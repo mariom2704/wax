@@ -1,0 +1,22 @@
+#ifndef __STL__INCLUDED__
+#define __STL__INCLUDED__
+
+#include <io.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <time.h>
+#include <stdlib.h>
+
+#pragma warning(disable : 4786)
+#include <iostream>
+#include <string>
+#include <vector>
+#include <list>
+#include <fstream>
+#include <algorithm>
+using namespace std;
+
+
+#endif
+

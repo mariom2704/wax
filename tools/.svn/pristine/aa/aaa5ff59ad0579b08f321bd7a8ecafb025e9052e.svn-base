@@ -1,0 +1,71 @@
+// TestEingabe.cpp: Implementierungsdatei
+//
+
+#include "stdafx.h"
+#include "SplitterWindowTutorial.h"
+
+#include "TestEingabe.h"
+#include "MainFrm.h"
+
+#include <math.h>
+
+#include "Tubes it self\\StrangRohr.h"
+
+IMPLEMENT_DYNCREATE(CTestEingabe, CFormView)
+
+
+
+CRohrKomponenteVector StrangRohrVector;
+
+CTestEingabe::CTestEingabe()
+	: CFormView(CTestEingabe::IDD)
+{
+
+}
+
+
+
+
+CTestEingabe::~CTestEingabe()
+{
+	delete m_pGraficController;
+}
+
+
+
+void CTestEingabe::DoDataExchange(CDataExchange* pDX)
+{
+	CFormView::DoDataExchange(pDX);
+}
+
+
+
+BEGIN_MESSAGE_MAP(CTestEingabe, CFormView)
+	ON_BN_CLICKED(IDC_BUTTON1, &CTestEingabe::OnBnClickedButton1)
+END_MESSAGE_MAP()
+
+
+
+void CTestEingabe::OnBnClickedButton1()
+{
+	CRohrKomponente StrangRohrI, StrangRohrII;
+	StrangRohrI.SetnextStrangRohr(&StrangRohrII);
+	StrangRohrI.SetWinkel( 3 );
+	StrangRohrVector.push_back(StrangRohrI);
+	StrangRohrII.SetprevStrangRohr(&StrangRohrI);
+	StrangRohrII.SetWinkel( 82 );
+	StrangRohrVector.push_back(StrangRohrII);
+	
+	m_pGraficController->GenerateDrawingOfTubes(StrangRohrVector);
+}
+
+
+
+void CTestEingabe::OnInitialUpdate()
+{
+	CFormView::OnInitialUpdate();
+	CMainFrame*  pF =  (CMainFrame*)AfxGetMainWnd();
+	m_pHTML = (CHtmlTestview*) pF->m_mainSplitter.GetPane(1,0);
+	m_pGraficController = new CGraficController(m_pHTML);
+	PostMessage(WM_COMMAND, IDC_BUTTON1);
+}

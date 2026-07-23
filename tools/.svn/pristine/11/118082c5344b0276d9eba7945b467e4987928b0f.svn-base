@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Einstellung xmlns="http://tempuri.org/XMLSchema1.xsd">
+	<Server>odwax</Server>
+	<Datenbank>waxserver</Datenbank>
+  <SqlDatPfad>D:\Daten\Programmierung\MxStat\MxStat\</SqlDatPfad>
+</Einstellung>

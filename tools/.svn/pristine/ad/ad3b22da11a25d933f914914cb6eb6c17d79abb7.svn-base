@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{17c8b1c7-b866-4e71-930b-e93b22558bd2}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{286ed7ed-9300-4b15-9f8a-cd0b321c2931}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SVG File Operations">
+      <UniqueIdentifier>{de9447ac-3e4d-4346-ba06-913a5651be58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mechanicals Geometrics">
+      <UniqueIdentifier>{c6e8f96c-5d4f-449b-b6c3-1ffb7eb53111}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Basic Geometrics">
+      <UniqueIdentifier>{c3a76705-d8d4-4632-a1dd-fb144935e2e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controller">
+      <UniqueIdentifier>{1dcece62-353b-444b-ab27-c687631e758d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tubes it self">
+      <UniqueIdentifier>{22b3ba7a-2a94-4cee-846a-0a1390d5630c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="res\SplitterWindowTutorial.ico">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\SplitterWindowTutorial.rc2">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\SplitterWindowTutorialDoc.ico">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="res\Toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\MDIFrameBackground.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Begleittext.docx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="HtmlTestview.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="SplitterWindowTutorial.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="SplitterWindowTutorialDoc.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="SplitterWindowTutorialView.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="TestEingabe.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="Grafic\SVG File Operations\GraficFileController.cpp">
+      <Filter>SVG File Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="Grafic\Controller\GraficController.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Tubes it self\StrangRohr.cpp">
+      <Filter>Tubes it self</Filter>
+    </ClCompile>
+    <ClCompile Include="UtiltyHelper.cpp" />
+    <ClCompile Include="Grafic\Mechanicals Geometrics\GraficRohrKomponente.cpp">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClCompile>
+    <ClCompile Include="Grafic\Mechanicals Geometrics\GraficRohrKomponentenContainer.cpp">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HtmlTestview.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="SplitterWindowTutorial.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="SplitterWindowTutorialDoc.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="SplitterWindowTutorialView.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="TestEingabe.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="Grafic\SVG File Operations\GraficFileController.h">
+      <Filter>SVG File Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="Grafic\Controller\GraficController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Tubes it self\StrangRohr.h">
+      <Filter>Tubes it self</Filter>
+    </ClInclude>
+    <ClInclude Include="UtiltyHelper.h" />
+    <ClInclude Include="Grafic\Mechanicals Geometrics\GraficRohrKomponente.h">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClInclude>
+    <ClInclude Include="Grafic\Mechanicals Geometrics\GraficRohrKomponentenContainer.h">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SplitterWindowTutorial.rc">
+      <Filter>Main</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,17 @@
+#include "StdAfx.h"
+
+#include "RohrKomponente.h"
+
+#include "RohrOneAssembeldKomponenteVector.h"
+
+
+CCRohrOneAssembeldKomponenteVector::CCRohrOneAssembeldKomponenteVector(void)
+{
+	m_pRohrOneAssembeldKomponenteVector = new CCRohrOneAssembeldKomponenteVector();
+}
+
+
+CCRohrOneAssembeldKomponenteVector::~CCRohrOneAssembeldKomponenteVector(void)
+{
+	delete m_pRohrOneAssembeldKomponenteVector;
+}

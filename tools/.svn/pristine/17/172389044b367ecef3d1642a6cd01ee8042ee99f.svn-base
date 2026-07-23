@@ -1,0 +1,46 @@
+#pragma once
+
+
+typedef std::vector<CGraficRohrKomponente*> CGraficRohrBemassungsRohrKomponentenVectorBase;
+
+class WAXGLDLL CGraficRohrBemassungsRohrKomponentenVector :
+	public CGraficRohrBemassungsRohrKomponentenVectorBase
+{
+
+	private:
+		CRohrBemassungsRohrKomponentenVector* m_pRohrLogicBemassungsKomponentenVector;
+		CGraficController* m_pGraficGraficController;
+		CPointDouble StartPoint, EndPoint;
+
+	public:
+		void CalculateAadDrawDimension();
+		CGraficRohrBemassungsRohrKomponentenVector(CGraficController* pGraficGraficController);
+		~CGraficRohrBemassungsRohrKomponentenVector(void);
+
+		void SetRohrLogicBemassungsKomponentenVector(CRohrBemassungsRohrKomponentenVector* pRohrLogicBemassungsKomponentenVector)
+		{
+			m_pRohrLogicBemassungsKomponentenVector = pRohrLogicBemassungsKomponentenVector;
+		};
+
+		CRohrBemassungsRohrKomponentenVector* GetRohrLogicBemassungsKomponentenVector()
+		{
+			return m_pRohrLogicBemassungsKomponentenVector;
+		};
+		
+		CGraficRohrBemassungsAnbauChildKomponentenVectorVector m_GraficRohrBemassungsAnbauChildKomponentenVectorVector;
+
+		
+		bool HasAssembeldTubes();
+		CGraficRohrBemassungsAnbauChildKomponentenVectorVector& GetGraficRohrBemassungsAnbauChildKomponentenVectorVector();
+
+		CPointDouble GetConnectionPointForAbgaenge(double RelativerAbstandzumNaechsten);
+
+		double GetWinkelRohrZuXundYAchse();
+
+		void SetDemissonPoints();
+
+		void ZeichneLinie( double x1, double y1, double x2, double y2, CString strFarbe );
+
+
+};
+

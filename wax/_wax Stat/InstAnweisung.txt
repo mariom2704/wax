@@ -1,0 +1,10 @@
+Freigabe der Net-Anwendung
+
+
+1. Das Net-Framework 2.0 muß installiert sein. Inst-datei unter:
+	..\Odinst\standard\DotNet\dotnetfx.exe
+
+
+2. Damit das Programm läuft muss die Net Freigabe über folgenden Batch erfolgen:
+
+ 	..\Odinst\standard\DotNet\local_intranet_zone_full_trust.cmd

@@ -1,0 +1,80 @@
+>>> "Sienersoft GmbH" <vorstand@sienersoft.de> 05.09.2011 16:47 >>>
+Sehr geehrter Herr Siener!
+
+Vielen Dank, dass Sie sich für unser Produkt entschieden haben!
+
+*** WICHTIGE EMAIL, BITTE AUFBEWAHREN *** Mit dieser Email erhalten Sie Ihre Lizenzdaten! Es ist kein erneuter Download der Software notwendig - es muss nur der angegebene Lizenzschlüssel eingegeben werden. 
+Dafür stehen Ihnen zwei Lizenzierungsarten zur Verfügung. Bitte folgen Sie den Anweisungen in dieser Email.
+
+*** RECHNUNG ***
+Eine schriftliche Rechnung finden Sie im Anhang als PDF Dokument. * Eine Kopie der Rechnung wird Ihnen in den nächsten Tagen per Post zugestellt. Bitte leiten Sie die Rechnung an Ihre zuständige Abteilung weiter.
+
+*** IHR LIZENZSCHLÜSSEL ***
+
+**********************************************
+TBarCode (OCX/DLL/NET) 1D V10.0
+
+System ID    : n/a
+Product      : TBarCode (OCX/DLL/NET) 1D V10.0
+Licensee     : Mem: Minimax GmbH & Co. KG DE-23843
+Kind of Lic. : Developer/Unlimited
+Number       : 1
+License Key  : 10E83FB2EBCC3ABF336E0B0074A7402A
+**********************************************
+
+*** IHR LIZENZSCHLÜSSEL ***
+
+**********************************************
+TBarCode (OCX/DLL/NET) x64 (1D) V10.0
+
+System ID    : n/a
+Product      : TBarCode (OCX/DLL/NET) x64 (1D) V10.0
+Licensee     : Mem: Minimax GmbH & Co. KG DE-23843
+Kind of Lic. : Developer/Unlimited
+Number       : 1
+License Key  : 10E83FB2EBCC3ADF536E6B0074C7404A
+**********************************************
+
+*** MANUELLE LIZENZIERUNG ***
+Für Einzel und Standortlizenzen. Geben Sie PRODUKT (Product), LIZENZNEHMER (Licensee), LIZENZTYP (Kind of license), ANZAHL (Number of licenses) und LIZENZSCHLÜSSEL (License Key) in den Lizenzierungsdialog exakt so ein, wie angeführt (Copy & Paste empfehlenswert). Führen Sie diesen Vorgang auf jedem Rechner (und für jeden Benutzer) einmal durch.
+
+*** AUTOMATISCHE LIZENZIERUNG ***
+Für Standortlizenzen auf Terminal Servern: Hierfür gibt es Registry und Ini-Datei basierende Lizenzierungsmethoden, bitte kontaktieren Sie unseren Support (support@tec-it.com) für weitere Details.
+
+Für Standort, Web und Entwickler-Lizenzen. Lizenzieren Sie das Produkt per Programmcode direkt in Ihrer Anwendung (z.B. im Programmstart) über die LicenseMe/BCLicenseMe/License Funktion. Verwenden Sie nicht die manuelle Methode.
+
+Funktionsaufruf - Syntax:
+TBarCode OCX: TBarCode10.LicenseMe "LICENSEE", KIND OF LICENSE, NUMBER OF LICENSES, "LICENSE KEY", PRODUCT-ID TBarCode NET: Barcode.License ("LICENSEE", KIND OF LICENSE, NUMBER OF LICENSES, "LICENSE KEY", PRODUCT-ID) TBarCode DLL: BCLicenseMe ("LICENSEE", KIND OF LICENSE, NUMBER OF LICENSES, "LICENSE KEY", PRODUCT-ID)
+
+Werte zu den Enumerationen:
+KIND OF LICENSE             : Single (1), Site (2), Developer (3), Web (3)
+PRODUCT-ID (Windows 32-Bit) : 1D (2002), 2D (2003)
+PRODUCT-ID (Windows x64)    : 1D (2004), 2D (2005)
+
+Hinweis: Bei TBarCode .NET unter Windows x64 verwenden Sie bitte die Produkt-ID und nicht die Enumerationen.
+
+*** WEITERE INFORMATIONEN ***
+FAQ Lizenzierung, Beispiele: http://www.tec-it.com/support/faq/licensing/licensekey/Default.aspx
+Manuelle Lizenzierung      : http://www.tec-it.com/download/PDF/TBarCode10_OCX_User_EN.pdf
+(Kapitel 11 - Lizenzierung/Licensing)
+Lizenzierung TBarCode DLL  : http://www.tec-it.com/Documentation/TBarCode10_Library_Reference/index.html
+(Modules, General Function Calls, BCLicenseMe).
+
+*** UNTERSTÜTZUNG/SUPPORT ***
+Lizenzprobleme: http://www.tec-it.com/support/faq/licensing/licensekey/Default.aspx
+Für Supportanfragen wenden Sie sich bitte an: mailto:support@tec-it.com
+
+
+Best Regards / Mit freundlichen Grüßen
+
+
+Susan Enzenhofer 
+
+
+
+Stay informed and get in touch!! News and Infos on FACEBOOK and TWITTER
+-----------------------------------------------------------------------
+TEC-IT Datenverarbeitung GmbH, Hans-Wagnerstrasse 6, A-4400 Steyr
+t: +43 (0)7252/72720, f: +43 (0)7252/72720-77, i: http://www.tec-it.com Landesgericht Steyr, FN144270m, CEO: Guenter Kriegl & Dieter Klausner
+-----------------------------------------------------------------------
+The information transmitted is intended only for the person or entity to which it is addressed and may contain confidential and/or privileged material. Any review, retransmission, dissemination or other use of, or taking of any action in reliance upon, this information by persons or entities other than the intended recipient is prohibited. If you received this in error, please contact the sender and delete the material, including attached files, from any computer. 

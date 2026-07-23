@@ -1,0 +1,12 @@
+#pragma once
+
+class CWaxRohrInterfaceAdapter
+{
+	public:
+		CWaxRohrInterfaceAdapter(void);
+		virtual ~CWaxRohrInterfaceAdapter(void);
+
+		static void AdaptedWaxToSVGGUI();
+
+};
+

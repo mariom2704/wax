@@ -1,0 +1,16 @@
+wanr komma hintersetzen eventuell vordere 0 entfernen => Text auf Zahl setzen
+wanr ermitteln komma hintersetzen
+All new ausfuehren
+diff nachsehen
+classsid ermitteln wanr waid.sql
+
+All new from CAD
+diff nachschauen
+classsid nachsehen
+
+
+All apax new.sql
+diff nachschauen
+classsid nachschauen
+
+Daten in Excel importieren csv => Menu  Daten aus Text importieren

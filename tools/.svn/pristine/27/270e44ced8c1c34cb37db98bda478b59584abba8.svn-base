@@ -1,0 +1,131 @@
+#include "stdafx.h"
+#include "UtiltyHelper.h"
+
+#include "RohrKomponente.h"
+
+#include "..\Grafic\Mechanicals Geometrics\GraficRohrKomponentenContainer.h"
+#include "..\Grafic\Mechanicals Geometrics\GraficRohrKomponente.h"
+
+#include "..\Grafic\SVG File Operations\GraficFileController.h"
+#include "..\Grafic\Controller\GraficController.h"
+
+
+ CRohrKomponente::CRohrKomponente(void)
+{
+	m_prevStrangRohr  = NULL;
+	m_pNextStrangRohr = NULL;
+	m_pGraficRohrKomponente = NULL;
+	m_iDN			= 35;
+	iLaenge		= 250;
+	NutIdEnde	= 21;
+	NutIdAnfang = 22;
+	winkel		= 0;
+	m_FirstKomponent = false;
+}
+
+
+
+ CGraficRohrKomponente* CRohrKomponenteTeilRohr::GetGraficRohrKomponente(CGraficController* pGraficRohrContainer)
+{
+	if(m_pGraficRohrKomponente == 0)
+	{
+		m_pGraficRohrKomponente = new CGraficRohrKomponenteTeilRohr( pGraficRohrContainer, this);
+		return m_pGraficRohrKomponente;
+	}
+	else
+	{
+		return m_pGraficRohrKomponente;
+	}
+ };
+
+
+
+CGraficRohrKomponente* CRohrKomponente::GetGraficRohrKomponente( CGraficController* pGraficRohrContainer)
+{
+	if(m_pGraficRohrKomponente == 0)
+	{
+		m_pGraficRohrKomponente = new CGraficRohrKomponenteBogen(pGraficRohrContainer, this);
+		return m_pGraficRohrKomponente;
+	}
+	else
+	{
+		return m_pGraficRohrKomponente;
+	}
+ };
+
+
+
+CRohrKomponente::~CRohrKomponente(void)
+{
+	if(m_pGraficRohrKomponente != 0)
+	{
+		delete m_pGraficRohrKomponente;
+	}
+}
+
+
+
+
+
+
+
+CGraficRohrKomponente* CRohrKomponenteBogen::GetGraficRohrKomponente(CGraficController* pGraficRohrContainer)
+{
+	if(m_pGraficRohrKomponente == 0)
+	{
+		CGraficRohrKomponenteBogen* pGraficRohrKomponente = new CGraficRohrKomponenteBogen(pGraficRohrContainer, this);
+		m_pGraficRohrKomponente = (CGraficRohrKomponente*) pGraficRohrKomponente;
+		return m_pGraficRohrKomponente;
+	}
+	else
+	{
+		return m_pGraficRohrKomponente;
+	}
+ };
+
+
+
+CGraficRohrKomponente* CRohrKomponenteNut::GetGraficRohrKomponente(CGraficController* pGraficRohrContainer)
+{
+	if(m_pGraficRohrKomponente == 0)
+	{
+		CGraficRohrKomponenteNut* pGraficRohrKomponente = new CGraficRohrKomponenteNut(pGraficRohrContainer, this);
+		m_pGraficRohrKomponente = (CGraficRohrKomponente*) pGraficRohrKomponente;
+		return m_pGraficRohrKomponente;
+	}
+	else
+	{
+		return m_pGraficRohrKomponente;
+	}
+};
+
+
+CGraficRohrKomponente* CRohrKomponenteGlatt::GetGraficRohrKomponente(CGraficController* pGraficRohrContainer)
+{
+	if(m_pGraficRohrKomponente == 0)
+	{
+		CGraficRohrKomponenteGlatt* pGraficRohrKomponente = new CGraficRohrKomponenteGlatt(pGraficRohrContainer, this);
+		m_pGraficRohrKomponente = (CGraficRohrKomponente*) pGraficRohrKomponente;
+		return m_pGraficRohrKomponente;
+	}
+	else
+	{
+		return m_pGraficRohrKomponente;
+	}
+};
+
+
+
+void CRohrKomponente::AddChildren(CRohrKomponente* pRohr)
+{
+	CRohrKomponenteVector::size_type sz = RohrKomponenteChildVector.size();
+	RohrKomponenteChildVector[sz-1]->push_back(pRohr);
+}
+
+
+void CRohrKomponente::AddOneassembeldRohr()
+{
+	CRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVector = new CRohrOneAssembeldKomponenteVector();
+	RohrKomponenteChildVector.push_back(pRohrOneAssembeldKomponenteVector);	
+}
+

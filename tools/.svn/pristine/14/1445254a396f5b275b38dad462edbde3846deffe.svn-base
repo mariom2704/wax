@@ -1,0 +1,87 @@
+#pragma once
+
+#include "Tubes it self\StrangRohr.h"
+
+
+
+class CGraficRohrKomponente
+{
+private:
+	 CRohrKomponente m_LogicRohrKomponente;
+	
+
+	 CPointDouble m_PointAnfangCenterLinie;
+	 CPointDouble m_PointEndeCenterLinie;
+	 CPointDouble m_FirstBorderPoint;
+	 CPointDouble m_xNullPunktBeginAussenWandBefore, m_xNullPunktSecondAussenWandBefore;
+	 CPointDouble m_xNullPunktThirdWandPoint, m_xNullPunktForthWandPoint;
+	 CPointDouble m_NullPointConnectionPoint, m_NullPointConnectionPointII;
+	 CPointDouble m_FirstCornerPoint, m_SecondCornerPoint, m_ThridCornerPoint, m_ForthCornerPoint;
+	 int m_DrehWinkel; 
+	 CPointDouble  DeltaPitch;; 
+		
+	
+
+public:
+	CGraficRohrKomponente(CRohrKomponente LogicRohrKomponente);
+	
+	
+	void SetStartPointCenterLine(CPointDouble StartPoint);
+	void SetPitchForCenterLinie();
+	CPointDouble GetPitchCenterLinie();
+	CPointDouble getStartPointCenterLine();
+	
+	void SetFirstCornerPoint(CPointDouble FirstCornerPoint);
+	CPointDouble  GetFirstCornerPoint();
+	void SetSecondCornerPoint(CPointDouble FirstCornerPoint);
+	CPointDouble  GetSecondCornerPoint();
+	void SetThirdCornerPoint(CPointDouble ThridCornerPoint);
+	CPointDouble GetThridCornerPoint();
+	void SetForthCornerPoint(CPointDouble FirstCornerPoint);
+	CPointDouble  GetForthCornerPoint();
+
+	void SetFirstBorderpoint(double CumulatedArcBefore);
+	CPointDouble GetFirstBorderpoint();
+	void SetSecondBorderpoint(double CumulatedArcBefore);
+	CPointDouble GetSecondBorderpoint();
+	void SetThirdBorderpoint(double CumulatedArcBefore);
+	CPointDouble GetThirdBorderpoint();
+	void SetFourthBorderpoint(double CumulatedArcBefore);
+	CPointDouble GetForthBorderpoint();
+	void SetConnectionPoint(CPointDouble ConnectionPoint)
+	{
+		m_NullPointConnectionPoint = ConnectionPoint;
+	};
+
+	CPointDouble GetConnectionPoint()
+	{
+		return m_NullPointConnectionPoint;
+	};
+
+	void SetConnectionPointII(CPointDouble ConnectionPoint)
+	{
+		m_NullPointConnectionPointII = ConnectionPoint;
+	};
+
+	CPointDouble GetConnectionPointII()
+	{
+		return m_NullPointConnectionPointII;
+	};
+	
+	void SetDrehWinkelForBorederPoint(double DrehWinkel);
+
+	CPointDouble GetEndPointCenterLine();
+	void SetEndPointCenterLine(double& CumulatedArc);
+	
+	CRohrKomponente* GetLogicalRohrKomponente(){ return &m_LogicRohrKomponente;};
+	void DrawYourSelf(CString& strSVGContent);
+	void ZeichneLinie(CString& strPost, double x1, double y1, double x2,  double y2);
+	void ZeichneLinie(CString& strPost, CString strFarbe, double x1, double y1, double x2,  double y2);
+	
+
+	
+
+	~CGraficRohrKomponente(void);
+};
+
+typedef std::vector<CGraficRohrKomponente> CGraficRohrKomponenteVector;

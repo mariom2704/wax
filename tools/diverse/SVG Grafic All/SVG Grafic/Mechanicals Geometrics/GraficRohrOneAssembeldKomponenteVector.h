@@ -1,0 +1,46 @@
+#pragma once
+
+
+class WAXGLDLL CCGraficRohrOneAssembeldKomponenteVector : public CGraficComponentsForOneAssembeldTube
+{
+
+private:
+	
+	 // Logische Zusammenfassung von grafischen Komponeten zu einem Bemassungs objekt(im allgemeinen Bestweht dieses
+	 // aus einem Teilrohr mit Nut oder Bogen usw.
+	 CGraficRohrBemassungsKomponentenVectorVector m_GraficBemassungsKomponentenVectorVector;
+	
+	
+
+	CCRohrOneAssembeldKomponenteVector* m_pRohrOneAssembeldKomponenteVector;
+	
+	std::vector<int>::size_type size()
+	{
+		return CGraficComponentsForOneAssembeldTube::size();
+	}
+
+public:
+	CCGraficRohrOneAssembeldKomponenteVector(void);
+	~CCGraficRohrOneAssembeldKomponenteVector(void);
+
+	bool HasChildTubes();
+	int NumberOfComponents()
+	{
+		return size();
+	};
+
+	void SetRohrOneAssembeldKomponenteVector(CCRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVector)
+	{
+		m_pRohrOneAssembeldKomponenteVector = pRohrOneAssembeldKomponenteVector;
+	}
+
+	CCRohrOneAssembeldKomponenteVector* GetRohrOneAssembeldKomponenteVector()
+	{
+		return m_pRohrOneAssembeldKomponenteVector;
+	}
+	
+	CCGraficRohrOneAssembeldKomponenteVector* GetNewAddedChildAssembeldTube();
+	void AddComponenteForTube(CGraficRohrKomponente* pRohrKomponente);
+	CGraficRohrBemassungsKomponentenVectorVector& GetGraficBemassungsKomponentenVectorVector();
+};
+

@@ -1,0 +1,16 @@
+#pragma once
+
+typedef std::vector<CRohrKomponente*> CRohrBemassungsKomponentenVectorBase;
+
+class CRohrBemassungsRohrKomponentenVector :
+	public CRohrBemassungsKomponentenVectorBase
+{
+
+	private:
+	 CRohrBemassungsAnbauChildKomponentenVectorVector m_RohrBemassungsAnbauChildKomponentenVectorVector;
+public:
+	CRohrBemassungsRohrKomponentenVector(void);
+	~CRohrBemassungsRohrKomponentenVector(void);
+	CRohrBemassungsAnbauChildKomponentenVectorVector& GetRohrBemassungsAnbauChildKomponentenVectorVector();
+};
+

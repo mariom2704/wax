@@ -1,0 +1,733 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Deutsch (Deutschland) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 7, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\waxint.rc2""  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen\r\n"
+    "#include ""l.deu\\afxres.rc""          // Standardkomponenten\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 4,6,0,0
+ PRODUCTVERSION 4,6,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040704b0"
+        BEGIN
+            VALUE "FileDescription", "waxint DLL"
+            VALUE "FileVersion", "4, 6, 0, 0"
+            VALUE "InternalName", "waxint"
+            VALUE "LegalCopyright", "Copyright (C) 2015 Minimax GmbH & Co KG"
+            VALUE "OriginalFilename", "waxint.dll"
+            VALUE "ProductName", "waxint Dynamic Link Library"
+            VALUE "ProductVersion", "4, 6, 0, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x407, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_OPEN_SAP DIALOG  0, 0, 438, 202
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "SAP-Auftrag auswählen"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,164,181,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,225,181,50,14
+    CONTROL         "List2",IDC_SAPAUFTRAEGE,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | WS_BORDER,0,0,430,173
+    PUSHBUTTON      "Suchen",IDC_SEARCH,380,181,50,14
+END
+
+IDD_SEARCH_SAP DIALOGEX 0, 0, 200, 90
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Sapauftrag suchen"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "SD &Auftragsnummer",IDC_STATIC_SD_IPPE_MAT,15,30,72,8
+    EDITTEXT        IDC_AUFTRAGSNR,102,27,86,14,ES_AUTOHSCROLL
+    LTEXT           "SD &Positionsnummer",IDC_STATIC_SD_IPPE_KNOTEN,15,46,72,8
+    EDITTEXT        IDC_POSNR,102,46,86,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Abbrechen",IDCANCEL,82,68,50,14
+    DEFPUSHBUTTON   "OK",IDOK,139,68,50,14
+    CONTROL         "Eingabe iPPE MaterialNum.",IDC_CHECK_IPPE_MAT_KNOTEN_SD,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,16,8,116,13
+END
+
+IDD_OPEN_DATABASE DIALOG  0, 0, 398, 186
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Werkaufträge aus Datenbank laden"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "NL Auswahl",IDC_STATIC,7,4,219,56,WS_GROUP
+    CONTROL         "alle &Niederlassungen",IDC_ALLE_NL,"Button",BS_AUTORADIOBUTTON,17,24,81,10
+    CONTROL         "&einzelne Niederlassung",IDC_EINZELNL,"Button",BS_AUTORADIOBUTTON,17,40,89,10
+    COMBOBOX        IDC_NL,109,39,110,142,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "&Sachbearbeiter AV",IDC_STATIC,7,63,219,33,WS_GROUP
+    COMBOBOX        IDC_SACHBEARBEITER,14,76,205,141,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "&Anordnung, Sortierung",IDC_STATIC,7,101,220,78,WS_GROUP
+    CONTROL         "&Niederlassung",IDC_SORT_NL,"Button",BS_AUTORADIOBUTTON,71,122,61,10
+    CONTROL         "&Art des Werkauftrages",IDC_SORT_WA,"Button",BS_AUTORADIOBUTTON,71,137,87,10
+    CONTROL         "&Sachbearbeiter",IDC_SORT_SACHBEARBEITER,"Button",BS_AUTORADIOBUTTON,71,152,64,10
+    GROUPBOX        "&WA Auswahl",IDC_STATIC,235,4,155,92,WS_GROUP
+    CONTROL         "&alle WA Nummern",IDC_SELECT_EGAL,"Button",BS_AUTORADIOBUTTON,248,24,139,10
+    CONTROL         "&neue Werkaufträge ohne WA Nummer",IDC_SELECT_NEW,
+                    "Button",BS_AUTORADIOBUTTON,248,38,139,10
+    CONTROL         "Werkaufträge &in Bearbeitung",IDC_SELECT_INBEARBEITUNG,
+                    "Button",BS_AUTORADIOBUTTON,248,52,107,10
+    CONTROL         "&einzelner Werkauftrag",IDC_SELECT_WA,"Button",BS_AUTORADIOBUTTON,248,66,85,10
+    EDITTEXT        IDC_WANUMMER,335,64,40,14,ES_AUTOHSCROLL
+    GROUPBOX        "Freigabedatum",IDC_STATIC,236,101,154,55
+    LTEXT           "von",IDC_STATIC,269,116,13,8
+    CONTROL         "DateTimePicker1",IDC_FREIGABE_VON,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_APPCANPARSE | WS_TABSTOP,287,113,59,15
+    CONTROL         "DateTimePicker1",IDC_FREIGABE_BIS,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_APPCANPARSE | WS_TABSTOP,287,133,59,15
+    DEFPUSHBUTTON   "OK",IDOK,282,165,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,340,165,50,14
+    LTEXT           "bis",IDC_STATIC,271,136,10,8
+    CONTROL         "",IDC_ENABLE_FREIGABE_VON,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,349,116,16,8
+    CONTROL         "",IDC_ENABLE_FREIGABE_BIS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,349,136,16,8
+    CONTROL         "auch &stornierte Aufträge laden",IDC_STORNIERT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,264,80,111,10
+END
+
+IDD_OPEN_DATABASE_MYWA DIALOG  0, 0, 424, 130
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Werkaufträge aus Datenbank laden"
+FONT 8, "MS Sans Serif"
+BEGIN
+    GROUPBOX        "&Sachbearbeiter",IDC_STATIC,8,46,246,46,WS_GROUP
+    COMBOBOX        IDC_SACHBEARBEITER,51,65,171,141,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Bearbeitungsdatum",IDC_STATIC,8,4,246,37
+    LTEXT           "von",IDC_STATIC,35,20,13,8
+    CONTROL         "DateTimePicker1",IDC_FREIGABE_VON,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_APPCANPARSE | WS_TABSTOP,53,17,59,15
+    LTEXT           "bis",IDC_STATIC,147,21,10,8
+    CONTROL         "DateTimePicker1",IDC_FREIGABE_BIS,"SysDateTimePick32",DTS_RIGHTALIGN | DTS_APPCANPARSE | WS_TABSTOP,162,18,59,15
+    GROUPBOX        "&WA Auswahl",IDC_STATIC,261,4,155,88,WS_GROUP
+    DEFPUSHBUTTON   "OK",IDOK,150,111,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,204,111,50,14
+    CONTROL         "nach Werkauftragsarten sortieren (unsichtbare Vorgabe)",IDC_SORT_WA,
+                    "Button",BS_AUTOCHECKBOX | BS_MULTILINE | NOT WS_VISIBLE | WS_TABSTOP,8,105,120,20
+    CONTROL         "&nicht abgearbeitete Werkaufträge",IDC_SELECT_NOTSAP,
+                    "Button",BS_AUTORADIOBUTTON,274,20,121,10
+    CONTROL         "&abgearbeitete Werkaufträge",IDC_SELECT_SAP,"Button",BS_AUTORADIOBUTTON,274,44,121,10
+    CONTROL         "&alle Werkaufträge",IDC_SELECT_ALL,"Button",BS_AUTORADIOBUTTON,274,68,121,10
+END
+
+IDD_OPEN_DATABASE_NEWWA DIALOGEX 0, 0, 278, 233
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Werkaufträge aus Datenbank laden"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "&Sachbearbeiter zuweisen",IDC_STATIC,7,46,263,152,WS_GROUP
+    LTEXT           "&Verteiler:",IDC_STATIC,16,68,69,8
+    COMBOBOX        IDC_SACHBEARBEITER_VERTEILER,87,65,165,141,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Stationsverteiler:",IDC_STATIC,16,89,69,8
+    COMBOBOX        IDC_SACHBEARBEITER_STATIONSVERTEILER,87,86,165,141,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Handelslängen:",IDC_STATIC,16,110,69,8
+    COMBOBOX        IDC_SACHBEARBEITER_HANDELSLAENGEN,87,107,165,141,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Strangrohr:",IDC_STATIC,16,131,69,8
+    COMBOBOX        IDC_SACHBEARBEITER_STRANGROHR,87,128,165,141,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&Gewinderohr:",IDC_STATIC,16,152,69,8
+    COMBOBOX        IDC_SACHBEARBEITER_GEWINDEROHR,87,149,165,141,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "S&onstiges:",IDC_STATIC,16,173,69,8
+    COMBOBOX        IDC_SACHBEARBEITER_SONSTIGES,87,170,165,141,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,164,212,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,220,212,50,14
+    CONTROL         "nach Werkauftragsarten sortieren (unsichtbare Vorgabe)",IDC_SORT_WA,
+                    "Button",BS_AUTOCHECKBOX | BS_MULTILINE | NOT WS_VISIBLE | WS_TABSTOP,98,206,62,20
+    LTEXT           "Niederlassung:",IDC_STATIC,23,23,48,8
+    COMBOBOX        IDC_NL,75,21,177,159,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Nur MV Pipe (BFP) Aufträge einlesen",IDC_CHECK_OHNE_KC_EINLESEN,
+                    "Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,16,205,114,21
+END
+
+IDD_GET_DIFFERENT_AUFTRAEGE DIALOGEX 0, 0, 229, 157
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Projektdatei erstellen"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_RADIO_PSP_ELEMENT,"Button",BS_AUTORADIOBUTTON | WS_GROUP,8,7,11,13
+    CONTROL         "",IDC_RADIO_WERKAUFTRAG,"Button",BS_AUTORADIOBUTTON,7,81,11,16
+    CONTROL         "",IDC_RADIO_SD_AUFTRAG,"Button",BS_AUTORADIOBUTTON,119,82,9,16
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,6,80,171,1
+    LTEXT           "NL Kennung:",IDC_STATIC_NL_KENNNG,160,7,43,8
+    COMBOBOX        IDC_NL,160,21,35,63,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&PSP Element:",IDC_STATIC_PSP_ELEMENT,23,8,44,8
+    EDITTEXT        IDC_PSPELEMENT,22,19,91,14,ES_AUTOHSCROLL
+    CONTROL         "&letzte drei Ziffern übereinstimmen",IDC_LETZTE_ZIFFERN_DREI,
+                    "Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,7,45,138,13
+    CONTROL         "&letzte vier Zin übereinstimmen",IDC_LETZTE_ZIFFERN_VIER,
+                    "Button",BS_AUTORADIOBUTTON,7,60,139,17
+    CONTROL         "&Projektleitkarte erzeugen",IDC_PROJEKTLEITKARTE,"Button",BS_AUTOCHECKBOX | BS_MULTILINE | WS_TABSTOP,155,44,59,17
+    CONTROL         "nach Werkauftragsarten sortieren (unsichtbare Vorgabe)",IDC_SORT_WA,
+                    "Button",BS_AUTOCHECKBOX | BS_MULTILINE | NOT WS_VISIBLE | WS_TABSTOP,2,116,62,31
+    DEFPUSHBUTTON   "OK",IDOK,114,133,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,171,133,50,14
+    EDITTEXT        IDC_EDIT_WERKAUFTRAG,22,97,72,16,ES_AUTOHSCROLL
+    EDITTEXT        IDC_EDIT_SD_AUFTRAG,133,96,72,16,ES_AUTOHSCROLL
+    LTEXT           "SD Auftrag",IDC_STATIC_SD_AUFTRAGS_NR,133,85,74,9
+    LTEXT           "Werkauftrag",IDC_STATIC_WERKAUFTRAG,22,85,74,9
+    GROUPBOX        "Letzte Ziffern",IDC_STATIC,2,36,148,42
+END
+
+IDD_OPEN_DATABASE_PSPELEMENT DIALOGEX 0, 0, 274, 113
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Projektdatei erstellen"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "NL Kennung:",IDC_STATIC,170,13,39,8
+    COMBOBOX        IDC_NL,208,11,48,63,CBS_DROPDOWN | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "&PSP Element:",IDC_STATIC,13,13,44,8
+    EDITTEXT        IDC_PSPELEMENT,57,10,91,14,ES_AUTOHSCROLL
+    CONTROL         "&letzte drei Ziffern müssen übereinstimmen",IDC_LETZTE_ZIFFERN_DREI,
+                    "Button",BS_AUTORADIOBUTTON | WS_TABSTOP,15,39,145,10
+    CONTROL         "Radio1",IDC_LETZTE_ZIFFERN_VIER,"Button",BS_AUTORADIOBUTTON,15,54,130,17
+    CONTROL         "&Projektleitkarte erzeugen",IDC_PROJEKTLEITKARTE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,170,47,94,10
+    CONTROL         "nach Werkauftragsarten sortieren (unsichtbare Vorgabe)",IDC_SORT_WA,
+                    "Button",BS_AUTOCHECKBOX | BS_MULTILINE | NOT WS_VISIBLE | WS_TABSTOP,8,79,91,26
+    DEFPUSHBUTTON   "OK",IDOK,162,94,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,217,94,50,14
+    GROUPBOX        "Statisch",IDC_STATIC,9,27,154,47
+END
+
+LADEFORTSCHRITT DIALOGEX 0, 0, 187, 39
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+EXSTYLE WS_EX_TOOLWINDOW
+CAPTION "Werkauftrag laden..."
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CONTROL         "Progress1",IDC_PROG_LADE,"msctls_progress32",WS_BORDER,7,22,173,11
+    CTEXT           "",IDC_MSG,7,7,173,8
+END
+
+IDD_GROHRAUSWAHL DIALOG  0, 0, 491, 250
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Rohrauswahl für Gewinderohranlage"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,3,225,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,74,225,50,14
+    CONTROL         "List1",IDC_GROHRLIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_EDITLABELS | WS_BORDER | WS_TABSTOP,6,20,459,197
+    LTEXT           "Bitte Rohrstücke für die Gewinderohranlage auswählen : ",IDC_STATIC,10,4,218,8
+END
+
+IDD_OPEN_MONITOR DIALOGEX 0, 0, 620, 397
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Monitor für Fertigungsanlagen"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,564,374,51,14
+    CONTROL         "List2",IDC_WA_FINISHED,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER,415,21,200,345
+    CONTROL         "List2",IDC_WA_FREE,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | WS_BORDER,5,21,200,345
+    CONTROL         "List2",IDC_WA_STOPPED,"SysListView32",LVS_REPORT | LVS_SHOWSELALWAYS | WS_BORDER,210,202,200,164
+    CONTROL         "List2",IDC_WA_ACTIVE,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER,210,22,200,162
+    PUSHBUTTON      "&Löschen",IDC_STREET_DELETE,6,376,51,14,NOT WS_TABSTOP
+    LTEXT           "Freigegebene Werkaufträge : ",IDC_STATIC,6,5,116,12
+    LTEXT           "Aktive Werkaufträge : ",IDC_STATIC,211,4,116,12
+    LTEXT           "Bearbeitete Werkaufträge : ",IDC_STATIC,416,4,116,12
+    LTEXT           "Gestoppte Werkaufträge : ",IDC_STATIC,209,190,116,12
+    PUSHBUTTON      "&Archivieren",IDC_STREET_ARCHIVE,415,374,51,14,NOT WS_TABSTOP
+    PUSHBUTTON      "Datum ändern",IDC_BUTTON_DATE,145,376,60,14
+    PUSHBUTTON      "&Löschen",IDC_STREET_DELETE2,273,376,51,14,NOT WS_TABSTOP
+END
+
+IDD_ZUSAMMENFASSEN_WA_ROBBI DIALOGEX 0, 0, 440, 230
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Zusammenfassen von Werkaufträgen für die Strangrohrstrasse"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    EDITTEXT        IDC_EDIT_WANR,83,209,49,14,ES_MULTILINE | ES_AUTOHSCROLL
+    CONTROL         "",IDC_LIST1,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,426,188
+    DEFPUSHBUTTON   "OK",IDOK,383,209,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,325,209,50,14
+    LTEXT           "Werkauftrag (Wanr)\nhinzufügen:",IDC_STATIC,8,208,74,20
+    PUSHBUTTON      "Hinzufügen",IDC_BUTTON_ADD,146,210,70,14
+END
+
+IDD_HTMLVIEW_PRINT DIALOGEX 0, 0, 641, 470
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Anzeige und Druck"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Drucken und Beenden",IDOK,546,449,88,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,461,449,50,14
+    CTEXT           "<Browser location>",IDC_BROWSER,7,7,627,430,SS_CENTERIMAGE | NOT WS_VISIBLE,WS_EX_STATICEDGE
+END
+
+IDD_DIALOG_DATE DIALOGEX 0, 0, 154, 136
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Datum"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,47,115,50,14
+    CONTROL         "",IDC_MONTHCALENDAR1,"SysMonthCal32",MCS_NOTODAY | MCS_NOTODAYCIRCLE | WS_TABSTOP,7,7,140,100
+END
+
+IDD_LOAD_PA DIALOGEX 0, 0, 159, 78
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Preisanfrage laden"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,87,57,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,23,57,50,14
+    LTEXT           "Preisanfragenummer:",IDC_STATIC,15,20,70,8
+    EDITTEXT        IDC_EDIT_PA,97,17,40,14,ES_AUTOHSCROLL
+    CONTROL         "nach Werkauftragsarten sortieren (unsichtbare Vorgabe)",IDC_SORT_WA,
+                    "Button",BS_AUTOCHECKBOX | BS_MULTILINE | NOT WS_VISIBLE | WS_TABSTOP,7,31,146,26
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_OPEN_SAP, DIALOG
+    BEGIN
+        RIGHTMARGIN, 430
+        BOTTOMMARGIN, 195
+    END
+
+    IDD_SEARCH_SAP, DIALOG
+    BEGIN
+        RIGHTMARGIN, 189
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_OPEN_DATABASE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 390
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 179
+    END
+
+    IDD_OPEN_DATABASE_MYWA, DIALOG
+    BEGIN
+        LEFTMARGIN, 8
+        RIGHTMARGIN, 413
+        BOTTOMMARGIN, 129
+    END
+
+    IDD_OPEN_DATABASE_NEWWA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 270
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 226
+    END
+
+    IDD_GET_DIFFERENT_AUFTRAEGE, DIALOG
+    BEGIN
+        RIGHTMARGIN, 224
+        BOTTOMMARGIN, 152
+    END
+
+    IDD_OPEN_DATABASE_PSPELEMENT, DIALOG
+    BEGIN
+        LEFTMARGIN, 8
+        RIGHTMARGIN, 268
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 108
+    END
+
+    IDD_GROHRAUSWAHL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 484
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 243
+    END
+
+    IDD_OPEN_MONITOR, DIALOG
+    BEGIN
+        RIGHTMARGIN, 615
+        BOTTOMMARGIN, 390
+    END
+
+    IDD_ZUSAMMENFASSEN_WA_ROBBI, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 433
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 223
+    END
+
+    IDD_HTMLVIEW_PRINT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 634
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 463
+    END
+
+    IDD_DIALOG_DATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 147
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 129
+    END
+
+    IDD_LOAD_PA, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 71
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_GROHR_ANZAHL        "Anzahl"
+    IDS_GROHR_LAENGE        "Länge"
+    IDS_AUFTRAGSTABELLE     "&Auftragstabelle erstellen"
+    IDS_STUTZEN_LAENGE      "Rohrstutzen für Anlage haben unterschiedliche Länge, aber gleiche Nennweitenkombination!"
+    IDS_FREIGABE_SAEGENUT   "&Auftrag freigeben für Sägenut- und Verteilerrohranlage"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FREIGABE_VERTEILER  "&Auftrag freigeben für &Verteilerrohranlage"
+    IDS_FREIGABE_STRANG     "&Auftrag freigeben für Strangrohranlage"
+    IDS_DLL_EXCEL           "Die Dll ""ExcelTable"" konnte nicht gefunden werden!"
+    IDS_ERROR13             "Kein Werkauftrag ausgewählt!"
+    IDS_CHECK               "Check"
+    IDS_PREISTEST           "&Preistest"
+    IDS_UNBEKANNTE_AKTION   "Unbekannte Aktion"
+    IDS_ERROR1              "WA mit WAnr. 0 kann nicht ausgegeben werden!"
+    IDS_ERROR2              """WA mit SD-Auftragsnr. 0 oder SD-Positionsnr. 0 kann nicht ausgegeben werden!"
+    IDS_HINWEIS1            "Auftrag nicht von AV in Bearbeitung!"
+    IDS_ERROR3              "Kann Exceldatei nicht öffnen!"
+    IDS_ERROR4              "Kann %s nicht öffnen!"
+    IDS_ERROR5              "Keine gültigen Rohrdaten für Gewinderohranlage!"
+    IDS_HINWEIS2            "Achtung: Abstand < 75 mm!!! Soll Datei trotzdem erzeugt werden?"
+    IDS_FRAGE1              "Rohr über Anlage fertigen?"
+    IDS_ZUSAMMENFASSEN_WA   "Zusammenfassung Werkaufträge"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MONITOR2            "Monitor für %sSägenutanlage"
+    IDS_MONITOR3            "Monitor für %sVerteilerrohranlage 1"
+    IDS_MONITOR4            "Monitor für %sStrangrohranlage 1"
+    IDS_MONITOR5            "Monitor für %sStrangrohranlage 2"
+    IDS_MONITOR6            "Monitor für %sStrangrohranlage 3"
+    IDS_MONITOR7            "Monitor für %sStrangrohranlage 4"
+    IDS_VERKETTUNG          "Verkettung"
+    IDS_AUFTRAEGE           "Aufträge"
+    IDS_HINWEIS3            "Kein Werkauftrag ausgewählt!"
+    IDS_SAP_MENU1           "&Aufträge zu SAP übertragen"
+    IDS_SAP_MENU2           "Aufträge aus SAP &löschen"
+    IDS_SAP_MENU3           "SA&P-Aufträge anzeigen"
+    IDS_SAP_MENU4           "&SAP-Aufträge einlesen"
+    IDS_HINWEIS4            "Bogen im Rohr"
+    IDS_HINWEIS5            "kein Hinweis"
+    IDS_ERROR6              "Aufträge konnten nicht gelesen werden!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR7              "Auftrag %s konnte nicht gelöscht werden!"
+    IDS_HINWEIS6            "Auftrag mit Auftragsnr. %d und Pos.nr. %d in SAP-Datei nicht vorhanden!"
+    IDS_ERROR8              "Kein Eintrag in Statustabelle für Werkauftrag %s"
+    IDS_ERROR9              "Keine Werkaufträge gefunden!"
+    IDS_ERROR10             "Interner Fehler. Bitte Systemadministrator verständigen!"
+    IDS_LADEFORTSCHRITT     "LADEFORTSCHRITT"
+    IDS_VERBINDUNG          "Verbindung zum Server wird aufgenommen..."
+    IDS_LEITKARTE           " - Leitkarte"
+    IDS_ANHANG              " - Anhang"
+    IDS_MATERIAL            " - Material"
+    IDS_ROHRLEITUNG         " - Rohrleitung"
+    IDS_PREISE              " - Preise"
+    IDS_ERROR11             "Keine gültige NL ausgewählt!"
+    IDS_ERROR12             "Keine gültige Werkauftragsnummer angegeben!"
+    IDS_DATENBANKABFRAGE    "Datenbankabfrage"
+    IDS_NEUE_FREIGABEN      "Neue Freigaben"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NICHT_ZUGEORDNET    "Nicht zugeordnet"
+    IDS_KEIN_SACHBEARBEITER "<kein Sachbearbeiter zugeordnet>"
+    IDS_ALLE_SACHBEARBEITER "<alle Sachbearbeiter>"
+    IDS_ALLE_NIEDERLASSUNGEN "<alle Niederlassungen>"
+    IDS_KEINE_WANR_KEIN_SAP "Ein od. mehrere Positionen haben keine WAnr. Auftrag kann nicht zu SAP übertragen werden!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ZUSAMMENFASSUNG_WERKAUFTRAEGE 
+                            "Zusammenfassung Werkaufträge für Strangrohrstrasse"
+    IDS_WA_EINLESEN         "Werkaufträge aus der Datenbank einlesen..."
+    IDS_WANR                "WA-Nr."
+    IDS_WA_BEZ              "Auftragsbez."
+    IDS_WA_ANZMUFFEN        "Anz. Muffen"
+    IDS_KEINE_WERKAUSTRAEGE "Keine Werkaufträge eingegeben."
+    IDS_STRANGROHR_UNGLEICH "Strangrohre sind unterschiedlich."
+    IDS_DNROHR              "DN-Rohr"
+    IDS_ROHRQUALI           "DIN"
+    IDS_MUFFENLAENGE        "Länge Muffen"
+    IDS_DNMUFFE             "DN-Muffe"
+    IDS_KEIN_STRANGROHR     "Werkauftrag %d (Pos %s) ist kein Strangrohr."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_WERKAUFTRAG_NICHT_GEFUNDEN 
+                            "Zu der WA-Nummer %d wurden keine Positionen in der Datenbank gefunden!"
+    IDS_OBERFLAECHE         "Oberfläche"
+    IDS_POSNR               "Pos.Nr."
+    IDS_ANZ                 "Anzahl"
+    IDS_ANZ_MUFFEN          "Gesamtanzahl Muffen"
+    IDS_SUMME               "Summe"
+    IDS_SAEGENUT            "Auftrag ist schon gefertigt bzw. in Bearbeitung"
+    IDS_VERTEILER_LAENGE    "Das Teilrohr ist größer 6000"
+    IDS_MODELL_FEHLER       "Interner Fehler: Fehler im Rohrmodell"
+    IDS_SAEGENUT_FEHLER     "Die Daten konnten nicht erstellt werden."
+    IDS_SAEGENUT_DB_FEHLER  "Fehler beim Schreiben in die Datenbank!"
+    IDS_VERT_TAB_LOESCHEN   "ACHTUNG: Die Schnittstellendatei existiert schon! Wollen Sie diese überschreiben?"
+    IDS_KEINE_WAID          "Der Werkauftrag entält Positionen, die noch nicht freigegeben wurden."
+    IDS_ORT                 "Ort"
+    IDS_DATUM               "Datum"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SDAUFTRAG           "Sd Auftrag"
+    IDS_MONITOROLD          "Monitor für Sägenutanlage  %sAlt"
+    IDS_FREIGABE_SAEGENUT_ALT "Auftrag freigeben für &Sägenutanlage_32020 ALT"
+    IDS_SAEGENUT_FREIGEGBEN "Der Auftrag ist für die Sägenut- und Verteilerrohranlage freigegeben."
+    IDS_ANLAGENTEILE_UNGLEICH2 
+                            "Bei Position {0} können {1} Löcher, die als Anlage markiert sind, aufgrund der Mindestabstände nicht auf der Sägenutanlage gefertigt werden!"
+    IDS_ANLAGENTEILE_UNGLEICH1 
+                            "Bei Position {0} kann {1} Loch, dass als Anlage markiert ist, aufgrund der Mindestabstände nicht auf der Sägenutanlage gefertigt werden!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FERT_DATE           "Fertigungsdatum"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MIN_ABST_VERT       "Die Mindestabstände für die Verteilerrohrstraße werden bei der Pos {0} nicht eingehalten"
+END
+
+#endif    // Deutsch (Deutschland) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Englisch (USA) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_GROHR_ANZAHL        "Number"
+    IDS_GROHR_LAENGE        "Length"
+    IDS_AUFTRAGSTABELLE     "&Create order table"
+    IDS_STUTZEN_LAENGE      "Pipe branches have different length but equal combination of nominal wide!"
+    IDS_FREIGABE_SAEGENUT   "&Release order for saw-groove-machine_32020"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FREIGABE_VERTEILER  "&Release order for distribution-pipe-machine %d"
+    IDS_FREIGABE_STRANG     "&Release order for range-pipe-machine"
+    IDS_DLL_EXCEL           "Couldn't find Dll ""ExcelTable"""
+    IDS_ERROR13             "No work order selected!"
+    IDS_CHECK               "Check"
+    IDS_PREISTEST           "&Test price"
+    IDS_UNBEKANNTE_AKTION   "Unknown action"
+    IDS_ERROR1              "WO with WOno. 0 cannot be pass out!"
+    IDS_ERROR2              """WO with SD-Order no. 0 or SD-Position no. 0 cannot be pass out!"
+    IDS_HINWEIS1            "Order not from AV in treatment!"
+    IDS_ERROR3              "Cannot open Excel file!"
+    IDS_ERROR4              "Cannot open %s!"
+    IDS_ERROR5              "No valid pipe-data for thread-pipe-machine!"
+    IDS_HINWEIS2            "Respect: Distance <75 mm!!! Should file nevertheless be generated?"
+    IDS_FRAGE1              "Manufactures pipe over machine?"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MONITOR2            "Monitor for %ssaw-groove-machine"
+    IDS_MONITOR3            "Monitor for %sdistribution-machine 1"
+    IDS_MONITOR4            "Monitor for %srange-pipe-machine 1"
+    IDS_MONITOR5            "Monitor for %srange-pipe-machine 2"
+    IDS_MONITOR6            "Monitor for %srange-pipe-machine 3"
+    IDS_MONITOR7            "Monitor for %srange-pipe-machine 4"
+    IDS_VERKETTUNG          "Concatenation"
+    IDS_AUFTRAEGE           "Orders"
+    IDS_HINWEIS3            "No work order selected!"
+    IDS_SAP_MENU1           "&Transfer orders to SAP"
+    IDS_SAP_MENU2           "&Delete orders from SAP"
+    IDS_SAP_MENU3           "&Show SAP orders"
+    IDS_SAP_MENU4           "&Read SAP orders"
+    IDS_HINWEIS4            "Bend in the pipe"
+    IDS_HINWEIS5            "No hint"
+    IDS_ERROR6              "Orders could not be read!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR7              "Order %s could not be deleted!"
+    IDS_HINWEIS6            "Order with SD-order no. %d and SD-pos. no. %d does not exist in SAP file!"
+    IDS_ERROR8              "No entry in status table for work order %s"
+    IDS_ERROR9              "No work order found!"
+    IDS_ERROR10             "Internal error. Inform system-administrator please!"
+    IDS_LADEFORTSCHRITT     "LADEFORTSCHRITT"
+    IDS_VERBINDUNG          "Connection to the server is lifted..."
+    IDS_LEITKARTE           " - Headdata"
+    IDS_ANHANG              " - Appendix"
+    IDS_MATERIAL            " - Material"
+    IDS_ROHRLEITUNG         " - Pipeline"
+    IDS_PREISE              " - Prices"
+    IDS_ERROR11             "No valid office selected!"
+    IDS_ERROR12             "No valid work order number declared!"
+    IDS_DATENBANKABFRAGE    "Database retrieval"
+    IDS_NEUE_FREIGABEN      "New releases"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NICHT_ZUGEORDNET    "Not assigned"
+    IDS_KEIN_SACHBEARBEITER "<No specialist assigned>"
+    IDS_ALLE_SACHBEARBEITER "<All specialists>"
+    IDS_ALLE_NIEDERLASSUNGEN "<All offices>"
+    IDS_KEINE_WANR_KEIN_SAP "One or more positions haven't an order number! The order can't be transfered to SAP!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ZUSAMMENFASSUNG_WERKAUFTRAEGE "Summary orders for range-pipe-machine"
+    IDS_WA_EINLESEN         "Read work orders from database..."
+    IDS_WANR                "Work Order"
+    IDS_WA_BEZ              "Descition"
+    IDS_WA_ANZMUFFEN        "Number of sockets"
+    IDS_KEINE_WERKAUSTRAEGE "None input of work orders "
+    IDS_STRANGROHR_UNGLEICH "Pipes different."
+END
+
+#endif    // Englisch (USA) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE 7, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\waxint.rc2"  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen
+#include "l.deu\afxres.rc"          // Standardkomponenten
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

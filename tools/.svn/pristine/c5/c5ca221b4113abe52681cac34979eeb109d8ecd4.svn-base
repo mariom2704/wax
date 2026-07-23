@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/LizenzGui" >
+        <file>Resources/argotec.png</file>
+        <file>Resources/wax.png</file>
+    </qresource>
+</RCC>

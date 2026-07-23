@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Einstellung>
+	<InsertKey>HKEY_CURRENT_USER\Software\Autodesk\AutoCAD\R17.1\ACAD-6001:407\Profiles</InsertKey>
+	<InsertVar></InsertVar>
+  <ReplaceKey>*VALUE*</ReplaceKey>
+
+  <Area>HKEY_CURRENT_USER</Area>
+  <SourceKey>Software\Autodesk\AutoCAD\R17.1\ACAD-6001:407\Profiles\*VALUE*</SourceKey>
+  <CopyKey>Software\Autodesk\AutoCAD\R17.1\ACAD-6001:407\Profiles\elcocad</CopyKey>  
+</Einstellung>

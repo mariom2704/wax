@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{de1abcb4-2cc4-4b44-b7cc-16c78a134eba}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="CadModell">
+      <UniqueIdentifier>{07362fee-5fdb-47ea-ad03-86fe8ea3a7ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CadModell\en">
+      <UniqueIdentifier>{ec094482-3f7a-45ce-a641-fd3adcf95d03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CadModell\en\Header-Dateien">
+      <UniqueIdentifier>{d06374d5-39e2-42d9-8cde-8ea5b5b5a504}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CadModell\en\Quellcodedateien">
+      <UniqueIdentifier>{5b87192d-6adf-4432-9d4f-eed6cf903eb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CadModell\gp">
+      <UniqueIdentifier>{30b428c6-4e2a-45ee-9de1-0d0822e8daff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CadModell\gp\Header-Dateien">
+      <UniqueIdentifier>{e3e19e58-cfe9-4673-be2c-f6ee6160ceb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="CadModell\gp\Quellcodedateien">
+      <UniqueIdentifier>{c56abf03-0c97-42a4-a86b-422def2c866a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Listen">
+      <UniqueIdentifier>{b78aa745-9d9b-453a-a964-9194fe5486be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Listen\Header-Dateien">
+      <UniqueIdentifier>{d129e767-c08f-437c-be4c-9c1e5210098f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Listen\Quellcodedateien">
+      <UniqueIdentifier>{fa15a3d8-7a49-4e50-8812-55c63c342a12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Preisberechnung">
+      <UniqueIdentifier>{b9d55fd9-72e2-4c94-9edb-65936bc7ef03}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Preisberechnung\Quellcodedateien">
+      <UniqueIdentifier>{54faacba-91f4-4dc3-b896-910cad0a9db3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Preisberechnung\Header-Dateien">
+      <UniqueIdentifier>{6fac6283-dbbd-4fec-a4a2-c7a419f6799a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Werkauftragsarten">
+      <UniqueIdentifier>{482ec290-e098-4cc1-933e-e4316d2b1d57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Werkauftragsarten\Quellcodedateien">
+      <UniqueIdentifier>{ccd8eff2-ef59-4ccf-8e42-36425632c763}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Werkauftragsarten\Header-Dateien">
+      <UniqueIdentifier>{9cbcedb1-2fd6-42ff-b758-8dc4bf683343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base">
+      <UniqueIdentifier>{e93d3f8a-8987-4fae-b605-06e39b8a74e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base\Header-Dateien">
+      <UniqueIdentifier>{ece41ddf-8385-447a-af59-b09b8e207c61}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Base\Quellcodedateien">
+      <UniqueIdentifier>{ea839929-fb1f-41bd-9ccc-b4de1c87ee24}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="unittest">
+      <UniqueIdentifier>{804c95a7-d69f-4973-a059-c4c9e0078b49}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\rohrkonst.rc2">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="rohrkonst.def">
+      <Filter>Base\Quellcodedateien</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="cadmodell.h">
+      <Filter>CadModell\en\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="cadmodell_anschluss.h">
+      <Filter>CadModell\en\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="cadmodell_cadelement.h">
+      <Filter>CadModell\en\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="cadmodell_pipe.h">
+      <Filter>CadModell\en\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="cadmodell_point.h">
+      <Filter>CadModell\en\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="cadmodell_typrohr.h">
+      <Filter>CadModell\en\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="cadmodell_unitvector.h">
+      <Filter>CadModell\en\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="cadmodell_vector.h">
+      <Filter>CadModell\en\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="cadwerkauftrag.h">
+      <Filter>CadModell\gp\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="cadxmlparser.h">
+      <Filter>CadModell\gp\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="waxcadmodell.h">
+      <Filter>CadModell\gp\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="xml2cadmodell.h">
+      <Filter>CadModell\gp\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="elementlist.h">
+      <Filter>Listen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="EnCObListModell.h">
+      <Filter>Listen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="EnCObListVk3.h">
+      <Filter>Listen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="EnContainerRohrElemente.h">
+      <Filter>Listen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="EnStueckliste.h">
+      <Filter>Listen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialListe.h">
+      <Filter>Listen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MxCObList.h">
+      <Filter>Listen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MxListe.h">
+      <Filter>Listen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WerkauftragListe.h">
+      <Filter>Listen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GpWapPreis.h">
+      <Filter>Preisberechnung\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Preis.h">
+      <Filter>Preisberechnung\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="VK3Berechnung.h">
+      <Filter>Preisberechnung\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="zinkkosten.h">
+      <Filter>Preisberechnung\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ApaxWerkauftrag.h">
+      <Filter>Werkauftragsarten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="CO II verteiler.h">
+      <Filter>Werkauftragsarten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="EntnahmeleitungDWB.h">
+      <Filter>Werkauftragsarten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="FormstueckeFittinge.h">
+      <Filter>Werkauftragsarten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Gewinderohr.h">
+      <Filter>Werkauftragsarten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Handelslaenge.h">
+      <Filter>Werkauftragsarten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Pumpenprobierleitung.h">
+      <Filter>Werkauftragsarten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Pumpenverteiler.h">
+      <Filter>Werkauftragsarten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Rohrleitung.h">
+      <Filter>Werkauftragsarten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SammelWerkauftrag.h">
+      <Filter>Werkauftragsarten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Stationsverteiler.h">
+      <Filter>Werkauftragsarten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Strangrohr.h">
+      <Filter>Werkauftragsarten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Verteiler.h">
+      <Filter>Werkauftragsarten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Werkauftrag.h">
+      <Filter>Werkauftragsarten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Arbeitsfolge.h">
+      <Filter>Base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Arbeitsplan.h">
+      <Filter>Base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Beschichtung.h">
+      <Filter>Base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Element.h">
+      <Filter>Base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GpArbeitsplan.h">
+      <Filter>Base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GpConvertOldVersion.h">
+      <Filter>Base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Leitkarte.h">
+      <Filter>Base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Material.h">
+      <Filter>Base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="mxdate.h">
+      <Filter>Base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MxError.h">
+      <Filter>Base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MxErrorHandler.h">
+      <Filter>Base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MxString.h">
+      <Filter>Base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Preisanfrage.h">
+      <Filter>Base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="rohrkonst_dll.h">
+      <Filter>Base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Status.h">
+      <Filter>Base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="StringPair.h">
+      <Filter>Base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WaxBase.h">
+      <Filter>Base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="unittest\test_cadmodell_typrohr.h">
+      <Filter>unittest</Filter>
+    </ClInclude>
+    <ClInclude Include="unittest\testsuite_rohrkonst.h">
+      <Filter>unittest</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="cadmodell_pipe.cpp">
+      <Filter>CadModell\en\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="cadwerkauftrag.cpp">
+      <Filter>CadModell\gp\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="elementlist.cpp">
+      <Filter>Listen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="EnCObListModell.cpp">
+      <Filter>Listen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="EnCObListVk3.cpp">
+      <Filter>Listen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="EnContainerRohrElemente.cpp">
+      <Filter>Listen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="EnStueckliste.cpp">
+      <Filter>Listen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialListe.cpp">
+      <Filter>Listen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MxCObList.cpp">
+      <Filter>Listen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MxListe.cpp">
+      <Filter>Listen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="WerkauftragListe.cpp">
+      <Filter>Listen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GpWapPreis.cpp">
+      <Filter>Preisberechnung\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Preis.cpp">
+      <Filter>Preisberechnung\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="VK3Berechnung.cpp">
+      <Filter>Preisberechnung\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="zinkkosten.cpp">
+      <Filter>Preisberechnung\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ApaxWerkauftrag.cpp">
+      <Filter>Werkauftragsarten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="CO II Verteiler.cpp">
+      <Filter>Werkauftragsarten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="EntnahmeleitungDWB.cpp">
+      <Filter>Werkauftragsarten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="FormstueckeFittinge.cpp">
+      <Filter>Werkauftragsarten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Gewinderohr.cpp">
+      <Filter>Werkauftragsarten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Handelslaenge.cpp">
+      <Filter>Werkauftragsarten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Pumpenprobierleitung.cpp">
+      <Filter>Werkauftragsarten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Pumpenverteiler.cpp">
+      <Filter>Werkauftragsarten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Rohrleitung.cpp">
+      <Filter>Werkauftragsarten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SammelWerkauftrag.cpp">
+      <Filter>Werkauftragsarten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Stationsverteiler.cpp">
+      <Filter>Werkauftragsarten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Strangrohr.cpp">
+      <Filter>Werkauftragsarten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Verteiler.cpp">
+      <Filter>Werkauftragsarten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Werkauftrag.cpp">
+      <Filter>Werkauftragsarten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Arbeitsfolge.cpp">
+      <Filter>Base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Arbeitsplan.cpp">
+      <Filter>Base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Beschichtung.cpp">
+      <Filter>Base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Element.cpp">
+      <Filter>Base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GpArbeitsplan.cpp">
+      <Filter>Base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GpConvertOldVersion.cpp">
+      <Filter>Base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Leitkarte.cpp">
+      <Filter>Base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Material.cpp">
+      <Filter>Base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="mxdate.cpp">
+      <Filter>Base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MxError.cpp">
+      <Filter>Base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MxString.cpp">
+      <Filter>Base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Preisanfrage.cpp">
+      <Filter>Base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="rohrkonst.cpp">
+      <Filter>Base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Status.cpp">
+      <Filter>Base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="StringPair.cpp">
+      <Filter>Base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="WaxBase.cpp">
+      <Filter>Base\Quellcodedateien</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="rohrkonst.rc">
+      <Filter>Base\Quellcodedateien</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

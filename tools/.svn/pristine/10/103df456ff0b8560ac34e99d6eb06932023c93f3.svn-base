@@ -1,0 +1,18 @@
+#pragma once
+
+/*
+class WAXGLDLL CCRohrOneAssembeldKomponenteVector : public CRohrOneAssembeldKomponenteVector
+{
+	CRohrOneAssembeldKomponenteVector RohrOneAssembeldKomponenteVector;
+};
+*/
+class WAXGLDLL CCGraficRohrOneAssembeldKomponenteVector : public CGraficComponentsForOneAssembeldTube
+{
+	
+public:
+	CCGraficRohrOneAssembeldKomponenteVector(void);
+	~CCGraficRohrOneAssembeldKomponenteVector(void);
+
+	CCGraficRohrOneAssembeldKomponenteVector* m_pRohrOneAssembeldKomponenteVector;
+};
+

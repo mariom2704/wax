@@ -1,0 +1,475 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using MxLib.Entities;
+using RohrKonfBase.Entities;
+using MxLib.Dialog;
+using RohrKonfBase.Gp;
+using MxLib.Math;
+using System.Drawing;
+using MxLib.Db;
+
+namespace WaxEdit.Gp
+{
+	public class GpVkX : GpBase
+	{
+		string server = "",
+			   datenbank = "";
+
+        DbSqlBase mAbfrage;
+
+		string tabVk3 = "Vk3Pos",
+			   tabFestpreisArtikel = "Artikelstamm";
+
+		string internerError = "Interner Fehler";
+
+		//Bereich der Ids für Gewinderohr (vk2)
+		public static int vk2IdStart = 4000;
+		public static int vk2IdEnde = 4999;
+
+		//Ab Spalte 3 fangen die DN Werte an (Spalte0=Id, Spalte1=Bez, Spalte2=DN, ab Spalte3 = DnVl 10 - 300)
+		int firstPreisSpalteVk3 = 3;
+
+		int tabSpaltePreis;
+		int tabSpalteArtikelNr;
+		
+		public GpVkX(string server, string db)
+		{
+			Datenbank = db;
+			Server = server;
+		}
+
+		public bool readVk3(bool readVerzinktePreise, 
+						    int minDn, int maxDn, 
+							int minId, int maxId,
+							EnMatrix matrix)
+		{
+			matrix.clearAll();
+
+			string sqlStatement = string.Format("SELECT v.Id, b.BezeichnungDeutsch, v.Dn, v.Dnvl, v.{0} " +
+										 "FROM {1} v LEFT JOIN Vk3Bezeichnung b ON v.Id = b.Id " +
+										 "where v.Dnvl >= {2} and v.Dnvl <= {3} " +
+										 "and v.Id >= {4} and v.Id <= {5} " +
+										 "and v.Id > 0 " +
+                                         "and not v.Id=6 and not v.Id=7 and not v.Id=24 " +  
+										 "order by v.Id, v.Dn, v.Dnvl",
+										 getPreisfield(readVerzinktePreise), tabVk3,
+										 minDn, maxDn,
+										 minId, maxId);
+			
+			EnMatrix mat = new EnMatrix();
+			if (!start(sqlStatement, mat))
+				return false;
+
+			if (!convertInVkMatrix(mat, matrix))
+				return false;
+
+			return true;
+		}
+
+	
+
+
+		string getPreisfield(bool isVerzinkt)
+		{
+			if (isVerzinkt)
+				return "PreisVerzinkt";
+			else
+				return "Preis";
+		}
+
+		/**
+		 * In eine Matrix mit DNVL als Überschrift konvertieren
+		 */
+		private bool convertInVkMatrix(EnMatrix matListe, EnMatrix matMatrix)
+		{
+			string dnPraefix = "DN ";
+
+			int spalteElemId = 0;
+			string bezSpalteElemId = "ID";
+			int spalteBez = 1;
+			string bezSpalteBez = "Bezeichnung";
+			int spalteDn = 2;
+			string bezSpalteDn = "DN";
+			int spalteDnVl = 3;
+			int spaltePreis = 4;
+
+			matMatrix.ColumnNames.Add(bezSpalteElemId);
+			matMatrix.ColumnNames.Add(bezSpalteBez);
+			matMatrix.ColumnNames.Add(bezSpalteDn);
+
+			//DN Spalten erzeugen
+			int zeile;
+			for (zeile = 0; zeile < matListe.MaxRow; zeile++)
+			{
+				int dn = 0;
+				matListe.getIntAt(zeile, spalteDnVl, out dn);
+
+				EnRohrDn dnVl = new EnRohrDn();
+				dnVl.DnId = dn;
+				dnVl.DnBezeichnung = dnPraefix + dn.ToString();
+
+				//prüfen an welcher stelle dn wert eingetragen werden muss
+				int insertSpalte = matMatrix.ColumnNames.Count;
+				for (int i = firstPreisSpalteVk3; i < matMatrix.ColumnNames.Count; i++)
+				{
+					EnRohrDn tmpDn = matMatrix.ColumnNames[i] as EnRohrDn;
+					if (tmpDn == null)
+						continue;
+					if (tmpDn.DnId == dnVl.DnId)
+					{
+						insertSpalte = -1;
+						break;
+					}
+					else if (dnVl.DnId > tmpDn.DnId)
+					{
+						insertSpalte = i+1;
+					}
+					else if (dnVl.DnId < tmpDn.DnId)
+					{
+						insertSpalte = i;
+						break;
+					}
+				}
+				if (insertSpalte > 0)
+					matMatrix.ColumnNames.Insert(insertSpalte, dnVl);
+			}
+
+			
+			//Felder mit Preisen füllen
+			for (zeile = 0; zeile < matListe.MaxRow; zeile++)
+			{
+				int tmpId = (int)matListe.getAt(zeile, spalteElemId);
+				int tmpDn = (int)matListe.getAt(zeile, spalteDn);
+
+				//Zeile suchen in der der Wert eingetragen werden soll
+				int matZeile = -1;
+				for (int i = 0; i < matMatrix.MaxRow; i++)
+				{
+					if ((int)matMatrix.getAt(i, spalteElemId) == tmpId &&
+						(int)matMatrix.getAt(i, spalteDn) == tmpDn)
+					{
+						matZeile = i;
+						break;
+					}
+				}
+
+				//Wenn noch kein Eintrag vorhanden ist, diesen anlegen
+				if (matZeile < 0)
+				{
+					matZeile = matMatrix.MaxRow;
+					matMatrix.setAt(matZeile, spalteElemId, tmpId);
+					matMatrix.setAt(matZeile, spalteBez, matListe.getAt(zeile, spalteBez));
+					matMatrix.setAt(matZeile, spalteDn, tmpDn);
+				}
+
+				//Dn Verteiler holen
+				int dnvl = 0;
+				matListe.getIntAt(zeile, spalteDnVl, out dnvl);
+
+				//Spalte suchen an der der Preis eingetragen werden muss
+				int spCount = -1;
+				for (spCount = firstPreisSpalteVk3; spCount < matMatrix.ColumnNames.Count; spCount++)
+				{
+					EnRohrDn tmpRoDn = matMatrix.ColumnNames[spCount] as EnRohrDn;
+					if (tmpRoDn == null)
+						continue;
+					if (tmpRoDn.DnId == dnvl)
+						break;
+				}
+
+				if (spCount >= 0)
+				{
+					ListViewField field = new ListViewField();
+					field.setWert((double)matListe.getAt(zeile, spaltePreis), 2, false);
+					matMatrix.setAt(matZeile, spCount, field);
+				}
+
+			}
+
+			return true;
+		}
+
+
+		/**
+		 * Änderungen zwischen den Matrizen speichern
+		 */
+		public bool saveVk3(bool isVerzinktPreis, EnMatrix matrix)
+		{
+			for (int zeile = 0; zeile < matrix.MaxRow; zeile++)
+			{
+				int id = 0;
+				if (!matrix.getIntAt(zeile, 0, out id))
+					throw new Exception(internerError);
+
+				int elementDn = 0;
+				if (!matrix.getIntAt(zeile, 2, out elementDn))
+					throw new Exception(internerError);
+
+				//Ab Spalte 3 fangen die DN Werte an (Id, Bez, DN, DnVl 10 - 300)
+				for (int spalte = firstPreisSpalteVk3; spalte < matrix.MaxColumn && spalte < matrix.ColumnNames.Count; spalte++)
+				{
+					//Preis lesen
+					ListViewField field = matrix.getAt(zeile, spalte) as ListViewField;
+					if (field == null)
+						continue;
+
+					if (!field.HasChangedValue)
+						continue;
+
+					if (field.Value == null || field.Value.GetType() != typeof(double))
+						continue;
+					double preis = (double)field.Value;
+
+					//Dn Wert aus Spalte ermitteln
+					EnRohrDn dn = matrix.ColumnNames[spalte] as EnRohrDn;
+					if (dn == null)
+						throw new Exception(internerError);
+					
+					//Werte in DB ändern
+					if (!updateVk3(id, elementDn, dn.DnId, preis, isVerzinktPreis))
+						return false;
+					
+					//Flag zurücksetzen
+					field.HasChangedValue = false;
+				}
+			}
+
+			return true;
+		}
+
+		public bool hasChangedValues(EnMatrix matrix)
+		{
+			for (int zeile = 0; zeile < matrix.MaxRow; zeile++)
+			{
+				for (int spalte = 0; spalte < matrix.MaxColumn && spalte < matrix.ColumnNames.Count; spalte++)
+				{
+					//Preis lesen
+					ListViewField field = matrix.getAt(zeile, spalte) as ListViewField;
+					if (field == null)
+						continue;
+
+					if (field.HasChangedValue)
+						return true;
+				}
+			}
+
+			return false;
+		} 
+
+		private bool initDb()
+		{
+			if (mAbfrage == null)
+			{
+				EnConnectionData conData = new EnConnectionData();
+			
+				//Datenbank setzen
+				conData.DatabaseTyp = EnConnectionData.DbTyp.Access;
+				conData.Server = server;
+				conData.Datenbank = datenbank;
+
+				DbConnection dbConn = new DbConnection(conData);
+				mAbfrage = new DbSqlBase(dbConn);
+			}
+
+
+			return true;
+		}
+
+       
+		public string Server
+		{
+			set
+			{
+				server = value;
+			}
+		}
+
+		public string Datenbank
+		{
+			set
+			{
+				datenbank = value;
+			}
+		}
+
+		
+
+		/**
+		 * Abfrage starten
+		 */
+        private bool start(string sql, EnMatrix matrix)
+        {
+			if (!initDb())
+				return false;
+
+            if (matrix == null)
+                return false;
+
+			if (string.IsNullOrEmpty(sql))
+                return false;
+
+            //Abfrage starten
+			if (!mAbfrage.executeSql(sql, matrix))
+			{
+				appendErrorListeAndClear(mAbfrage);
+				return false;
+			}
+
+            //Db wieder schließen
+            mAbfrage.Connection.closeDb();
+
+            //WaxDatum in String umwandeln
+           // waxDateToString(matrix);
+					
+            return true;
+        }
+
+
+
+		/**
+		 * Wert in Vk3 Tabelle aktualisieren
+		 */
+		public bool updateVk3(int id, int elementDn, int dnvl, double preis, bool isVerzinktPreis)
+		{
+			if (!initDb())
+				return false;
+
+			//Edit Spalten
+			List<string> spalten = new List<string>();
+			spalten.Add(getPreisfield(isVerzinktPreis));
+			
+			//Values
+			List<object> values = new List<object>();
+			values.Add(preis);
+
+			//Filter
+			EnSqlFilter filter = new EnSqlFilter();
+			filter.addFilter("Id", id);
+			filter.addFilter("Dn", elementDn);
+			filter.addFilter("Dnvl", dnvl);
+
+            //Abfrage starten
+			int changedRows = 0;
+			if (!mAbfrage.updateTable(tabVk3, spalten, values, filter, ref changedRows))
+			{
+				appendErrorListeAndClear(mAbfrage);
+				return false;
+			}
+
+			return true;
+		}
+
+
+		public bool readFestpreis(bool filterPreisNull, EnMatrix matrix)
+		{
+			string sql = "SELECT a.Artikelgruppe,a.Artikelnummer, a.FestPreis, a.SapPreis, f.dn1, f.dn2, f.dn3, f.dn4, f.GruppeDeutsch as Bez_Fitting, a.BezeichnungDeutsch as Sap_Bezeichnng, b.Deutsch as Wax_Bezeichnung " +
+						 "FROM (Artikelstamm a LEFT JOIN formstuecke_und_fittinge f ON a.Artikelnummer = f.artikelnr) LEFT JOIN bauelementgruppen b ON a.Artikelgruppe = b.elemid ";
+
+			if (filterPreisNull)
+				sql += "WHERE a.FestPreis>0 ";
+			else
+				sql += "WHERE a.FestPreis>=0 ";
+
+			//Order by anfügen
+			sql += "ORDER BY a.Artikelgruppe, f.GruppeDeutsch, f.dn1, f.dn2, f.dn3, f.dn4, a.BezeichnungDeutsch"; 
+
+			if (!start(sql, matrix))
+				return false;
+
+			tabSpalteArtikelNr = 1;
+			tabSpaltePreis = 2;
+			if (!setPreisToEdit(tabSpaltePreis, matrix))
+				return false;
+
+			return true;
+		}
+
+
+		/**
+		 * Preisspalte editierbar machen
+		 */
+		private bool setPreisToEdit(int nrPreisSpalte, EnMatrix matrix)
+		{
+			if (nrPreisSpalte >= matrix.MaxColumn)
+				throw new Exception(internerError);
+
+			for (int zeile = 0; zeile < matrix.MaxRow; zeile++)
+			{
+				object obj = matrix.getAt(zeile, nrPreisSpalte);
+				if (obj == null || obj.GetType() != typeof(double))
+					continue;
+
+				ListViewField field = new ListViewField();
+				field.setWert((double)obj, 2, false);
+
+				//Wert als Edit Feld speichern
+				matrix.setAt(zeile, nrPreisSpalte, field);
+			}
+
+			return true;
+		}
+
+		/**
+		 * Preise in Fitting Tabelle schreiben
+		 */
+		public bool saveFestpreis(EnMatrix matrix)
+		{
+			for (int zeile = 0; zeile < matrix.MaxRow; zeile++)
+			{
+				ListViewField field = matrix.getAt(zeile, tabSpaltePreis) as ListViewField;
+				if (field == null)
+					throw new Exception(internerError);
+
+				//prüfen ob Wert verändert wurde
+				if (!field.HasChangedValue)
+					continue;
+
+				double preis = (double)field.Value;
+
+				//Artikelnr
+				int artikelnr = 0;
+				if (!matrix.getIntAt(zeile, tabSpalteArtikelNr, out artikelnr))
+					throw new Exception(internerError);
+
+				if (!updatePreis(tabFestpreisArtikel, "Artikelnummer", artikelnr, "FestPreis", preis))
+					return false;
+
+				//Flag zurücksetzen
+				field.HasChangedValue = false;
+			}
+
+			return true;
+		}
+
+		private bool updatePreis(string tabFittinge, string tabKey, int artikelnr, string tabWert, double preis)
+		{
+			if (!initDb())
+				return false;
+
+			//Edit Spalten
+			List<string> spalten = new List<string>();
+			spalten.Add(tabWert);
+
+			//Values
+			List<object> values = new List<object>();
+			values.Add(preis);
+
+			//Filter
+			EnSqlFilter filter = new EnSqlFilter();
+			filter.addFilter(tabKey, artikelnr);
+			
+			//Abfrage starten
+			int changedRows = 0;
+			if (!mAbfrage.updateTable(tabFittinge, spalten, values, filter, ref changedRows))
+			{
+				appendErrorListeAndClear(mAbfrage);
+				return false;
+			}
+
+			return true;
+		}
+		
+
+	}
+}

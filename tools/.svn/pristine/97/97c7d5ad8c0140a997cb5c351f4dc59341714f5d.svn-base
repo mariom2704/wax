@@ -1,0 +1,522 @@
+#include "stdafx.h"
+
+
+#include "..\..\Tubes it self\RohrKomponente.h"
+
+
+
+#include "GraficRohrKomponentenContainer.h"
+#include "Grafic\Mechanicals Geometrics\GraficRohrKomponente.h"
+#include "Grafic\SVG File Operations\GraficFileController.h"
+#include "Grafic\Controller\GraficController.h"
+
+#include <math.h>
+#include "UtiltyHelper.h"
+
+
+
+
+
+CGraficRohrKomponente::CGraficRohrKomponente(CGraficController* pGraficGraficController,  CRohrKomponente LogicRohrKomponente): m_pGraficGraficController(pGraficGraficController)
+{
+	
+	m_LogicRohrKomponente = LogicRohrKomponente;
+	m_DrehWinkel = 90;
+	m_KomponentenWinkel = -1;
+	m_pGraficRohrChildContainer = new CGraficTubeController();
+	m_bCalculateDimisiosMainTube = false;
+}
+
+
+CGraficRohrKomponente::CGraficRohrKomponente(CGraficController* pGraficGraficController,  CRohrKomponente *pLogicRohrKomponente): m_pGraficGraficController(pGraficGraficController)
+{
+	m_LogicRohrKomponente = *pLogicRohrKomponente;
+	m_DrehWinkel = 90;
+	m_KomponentenWinkel = -1;
+	m_pGraficRohrChildContainer = new CGraficTubeController();
+	m_bCalculateDimisiosMainTube = false;
+}
+
+void CGraficRohrKomponente::SetCalculateDemisions()
+{
+	m_bCalculateDimisiosMainTube = true;
+}
+
+void CGraficRohrKomponente::SetStartPointCenterLine(CPointDouble PointAnfang)
+{ 
+	 m_PointAnfangCenterLinie = PointAnfang;
+};
+
+
+
+void CGraficRohrKomponente::SetGraficRohrKomponentenWinkel(CGraficRohrKomponente* )
+{
+	if(m_KomponentenWinkel == -1)
+	{
+		m_KomponentenWinkel = GetLogicalRohrKomponente()->GetWinkel();
+	}
+	return;
+}
+
+
+
+CPointDouble CGraficRohrKomponente::getStartPointCenterLine()
+{ 
+	return m_PointAnfangCenterLinie;
+};
+
+
+
+CPointDouble CGraficRohrKomponente::GetEndPointCenterLine()
+{	
+	return m_PointEndeCenterLinie; //650 Pixel insgesamt
+};
+
+
+
+double CGraficRohrKomponente::SetEndPointCenterLine( double CumulatedArc )
+{
+	m_PointEndeCenterLinie.X =  getStartPointCenterLine().X + cos( (m_KomponentenWinkel + CumulatedArc) *  3.14 /180) * GetLogicalRohrKomponente()->GetLaenge();
+	m_PointEndeCenterLinie.Y =  getStartPointCenterLine().Y + sin( (m_KomponentenWinkel + CumulatedArc)*  3.14 /180) * GetLogicalRohrKomponente()->GetLaenge();
+	return m_KomponentenWinkel;
+};
+
+
+
+CPointDouble CGraficRohrKomponente::GetConnectionPointForAbgaenge(double RelativerAbstandzumNaechsten)
+{
+	CPointDouble PointOfConnectionForAbgaenge;
+	PointOfConnectionForAbgaenge.X =  GetSecondBorderpoint().X + cos( GetWinkelRohrZuXundYAchse() *  3.14 /180) * RelativerAbstandzumNaechsten;
+	PointOfConnectionForAbgaenge.Y =  GetSecondBorderpoint().Y + sin( GetWinkelRohrZuXundYAchse() *  3.14 /180) * RelativerAbstandzumNaechsten;
+	return PointOfConnectionForAbgaenge;
+};
+
+
+
+void CGraficRohrKomponente::SetPitchForCenterLinie()
+{
+	DeltaPitch.X = GetEndPointCenterLine().X - getStartPointCenterLine().X; 
+	DeltaPitch.Y = GetEndPointCenterLine().Y - getStartPointCenterLine().Y; 
+}
+
+
+
+CPointDouble CGraficRohrKomponente::GetPitchCenterLinie()
+{
+	return DeltaPitch;
+}
+
+
+
+void CGraficRohrKomponente::SetFirstCornerPoint(CPointDouble FirstCornerPoint)
+{
+	m_xNullPunktBeginAussenWandBefore = m_FirstCornerPoint = FirstCornerPoint;
+};
+
+
+
+CPointDouble  CGraficRohrKomponente::GetFirstCornerPoint()
+{
+	return m_FirstCornerPoint; 
+};
+
+
+
+void CGraficRohrKomponente::SetFirstBorderpoint(double localWinkelRohrZuXundYAchse)
+{
+	m_CumulatedWinkelRohrZuXundYAchse =  localWinkelRohrZuXundYAchse;
+	double xRadius = cos((m_CumulatedWinkelRohrZuXundYAchse + m_DrehWinkel)* 3.14 / 180) 
+		* GetLogicalRohrKomponente()->GetRadius();
+
+	double yRadius = sin((m_CumulatedWinkelRohrZuXundYAchse + m_DrehWinkel)* 3.14 / 180)
+		* GetLogicalRohrKomponente()->GetRadius();
+
+	m_xNullPunktBeginAussenWandBefore.X  = getStartPointCenterLine().X + xRadius; 
+	m_xNullPunktBeginAussenWandBefore.Y  = getStartPointCenterLine().Y + yRadius; 
+
+	m_FirstCornerPoint = m_xNullPunktBeginAussenWandBefore;
+};
+
+
+
+CPointDouble  CGraficRohrKomponente::GetFirstBorderpoint()
+{
+	return m_xNullPunktBeginAussenWandBefore; 
+};
+
+
+
+void CGraficRohrKomponente::SetSecondBorderpoint(double localWinkelRohrZuXundYAchse)
+{
+	m_CumulatedWinkelRohrZuXundYAchse =  localWinkelRohrZuXundYAchse;
+	double xRadius = cos((m_CumulatedWinkelRohrZuXundYAchse + (-m_DrehWinkel))* 3.14 / 180) 
+		* GetLogicalRohrKomponente()->GetRadius();
+
+	double yRadius = sin((m_CumulatedWinkelRohrZuXundYAchse + (-m_DrehWinkel))* 3.14 / 180)
+		* GetLogicalRohrKomponente()->GetRadius();
+
+	m_xNullPunktSecondAussenWandBefore.X  = getStartPointCenterLine().X + xRadius; 
+	m_xNullPunktSecondAussenWandBefore.Y  = getStartPointCenterLine().Y + yRadius; 
+	m_SecondCornerPoint = m_xNullPunktSecondAussenWandBefore; 
+};
+
+CPointDouble  CGraficRohrKomponente::GetSecondBorderpoint()
+{
+	return m_xNullPunktSecondAussenWandBefore; 
+};
+
+
+
+void CGraficRohrKomponente::SetSecondCornerPoint(CPointDouble SecondCornerPoint)
+{
+	m_SecondCornerPoint = SecondCornerPoint;
+};
+
+
+
+CPointDouble  CGraficRohrKomponente::GetSecondCornerPoint()
+{
+	return m_SecondCornerPoint; 
+};
+
+
+void CGraficRohrKomponente::SetThirdBorderpoint( double localWinkelRohrZuXundYAchse )
+{
+	m_CumulatedWinkelRohrZuXundYAchse =  localWinkelRohrZuXundYAchse;
+	double xRadius = cos((m_CumulatedWinkelRohrZuXundYAchse + (m_DrehWinkel))* 3.14 / 180) * GetLogicalRohrKomponente()->GetRadius();
+
+	double yRadius = sin((m_CumulatedWinkelRohrZuXundYAchse + (m_DrehWinkel))* 3.14 / 180) * GetLogicalRohrKomponente()->GetRadius();
+
+	 m_xNullPunktThirdWandPoint.X = GetEndPointCenterLine().X + xRadius;
+	 m_xNullPunktThirdWandPoint.Y = GetEndPointCenterLine().Y + yRadius;
+	 m_ThirdCornerPoint = m_xNullPunktThirdWandPoint; 
+}
+
+CPointDouble  CGraficRohrKomponente::GetThirdBorderpoint()
+{
+	return m_xNullPunktThirdWandPoint; 
+};
+
+
+void CGraficRohrKomponente::SetThirdCornerPoint(CPointDouble ThridCornerPoint)
+{
+	m_ThirdCornerPoint = ThridCornerPoint;
+};
+
+
+CPointDouble  CGraficRohrKomponente::GetThirdCornerPoint()
+{
+	return m_ThirdCornerPoint; 
+};
+
+
+
+
+void CGraficRohrKomponente::SetFourthBorderpoint( double localWinkelRohrZuXundYAchse )
+{
+	m_CumulatedWinkelRohrZuXundYAchse= localWinkelRohrZuXundYAchse;
+	double xRadius = cos((m_CumulatedWinkelRohrZuXundYAchse + (-m_DrehWinkel))* 3.14 / 180) * GetLogicalRohrKomponente()->GetRadius();
+
+	double yRadius = sin((m_CumulatedWinkelRohrZuXundYAchse + (-m_DrehWinkel))* 3.14 / 180) * GetLogicalRohrKomponente()->GetRadius();
+
+	 m_xNullPunktForthWandPoint.X = GetEndPointCenterLine().X + xRadius;
+	 m_xNullPunktForthWandPoint.Y = GetEndPointCenterLine().Y + yRadius;
+	 m_FourthCornerPoint = m_xNullPunktForthWandPoint;
+}
+
+
+void CGraficRohrKomponente::SetForthCornerPoint(CPointDouble ForthCornerPoint)
+{
+	
+	m_FourthCornerPoint = ForthCornerPoint;
+};
+
+
+CPointDouble  CGraficRohrKomponente::GetFourthCornerPoint()
+{
+	return m_FourthCornerPoint; 
+};
+
+
+CPointDouble  CGraficRohrKomponente::GetForthBorderpoint()
+{
+	return m_xNullPunktForthWandPoint; 
+};
+
+
+
+
+
+void CGraficRohrKomponente::ZeichneLinie( double x1, double y1, double x2, double y2)
+{ 
+	CString strTemp;
+	strTemp.Format( "<line  x1='%f' y1='%f' x2='%f'  y2='%f'   style='stroke:rgb(0,0,0);stroke-width:2'/>", x1, y1, x2, y2);
+	m_pGraficGraficController->m_GraficFileController.strSVGContent += strTemp;	
+}
+
+
+void CGraficRohrKomponente::ZeichneLinie( int stroke, double x1, double y1, double x2, double y2)
+{ 
+	CString strTemp;
+	strTemp.Format( "<line  x1='%f' y1='%f' x2='%f'  y2='%f'   style='stroke:rgb(0,0,0);stroke-width:%i'/>", x1, y1, x2, y2, stroke );
+	m_pGraficGraficController->m_GraficFileController.strSVGContent += strTemp;	
+}
+
+
+void CGraficRohrKomponente::ZeichneLinie( double x1, double y1, double x2, double y2, CString strFarbe )
+{ 
+	CString strTemp;
+	strTemp.Format( "<line  x1='%f' y1='%f' x2='%f'  y2='%f'   style='stroke:%s;stroke-width:2'/>", x1, y1, x2, y2, strFarbe);
+	m_pGraficGraficController->m_GraficFileController.strSVGContent += strTemp;	
+}
+
+
+/*
+void CGraficRohrKomponente::DrawYourSelf()
+{
+		//MittellinieI
+	ZeichneLinie(getStartPointCenterLine().X, getStartPointCenterLine().Y,
+		GetEndPointCenterLine().X,  GetEndPointCenterLine().Y,"rgb(255,0,0)" );	
+
+	CString strFarbe = "rgb(0,0,0)";
+	ZeichneLinie(  GetFirstCornerPoint().X,  GetFirstCornerPoint().Y,   GetThirdCornerPoint().X, GetThirdCornerPoint().Y, strFarbe);
+	
+	
+	//if(j==1)
+	strFarbe = "rgb(0,0,255)";
+	ZeichneLinie(  GetSecondCornerPoint().X, GetSecondCornerPoint().Y,  GetFourthCornerPoint().X, GetFourthCornerPoint().Y, strFarbe);
+}
+*/
+
+
+CGraficRohrKomponente::~CGraficRohrKomponente(void)
+{
+	delete m_pGraficRohrChildContainer;
+}
+
+
+CGraficRohrKomponenteTeilRohr::CGraficRohrKomponenteTeilRohr(CGraficController* pCRohrKomponente, CRohrKomponente *pLogicRohrKomponente):CGraficRohrKomponente( pCRohrKomponente, pLogicRohrKomponente)
+{};
+
+
+void CGraficRohrKomponenteTeilRohr::DrawYourSelf()
+{
+		//MittellinieI
+	ZeichneLinie(getStartPointCenterLine().X, getStartPointCenterLine().Y,
+		GetEndPointCenterLine().X,  GetEndPointCenterLine().Y,"rgb(255,0,0)" );	
+
+	CString strFarbe = "rgb(0,0,0)";
+	ZeichneLinie(  GetFirstCornerPoint().X,  GetFirstCornerPoint().Y,   GetThirdCornerPoint().X, GetThirdCornerPoint().Y, strFarbe);
+	
+	
+	//if(j==1)
+	strFarbe = "rgb(0,0,255)";
+	ZeichneLinie(  GetSecondCornerPoint().X, GetSecondCornerPoint().Y,  GetFourthCornerPoint().X, GetFourthCornerPoint().Y, strFarbe);
+}
+
+
+CGraficRohrKomponenteBogen::CGraficRohrKomponenteBogen(CGraficController* pCRohrKomponente, CRohrKomponente *pLogicRohrKomponente):CGraficRohrKomponente(pCRohrKomponente, pLogicRohrKomponente)
+{};
+
+
+// Setzt alle noetigen Komponentenpunkte, um diese zu zeichnen, 
+//beim Bogen wird an dieser Stelle der Radius fuer den Bogen berechnet
+//alles andere wird durch die Standard Berechung abgewicklet
+void CGraficRohrKomponenteBogen::SetKomponentPointfromConectonPoint()
+{
+		//SecondBorder
+		CPointDouble PitchDeltaI, PitchDeltaII;
+		PitchDeltaI.X = GetSecondCornerPoint().X - GetFirstCornerPoint().X; 
+		PitchDeltaI.Y = GetSecondCornerPoint().Y - GetFirstCornerPoint().Y; 
+
+		PitchDeltaII.X = GetFourthCornerPoint().X - GetThirdCornerPoint().X; 
+		PitchDeltaII.Y = GetFourthCornerPoint().Y - GetThirdCornerPoint().Y; 
+		
+		double dFaktor = CUtiltyHelper::GetFaktorForConnectionPoint( GetSecondCornerPoint(), PitchDeltaI,
+		CPointDouble(GetFourthCornerPoint().X, GetFourthCornerPoint().Y), PitchDeltaII);
+
+		double x2 = GetSecondCornerPoint().X +  dFaktor * PitchDeltaI.X;
+		double y2 = GetSecondCornerPoint().Y +  dFaktor * PitchDeltaI.Y;
+
+//ZeichneLinie(  GetSecondCornerPoint().X, GetSecondCornerPoint().Y, x2,  y2);
+//ZeichneLinie(  GetFourthCornerPoint().X, GetFourthCornerPoint().Y, x2,  y2);
+ 
+		double dDeltax = x2 - GetSecondCornerPoint().X;
+		double dDeltay = y2 - GetSecondCornerPoint().Y;
+		m_RadiusSecondBorder = sqrt(dDeltax*dDeltax + dDeltay*dDeltay);
+		
+	
+
+
+		//Mittellinie
+		dFaktor = CUtiltyHelper::GetFaktorForConnectionPoint( getStartPointCenterLine(), PitchDeltaI,
+		CPointDouble(GetEndPointCenterLine().X, GetEndPointCenterLine().Y), PitchDeltaII);
+
+		x2 = getStartPointCenterLine().X +  dFaktor * PitchDeltaI.X;
+		y2 = getStartPointCenterLine().Y +  dFaktor * PitchDeltaI.Y;
+
+//ZeichneLinie(  getStartPointCenterLine().X, getStartPointCenterLine().Y, x2,  y2);
+//ZeichneLinie(  GetEndPointCenterLine().X, GetEndPointCenterLine().Y, x2,  y2);
+ 
+		dDeltax = x2 - getStartPointCenterLine().X;
+		dDeltay = y2 - getStartPointCenterLine().Y;
+		m_RadiusCenterLinie = sqrt(dDeltax*dDeltax + dDeltay*dDeltay);
+
+
+
+		//FirstBorder
+		dFaktor = CUtiltyHelper::GetFaktorForConnectionPoint( GetFirstCornerPoint(), PitchDeltaI,
+		CPointDouble(GetThirdCornerPoint().X, GetThirdCornerPoint().Y), PitchDeltaII);
+
+		x2 = GetFirstCornerPoint().X +  dFaktor * PitchDeltaI.X;
+		y2 = GetFirstCornerPoint().Y +  dFaktor * PitchDeltaI.Y;
+
+//ZeichneLinie( getStartPointCenterLine().X, getStartPointCenterLine().Y, x2,  y2);
+//ZeichneLinie( GetEndPointCenterLine().X, GetEndPointCenterLine().Y, x2,  y2);
+ 
+		dDeltax = x2 - GetFirstCornerPoint().X;
+		dDeltay = y2 - GetFirstCornerPoint().Y;
+		m_RadiusFirstBorder = sqrt(dDeltax*dDeltax + dDeltay*dDeltay);
+	
+
+	return;
+};
+
+
+void CGraficRohrKomponenteBogen::DrawYourSelf()
+{
+	//	CGraficRohrKomponente::DrawYourSelf();
+	CString strDirection;
+	double dFaktorCorrectArcI, dFaktorCorrectArcII, dFaktorCorrectArcIII;
+	
+	if(((CGraficRohrKomponenteBogen*) this)->GetGraficRohrKomponentenWinkel() > 0)
+	{
+		strDirection = "0 0 1";
+		dFaktorCorrectArcI =  0.8;
+		dFaktorCorrectArcII = 0.75;
+		dFaktorCorrectArcIII = 0.7;
+	}
+	else
+	{
+		strDirection = "1 0 0";
+		dFaktorCorrectArcI =  0.7;
+		dFaktorCorrectArcII = 0.75;
+		dFaktorCorrectArcIII = 0.8;
+	}
+	CString strTemp; 
+	strTemp.Format("<path d='M %f %f A %f %f %s %f %f'  fill='none' stroke='black' stroke-width='2' />", GetFirstCornerPoint().X, GetFirstCornerPoint().Y,
+		m_RadiusFirstBorder / sqrt(2.0) * dFaktorCorrectArcIII,  m_RadiusFirstBorder / sqrt(2.0) * dFaktorCorrectArcIII, strDirection, GetThirdCornerPoint().X,  GetThirdCornerPoint().Y  );
+	
+	m_pGraficGraficController->m_GraficFileController.strSVGContent += strTemp;
+
+
+	//MittellinieI
+	strTemp.Format("<path d='M %f %f A %f %f %s %f %f'  fill='none' stroke='red' stroke-width='2' />", getStartPointCenterLine().X, getStartPointCenterLine().Y, 
+		m_RadiusCenterLinie / sqrt(2.0) *dFaktorCorrectArcII,  m_RadiusCenterLinie / sqrt(2.0) * dFaktorCorrectArcII, strDirection, GetEndPointCenterLine().X,  GetEndPointCenterLine().Y  );
+	
+	m_pGraficGraficController->m_GraficFileController.strSVGContent += strTemp;		
+	
+
+	strTemp.Format("<path d='M %f %f A %f %f %s %f %f'  fill='none' stroke='blue' stroke-width='2' />", GetSecondCornerPoint().X, GetSecondCornerPoint().Y, 
+		m_RadiusSecondBorder / sqrt(2.0) * dFaktorCorrectArcI,  m_RadiusSecondBorder / sqrt(2.0) * dFaktorCorrectArcI, strDirection, GetFourthCornerPoint().X,  GetFourthCornerPoint().Y  );
+	
+	m_pGraficGraficController->m_GraficFileController.strSVGContent += strTemp;
+}
+
+
+
+void CGraficRohrKomponenteBogen::SetGraficRohrKomponentenWinkel(CGraficRohrKomponente* GraficRohrKomponente)
+{
+	m_KomponentenWinkel = GraficRohrKomponente->GetLogicalRohrKomponente()->GetWinkel();
+	m_KomponentenWinkel /= 2;
+	((CGraficRohrKomponenteBogen*)GraficRohrKomponente)->SetGraficRohrKomponentenWinkelDirect(m_KomponentenWinkel);
+	return;
+}
+
+
+
+
+
+CGraficRohrKomponenteNut::CGraficRohrKomponenteNut(CGraficController* pGraficRohrContainer, CRohrKomponente *pLogicRohrKomponente):CGraficRohrKomponente(pGraficRohrContainer, pLogicRohrKomponente)
+{};
+
+
+// Setzt alle noetigen Komponentenpunkte, um diese zu zeichnen, 
+// hier wird die Nut mit 80 % des RohrRadiuses gezeichnet
+// davon abhängig alle weiteren Punkte brechnet
+void CGraficRohrKomponenteNut::SetKomponentPointfromConectonPoint()
+{
+
+	m_RohrFirstEndPoint = GetFirstCornerPoint();
+	m_RohrSecondEndPoint = GetSecondCornerPoint();
+	int iRadius = GetLogicalRohrKomponente()->GetRadius();
+	int iLaenge = GetLogicalRohrKomponente()->GetLaenge();
+	GetLogicalRohrKomponente()->SetLaenge(iLaenge/2);
+	GetLogicalRohrKomponente()->SetRadius( (int) (iRadius*0.8) );
+	
+	double WinkelRohrZuXundYAchse = GetWinkelRohrZuXundYAchse();
+	
+	if(GetLogicalRohrKomponente()->GetFirstKomponent())
+	{
+		WinkelRohrZuXundYAchse = 0.0;
+	}
+	
+
+	SetEndPointCenterLine(WinkelRohrZuXundYAchse);
+	SetFirstBorderpoint(GetWinkelRohrZuXundYAchse());
+	SetSecondBorderpoint(GetWinkelRohrZuXundYAchse());
+	SetThirdBorderpoint(GetWinkelRohrZuXundYAchse());
+	SetFourthBorderpoint(GetWinkelRohrZuXundYAchse());
+	m_RohrFirstEndPointI  = GetFirstCornerPoint();
+	m_RohrSecondEndPointI = GetSecondCornerPoint();
+	m_RohrThridEndPointI  = GetThirdCornerPoint();
+	m_RohrForthEndPointI  = GetFourthCornerPoint(); 
+
+	GetLogicalRohrKomponente()->SetRadius(iRadius);
+	//Hier wird der neue Stsartpunkt fuer das Nutende gesetzt iLaenge/2
+	SetStartPointCenterLine(GetEndPointCenterLine());
+	
+	SetEndPointCenterLine(WinkelRohrZuXundYAchse);
+	SetFirstBorderpoint(GetWinkelRohrZuXundYAchse());
+	SetSecondBorderpoint(GetWinkelRohrZuXundYAchse());
+	SetThirdBorderpoint(GetWinkelRohrZuXundYAchse());
+	SetFourthBorderpoint(GetWinkelRohrZuXundYAchse());
+
+	GetLogicalRohrKomponente()->SetLaenge(iLaenge);
+	
+	return;
+};
+
+void CGraficRohrKomponenteNut::DrawYourSelf()
+{	
+	//Endlinie prev 
+	ZeichneLinie( m_RohrFirstEndPoint.X, m_RohrFirstEndPoint.Y, m_RohrSecondEndPoint.X,  m_RohrSecondEndPoint.Y);
+		
+	//Nut
+	ZeichneLinie( m_RohrFirstEndPointI.X, m_RohrFirstEndPointI.Y,m_RohrSecondEndPointI.X,  m_RohrSecondEndPointI.Y);
+	ZeichneLinie( m_RohrSecondEndPointI.X, m_RohrSecondEndPointI.Y, m_RohrForthEndPointI.X,  m_RohrForthEndPointI.Y);
+	ZeichneLinie( m_RohrFirstEndPointI.X, m_RohrFirstEndPointI.Y, m_RohrThridEndPointI.X,  m_RohrThridEndPointI.Y);
+	ZeichneLinie( m_RohrThridEndPointI.X, m_RohrThridEndPointI.Y, m_RohrForthEndPointI.X,  m_RohrForthEndPointI.Y);
+
+	//Absatz
+	//ZeichneLinie( strPost,  m_RohrThridEndPoint.X, m_RohrThridEndPoint.Y, m_RohrForthEndPoint.X,  m_RohrForthEndPoint.Y);
+	ZeichneLinie( GetFirstCornerPoint().X, GetFirstCornerPoint().Y, GetSecondCornerPoint().X,  GetSecondCornerPoint().Y);
+	ZeichneLinie( GetSecondCornerPoint().X, GetSecondCornerPoint().Y, GetFourthCornerPoint().X,  GetFourthCornerPoint().Y);
+	ZeichneLinie( GetFirstCornerPoint().X, GetFirstCornerPoint().Y, GetThirdCornerPoint().X,  GetThirdCornerPoint().Y);
+	ZeichneLinie( GetThirdCornerPoint().X, GetThirdCornerPoint().Y, GetFourthCornerPoint().X,  GetFourthCornerPoint().Y);
+}
+
+
+CGraficRohrKomponenteGlatt::CGraficRohrKomponenteGlatt(CGraficController* pGraficRohrContainer, CRohrKomponente *pLogicRohrKomponente):CGraficRohrKomponente(pGraficRohrContainer, pLogicRohrKomponente)
+{};
+
+
+void CGraficRohrKomponenteGlatt::DrawYourSelf()
+{
+	ZeichneLinie( GetFirstCornerPoint().X, GetFirstCornerPoint().Y, GetSecondCornerPoint().X,  GetSecondCornerPoint().Y);
+}
+
+void CGraficRohrKomponenteGlatt::SetKomponentPointfromConectonPoint()
+{
+	return;
+}

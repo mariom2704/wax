@@ -1,0 +1,403 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
+using MxLib.Dialog;
+using WaxEdit.Gp;
+using MxLib.Entities;
+using MxLib.Basis;
+using System.Diagnostics;
+using MxLib.Db;
+
+
+namespace WaxEdit
+{
+	public partial class Form1 : DlgBaseSizeChange
+	{
+		EnMatrix preisMatrix = new EnMatrix();
+
+		GpVkX vkx; 
+
+		string waxstammDb = "";
+
+		int minDnVk3 = 0;
+		int maxDnVk3 = 300;
+
+		int minDnVk2 = 15;
+		int maxDnVk2 = 50;
+
+		enum auswertung
+		{
+			keine = -1,
+			vk3 = 0,
+			vk2 = 1,
+			festpreis = 2,
+			festpreisAlle = 3,
+		}
+
+		public Form1()
+		{
+			InitializeComponent();
+		}
+
+		private void Form1_Load(object sender, EventArgs e)
+		{
+			//neue Positionen und Breite speichern
+			saveFormSize();
+
+			comboBoxAuswertung.SelectedIndex = 0;
+
+			if (!readEinstellungen())
+				buttonLoad.Enabled = false;
+
+			this.Text += "   " + waxstammDb;
+
+			vkx = new GpVkX(null, waxstammDb);
+		}
+
+
+
+		private void Form1_SizeChanged(object sender, EventArgs e)
+		{
+			this.resizeXY(listView1);
+			this.reLocationX(buttonSave);
+
+			//neue Positionen und Breite speichern
+			saveFormSize();
+		}
+
+
+		private bool readEinstellungen()
+		{
+			GpEinstellungen einst = new GpEinstellungen();
+			einst.Datei = "WaxEdit.xml";
+
+			if (!einst.readWerte(ref waxstammDb))
+			{
+				MessageBox.Show("Die Einstellungsdatei WaxEdit.xml wurde nicht gefunden!");
+				return false;
+			}
+
+			return true;
+		}
+
+
+		private auswertung getAuswertung()
+		{
+			return (auswertung)comboBoxAuswertung.SelectedIndex;
+		}
+
+
+		/**
+		 * Button Laden
+		 * Werte aus der DB laden
+		 */
+		private void button1_Click(object sender, EventArgs e)
+		{
+			//evt. Änderungen speichern
+			if (!checkAndSave())
+				return;
+
+			//Werte aus Db lesen
+			if (getAuswertung() == auswertung.vk3)
+			{
+				//Dn Bereich einlesen
+				int.TryParse(comboBoxDNVon.Text, out minDnVk3);
+				int.TryParse(comboBoxDnBis.Text, out maxDnVk3);
+
+				if (!vkx.readVk3(checkBoxVerzinkt.Checked, minDnVk3, maxDnVk3, 1, GpVkX.vk2IdStart - 1, preisMatrix))
+				{
+					showError(vkx);
+					return;
+				}
+
+				listView1.GotoNextFieldAfterEnter = ListViewExtended.gotoNextFieldAfterEnter.waagerecht;
+			}
+			else if (getAuswertung() == auswertung.vk2)
+			{
+				//Dn Bereich einlesen
+				int.TryParse(comboBoxDNVon.Text, out minDnVk2);
+				int.TryParse(comboBoxDnBis.Text, out maxDnVk2);
+
+				if (!vkx.readVk3(checkBoxVerzinkt.Checked, minDnVk2, maxDnVk2, GpVkX.vk2IdStart, GpVkX.vk2IdEnde, preisMatrix))
+				{
+					showError(vkx);
+					return;
+				}
+
+				listView1.GotoNextFieldAfterEnter = ListViewExtended.gotoNextFieldAfterEnter.waagerecht;
+			}
+			else if (getAuswertung() == auswertung.festpreis)
+			{
+				if (!vkx.readFestpreis(true, preisMatrix))
+				{
+					showError(vkx);
+					return;
+				}
+
+				listView1.GotoNextFieldAfterEnter = ListViewExtended.gotoNextFieldAfterEnter.senkrecht;
+			}
+			else if (getAuswertung() == auswertung.festpreisAlle)
+			{
+				if (!vkx.readFestpreis(false, preisMatrix))
+				{
+					showError(vkx);
+					return;
+				}
+
+				listView1.GotoNextFieldAfterEnter = ListViewExtended.gotoNextFieldAfterEnter.senkrecht;
+			}
+			else
+				return;
+	
+			listView1.setMatrix(preisMatrix);
+			
+			if (getAuswertung() != auswertung.vk3)
+				listView1.AutoResizeColumns(ColumnHeaderAutoResizeStyle.HeaderSize);
+			
+			listView1.setBackColorWhiteGrey();
+			listView1.EditColor = Color.LightPink;
+
+			groupBoxEinstellungen.Enabled = false;
+		}
+
+		/**
+		 * Fehler anzeigen
+		 */
+		private void showError(IMxError error)
+		{
+			if (error.Errorliste.Count == 0)
+				return;
+
+			string meldung = "";
+			for (int i=error.Errorliste.Count-1; i>=0; i--)
+			{
+				meldung += error.Errorliste[i].ToStringWithId() + "\n";
+			}
+
+			MessageBox.Show(meldung, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+			error.Errorliste.Clear();
+		}
+
+		/**
+		 * Button speichern
+		 * Werte in DB speichern
+		 */
+		private void buttonSave_Click(object sender, EventArgs e)
+		{
+			if (!saveWerte())
+				return;
+
+			listView1.setBackColorWhiteGrey();
+		}
+
+		/**
+		 * geänderte Preise in die Db schreiben
+		 */
+		private bool saveWerte()
+		{
+			//Werte Speichern
+			if (getAuswertung() == auswertung.vk3 || getAuswertung() == auswertung.vk2)
+			{
+				if (!vkx.saveVk3(checkBoxVerzinkt.Checked, preisMatrix))
+				{
+					showError(vkx);
+					return false;
+				}
+			}
+			else if (getAuswertung() == auswertung.festpreis || getAuswertung() == auswertung.festpreisAlle)
+			{
+				if (!vkx.saveFestpreis(preisMatrix))
+				{
+					showError(vkx);
+					return false;
+				}
+			}
+			
+			return true;
+		}
+
+
+		/**
+		 * Prüfungen bevor die Anwendung geschlossen wird
+		 */
+		private void Form_Closing(object sender, FormClosingEventArgs e)
+		{
+			if (!checkAndSave())
+			{
+				//Beenden abbrechen
+				e.Cancel = true;
+			}
+		}
+
+
+		/**
+		 * pürfen ob Werte schon gespeichert wurden.
+		 * Wenn nicht erfolgt eine Abfrage und es wird gespeichert
+		 */
+		private bool checkAndSave()
+		{
+			if (vkx.hasChangedValues(preisMatrix))
+			{
+				DialogResult result = MessageBox.Show("Die Werte sind noch nicht gespeichert! Wollen Sie speichern?", "Hinweis", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Warning);
+
+				if (result == DialogResult.Cancel || result == DialogResult.Abort)
+					return false;
+
+				if (result == DialogResult.Yes)
+				{
+					if (!saveWerte())
+						return false;
+				}
+			}
+
+			return true;
+		}
+
+		/**
+		 * Werte zurücksetzen
+		 */
+		private void buttonReset_Click(object sender, EventArgs e)
+		{
+			if (!checkAndSave())
+				return;
+
+			preisMatrix.clearAll();
+			listView1.Clear();
+
+			groupBoxEinstellungen.Enabled = true;
+		}
+
+		private void comboBoxAuswertung_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (getAuswertung() == auswertung.vk3)
+			{
+				checkBoxVerzinkt.Enabled = true;
+				labelDnVon.Enabled = true;
+				labelDnVon.Enabled = true;
+				comboBoxDNVon.Enabled = true;
+				comboBoxDnBis.Enabled = true;
+
+				comboBoxDNVon.Text = minDnVk3.ToString();
+				comboBoxDnBis.Text = maxDnVk3.ToString();
+
+				
+			}
+			else if (getAuswertung() == auswertung.vk2)
+			{
+				checkBoxVerzinkt.Checked = false;
+				checkBoxVerzinkt.Enabled = false;
+				labelDnVon.Enabled = true;
+				labelDnVon.Enabled = true;
+				comboBoxDNVon.Enabled = true;
+				comboBoxDnBis.Enabled = true;
+
+				comboBoxDNVon.Text = minDnVk2.ToString();
+				comboBoxDnBis.Text = maxDnVk2.ToString();
+			}
+			else
+			{
+				checkBoxVerzinkt.Checked = false;
+				checkBoxVerzinkt.Enabled = false;
+				labelDnVon.Enabled = false;
+				labelDnVon.Enabled = false;
+				comboBoxDNVon.Enabled = false;
+				comboBoxDnBis.Enabled = false;
+
+				comboBoxDNVon.SelectedIndex = -1;
+				comboBoxDnBis.SelectedIndex = -1;
+			}
+
+			setLabelAuswertung();
+		}
+
+		private void buttonExport_Click(object sender, EventArgs e)
+		{
+
+            //Matrix konvertieren
+            EnMatrix mat = new EnMatrix();
+
+            for(int i=0; i < preisMatrix.ColumnNames.Count; i++)
+            {
+                mat.setColumnName(i, preisMatrix.ColumnNames[i].ToString());
+            }
+            
+            for (int spalte = 0; spalte < preisMatrix.MaxColumn; spalte++)
+            {
+                for (int zeile = 0; zeile < preisMatrix.MaxRow; zeile++)
+                {
+                    object obj = preisMatrix.getAt(zeile, spalte);
+
+                    ListViewField field = obj as ListViewField;
+                    if (field != null)
+                    {
+                        if (field.Tag != null)
+                            obj = field.Tag;
+                        else
+                            obj = field.Value;
+                    }
+
+                    mat.setAt(zeile, spalte, obj);
+                }
+            }
+
+
+
+			DbExcel excel = new DbExcel(textBoxExcelDat.Text);
+
+			if (!excel.writeMatrixToDatei(mat, false))
+			{
+				showError(excel);
+				return;
+			}
+
+			//Exceldatei öffnen
+			Process myProcess = new Process();
+			myProcess.StartInfo.FileName = "\"" + textBoxExcelDat.Text + "\"";
+
+			try
+			{
+				myProcess.Start();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(ex.Message, "Fehler", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void setLabelAuswertung()
+		{
+			if (getAuswertung() == auswertung.vk3)
+			{
+				if (checkBoxVerzinkt.Checked)
+					labelAuswertung.Text = "Vk3 verzinkt";
+				else
+					labelAuswertung.Text = "Vk3";
+			}
+			else if (getAuswertung() == auswertung.vk2)
+			{
+				labelAuswertung.Text = "Vk2";
+			}
+			else if (getAuswertung() == auswertung.festpreis)
+			{
+				labelAuswertung.Text = "Festpreis Artikel (Preis > 0)";
+			}
+			else if (getAuswertung() == auswertung.festpreisAlle)
+			{
+				labelAuswertung.Text = "Festpreis alle Artikel";
+			}
+		}
+
+		private void checkBoxVerzinkt_CheckedChanged(object sender, EventArgs e)
+		{
+			setLabelAuswertung();
+		}
+
+		
+
+	}
+}

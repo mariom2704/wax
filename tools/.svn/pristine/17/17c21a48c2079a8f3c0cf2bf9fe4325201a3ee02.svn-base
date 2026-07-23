@@ -1,0 +1,36 @@
+#pragma once
+
+
+
+// CTestEingabe-Formularansicht
+
+class CTestEingabe : public CFormView
+{
+	DECLARE_DYNCREATE(CTestEingabe)
+
+protected:
+	CTestEingabe();           // Dynamische Erstellung verwendet geschützten Konstruktor
+	virtual ~CTestEingabe();
+	void ConstructSchiefRohr(CString& strPost);
+
+public:
+	enum { IDD = IDD_TESTEINGABE };
+#ifdef _DEBUG
+	virtual void AssertValid() const;
+#ifndef _WIN32_WCE
+	virtual void Dump(CDumpContext& dc) const;
+#endif
+#endif
+
+protected:
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV-Unterstützung
+	void ConstructStrnrohr(CString& strPost);
+
+	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnBnClickedButton1();
+	void OnBnSecondSVG();
+	void ZeichneLinie(CString& strPost, int x1, int x2, int y1, int y2);
+};
+
+

@@ -1,0 +1,124 @@
+#pragma once
+
+
+class CGraficRohrKomponente;
+class CGraficRohrKomponenteTeilRohr;
+class CGraficRohrKomponenteBogen;
+
+class CRohrKomponente
+{
+	 bool m_FirstKomponent;
+	
+public:
+	CRohrKomponente(void);
+
+	~CRohrKomponente(void);
+	double GetWinkel()
+	{
+		return winkel;
+	};
+	int GetDn()
+	{
+		return iDN;
+	};
+	int GetRadius()
+	{
+		return iDN/2;
+	};
+
+	void SetFirstKomponent()
+	{
+		m_FirstKomponent = true;
+	}
+
+	bool GetFirstKomponent()
+	{
+		return m_FirstKomponent;
+	}
+
+	void SetRadius(int iLocalDN)
+	{
+		iDN = iLocalDN*2;
+		return;
+	};
+	void SetWinkel(double lWinkel)
+	{
+		winkel = lWinkel;
+	};
+	double GetLaenge()
+	{
+		return iLaenge;
+	};
+
+	void SetLaenge(int iLocalLaenge)
+	{
+		iLaenge = iLocalLaenge;
+	};
+
+	void SetprevStrangRohr(CRohrKomponente* prevStrangRohr)
+	{
+		m_prevStrangRohr = prevStrangRohr;
+	};
+
+	CRohrKomponente* GetprevStrangRohr()
+	{
+		return m_prevStrangRohr;
+	};
+
+	void SetnextStrangRohr(CRohrKomponente* nextStrangRohr)
+	{
+		m_pNextStrangRohr = nextStrangRohr;
+	};
+
+	
+	CRohrKomponente* GetnextStrangRohr()
+	{
+		return m_pNextStrangRohr;
+	};
+
+	
+	
+	virtual CGraficRohrKomponente* GetGraficRohrKomponente();
+	
+
+
+private:
+	int iDN;
+	int iLaenge;
+	int NutIdEnde;
+	int NutIdAnfang;
+	double winkel;
+	CRohrKomponente* m_prevStrangRohr;
+	CRohrKomponente* m_pNextStrangRohr;
+protected:
+	CGraficRohrKomponente* m_pGraficRohrKomponente;
+
+};
+
+
+
+
+class CRohrKomponenteTeilRohr : public CRohrKomponente
+{
+	virtual CGraficRohrKomponente*  GetGraficRohrKomponente();
+};
+
+
+
+
+class CRohrKomponenteBogen : public CRohrKomponente
+{
+	
+	virtual CGraficRohrKomponente* GetGraficRohrKomponente();
+};
+
+
+
+
+class CRohrKomponenteNut : public CRohrKomponente
+{
+	virtual CGraficRohrKomponente* GetGraficRohrKomponente();
+};
+
+
+typedef std::vector<CRohrKomponente*> CRohrKomponenteVector;

@@ -1,0 +1,26 @@
+Index	SourceFilename	TimeStamp	Version	SHA1Sum	OriginalSize	FirstSlice	LastSlice	StartOffset	ChunkSuboffset	ChunkCompressedSize	Encrypted
+0	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\Blank.jpg	2011-04-04 12:43:16.000		1e489c1dff2d5d1facee982806aea601183cab53	699	1	1	0	0	699	no
+1	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\LoaderForImagesDwfSvg.css	2014-11-25 11:11:58.000		466187f9a1d00d7aa5f15c291e59dac101fdb9b8	453	1	1	703	0	453	no
+2	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\LoaderForImagesDwfSvg.js	2015-03-11 15:10:04.000		d1ee14418b61df599a9af4a564774e1b5b5bb6ef	10575	1	1	1160	0	10575	no
+3	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\mxparam.dll	2015-10-19 08:04:22.000	4.5.0.0	9f3e77818e429e55aa3ad6e3bb459ff117321a47	384512	1	1	11739	0	384512	no
+4	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\rohrkonst.dll	2015-10-19 08:04:40.000	4.5.0.0	90c71f8401b5c79fdfd0cd94b75ca22b6908764a	741888	1	1	396255	0	741888	no
+5	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\TBarCode10.dll	2012-06-07 16:02:56.000	10.2.1.13536	3ccbf6e70831c10b571c7301eaf7f69373855b88	510464	1	1	1138147	0	510464	no
+6	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\wax3.exe	2015-10-19 08:07:52.000	4.5.0.0	bc267c4de97e1ea8838d59dcd30940b049f31c6e	1379840	1	1	1648615	0	1379840	no
+7	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\waxgl.dll	2015-10-19 08:06:46.000	4.5.0.0	061d62bd5e79596e015be859b118cb335f77b65c	418816	1	1	3028459	0	418816	no
+8	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\waxint.dll	2015-10-19 08:07:26.000	4.5.0.0	ab14eba2498ccdccbc39a968aeca291e4d0ff0e5	749056	1	1	3447279	0	749056	no
+9	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\waxprj.dll	2015-10-19 08:07:06.000	4.5.0.0	fc5318723ba9734635618c1753ef8804bf23cdf7	1717248	1	1	4196339	0	1717248	no
+10	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\WaxStamm.dat	2015-10-07 10:54:50.000		2a96f63ea68dd0b96fca81e3443a72666a54de3f	4361261	1	1	5913591	0	4361261	no
+11	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\waxstamm.dll	2015-10-19 08:04:26.000	4.5.0.0	a0a3affbae3afd2e57f18ae9b46767d26da09b43	274944	1	1	10274856	0	274944	no
+12	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\waxui.dll	2015-10-19 08:07:16.000	4.5.0.0	bb8528ff3db93815518fa56fe376cc40d9a049e3	2582016	1	1	10549804	0	2582016	no
+13	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\WaxUser.mdb	2015-08-17 15:07:20.000		4c9f8c6944acaacbbf7608eb932ab6a7c5b0e742	520192	1	1	13131824	0	520192	no
+14	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\WaxViewerForHTMLDWFandSVG.html	2014-05-26 07:58:26.000		6dd6bf7559ff28fb9d83f4002c5c2fc737d693a7	7127	1	1	13652020	0	7127	no
+15	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\WaxViewerForHTMLDWFandSVG.xhtml	2014-11-25 11:11:58.000		6dd6bf7559ff28fb9d83f4002c5c2fc737d693a7	7127	1	1	13659151	0	7127	no
+16	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\xerces-c_2_8.dll	2010-11-10 12:10:00.000	2.8.0.0	582c33a1cb42392172f2cf350328c96c79a75f0a	1828352	1	1	13666282	0	1828352	no
+17	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\..\..\..\wax\_Setup\WaxUser.mdb	2013-12-03 09:09:48.000		9cb7f3652899484d3f836281a380d9221265b2a1	520192	1	1	15494638	0	520192	no
+18	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\..\..\..\wax\_Setup\SVGView.exe	2013-12-03 09:19:08.000		a3297bf25c2d1c22f71dfdccce2d647b5578e10a	2392360	1	1	16014834	0	2392360	no
+19	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\..\..\..\wax\_Setup\2008vcredist_x86.exe	2013-12-03 09:19:08.000	9.0.21022.8	56719288ab6514c07ac2088119d8a87056eeb94a	1821192	1	1	18407198	0	1821192	no
+20	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\..\..\..\wax\_Setup\2008vcredist_x86sp1.exe	2009-08-26 01:44:38.000	9.0.30729.4148	bd18409cfe75b88c2a9432d36d96f4bf125a3237	4485976	1	1	20228394	0	4485976	no
+21	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\..\..\..\wax\_Setup\2008vcredist_x86sp11.6161.exe	2011-11-03 10:35:42.000	9.0.30729.5677	470640aa4bb7db8e69196b5edb0010933569e98d	4479832	1	1	24714374	0	4479832	no
+22	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\..\..\..\wax\_Setup\2005vcredist_x86.exe	2014-05-15 11:38:30.000	6.0.3790.0	1b117c468f7aa78107bf7e9ab10c328ebfa958d2	2728104	1	1	29194210	0	2728104	no
+23	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\..\..\..\wax\_Setup\SetupDesignReview2011.msi	2013-12-03 09:19:08.000		90237c1a254f5922ec83f6add588d4eb09c06813	55132160	1	1	31922318	0	55132160	no
+24	D:\work\wax Project\bin\Wax\wax_fuer_3te_Release32\..\..\..\wax\_Setup\wax3deutsch.pdf	2014-07-17 07:33:30.000		af9ec9065a458f3206ecea4a95427743ee322ab7	1756337	1	1	87054482	0	1756337	no

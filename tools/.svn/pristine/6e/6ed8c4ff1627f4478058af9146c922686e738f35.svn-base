@@ -1,0 +1,26 @@
+#pragma once
+
+
+
+
+
+
+class WAXGLDLL CCRohrOneAssembeldKomponenteVector : public CRohrOneAssembeldKomponenteVector
+{
+ private:
+	 int m_iFromWhere, m_iToCurrent;
+	 CRohrBemassungsKomponentenVectorVector m_BemassungsKomponentenVectorVector;
+	 CRohrBemassungsAnbauChildKomponentenVectorVector m_RohrBemassungsAnbauChildKomponentenVectorVector;
+ public:
+	CCRohrOneAssembeldKomponenteVector(void);
+	~CCRohrOneAssembeldKomponenteVector(void);
+
+	CRohrKomponenteVectorVector m_AssembeldTubeVectorVector;
+
+	CCRohrOneAssembeldKomponenteVector* GetNewAddedChildAssembeldTube();
+	void AddComponenteForTube(CRohrKomponente* pRohrKomponente);
+	bool HasAssembeldTubes();
+	CRohrKomponenteVectorVector& GetChildAssembeldTubes();
+	void CumulateBemassungsAndAbstandsObject();
+	double GetRelativerAbstandzumNaechsten();
+};

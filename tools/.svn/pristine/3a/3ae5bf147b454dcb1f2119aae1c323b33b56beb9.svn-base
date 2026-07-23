@@ -1,0 +1,46 @@
+#include "StdAfx.h"
+
+#include "RohrKomponente.h"
+
+#include "RohrOneAssembeldKomponenteVector.h"
+
+
+CCRohrOneAssembeldKomponenteVector::CCRohrOneAssembeldKomponenteVector(void)
+{}
+
+
+
+CCRohrOneAssembeldKomponenteVector* CCRohrOneAssembeldKomponenteVector::GetNewAddedChildAssembeldTube()
+{
+	CCRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVector = new CCRohrOneAssembeldKomponenteVector();
+	m_AssembeldTubeVector.push_back(pRohrOneAssembeldKomponenteVector);
+	
+	return pRohrOneAssembeldKomponenteVector;
+}
+
+
+
+CRohrKomponenteVector& CCRohrOneAssembeldKomponenteVector::GetChildAssembeldTubes()
+{	
+	return  m_AssembeldTubeVector; 
+}
+
+
+
+bool CCRohrOneAssembeldKomponenteVector::HasAssembeldTubes()
+{	
+	return  m_AssembeldTubeVector.size() > 0 ?  true : false; 
+}
+
+
+
+void CCRohrOneAssembeldKomponenteVector::AddComponenteForTube(CRohrKomponente* pRohrKomponente)
+{
+	push_back(pRohrKomponente);
+}
+
+
+
+CCRohrOneAssembeldKomponenteVector::~CCRohrOneAssembeldKomponenteVector(void)
+{
+}

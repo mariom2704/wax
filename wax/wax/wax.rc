@@ -1,0 +1,1173 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include "..\WaxDef.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 202, 86
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Info"
+FONT 10, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    CTEXT           "Copyright (C) 2001-%i \nMinimax GmbH && Co. KG",IDC_STATIC_COPYRIGHT,109,35,83,23,0,WS_EX_TRANSPARENT
+    CTEXT           "Wax+ Version  xxx",IDC_STATIC_VERSION,110,20,83,11,SS_NOPREFIX,WS_EX_TRANSPARENT
+    CONTROL         20048,IDC_STATIC,"Static",SS_BITMAP,5,57,63,21,WS_EX_TRANSPARENT
+    DEFPUSHBUTTON   "OK",IDOK,143,64,50,14,WS_GROUP,WS_EX_TRANSPARENT
+END
+
+IDD_AUFTRAGSTEST DIALOGEX 0, 0, 465, 242
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Aufträge"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Abbrechen",IDCANCEL,408,221,50,14
+    PUSHBUTTON      "&Aktualisieren",IDC_AKTUALISIEREN,329,221,65,14
+    CONTROL         "",IDC_LIST,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,7,7,451,206
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 193
+        BOTTOMMARGIN, 78
+    END
+
+    IDD_AUFTRAGSTEST, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 458
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 235
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Deutsch (Deutschland) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SAMMELAUFTRAGVIALIST DIALOGEX 0, 0, 1032, 569
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Aufträge als Liste"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,863,540,51,14,NOT WS_VISIBLE
+    PUSHBUTTON      "Abbrechen",IDCANCEL,916,540,50,14,NOT WS_VISIBLE
+    CONTROL         "",IDC_LIST_AUFRAEGE,"SysListView32",LVS_REPORT | LVS_ALIGNLEFT | WS_BORDER | WS_TABSTOP,5,70,251,499
+    CONTROL         "",IDC_EXPLORER_WEB_CONTROL,
+                    "{8856F961-340A-11D0-A96B-00C04FD705A2}",WS_TABSTOP,265,38,712,529
+    PUSHBUTTON      " Grafikdruck",IDC_BUTTON_GRAFIK_DRUCK,305,3,58,25,BS_MULTILINE
+    PUSHBUTTON      "SägeNutanlage 32020",IDC_BUTTON_SAEGE_NUT,0,3,89,25,BS_MULTILINE
+    PUSHBUTTON      "Säge 32060",IDC_BUTTON32060,94,3,60,25
+    PUSHBUTTON      "Säge 32070",IDC_BUTTON_SAEGE32070,159,3,65,25
+    PUSHBUTTON      "Säge 38030 Hand",IDC_BUTTON_38030,229,3,71,25
+    PUSHBUTTON      "Drucken",IDC_BUTTON_PRINT,449,3,58,25
+    CONTROL         "Alle",IDC_RADIO_ALL,"Button",BS_AUTORADIOBUTTON,13,53,27,10
+    CONTROL         "Oldesloe",IDC_RADIO_OD,"Button",BS_AUTORADIOBUTTON,140,53,43,10
+    CONTROL         "Wittenberge",IDC_RADIO_WITT,"Button",BS_AUTORADIOBUTTON,196,53,56,10
+    GROUPBOX        "Auswahl Aufträge",IDC_STATIC,6,43,250,27
+    PUSHBUTTON      "Arbeitspläne",IDC_BUTTON_ARBEITSPLAENE,370,3,58,25,BS_MULTILINE
+    CONTROL         "Keiner",IDC_RADIO_NONE,"Button",BS_AUTORADIOBUTTON,56,53,36,10
+    PUSHBUTTON      "Übergabe an SAP",IDC_BUTTON_TRANFER_TO_SAP,651,3,46,25,BS_MULTILINE
+    PUSHBUTTON      "Übergabe Strangrohrstrasse",IDC_BUTTON_UEBERGABESTRANGROHRSTRASSE,564,3,81,25,BS_MULTILINE
+END
+
+IDD_DATABASE_SELECT DIALOGEX 0, 0, 317, 197
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Pfad zur Benutzerdatenbank"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Datenbank 1 (z.B. auf Server)",IDC_STATIC_DB1,7,7,303,76
+    LTEXT           "Bezeichnung:    ",IDC_STATIC_BEZ1,38,29,58,8
+    EDITTEXT        IDC_NAME,102,26,141,14,ES_AUTOHSCROLL
+    LTEXT           "Bitte hier den Pfad zur Benutzerdatenbank (WAXuser.mdb) angeben:",IDC_STATIC_DBINFO1,38,44,210,8
+    EDITTEXT        IDC_EDIT_DBPATH,38,54,205,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_DBSEL,250,57,29,10
+    GROUPBOX        "Datenbank 2 (z.B. auf lokal)",IDC_STATIC_DB2,7,93,303,76
+    LTEXT           "Bezeichnung:    ",IDC_STATIC_BEZ2,38,115,58,8
+    EDITTEXT        IDC_NAME2,102,112,141,14,ES_AUTOHSCROLL
+    LTEXT           "Hier können Sie eine zweite Benutzerdatenbank eingeben:",IDC_STATIC_DBINFO2,38,130,226,8
+    EDITTEXT        IDC_EDIT_DBPATH2,38,139,205,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_DBSEL2,250,143,29,10
+    CONTROL         "&Datenbankauswahl bei Programmstart",IDC_PROMPT,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,180,216,10
+    DEFPUSHBUTTON   "OK",IDOK,260,176,50,14
+END
+
+IDD_DBPROMPT DIALOGEX 0, 0, 206, 23
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION
+CAPTION "Wax+ Datenbank auswählen / Choose Wax+ database"
+FONT 14, "Microsoft Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "server",ID_SERVER,7,7,83,11
+    PUSHBUTTON      "lokal",ID_LOKAL,94,7,83,11
+    ICON            IDR_MAINFRAME,IDC_STATIC,188,7,12,11
+END
+
+IDD_DATABASE_INFO DIALOGEX 0, 0, 307, 295
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Eigenschaften der Wax+ Datenbanken"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,250,274,50,14
+    GROUPBOX        "Benutzerdatenbank",IDC_STATIC_USERDB,7,7,293,68
+    LTEXT           "connect",IDC_DBCONNECT,17,19,273,48
+    GROUPBOX        "Stammdatenbank",IDC_STATIC_STAMMDB,7,79,293,68
+    LTEXT           "connect",IDC_DBCONNECT2,20,91,267,48
+    GROUPBOX        "Freigabedatenbank",IDC_STATIC_FREIGABEDB,7,154,293,68
+    LTEXT           "connect",IDC_DBCONNECT3,19,165,269,48
+    GROUPBOX        "Freigabedatenbank",IDC_STATIC_FREIGABESOAPSERVER,8,228,293,39
+    LTEXT           "connect",IDC_CONNECT_SOAP_SERVER,20,239,269,26
+END
+
+IDD_MEHRFACHDRUCK DIALOGEX 0, 0, 807, 136
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_SYSMENU
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_N_VKABRECHNUNG,19,16,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Abrechnung nach Aufwand",IDC_VKABRECHNUNG,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,45,18,97,10
+    EDITTEXT        IDC_N_ZEUGNISSTELLE,19,35,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Zeugnisstelle ",IDC_ZEUGNISSTELLE,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,45,36,97,10
+    EDITTEXT        IDC_N_SCHWEISSEREI,19,54,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Schweisserei",IDC_SCHWEISSEREI,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,46,55,97,10
+    EDITTEXT        IDC_N_GEWINDEROHR,19,111,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Gewinderohrfertigung",IDC_GEWINDEROHR,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,45,112,97,10
+    EDITTEXT        IDC_N_PULVERANLAGE,205,16,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Pulveranlage",IDC_PULVERANLAGE,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,229,18,63,10
+    EDITTEXT        IDC_N_AWFERTIGUNG,367,72,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Auswärtsfertigung",IDC_AWFERTIGUNG,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,393,73,94,10
+    LTEXT           "bei Firma:",IDC_STATIC,370,93,31,8
+    EDITTEXT        IDC_FIRMA,408,91,110,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_N_GRUNDIERER,205,35,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Grundierer",IDC_GRUNDIERER,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,229,37,63,10
+    EDITTEXT        IDC_N_BUENDLER1,205,55,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Bündler 1",IDC_BUENDLER1,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,229,56,63,10
+    EDITTEXT        IDC_N_BUENDLER2,205,74,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Bündler 2",IDC_BUENDLER2,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,229,76,63,10
+    EDITTEXT        IDC_N_VERSAND1,205,93,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Versand",IDC_VERSAND1,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,229,95,63,10
+    PUSHBUTTON      "&Druck starten",IDC_PRINT,407,113,54,14
+    PUSHBUTTON      "Schliessen",IDOK,469,113,50,14
+    PUSHBUTTON      "&druck",IDC_PRINT_VKABRECHNUNG,145,16,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_ZEUGNISSTELLE,145,35,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_SCHWEISSEREI,145,54,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_GEWINDEROHR,145,111,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_PULVERANLAGE,297,16,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_GRUNDIERER,297,34,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_BUENDLER1,297,54,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_BUENDLER2,297,73,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_VERSAND1,297,92,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_AWFERTIGUNG,491,70,27,14
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",WS_BORDER,203,114,170,14
+    EDITTEXT        IDC_N_ROBBI1,19,73,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_N_ROBBI2,19,92,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Robbi",IDC_ROBBI1,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,45,75,97,10
+    CONTROL         "Robbi - QW",IDC_ROBBI2,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,45,93,97,10
+    PUSHBUTTON      "&druck",IDC_PRINT_ROBBI1,145,73,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_ROBBI2,145,92,27,14
+    EDITTEXT        IDC_N_BELIEBIG,368,18,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "beliebiger Text",IDC_BELIEBIG,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,394,19,92,10
+    PUSHBUTTON      "&druck",IDC_PRINT_BELIEBIG,490,17,27,14
+    EDITTEXT        IDC_TEXT,367,41,152,12,ES_AUTOHSCROLL
+END
+
+IDD_STATUSAKTUALISIERUNG DIALOGEX 0, 0, 280, 114
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Statusaktualisierung"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "&Nur Auswahl",IDC_AUSWAHL,"Button",BS_AUTORADIOBUTTON,44,26,56,10
+    CONTROL         "&Gesamtes Projekt",IDC_GESAMT,"Button",BS_AUTORADIOBUTTON,160,26,71,10
+    GROUPBOX        "Werkaufträge aktualisieren (WA Nummer, Sachbearbeiter, MB Datum usw.)",IDC_STATIC_WA_AKT,7,7,266,47
+    DEFPUSHBUTTON   "Aktualisierung ausführen...",IDC_DOAKTUALISIERUNG,153,93,120,14
+    CONTROL         "Progress1",IDC_UPDATESTATUS,"msctls_progress32",WS_BORDER,7,67,266,14
+END
+
+IDD_LANGUAGE DIALOGEX 0, 0, 272, 183
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Sprache auswählen"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,157,162,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,215,162,50,14
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ | WS_DISABLED,7,143,258,1,WS_EX_TRANSPARENT
+END
+
+IDD_DIALOG_SAP_WAX DIALOGEX 0, 0, 316, 148
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION
+CAPTION "SAP Artikel Import"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Beenden",IDOK,259,127,50,14
+    LTEXT           "Statisch",IDC_STATIC_SAP_TO_WAX_FILE,10,22,224,11
+    LTEXT           "Statisch",IDC_STATIC_STAMM_DB,10,56,193,15
+    PUSHBUTTON      "SAP Daten importieren",IDC_BUTTON_SAP_IMPORTIEREN,174,126,78,15
+    LTEXT           "Ort der SAP Importdatei:",IDC_STATIC,10,10,236,10
+    LTEXT           "Ort der Stammdatenbank:",IDC_STATIC,10,43,200,15
+    PUSHBUTTON      "Import abbrechen",IDC_BUTTON_IMPORT_ABBRECHEN,100,127,66,14,WS_DISABLED
+    CONTROL         "",IDC_PROGRESS_IMPORT,"msctls_progress32",WS_BORDER,8,86,301,19
+END
+
+IDD_DIALOG_MEHRFACHDRUCK DIALOGEX 0, 0, 859, 165
+STYLE DS_SETFONT | WS_CHILD | WS_VISIBLE | WS_SYSMENU
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_N_VKABRECHNUNG,19,24,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Abrechnung nach Aufwand",IDC_VKABRECHNUNG,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,45,26,97,10
+    EDITTEXT        IDC_N_ZEUGNISSTELLE,19,43,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Zeugnisstelle ",IDC_ZEUGNISSTELLE,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,45,44,97,10
+    EDITTEXT        IDC_N_SCHWEISSEREI,19,62,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Schweisserei",IDC_SCHWEISSEREI,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,46,63,97,10
+    EDITTEXT        IDC_N_GEWINDEROHR,19,130,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Gewinderohrfertigung",IDC_GEWINDEROHR,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,45,134,97,10
+    EDITTEXT        IDC_N_PULVERANLAGE,205,24,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Pulveranlage",IDC_PULVERANLAGE,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,229,26,63,10
+    EDITTEXT        IDC_N_AWFERTIGUNG,367,80,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Auswärtsfertigung",IDC_AWFERTIGUNG,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,393,81,94,10
+    LTEXT           "bei Firma:",IDC_STATIC,370,101,31,8
+    EDITTEXT        IDC_FIRMA,408,99,110,12,ES_AUTOHSCROLL
+    EDITTEXT        IDC_N_GRUNDIERER,205,43,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Grundierer",IDC_GRUNDIERER,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,229,45,63,10
+    EDITTEXT        IDC_N_BUENDLER1,205,63,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Bündler 1",IDC_BUENDLER1,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,229,64,63,10
+    EDITTEXT        IDC_N_BUENDLER2,205,82,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Bündler 2",IDC_BUENDLER2,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,229,84,63,10
+    EDITTEXT        IDC_N_VERSAND1,205,101,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Versand",IDC_VERSAND1,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,229,103,63,10
+    PUSHBUTTON      "&Druck starten",IDC_PRINT,407,130,54,14,NOT WS_VISIBLE
+    PUSHBUTTON      "Schliessen",IDOK,469,130,50,14
+    PUSHBUTTON      "&druck",IDC_PRINT_VKABRECHNUNG,145,24,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_ZEUGNISSTELLE,145,43,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_SCHWEISSEREI,145,62,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_GEWINDEROHR,145,130,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_PULVERANLAGE,297,24,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_GRUNDIERER,297,42,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_BUENDLER1,297,62,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_BUENDLER2,297,81,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_VERSAND1,297,100,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_AWFERTIGUNG,491,78,27,14
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",WS_BORDER,203,130,170,14
+    EDITTEXT        IDC_N_ROBBI1,19,81,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    EDITTEXT        IDC_N_ROBBI2,19,100,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "Robbi",IDC_ROBBI1,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,45,83,97,10
+    CONTROL         "Robbi - QW",IDC_ROBBI2,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,45,101,97,10
+    PUSHBUTTON      "&druck",IDC_PRINT_ROBBI1,145,81,27,14
+    PUSHBUTTON      "&druck",IDC_PRINT_ROBBI2,145,100,27,14
+    EDITTEXT        IDC_N_BELIEBIG,368,26,23,14,ES_AUTOHSCROLL | ES_NUMBER
+    CONTROL         "beliebiger Text",IDC_BELIEBIG,"Button",BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,394,27,92,10
+    PUSHBUTTON      "&druck",IDC_PRINT_BELIEBIG,490,25,27,14
+    EDITTEXT        IDC_TEXT,367,49,152,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Öffen/Schließen",IDC_BUTTON_OPEN_CLOSE,7,0,530,16
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_SAMMELAUFTRAGVIALIST, DIALOG
+    BEGIN
+        RIGHTMARGIN, 977
+        BOTTOMMARGIN, 567
+    END
+
+    IDD_DATABASE_SELECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 310
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 190
+    END
+
+    IDD_DBPROMPT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 201
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 18
+    END
+
+    IDD_DATABASE_INFO, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 300
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 288
+    END
+
+    IDD_MEHRFACHDRUCK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 800
+        TOPMARGIN, 7
+    END
+
+    IDD_STATUSAKTUALISIERUNG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 273
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 107
+    END
+
+    IDD_LANGUAGE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 265
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+
+    IDD_DIALOG_SAP_WAX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 141
+    END
+
+    IDD_DIALOG_MEHRFACHDRUCK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 841
+        BOTTOMMARGIN, 144
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include ""..\\WaxDef.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 7, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\wax.rc2""  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen\r\n"
+    "#include ""l.deu\\afxres.rc""          // Standardkomponenten\r\n"
+    "#include ""l.deu\\afxprint.rc""        // Ressourcen für Drucken/Seitenansicht\r\n"
+    "#include ""l.deu\\afxdb.rc""           // Datenbankressourcen\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\wax.ico"
+IDR_WAXTYPE             ICON                    "res\\icon1.ico"
+IDR_WAXTYPE1            ICON                    "res\\idr_waxt.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "res\\Toolbar.bmp"
+IDB_SPLASH              BITMAP                  "res\\waxlogo.bmp"
+IDR_AVFUNKTIONEN        BITMAP                  "res\\mainfram.bmp"
+IDB_MYSQL_LOGO          BITMAP                  "res\\mysql_logo.bmp"
+IDR_MAINFRAME_3         BITMAP                  "res\\bmp00001.bmp"
+IDB_BITMAP1             BITMAP                  "res\\bitmap1.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_MAINFRAME TOOLBAR  20, 20
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    BUTTON      ID_FILE_SEND_MAIL
+    BUTTON      ID_VIEW_GRAFIK
+    BUTTON      ID_DRUCKVORSCHAU
+    SEPARATOR
+    BUTTON      ID_FREIGABE
+    BUTTON      ID_STATUS_AKTUALISIEREN
+    BUTTON      ID_NEWELEMENT
+    SEPARATOR
+    BUTTON      ID_PREISANFRAGE_FREIGEBEN
+    SEPARATOR
+    BUTTON      ID_ANGEBOT_ANNEHMEN
+    SEPARATOR
+    BUTTON      WAXID_CUT
+    BUTTON      WAXID_COPY
+    BUTTON      WAXID_PASTE
+    BUTTON      WAXID_DELETE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT_DIRECT
+    SEPARATOR
+    BUTTON      ID_PREISE
+    BUTTON      ID_EXCEL
+    BUTTON      ID_PRINTPREVIEW
+    BUTTON      ID_APP_ABOUT
+END
+
+IDR_AVFUNKTIONEN TOOLBAR  25, 23
+BEGIN
+    BUTTON      ID_OPEN_NEWWA
+    BUTTON      ID_OPEN_MYWA
+    BUTTON      ID_SAP
+    BUTTON      ID_MONITOR
+    SEPARATOR
+    BUTTON      ID_OPEN_NEW_PA
+    BUTTON      ID_FREIGABE_ANGEBOT
+    SEPARATOR
+    BUTTON      ID_EMAIL_BESTELLER
+END
+
+IDR_MAINFRAME_3 TOOLBAR  20, 20
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    BUTTON      ID_FILE_SEND_MAIL
+    BUTTON      ID_VIEW_GRAFIK
+    BUTTON      ID_DRUCKVORSCHAU
+    SEPARATOR
+    BUTTON      ID_NEWELEMENT
+    BUTTON      WAXID_CUT
+    BUTTON      WAXID_COPY
+    BUTTON      WAXID_PASTE
+    BUTTON      WAXID_DELETE
+    SEPARATOR
+    BUTTON      ID_FILE_PRINT_DIRECT
+    SEPARATOR
+    BUTTON      ID_APP_ABOUT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&Projekt"
+    BEGIN
+        MENUITEM "Neue Werkaufträge bearbeiten...", ID_OPEN_NEWWA
+        MENUITEM "Meine Werkaufträge...",       21061
+        MENUITEM "&Werkaufträge bearbeiten...", ID_OPEN_DATABASE
+        MENUITEM "Projektdatei nach PSP Element erstellen...", ID_OPEN_DATABASE_PSPELEMENT
+        POPUP "&Informationen zu Aufträgen"
+        BEGIN
+            MENUITEM "unbearbeitete &Aufträge...",  ID_AUFTRAGSTEST
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "&Neu\tStrg+N",                ID_FILE_NEW
+        MENUITEM "Ö&ffnen...\tStrg+O",          ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "Drucker&einrichtung...",      ID_FILE_PRINT_SETUP
+        MENUITEM SEPARATOR
+        MENUITEM "Letzte Datei",                ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Beenden",                    ID_APP_EXIT
+    END
+    POPUP "&Systemverwaltung"
+    BEGIN
+        MENUITEM "Parameter ... ",              IDM_PARAMETER_DIALOG
+        POPUP "Datenbank"
+        BEGIN
+            MENUITEM "&Einstellungen...",           ID_DATABASE
+            MENUITEM "&Auswählen...",               ID_DATABASE_SELECT
+            MENUITEM "Info...",                     ID_DATABASE_INFO
+        END
+        POPUP "Admin Tools"
+        BEGIN
+            MENUITEM "Statistik Tabellen aktualisieren", ID_DATABASE_UPDATESTATISTIK
+        END
+        MENUITEM SEPARATOR
+        POPUP "Spanx+ Rohreingabe"
+        BEGIN
+            MENUITEM "Strangrohreingabe...",        ID_SPANXANFRAGE_STRANGROHR
+            MENUITEM "Verteilereingabe...",         ID_SPANXANFRAGE_VERTEILER
+        END
+    END
+    POPUP "&Ansicht"
+    BEGIN
+        MENUITEM "&Symbolleiste",               ID_VIEW_TOOLBAR
+        MENUITEM "S&tatusleiste",               ID_VIEW_STATUS_BAR
+    END
+    POPUP "&?"
+    BEGIN
+        MENUITEM "Inf&o über Wax+...",          ID_APP_ABOUT
+        MENUITEM "&Versionsgeschichte...",      ID_VERSIONSGESCHICHTE
+        MENUITEM "&Anwenderdokumentation...",   ID_DOKU
+    END
+END
+
+IDR_WAXTYPE MENU 
+BEGIN
+    POPUP "&Projekt"
+    BEGIN
+        MENUITEM "&Neu\tStrg+N",                ID_FILE_NEW
+        MENUITEM "Ö&ffnen...\tStrg+O",          ID_FILE_OPEN
+        MENUITEM "&Schließen",                  ID_FILE_CLOSE
+        MENUITEM "S&peichern\tStrg+S",          ID_FILE_SAVE
+        MENUITEM "Speichern &unter...",         ID_FILE_SAVE_AS
+        MENUITEM SEPARATOR
+        MENUITEM "&Drucken...\tStrg+P",         ID_FILE_PRINT
+        MENUITEM "Drucker&einrichtung...",      ID_FILE_PRINT_SETUP
+        MENUITEM "Auswahl als Email verschicken...", ID_FILE_SEND_MAIL
+        MENUITEM SEPARATOR
+        MENUITEM "Letzte Datei",                ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM SEPARATOR
+        MENUITEM "&Beenden",                    ID_APP_EXIT
+    END
+    POPUP "&Bearbeiten"
+    BEGIN
+        MENUITEM "&Ausschneiden\tStrg+X",       WAXID_CUT
+        MENUITEM "&Kopieren\tStrg+C",           WAXID_COPY
+        MENUITEM "E&infügen\tStrg+V",           WAXID_PASTE
+        MENUITEM "Löschen",                     WAXID_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "&Umbenennen\tF2",             WAXID_UMBENENNEN
+        MENUITEM "Freigeben\tF3",               ID_FREIGABE
+        MENUITEM "&Status aktualisieren\tF5",   ID_STATUS_AKTUALISIEREN
+    END
+    POPUP "&Ansicht"
+    BEGIN
+        MENUITEM "&Symbolleiste",               ID_VIEW_TOOLBAR
+        MENUITEM "S&tatusleiste",               ID_VIEW_STATUS_BAR
+        MENUITEM SEPARATOR
+        MENUITEM "Grafikvollbild anzeigen",     ID_VIEW_GRAFIK
+        MENUITEM "&Druckvorschau",              ID_DRUCKVORSCHAU
+        MENUITEM "&Grafikfenster unter der Eingabe", ID_NOGRAFIK
+        MENUITEM SEPARATOR
+        MENUITEM "Grafik mit Viewer betrachten...", ID_VOLOVIEW
+    END
+    POPUP "&Fenster"
+    BEGIN
+        MENUITEM "Über&lappend",                ID_WINDOW_CASCADE
+        MENUITEM "&Nebeneinander",              ID_WINDOW_TILE_HORZ
+        MENUITEM "&Symbole anordnen",           ID_WINDOW_ARRANGE
+        MENUITEM SEPARATOR
+        MENUITEM "&Baumansicht anzeigen\tStrg+W", ID_SHOWEXPLORE
+    END
+    POPUP "&?"
+    BEGIN
+        MENUITEM "Inf&o über Wax+...",          ID_APP_ABOUT
+        MENUITEM "&Versionsgeschichte...",      ID_VERSIONSGESCHICHTE
+        MENUITEM "&Anwenderdokumentation...",   ID_DOKU
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "T",            ID_DBTEST,              VIRTKEY, SHIFT, CONTROL, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_CUT,            VIRTKEY, CONTROL, NOINVERT
+    VK_DELETE,      ID_EDIT_DELETE,         VIRTKEY, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "O",            ID_FILE_OPEN,           VIRTKEY, CONTROL, NOINVERT
+    "P",            ID_FILE_PRINT,          VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    VK_F3,          ID_FREIGABE,            VIRTKEY, NOINVERT
+    VK_INSERT,      ID_NEWELEMENT,          VIRTKEY, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    "W",            ID_SHOWEXPLORE,         VIRTKEY, CONTROL, NOINVERT
+    VK_F5,          ID_STATUS_AKTUALISIEREN, VIRTKEY, NOINVERT
+    VK_F12,         WAXID_NEU_APAX,         VIRTKEY, CONTROL, NOINVERT
+    VK_F8,          WAXID_NEU_FORMSTUECKEUNDFITTINGE, VIRTKEY, CONTROL, NOINVERT
+    VK_F2,          WAXID_NEU_GEWINDEROHR,  VIRTKEY, CONTROL, NOINVERT
+    VK_F3,          WAXID_NEU_HANDELSLAENGE, VIRTKEY, CONTROL, NOINVERT
+    VK_F5,          WAXID_NEU_STATIONSVERTEILER, VIRTKEY, CONTROL, NOINVERT
+    VK_F6,          WAXID_NEU_STRANGROHR,   VIRTKEY, CONTROL, NOINVERT
+    VK_F7,          WAXID_NEU_VERTEILER,    VIRTKEY, CONTROL, NOINVERT
+    VK_F9,          WAXID_NEUE_ENTNAHMELEITUNG, VIRTKEY, CONTROL, NOINVERT
+    VK_F10,         WAXID_NEUE_PUMPENPROBIERLEITUNG, VIRTKEY, CONTROL, NOINVERT
+    VK_F11,         WAXID_NEUER_PUMPENVERTEILER, VIRTKEY, CONTROL, NOINVERT
+    VK_F1,          WAXID_NEUER_SAMMELAUFTRAG, VIRTKEY, CONTROL, NOINVERT
+    VK_F2,          WAXID_UMBENENNEN,       VIRTKEY, NOINVERT
+    "A",            SWITCH_AV,              VIRTKEY, SHIFT, CONTROL, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 4,6,0,0
+ PRODUCTVERSION 4,6,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040704b0"
+        BEGIN
+            VALUE "CompanyName", "Minimax GmbH & Co KG"
+            VALUE "FileDescription", "Wax+"
+            VALUE "FileVersion", "4, 6, 0, 0"
+            VALUE "InternalName", "Wax+"
+            VALUE "LegalCopyright", "Copyright (C) 2015 Minimax GmbH & Co KG"
+            VALUE "OriginalFilename", "wax.exe"
+            VALUE "ProductName", "Werkaufträge bei Minimax"
+            VALUE "ProductVersion", "4, 6, 0, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x407, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// JPG
+//
+
+LOGO                    JPG                     "res\\jpg1.bin"
+ENTNAHMELEITUNG_A       JPG                     "res\\entnahmeleitung_a_jpg.bin"
+ENTNAHMELEITUNG_B       JPG                     "res\\entnahmeleitung_b_jpg.bin"
+STATIONSVERTEILER       JPG                     "res\\StatVert_Abg_jpg.bin"
+PUMPENVERTEILER         JPG                     "res\\pumpenverteiler.jpg"
+COIIMXVERTEILER         JPG                     "res\\COIIVert_Abg.jpg"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_SAMMELAUFTRAGVIALIST DLGINIT
+BEGIN
+    IDC_EXPLORER_WEB_CONTROL, 0x376, 160, 0
+0x0000, 0x0000, 0x004c, 0x0000, 0x6e62, 0x0000, 0x58e2, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x004c, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xd0e0, 0x0057, 0x3573, 0x11cf, 0x69ae, 0x0008, 0x2e2b, 0x6212, 
+0x0008, 0x0000, 0x0000, 0x0000, 0x004c, 0x0000, 0x1401, 0x0002, 0x0000, 
+0x0000, 0x00c0, 0x0000, 0x0000, 0x4600, 0x0080, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    ID_BENUTZEREINSTELLUNGEN "Benutzereinstellungen"
+    ID_DATABASE             "Benutzerdatenbank auswählen"
+    ID_DRUCKVORSCHAU        " "
+    ID_EXCEL                " "
+    ID_FREIGABE             " "
+    ID_ICONSIZE             "Zeigt grosse Icons im Baum an\nGrosse Icons anzeigen"
+    IDS_STORING             "Datei speichern"
+    ID_NEUE_GLIEDERUNG      "Fügt einen neuen Bauabschnitt an\nBauabschnitt anfügen"
+    IDS_HINWEIS1            "Der Sammelauftrag muss im Baum makiert sein!"
+    ID_NOGRAFIK             "Blendet das Grafikfenster unterhalb der Eingabemaske ein\nGrafikfenster einblenden"
+    ID_OPEN_DATABASE        "Öffnet die Serverdatenbank für die Bearbeitung von freigegebenen Werkaufträgen\nWerkaufträge öffnen"
+    ID_PREISE               " "
+    ID_SAP                  " "
+    IDS_HINWEIS2            "Für eine Maschinendatei muss ein Werkauftrag markiert sein!"
+    ID_SPRACHE_ENGLISH      "Setzt die Programmsprache auf Englisch\nEnglisch"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_STATUS_AKTUALISIEREN " "
+    ID_SYSPARM_EDIT         "Bearbeitet die Systemparameter\nParameter bearbeiten"
+    ID_VIEW_GRAFIK          " "
+    IDR_MAINFRAME           "WAX+ V. 8.5.0"
+    IDR_WAXTYPE             "\nwax\nwax\n\n.wax\nwax.Document\nWax Projekt"
+    IDS_FRAGE1              "Soll die Position wirklich gelöscht werden?"
+    IDS_ERROR1              "Konnte Viewer nicht starten!"
+    IDS_ERROR2              "Ein Sammelauftrag kann nur gleichartige Aufträge beinhalten!"
+    IDS_ERROR3              "Der Sammelauftrag ist bereits in Bearbeitung. Es können keine Änderungen mehr vorgenommen werden."
+    IDS_ERROR4              "Bereits freigegebene Aufträge können nicht mehr einem Sammelauftrag zugeordnet werden!"
+    IDC_DBSEL               "Datenbank suchen"
+    IDC_DBSEL2              "Datenbank suchen"
+    IDS_ERROR_MAXAUFTRAEGE  "Ein Sammelauftrag kann max. %i Positionen enthalten. Erstellen Sie bitte einen neuen Sammelauftrag!"
+    IDC_EDIT_DBPATH         "Hier muss der Pfad zur Benutzerdatenbank eingetragen werden oder der Name der Datenbank in der Systemsteuerung  unter ODBC"
+    IDC_EDIT_DBPATH2        "Hier muss der Pfad zur Benutzerdatenbank eingetragen werden oder der Name der Datenbank in der Systemsteuerung  unter ODBC"
+    IDS_AUFTRAEGE           "Aufträge"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_NAME                "Bezeichnung der Datenbank, wird bei einer manuellen Auswahl angezeigt."
+    IDC_NAME2               "Bezeichnung der Datenbank, wird bei einer manuellen Auswahl angezeigt."
+    IDC_NEW                 "Neuen Verteiler einfügen\nNeuer Verteiler"
+    IDC_PROMPT              "Ermöglicht eine manuelle Auswahl der Datenbank beim Programmstart."
+    IDS_HINWEIS3            "Druckausgabe läuft noch."
+    IDS_HINWEIS4            "Es sind keine Druckausgaben ausgewählt."
+    IDS_APPNAME             "Wax+"
+    IDS_FALSCHES_FORMAT     "Die Datei %s hat ein falsches Format!"
+    IDS_OPEN_DB             "Öffne Datenbank..."
+    IDS_WRONGDATABASE       "Die Benutzerdatenbank konnte nicht geöffnet werden. Wählen Sie bitte eine geeignete Datenbank aus."
+    IDS_WRONGDATABASE2      "Die Stammdatenbank konnte nicht geöffnet werden! \n\nÜberprüfen Sie die Einträge ""ODBC_STAMMDB_DRIVER"" und ""STAMMDB"" in der Benutzerdatenbank."
+    IDS_ERROR7              "Prozess konnte nicht gestartet werden: "
+    IDS_VKABRECHNUNG        "VK-Abrechnung"
+    IDS_ABRECHNUNGAUFWAND   "Abrechnung nach Aufwand"
+    IDS_ZEUGNISSTELLE       "Zeugnisstelle"
+    IDS_UNGUELTIGE_LIZENZ   "Ungültige Lizenz"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_VERSAND             "Versand"
+    IDS_SCHWEISSEREI        "Schweisserei"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PULVERANLAGE        "Pulveranlage"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_UNBEKANNT           "unbekannt"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Wax+"
+    AFX_IDS_IDLEMESSAGE     " "
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "ER"
+    ID_INDICATOR_CAPS       "UF"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "RF"
+    ID_INDICATOR_OVR        "ÜB"
+    ID_INDICATOR_REC        "MA"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             " "
+    ID_FILE_OPEN            " "
+    ID_FILE_CLOSE           " "
+    ID_FILE_SAVE            " "
+    ID_FILE_SAVE_AS         " "
+    ID_FILE_PAGE_SETUP      " "
+    ID_FILE_PRINT_SETUP     " "
+    ID_FILE_PRINT           " "
+    ID_FILE_PRINT_PREVIEW   " "
+    ID_FILE_SEND_MAIL       " "
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            " "
+    ID_APP_EXIT             " "
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_MRU_FILE1       "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE2       "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE3       "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE4       "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE5       "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE6       "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE7       "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE8       "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE9       "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE10      "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE11      "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE12      "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE13      "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE14      "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE15      "Öffnet dieses Dokument."
+    ID_FILE_MRU_FILE16      "Öffnet dieses Dokument."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Wechselt zum nächsten Fensterausschnitt.\nNächster Ausschnitt"
+    ID_PREV_PANE            "Springt zum vorherigen Fensterausschnitt zurück.\nVorheriger Ausschnitt"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_NEW           "Öffnet ein weiteres Fenster für das aktive Dokument.\nNeues Fenster"
+    ID_WINDOW_ARRANGE       "Ordnet die Symbole im unteren Bereich des Fensters an.\nSymbole anordnen"
+    ID_WINDOW_CASCADE       "Ordnet die Fenster überlappend an.\nÜberlappende Fenster"
+    ID_WINDOW_TILE_HORZ     "Ordnet die Fenster nebeneinander an.\nFenster nebeneinander"
+    ID_WINDOW_TILE_VERT     "Ordnet die Fenster nebeneinander an.\nFenster nebeneinander"
+    ID_WINDOW_SPLIT         "Teilt das aktive Fenster in Ausschnitte.\nTeilen"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Löschen"
+    ID_EDIT_CLEAR_ALL       "Alles löschen"
+    ID_EDIT_COPY            "Kopieren"
+    ID_EDIT_CUT             "Ausschneiden"
+    ID_EDIT_FIND            "Sucht den angegebenen Text.\nSuchen"
+    ID_EDIT_PASTE           "Einfügen"
+    ID_EDIT_REPEAT          "Wiederholt die letzte Aktion.\nWiederholen"
+    ID_EDIT_REPLACE         "Ersetzt einen bestimmten Text durch einen anderen.\nErsetzen"
+    ID_EDIT_SELECT_ALL      "Markiert das gesamte Dokument.\nAlles markieren"
+    ID_EDIT_UNDO            "Macht die letzte Aktion rückgängig.\nRückgängig"
+    ID_EDIT_REDO            "Wiederholt die vorher rückgängig gemachte Aktion.\nWiederherstellen"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Blendet die Symbolleiste ein oder aus.\nSymbolleiste ein-/ausschalten"
+    ID_VIEW_STATUS_BAR      "Blendet die Statusleiste ein oder aus.\nStatusleiste ein-/ausschalten"
+    ID_VIEW_AUTOARRANGE     "Symbole am Raster ausrichten."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Ändert die Fenstergröße."
+    AFX_IDS_SCMOVE          "Ändert die Position des Fensters."
+    AFX_IDS_SCMINIMIZE      "Verkleinert das Fenster zu einem Symbol."
+    AFX_IDS_SCMAXIMIZE      "Vergrößert das Fenster zu voller Größe."
+    AFX_IDS_SCNEXTWINDOW    "Wechselt zum nächsten Dokumentfenster."
+    AFX_IDS_SCPREVWINDOW    "Wechselt zum vorherigen Dokumentfenster."
+    AFX_IDS_SCCLOSE         "Schließt das aktive Fenster und fordert zur Dokumentspeicherung auf."
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Stellt das Fenster in seiner normalen Größe wieder her."
+    AFX_IDS_SCTASKLIST      "Aktiviert die Task-Liste."
+    AFX_IDS_MDICHILD        "Aktiviert dieses Fenster."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR_DOCNOTFOUND   "Anwenderdokumentation (%s) konnte nicht gefunden werden!"
+    IDS_GLIEDERUNG          "Gliederung"
+    IDS_UNTERGLIEDERUNG     "Untergliederung"
+    IDS_HINWEIS6            "Achtung: Geänderte Positionen müssen freigegeben werden!\nSonst kann eine korrekte Lieferung nicht gewährleistet werden!\nEs wurden %i bereits freigegebene Aufträge geändert:\n%s\n"
+    IDS_FRAGE2              "Sollen die Änderungen freigegeben werden?"
+    IDS_ERROR11             "Die Datei\n%s\nwurde gelöscht oder verschoben!"
+    IDS_ERROR12             "Dateifehler! Lesen der Datei musste abgebrochen werden."
+    IDS_ERROR13             "Datei wurde schreibgeschützt geöffnet."
+    IDS_HINWEIS7            "Datei wurde schreibgeschützt geöffnet."
+    IDS_FRAGE3              "Soll Mehrfachdruck für diesen %s erfolgen?"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_PREVIEW_CLOSE   "Beendet die Seitenansicht.\nSeitenansicht beenden"
+    ID_TOOLTIPS_CHILD_WND   "Child Window on View\nChild Window on View T.T."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_SMALLICON       "Zeigt Elemente mit kleinen Symbolen an.\nKleine Symbole"
+    ID_VIEW_LARGEICON       "Zeigt Elemente mit großen Symbolen an.\nGroße Symbole"
+    ID_VIEW_LIST            "Zeigt Elemente als Liste an.\nListe"
+    ID_VIEW_DETAILS         "Zeigt Informationen über jedes Element im Fenster an.\nDetails"
+    ID_VIEW_LINEUP          "Richtet Symbole am Raster aus."
+    ID_VIEW_BYNAME          "Sortiert die Symbole alphabetisch."
+END
+
+STRINGTABLE 
+BEGIN
+    WAXID_NEW               " "
+END
+
+STRINGTABLE 
+BEGIN
+    WAXID_COPY              " "
+    WAXID_PASTE             " "
+    WAXID_COPY_TOFILE       " "
+    WAXID_PASTE_FROMFILE    " "
+    WAXID_DELETE            " "
+    WAXID_CUT               " "
+    WAXID_UMBENENNEN        " "
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SAMMELAUFTRAG       "Sammelauftrag"
+    IDS_EINZELAUFTRAG       "EINZELAUFTRAG"
+    IDS_FRAGE4              "Soll wirklich nur der ausgewählte Auftrag gedruckt werden?"
+    IDS_POSITIONEN          "Positionen"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_DATABASE_SELECT      "Datenbank jetzt auswählen"
+    ID_DATABASE_INFO        "Datenbankinfo anzeigen"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_MONITOR              " "
+    ID_VOLOVIEW             " "
+    ID_OPEN_NEWWA           " "
+    ID_OPEN_MYWA            " "
+END
+
+STRINGTABLE 
+BEGIN
+    ID_MULTI_PRINT          "Mehrfachdruck"
+    ID_SHOWEXPLORE          "Zeigt die Baumansicht des Projektes an bzw. blendet sie aus\nBaumansicht ein/ausblenden"
+    ID_BACKWARDS            "Geht zur vorigen Druckausgabe\nVorige Druckausgabe"
+    ID_FORWARD              "Geht zur nächsten Druckausgabe\nnächste Druckausgabe"
+    ID_PRINT_SPEZIAL        "Zeigt alle Seiten aller Dokumente (Batchdruck)\nAlle Seiten anzeigen"
+    ID_FIRST                "Geht zur ersten Seite des ersten Dokuments\nZum Anfang"
+    ID_LAST                 "Geht zur letzten Seite des letzten Dokuments\nZum Ende"
+    ID_PRINTPREVIEW         "Startet die Druckvorschau des Internet Explorer\nDruckvorschau im Internet Explorer"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_OPEN_DATABASE_PSPELEMENT 
+                            "Sucht alle Aufträge aus der Datenbank, die einem PSP Element angehören\nAufträge nach PSP Element laden"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_PROJEKT_PREISE       "Gibt die Preise des Projekts aus.\nPreisausgabe"
+    IDS_KOPIE_VON           "Kopie von "
+    ID_FARBEINSTELLUNG      "Hintergrundfarbe des Projektbaumes setzen\nSetzt die Hintergrundfarbe des Projektbaumes"
+    ID_AUFTRAGSTEST         "Prüft auf unbearbeitete Werkaufträge\nNeue Werkaufträge"
+    ID_VERSIONSGESCHICHTE   "Öffnet Datei mit Versionsgeschichte des Programms"
+    ID_DOKU                 "Öffnet Datei mit der Anwenderdokumentation des Programms"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_GEWINDEROHRFERTIGUNG "Gewinderohrfertigung"
+    IDS_DEF_USERDB_WAX_FUER_DRITTE "c:\\programme\\waxplus\\waxuser.mdb"
+    IDS_AUSWAERTSFERTIGUNG  "Auswärtsfertigung"
+    IDS_GRUNDIERER          "Grundierer"
+    IDS_BUENDLER            "Bündler %d"
+    IDS_DEF_USERDB_WAX      "m:\\waxplus\\waxuser.mdb"
+    IDS_ROBBI               "Robbi"
+    IDS_QW                  " - QW"
+    IDS_HINWEIS5            "Ein neuer Druck kann noch nicht gestartet werden."
+    IDS_SEITE_VON           "Seite %i von %i"
+    IDS_ERROR8              "Fehler bei der Statusaktualisierung."
+    IDS_ERROR_VERSIONHISTORYNOTFOUND 
+                            "Doku zur Versionsgeschichte (%s) konnte nicht gefunden werden!"
+    IDS_VERSIONSGESCHICHTE  "versionsgeschichte.rtf"
+    IDR_WAXTYPE1            "\nwxx\nwxx\n\n.wxx\nwxx.Document\nWax Projekt"
+    IDS_AKTUALISIEREN       "A&ktualisieren..."
+    IDS_ABBRECHEN           "&Abbrechen"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_NL                  "Niederlassung"
+    IDS_CLASSID             "Auftragsart"
+    IDS_BAUABSCHNITT        "Bauabschnitt"
+    IDS_SDNR                "SD Auftragsnr"
+    IDS_SDMATNR             "SD Materialnr"
+    IDS_DOCNAME             "waxdeutsch.doc"
+    IDS_DOCNAME3            "wax3deutsch.doc"
+    IDS_LOADING             "Datei laden"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ROHRNIPPEL          "Rohrnippel"
+    IDS_ENTLEERUNG          "Entleerung %s DN%i / %imm"
+    IDS_VOLOVIEW            "Voloview"
+    IDS_AUTOVIEWER          "Autodesk DWF Viewer"
+    IDS_HINWEIS8            "Das Programm wird zur Anzeige von Grafiken benötigt!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR6              "%s ist nicht installiert."
+END
+
+#endif    // Deutsch (Deutschland) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Englisch (USA) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DATABASE_SELECT DIALOGEX 0, 0, 317, 197
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Path to the user database"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Database 1 (Local)",IDC_STATIC_DB1,7,7,303,76
+    LTEXT           "Name:    ",IDC_STATIC_BEZ1,38,29,58,8
+    EDITTEXT        IDC_NAME,102,26,141,14,ES_AUTOHSCROLL
+    LTEXT           "Please enter path to user database  (waxuser.mdb):",IDC_STATIC_DBINFO1,38,44,226,8
+    EDITTEXT        IDC_EDIT_DBPATH,38,54,205,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_DBSEL,250,57,29,10
+    GROUPBOX        "Database 2 (e.g. Server)",IDC_STATIC_DB2,7,93,303,76
+    LTEXT           "Name:    ",IDC_STATIC_BEZ2,38,115,58,8
+    EDITTEXT        IDC_NAME2,102,112,141,14,ES_AUTOHSCROLL
+    LTEXT           "Enter a second database to enable Database switching or leave empty:",IDC_STATIC_DBINFO2,37,130,226,8
+    EDITTEXT        IDC_EDIT_DBPATH2,38,139,205,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_DBSEL2,250,143,29,10
+    CONTROL         "&Prompt for database selection at program startup",IDC_PROMPT,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,7,180,203,10
+    DEFPUSHBUTTON   "OK",IDOK,260,176,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DATABASE_SELECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 310
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 190
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Englisch (USA) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE 7, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\wax.rc2"  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen
+#include "l.deu\afxres.rc"          // Standardkomponenten
+#include "l.deu\afxprint.rc"        // Ressourcen für Drucken/Seitenansicht
+#include "l.deu\afxdb.rc"           // Datenbankressourcen
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="SVG Grafic.cpp" />
+    <ClCompile Include="Controller\GraficController.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Mechanicals Geometrics\GraficRohrKomponente.cpp">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClCompile>
+    <ClCompile Include="Mechanicals Geometrics\GraficRohrKomponentenContainer.cpp">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClCompile>
+    <ClCompile Include="Mechanicals Geometrics\StrangrohrGrafic.cpp">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClCompile>
+    <ClCompile Include="SVG File Operations\GraficFileController.cpp">
+      <Filter>SVG File Operations</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GraficManager.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Controller\GraficController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Mechanicals Geometrics\GraficRohrKomponente.h">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClInclude>
+    <ClInclude Include="Mechanicals Geometrics\GraficRohrKomponentenContainer.h">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClInclude>
+    <ClInclude Include="Mechanicals Geometrics\StrangrohrGrafic.h">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClInclude>
+    <ClInclude Include="SVG File Operations\GraficFileController.h">
+      <Filter>SVG File Operations</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="SVG Grafic.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Basic Geometrics">
+      <UniqueIdentifier>{3290678d-b9d4-4d7d-91c7-020e2022420a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controller">
+      <UniqueIdentifier>{8fc3a6c0-2ca3-4f95-8d7f-6a132a0eb94e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mechanicals Geometrics">
+      <UniqueIdentifier>{1fe2add1-e14e-4b8c-8912-9732873d2cbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SVG File Operations">
+      <UniqueIdentifier>{87ecf8eb-da41-404b-8d11-66cf0a75d5f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_Tubes Logic Grafic Adapter">
+      <UniqueIdentifier>{d8b7e29e-aece-4cd8-b6d6-54b9caa2e9ce}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

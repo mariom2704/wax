@@ -1,0 +1,102 @@
+#include "stdafx.h"
+#include "UtiltyHelper.h"
+#include "RohrKomponente.h"
+
+#include "..\Grafic\Mechanicals Geometrics\GraficRohrKomponentenContainer.h"
+#include "..\Grafic\Mechanicals Geometrics\GraficRohrKomponente.h"
+
+
+
+ CRohrKomponente::CRohrKomponente(void)
+{
+	m_prevStrangRohr  = NULL;
+	m_pNextStrangRohr = NULL;
+	m_pGraficRohrKomponente = NULL;
+	m_iDN			= 35;
+	iLaenge		= 250;
+	NutIdEnde	= 21;
+	NutIdAnfang = 22;
+	winkel		= 0;
+	m_FirstKomponent = false;
+}
+
+
+
+ CGraficRohrKomponente* CRohrKomponenteTeilRohr::GetGraficRohrKomponente(/*CGraficRohrContainer* pGraficRohrContainer*/)
+{
+	if(m_pGraficRohrKomponente == 0)
+	{
+		m_pGraficRohrKomponente = new CGraficRohrKomponenteTeilRohr(0/* pGraficRohrContainer*/, this);
+		return m_pGraficRohrKomponente;
+	}
+	else
+	{
+		return m_pGraficRohrKomponente;
+	}
+ };
+
+
+
+CGraficRohrKomponente* CRohrKomponente::GetGraficRohrKomponente( /*CGraficRohrContainer* pGraficRohrContainer*/)
+{
+	if(m_pGraficRohrKomponente == 0)
+	{
+		m_pGraficRohrKomponente = new CGraficRohrKomponenteBogen(0/*pGraficRohrContainer*/, this);
+		return m_pGraficRohrKomponente;
+	}
+	else
+	{
+		return m_pGraficRohrKomponente;
+	}
+ };
+
+
+
+CRohrKomponente::~CRohrKomponente(void)
+{
+	if(m_pGraficRohrKomponente != 0)
+	{
+		delete m_pGraficRohrKomponente;
+	}
+}
+
+
+
+
+
+
+
+CGraficRohrKomponente* CRohrKomponenteBogen::GetGraficRohrKomponente(/*CGraficRohrContainer* pGraficRohrContainer*/)
+{
+	if(m_pGraficRohrKomponente == 0)
+	{
+		CGraficRohrKomponenteBogen* pGraficRohrKomponente = new CGraficRohrKomponenteBogen(0/*pGraficRohrContainer*/, this);
+		m_pGraficRohrKomponente = (CGraficRohrKomponente*) pGraficRohrKomponente;
+		return m_pGraficRohrKomponente;
+	}
+	else
+	{
+		return m_pGraficRohrKomponente;
+	}
+ };
+
+CGraficRohrKomponente* CRohrKomponenteNut::GetGraficRohrKomponente(/*CGraficRohrContainer* pGraficRohrContainer*/)
+{
+	if(m_pGraficRohrKomponente == 0)
+	{
+		CGraficRohrKomponenteNut* pGraficRohrKomponente = new CGraficRohrKomponenteNut(0 /*pGraficRohrContainer*/, this);
+		m_pGraficRohrKomponente = (CGraficRohrKomponente*) pGraficRohrKomponente;
+		return m_pGraficRohrKomponente;
+	}
+	else
+	{
+		return m_pGraficRohrKomponente;
+	}
+ };
+
+
+void CRohrKomponente::AddChildren(CRohrKomponente* pRohr)
+{
+	RohrKomponenteChildVector.push_back(pRohr);
+}
+

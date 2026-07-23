@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/updateassistqt" >
+        <file>Resources/ico00006.ico</file>
+        <file>Resources/updateassist.png</file>
+    </qresource>
+</RCC>

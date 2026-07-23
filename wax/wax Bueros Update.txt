@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Position Datei="test.dwg" Dichtmittel="5" FertHinweis="" IsHandelslaenge="false" KappenFarbe="0" MitUeberlaenge="false" Trockenanlage="false" Waid="532166">
+
+  <Bauteil>
+    <BauteilPos Artikelgruppe="51" Artikelnummer="843034" Bezeichnung="Rohrstutzen" Durchmesser="0" ElementId="1" Id="8796083741680" IsAnlage="false" MaxExt_x="13229.776000" MaxExt_y="693.174500" MaxExt_z="57.150000" MinExt_x="10229.776000" MinExt_y="578.874500" MinExt_z="-57.150000" Sondermuffenlaenge="0" WaxWinkel="0">
+      <TypRohr DnId="100" Id="8796083741680" P1_X="10229.776000" P1_Y="636.024500" P1_Z="0.000000" P2_X="13229.776000" P2_Y="636.024500" P2_Z="0.000000"/>
+      <Anschluesse>
+        <Anschluss AnschlussId="0" DnId="100" P_X="10229.776000" P_Y="636.024500" P_Z="0.000000" R_X="-1.000000" R_Y="0.000000" R_Z="0.000000" Rohrverlaengerung="0" VbArt="1"/>
+        <Anschluss AnschlussId="0" DnId="100" P_X="13229.776000" P_Y="636.024500" P_Z="0.000000" R_X="1.000000" R_Y="0.000000" R_Z="0.000000" Rohrverlaengerung="0" VbArt="1"/>
+      </Anschluesse>
+      <Anbauteile>
+        <Anschluss AnschlussId="8796083741776" DnId="50" P_X="10738.760500" P_Y="636.024500" P_Z="0.000000" R_X="0.000000" R_Y="-1.000000" R_Z="0.000000" VbArt="0"/>
+      </Anbauteile>
+    </BauteilPos>
+
+
+
+
+    <BauteilPos Artikelgruppe="52" Artikelnummer="104165" Bezeichnung="Rohrstutzen" Durchmesser="0" ElementId="1" Id="8796083741776" IsAnlage="false" MaxExt_x="10768.910600" MaxExt_y="1235.079100" MaxExt_z="30.150100" MinExt_x="10708.610300" MinExt_y="684.574300" MinExt_z="-30.150100" Sondermuffenlaenge="0" WaxWinkel="0">
+      <TypRohr DnId="50" Id="8796083741776" P1_X="10738.760500" P1_Y="636.024500" P1_Z="0.000000" P2_X="10738.760500" P2_Y="1235.079100" P2_Z="0.000000"/>
+      <Anschluesse>
+        <Anschluss AnschlussId="8796083741680" DnId="50" P_X="10738.760500" P_Y="636.024500" P_Z="0.000000" R_X="0.000000" R_Y="-1.000000" R_Z="0.000000" Rohrverlaengerung="0" VbArt="0"/>
+        <Anschluss AnschlussId="0" DnId="50" P_X="10738.760500" P_Y="1235.079100" P_Z="0.000000" R_X="0.000000" R_Y="1.000000" R_Z="0.000000" Rohrverlaengerung="0" VbArt="4"/>
+      </Anschluesse>
+    </BauteilPos>
+  </Bauteil>
+
+</Position>

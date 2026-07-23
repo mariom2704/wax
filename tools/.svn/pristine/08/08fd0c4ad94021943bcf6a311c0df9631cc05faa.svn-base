@@ -1,0 +1,42 @@
+#pragma once
+
+
+class WAXGLDLL CCGraficRohrOneAssembeldKomponenteVector : public CGraficComponentsForOneAssembeldTube
+{
+
+private:
+ // Logische Zusammenfassung von Komponeten zu einem Bemassungs objekt(im allgemeinen Bestweht dieses
+	 // aus einem Teilrohr mit Nut oder Bogen usw.
+	 CGraficRohrBemassungsKomponentenVectorVector m_GraficBemassungsKomponentenVectorVector;
+	// Alle Komponenten zum erstellen eines Rohres
+	//CGraficRohrKomponenteVectorVector m_GraficAssembeldTubeVectorVector;
+
+	CCRohrOneAssembeldKomponenteVector* m_pRohrOneAssembeldKomponenteVector;
+	
+
+public:
+	CCGraficRohrOneAssembeldKomponenteVector(void);
+	~CCGraficRohrOneAssembeldKomponenteVector(void);
+
+	bool HasChildTubes();
+
+
+	void SetRohrOneAssembeldKomponenteVector(CCRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVector)
+	{
+		m_pRohrOneAssembeldKomponenteVector = pRohrOneAssembeldKomponenteVector;
+	}
+
+	CCRohrOneAssembeldKomponenteVector* GetRohrOneAssembeldKomponenteVector()
+	{
+		return m_pRohrOneAssembeldKomponenteVector;
+	}
+	
+	CCGraficRohrOneAssembeldKomponenteVector* GetNewAddedChildAssembeldTube();
+	void AddComponenteForTube(CGraficRohrKomponente* pRohrKomponente);
+	bool HasAssembeldTubes();
+	//CGraficRohrKomponenteVectorVector& GetChildAssembeldTubes();
+	CGraficRohrBemassungsKomponentenVectorVector& GetGraficBemassungsKomponentenVectorVector();
+	static void ClearMeMySelf(CCGraficRohrOneAssembeldKomponenteVector*);
+	
+};
+

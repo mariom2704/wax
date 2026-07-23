@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Quellcodedateien">
+      <UniqueIdentifier>{292f2f07-0bbe-4381-a7dd-8165d1fdaf5a}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Quellcodedateien\GridCtrl">
+      <UniqueIdentifier>{170475fd-717e-4392-bdc7-25b323d86cfd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Quellcodedateien\StretchBitmapControl">
+      <UniqueIdentifier>{fa198387-0fce-41b9-8ca5-e8e6139d6a4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header-Dateien">
+      <UniqueIdentifier>{edfab53a-9f2a-4aa4-ba12-87c85f331979}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{3f77cdb2-3de7-4ba7-a60d-8efb0241de66}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Spanx Schnittstelle">
+      <UniqueIdentifier>{869533b4-f7af-4fe7-88b7-9c365de44de8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Spanx Schnittstelle\Quellcodedateien">
+      <UniqueIdentifier>{e34e9a60-3ac8-4b1a-9f33-2ca76e13d9c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Spanx Schnittstelle\Header-Dateien">
+      <UniqueIdentifier>{e7a7659d-f12f-4ce7-9f06-7793f56ce27c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Apax.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ApaxEditArbeitsfolge.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ApaxEingabeForm.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ApaxPosition.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="AVElementEingabe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="CadWerkauftragData.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="CO II VerteilerData.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="CO II VerteilerEingabeFormBemassung.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="EditFormstueckeUndFittinge.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ElementeEingabe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="EntnahmeleitungData.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="EntnahmeleitungEingabe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="FormstueckeUndFittingeDaten.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="FormstueckeUndFittingeEingabe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GewinderohrData.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GewinderohrEingabe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GRohranlageEingabe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="HandelslaengeData.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="HandelslaengeEingabe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MuffenEingabe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="PumpenprobierleitungData.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="PumpenprobierleitungEingabe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="PumpenverteilerData.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="PumpenverteilerEingabe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="RadioButtonData.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="StationsverteilerBemassung.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="StationsverteilerData.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="StrangrohrData.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="StrangrohrEingabe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="VerteilerDaten.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="VerteilerEingabe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="waxui.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl\GridCell.cpp">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl\GridCellBase.cpp">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl\GridCellCheck.cpp">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl\GridCellCombo.cpp">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl\GridCellDateTime.cpp">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl\GridCellNumeric.cpp">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl\GridCtrl.cpp">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl\GridDropTarget.cpp">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl\InPlaceEdit.cpp">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl\TitleTip.cpp">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl\WaxGridCellCombo.cpp">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl\WaxGridCtrl.cpp">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClCompile>
+    <ClCompile Include="StretchBitmapControl\StretchBitmapControl.cpp">
+      <Filter>Quellcodedateien\StretchBitmapControl</Filter>
+    </ClCompile>
+    <ClCompile Include="SpanxRohrDialog.cpp">
+      <Filter>Spanx Schnittstelle\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SpanxStrangrohrDialog.cpp">
+      <Filter>Spanx Schnittstelle\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SpanxVerteilerDialog.cpp">
+      <Filter>Spanx Schnittstelle\Quellcodedateien</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="waxui.def">
+      <Filter>Quellcodedateien</Filter>
+    </None>
+    <None Include="waxui3.def">
+      <Filter>Quellcodedateien</Filter>
+    </None>
+    <None Include="res\apax.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\autocad.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\avelemen.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\bitmap1.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\COIIVert_Abg.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\cursor1.cur">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\entnahme.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\entnahmeleitung_a.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\entnahmeleitung_a_eng.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\entnahmeleitung_b.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\entnahmeleitung_b_eng.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\Gewirohr.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\hlaenge.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\ico00001.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\icon1.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\icon1x.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\pumpenprobierleitung.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\pumpenprobierleitung.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\pumpenprobierleitung_eng.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\pumpenverteiler.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\pumpenverteiler_nred.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\pumpenverteiler_red.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\StatVert.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\StatVert2.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\StatVert_Abg.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\verteile.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\waxui.rc2">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="waxui.rc">
+      <Filter>Quellcodedateien</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GridCtrl\CellRange.h">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl\GridCell.h">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl\GridCellBase.h">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl\GridCellCheck.h">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl\GridCellCombo.h">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl\GridCellDateTime.h">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl\GridCellNumeric.h">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl\GridCtrl.h">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl\GridDropTarget.h">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl\InPlaceEdit.h">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl\MemDC.h">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl\TitleTip.h">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl\WaxGridCellCombo.h">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl\WaxGridCtrl.h">
+      <Filter>Quellcodedateien\GridCtrl</Filter>
+    </ClInclude>
+    <ClInclude Include="StretchBitmapControl\StretchBitmapControl.h">
+      <Filter>Quellcodedateien\StretchBitmapControl</Filter>
+    </ClInclude>
+    <ClInclude Include="Apax.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ApaxEditArbeitsfolge.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ApaxEingabeForm.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ApaxPosition.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="AVElementEingabe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="CadWerkauftragData.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="CO II VerteilerData.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="CO II VerteilerEingabe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="CO II VerteilerEingabeFormBemassung.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="EditFormstueckeUndFittinge.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ElementeEingabe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="EntnahmeleitungData.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="EntnahmeleitungEingabe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="FormstueckeUndFittingeDaten.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="FormstueckeUndFittingeEingabe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="gewinderohrData.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="gewinderohrEingabe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GRohranlageEingabe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="HandelslaengeData.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="HandelslaengeEingabe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MuffenEingabe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PumpenprobierleitungData.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PumpenprobierleitungEingabe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PumpenverteilerData.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PumpenverteilerEingabe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="RadioButtonData.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="StationsverteilerBemassung.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="StationsverteilerData.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="StrangrohrData.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="StrangrohrEingabe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="VerteilerDaten.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="VerteilerEingabe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="waxui_dll.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SpanxRohrDialog.h">
+      <Filter>Spanx Schnittstelle\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SpanxStrangrohrDialog.h">
+      <Filter>Spanx Schnittstelle\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SpanxVerteilerDialog.h">
+      <Filter>Spanx Schnittstelle\Header-Dateien</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

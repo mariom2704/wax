@@ -1,0 +1,45 @@
+#include "StdAfx.h"
+#include "UtiltyHelper.h"
+
+
+#include "..\_Tubes Logic Grafic Adapter\RohrKomponente.h"
+#include "..\_Tubes Logic Grafic Adapter\RohrBemassungsAnbauChildKomponentenVectorVector.h"
+#include "..\_Tubes Logic Grafic Adapter\RohrBemassungsRohrKomponentenVector.h"
+#include "..\_Tubes Logic Grafic Adapter\RohrBemassungsRohrKomponentenVectorVector.h"
+#include "..\_Tubes Logic Grafic Adapter\RohrOneAssembeldKomponenteVector.h"
+
+
+#include "GraficTubeController.h"
+#include "GraficRohrBemassungsAnbauChildKomponentenVectorVector.h"
+#include "GraficRohrBemassungsRohrKomponentenVector.h"
+#include "GraficRohrBemassungsRohrKomponentenVectorVector.h"
+#include "GraficRohrOneAssembeldKomponenteVector.h"
+
+
+
+CGraficRohrBemassungsRohrKomponentenVector::CGraficRohrBemassungsRohrKomponentenVector(void)
+{}
+
+
+
+CGraficRohrBemassungsRohrKomponentenVector::~CGraficRohrBemassungsRohrKomponentenVector(void)
+{}
+
+
+
+bool CGraficRohrBemassungsRohrKomponentenVector::HasAssembeldTubes()
+{
+	bool bHasChilds = false;
+	if(m_GraficRohrBemassungsAnbauChildKomponentenVectorVector.size() > 0)
+	{
+		bHasChilds = true;
+	}
+	return bHasChilds;
+}
+
+
+
+CGraficRohrBemassungsAnbauChildKomponentenVectorVector& CGraficRohrBemassungsRohrKomponentenVector::GetGraficRohrBemassungsAnbauChildKomponentenVectorVector()
+{
+	return m_GraficRohrBemassungsAnbauChildKomponentenVectorVector;
+}

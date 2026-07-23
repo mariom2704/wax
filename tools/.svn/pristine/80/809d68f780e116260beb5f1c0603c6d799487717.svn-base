@@ -1,0 +1,6 @@
+; lizenz.def : Deklariert die Modulparameter für die DLL.
+
+LIBRARY      "lizenz"
+
+EXPORTS
+    ; Explizite Exporte können hier eingefügt werden

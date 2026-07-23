@@ -1,0 +1,101 @@
+#include "stdafx.h"
+#include "Konfiguration.h"
+
+
+using namespace MxSoftwareCheck;
+
+LCID Konfiguration::lcid;
+
+Konfiguration::Konfiguration()
+{
+}
+
+Konfiguration::~Konfiguration()
+{
+}
+
+
+void Konfiguration::init_localfiles(string localpathIn)
+{
+	WIN32_FIND_DATA ffd;
+   
+	HANDLE hFind = INVALID_HANDLE_VALUE;
+	DWORD dwError=0;
+
+	string localpath = localpathIn + "\\*.*";
+	
+	hFind = FindFirstFile(localpath.c_str(), &ffd);
+
+	if (INVALID_HANDLE_VALUE == hFind) 
+	{
+      return;
+	} 
+
+	do
+	{  
+		string strFileName =  ffd.cFileName;
+		std::size_t found = strFileName.find(".txt");
+		if (found!=std::string::npos)
+		{
+			strFileNames.push_back(localpathIn + "\\" + strFileName);
+		}
+	}
+	while (FindNextFile(hFind, &ffd) != 0);
+ 
+	dwError = GetLastError();
+	if (dwError != ERROR_NO_MORE_FILES) 
+	{
+	   ;//DisplayErrorBox(TEXT("FindFirstFile"));
+	}
+
+   FindClose(hFind);
+}
+
+
+void Konfiguration::init_logfile_server(string serverpath)
+{
+	logfile = serverpath + "\\MXSoftwareCheck_" + get_computername() + ".log";
+}
+
+vector <string> Konfiguration::get_configfile() const
+{
+	return strFileNames;
+}
+
+string Konfiguration::get_logfile() const
+{
+	return logfile;
+}
+
+
+string Konfiguration::get_computername() const
+{
+	DWORD len(255);
+	char name[255];
+	::GetComputerName(name, &len);
+	return name;
+}
+
+string Konfiguration::get_username() const
+{
+	DWORD len(255);
+	char user[255];
+	memset(user, 0, 255);
+	::GetUserName(user, &len);
+	return user;
+}
+
+
+unsigned long Konfiguration::get_maxage() const
+{
+	 return 3*30*24*60*60;
+}
+
+
+bool Konfiguration::use_english()
+{
+	WORD lid = MAKELANGID(LANG_GERMAN, SUBLANG_DEFAULT);
+	LCID lc_german = MAKELCID(lid, SORT_DEFAULT);
+
+	return lcid != lid;
+}

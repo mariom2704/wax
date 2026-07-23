@@ -1,0 +1,25 @@
+#pragma once
+
+
+typedef std::vector<CRohrKomponente*> CBemassungsRohrKomponentenVector;
+typedef std::vector<CBemassungsRohrKomponentenVector*> CBemassungsRohrKomponentenMatrix;
+
+
+class WAXGLDLL CCRohrOneAssembeldKomponenteVector : public CRohrOneAssembeldKomponenteVector
+{
+ private:
+	 int m_iFromWhere, m_iToCurrent;
+	 CBemassungsRohrKomponentenMatrix m_BemassungsVectorVector;
+	
+ public:
+	CCRohrOneAssembeldKomponenteVector(void);
+	~CCRohrOneAssembeldKomponenteVector(void);
+
+	CRohrKomponenteVector m_AssembeldTubeVector;
+
+	CCRohrOneAssembeldKomponenteVector* GetNewAddedChildAssembeldTube();
+	void AddComponenteForTube(CRohrKomponente* pRohrKomponente);
+	bool HasAssembeldTubes();
+	CRohrKomponenteVector& GetChildAssembeldTubes();
+	void CumulateBemassungscomponents();
+};

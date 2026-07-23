@@ -1,0 +1,259 @@
+#include "stdafx.h"
+
+#include "Tubes it self\\StrangRohr.h"
+
+#include "Grafic\SVG File Operations\GraficFileController.h"
+#include "GraficRohrKomponentenContainer.h"
+#include "GraficRohrKomponente.h"
+
+#include "Grafic\Controller\GraficController.h"
+
+#include <math.h>
+#include "UtiltyHelper.h"
+
+CGraficRohrContainer::CGraficRohrContainer( CGraficController* pCGraficController, CGraficRohrKomponenteVector& StrangRohrKomponenten ) : m_GraficStrangRohrKomponenten(StrangRohrKomponenten)
+{
+	m_pCGraficController = pCGraficController;
+	m_CumulatedTubePoints.X = 0;
+	m_CumulatedTubePoints.Y = 0;
+}
+
+
+
+
+
+void CGraficRohrContainer::CreateGraficModell()
+{
+	CPointDouble TubeStartPoint;
+	TubeStartPoint.X = 50;
+	TubeStartPoint.Y = 800;
+	SetStartPointTubeCenterLine(TubeStartPoint);
+	
+	//std::vector<int>::size_type sz = m_GraficStrangRohrKomponenten.size();
+	
+	(*m_GraficStrangRohrKomponenten[0]).SetStartPointCenterLine(GetStartPointTubeCenterLine());
+	(*m_GraficStrangRohrKomponenten[0]).GetLogicalRohrKomponente()->SetWinkel((*m_GraficStrangRohrKomponenten[0]).GetLogicalRohrKomponente()->GetWinkel()+180);
+	(*m_GraficStrangRohrKomponenten[0]).SetGraficRohrKomponentenWinkel(m_GraficStrangRohrKomponenten[1]);
+	//(*m_GraficStrangRohrKomponenten[i-1]).SetGraficRohrKomponentenWinkel(m_GraficStrangRohrKomponenten[i]);
+	double dCumulatedDummyWinkel = 0;
+	dCumulatedDummyWinkel += (*m_GraficStrangRohrKomponenten[0]).SetEndPointCenterLine(dCumulatedDummyWinkel);
+	(*m_GraficStrangRohrKomponenten[0]).SetFirstBorderpoint(dCumulatedDummyWinkel);
+	(*m_GraficStrangRohrKomponenten[0]).SetSecondBorderpoint(dCumulatedDummyWinkel);
+	(*m_GraficStrangRohrKomponenten[0]).SetThirdBorderpoint(dCumulatedDummyWinkel);
+	(*m_GraficStrangRohrKomponenten[0]).SetFourthBorderpoint(dCumulatedDummyWinkel);
+	(*m_GraficStrangRohrKomponenten[0]).SetPitchForCenterLinie();
+	(*m_GraficStrangRohrKomponenten[1]).SetStartPointCenterLine((*m_GraficStrangRohrKomponenten[0]).getStartPointCenterLine());
+	(*m_GraficStrangRohrKomponenten[0]).SetKomponentPointfromConectonPoint( m_pCGraficController->m_GraficFileController.strSVGContent);
+		
+	//for(UINT i = 1; i < sz; i++ )
+	{
+		
+		DrawPartTubeGraficWithArc((*m_GraficStrangRohrKomponenten[0]).GetLogicalRohrKomponente()->GetWinkel()-180);
+		//SetStartPointCenterLine(m_PointEnde);
+	}
+	
+}
+
+
+
+
+
+
+void CGraficRohrContainer::DrawPartTubeGraficWithArc(double CumulatedArcCurrent )
+{
+
+	
+	//(*m_GraficStrangRohrKomponenten[0]).SetStartPointCenterLine(GetStartPointTubeCenterLine());
+	
+	
+	//double CumulatedArcCurrentII = 0, CumulatedArcCurrentIII = 0;
+	std::vector<int>::size_type sz = m_GraficStrangRohrKomponenten.size();
+	
+	
+	for(int i = 2; i < (int)sz+2; i=i+3)
+	{
+		
+		
+		
+		//Erste Kompnente
+		if(i < (int) sz)
+		{
+			(*m_GraficStrangRohrKomponenten[i-1]).SetGraficRohrKomponentenWinkel(m_GraficStrangRohrKomponenten[i]);
+		}
+		else
+		{ 
+			break;
+		}
+		CumulatedArcCurrent += (*m_GraficStrangRohrKomponenten[i-1]).SetEndPointCenterLine(CumulatedArcCurrent);
+		(*m_GraficStrangRohrKomponenten[i-1]).SetFirstBorderpoint(CumulatedArcCurrent);
+		(*m_GraficStrangRohrKomponenten[i-1]).SetSecondBorderpoint(CumulatedArcCurrent);
+		(*m_GraficStrangRohrKomponenten[i-1]).SetThirdBorderpoint(CumulatedArcCurrent);
+		(*m_GraficStrangRohrKomponenten[i-1]).SetFourthBorderpoint(CumulatedArcCurrent);
+		(*m_GraficStrangRohrKomponenten[i-1]).SetPitchForCenterLinie();
+		if(i < (int) sz)
+		{
+			;
+		}
+		else
+		{ 
+			break;
+		}
+		
+		if(i > 2)
+		{
+			//Connection Point 1-2 Kompnente erste Aussenwand
+			double dFaktorZeroI = CUtiltyHelper::GetFaktorForConnectionPoint( (*m_GraficStrangRohrKomponenten[i-2]).GetFirstBorderpoint(), (*m_GraficStrangRohrKomponenten[i-2]).GetPitchCenterLinie(),
+				CPointDouble((*m_GraficStrangRohrKomponenten[i-1]).GetThirdBorderpoint().X, (*m_GraficStrangRohrKomponenten[i-1]).GetThirdBorderpoint().Y), (*m_GraficStrangRohrKomponenten[i-1]).GetPitchCenterLinie());
+			CPointDouble ullPunktConnectionPointAussenWand;
+			ullPunktConnectionPointAussenWand.X = (*m_GraficStrangRohrKomponenten[i-2]).GetFirstBorderpoint().X + dFaktorZeroI * (*m_GraficStrangRohrKomponenten[i-2]).GetPitchCenterLinie().X;
+			ullPunktConnectionPointAussenWand.Y = (*m_GraficStrangRohrKomponenten[i-2]).GetFirstBorderpoint().Y + dFaktorZeroI * (*m_GraficStrangRohrKomponenten[i-2]).GetPitchCenterLinie().Y;
+			(*m_GraficStrangRohrKomponenten[i-2]).SetThirdCornerPoint(ullPunktConnectionPointAussenWand);
+			(*m_GraficStrangRohrKomponenten[i-1]).SetFirstCornerPoint(ullPunktConnectionPointAussenWand);
+
+			//Connection Point 1-2 Kompnente Zweite Aussenwand
+			(*m_GraficStrangRohrKomponenten[i-1]).SetSecondBorderpoint(CumulatedArcCurrent);	
+			(*m_GraficStrangRohrKomponenten[i-1]).SetFourthBorderpoint(CumulatedArcCurrent);
+			dFaktorZeroI = CUtiltyHelper::GetFaktorForConnectionPoint( (*m_GraficStrangRohrKomponenten[i-2]).GetSecondBorderpoint(), (*m_GraficStrangRohrKomponenten[i-2]).GetPitchCenterLinie(),
+				CPointDouble((*m_GraficStrangRohrKomponenten[i-1]).GetForthBorderpoint().X, (*m_GraficStrangRohrKomponenten[i-1]).GetForthBorderpoint().Y), (*m_GraficStrangRohrKomponenten[i-1]).GetPitchCenterLinie());
+			CPointDouble ullPunktConnectionPointAussenWandII;
+			ullPunktConnectionPointAussenWandII.X = (*m_GraficStrangRohrKomponenten[i-2]).GetSecondBorderpoint().X + dFaktorZeroI * (*m_GraficStrangRohrKomponenten[i-2]).GetPitchCenterLinie().X;
+			ullPunktConnectionPointAussenWandII.Y = (*m_GraficStrangRohrKomponenten[i-2]).GetSecondBorderpoint().Y + dFaktorZeroI * (*m_GraficStrangRohrKomponenten[i-2]).GetPitchCenterLinie().Y;
+			(*m_GraficStrangRohrKomponenten[i-2]).SetForthCornerPoint(ullPunktConnectionPointAussenWandII);
+			(*m_GraficStrangRohrKomponenten[i-1]).SetSecondCornerPoint(ullPunktConnectionPointAussenWandII);
+
+		}
+
+		
+		//Zweite Kompnente
+		//CumulatedArcCurrentII = CumulatedArcCurrentI;
+		(*m_GraficStrangRohrKomponenten[i]).SetStartPointCenterLine((*m_GraficStrangRohrKomponenten[i-1]).GetEndPointCenterLine());
+		if(i < (int) sz-1)
+		{
+			(*m_GraficStrangRohrKomponenten[i]).SetGraficRohrKomponentenWinkel(m_GraficStrangRohrKomponenten[i+1]);
+		}
+		else
+		{ 
+			break;
+		}
+		CumulatedArcCurrent += (*m_GraficStrangRohrKomponenten[i]).SetEndPointCenterLine(CumulatedArcCurrent);
+		(*m_GraficStrangRohrKomponenten[i]).SetFirstBorderpoint(CumulatedArcCurrent);	
+		(*m_GraficStrangRohrKomponenten[i]).SetThirdBorderpoint(CumulatedArcCurrent);
+		(*m_GraficStrangRohrKomponenten[i]).SetPitchForCenterLinie();
+		if(i < (int) sz-1)
+		{
+			;
+		}
+		else
+		{ 
+			break;
+		}
+
+		//Connection Point 1-2 Kompnente erste Aussenwand
+		double dFaktor = CUtiltyHelper::GetFaktorForConnectionPoint( (*m_GraficStrangRohrKomponenten[i-1]).GetFirstBorderpoint(), (*m_GraficStrangRohrKomponenten[i-1]).GetPitchCenterLinie(),
+			CPointDouble((*m_GraficStrangRohrKomponenten[i]).GetThirdBorderpoint().X, (*m_GraficStrangRohrKomponenten[i]).GetThirdBorderpoint().Y), (*m_GraficStrangRohrKomponenten[i]).GetPitchCenterLinie());
+		CPointDouble NullPunktConnectionPointAussenWand;
+		NullPunktConnectionPointAussenWand.X = (*m_GraficStrangRohrKomponenten[i-1]).GetFirstBorderpoint().X + dFaktor * (*m_GraficStrangRohrKomponenten[i-1]).GetPitchCenterLinie().X;
+		NullPunktConnectionPointAussenWand.Y = (*m_GraficStrangRohrKomponenten[i-1]).GetFirstBorderpoint().Y + dFaktor * (*m_GraficStrangRohrKomponenten[i-1]).GetPitchCenterLinie().Y;
+		(*m_GraficStrangRohrKomponenten[i-1]).SetThirdCornerPoint(NullPunktConnectionPointAussenWand);
+		(*m_GraficStrangRohrKomponenten[i]).SetFirstCornerPoint(NullPunktConnectionPointAussenWand);
+
+		//Connection Point 1-2 Kompnente Zweite Aussenwand
+		(*m_GraficStrangRohrKomponenten[i]).SetSecondBorderpoint(CumulatedArcCurrent);	
+		(*m_GraficStrangRohrKomponenten[i]).SetFourthBorderpoint(CumulatedArcCurrent);
+		dFaktor = CUtiltyHelper::GetFaktorForConnectionPoint( (*m_GraficStrangRohrKomponenten[i-1]).GetSecondBorderpoint(), (*m_GraficStrangRohrKomponenten[i-1]).GetPitchCenterLinie(),
+			CPointDouble((*m_GraficStrangRohrKomponenten[i]).GetForthBorderpoint().X, (*m_GraficStrangRohrKomponenten[i]).GetForthBorderpoint().Y), (*m_GraficStrangRohrKomponenten[i]).GetPitchCenterLinie());
+		CPointDouble NullPunktConnectionPointAussenWandII;
+		NullPunktConnectionPointAussenWandII.X = (*m_GraficStrangRohrKomponenten[i-1]).GetSecondBorderpoint().X + dFaktor * (*m_GraficStrangRohrKomponenten[i-1]).GetPitchCenterLinie().X;
+		NullPunktConnectionPointAussenWandII.Y = (*m_GraficStrangRohrKomponenten[i-1]).GetSecondBorderpoint().Y + dFaktor * (*m_GraficStrangRohrKomponenten[i-1]).GetPitchCenterLinie().Y;
+		(*m_GraficStrangRohrKomponenten[i-1]).SetForthCornerPoint(NullPunktConnectionPointAussenWandII);
+		(*m_GraficStrangRohrKomponenten[i]).SetSecondCornerPoint(NullPunktConnectionPointAussenWandII);
+
+
+
+		//Dritte Kompnente
+		(*m_GraficStrangRohrKomponenten[i+1]).SetStartPointCenterLine((*m_GraficStrangRohrKomponenten[i]).GetEndPointCenterLine());
+		if(i < (int) sz-2)
+		{
+			(*m_GraficStrangRohrKomponenten[i+1]).SetGraficRohrKomponentenWinkel(m_GraficStrangRohrKomponenten[i+2]);
+		}
+		else
+		{ 
+			break;
+		}
+	//	(*m_GraficStrangRohrKomponenten[i+1]).SetGraficRohrKomponentenWinkel(m_GraficStrangRohrKomponenten[i+1]);
+		CumulatedArcCurrent += (*m_GraficStrangRohrKomponenten[i+1]).SetEndPointCenterLine(CumulatedArcCurrent);
+		(*m_GraficStrangRohrKomponenten[i+1]).SetFirstBorderpoint(CumulatedArcCurrent);	
+		(*m_GraficStrangRohrKomponenten[i+1]).SetThirdBorderpoint(CumulatedArcCurrent);
+		(*m_GraficStrangRohrKomponenten[i+1]).SetPitchForCenterLinie();
+		if(i < (int) sz-2)
+		{
+			;
+		}
+		else
+		{ 
+			break;
+		}
+		//Connection Point 2-3 Kompnente erste Aussenwand
+		double dFaktor12 = CUtiltyHelper::GetFaktorForConnectionPoint( (*m_GraficStrangRohrKomponenten[i]).GetFirstBorderpoint(), (*m_GraficStrangRohrKomponenten[i]).GetPitchCenterLinie(),
+			CPointDouble((*m_GraficStrangRohrKomponenten[i+1]).GetThirdBorderpoint().X, (*m_GraficStrangRohrKomponenten[i+1]).GetThirdBorderpoint().Y), (*m_GraficStrangRohrKomponenten[i+1]).GetPitchCenterLinie());
+		NullPunktConnectionPointAussenWand.X = (*m_GraficStrangRohrKomponenten[i]).GetFirstBorderpoint().X + dFaktor12 * (*m_GraficStrangRohrKomponenten[i]).GetPitchCenterLinie().X;
+		NullPunktConnectionPointAussenWand.Y = (*m_GraficStrangRohrKomponenten[i]).GetFirstBorderpoint().Y + dFaktor12 * (*m_GraficStrangRohrKomponenten[i]).GetPitchCenterLinie().Y;
+		(*m_GraficStrangRohrKomponenten[i]).SetThirdCornerPoint(NullPunktConnectionPointAussenWand);
+		(*m_GraficStrangRohrKomponenten[i+1]).SetFirstCornerPoint(NullPunktConnectionPointAussenWand);		
+		
+		//Connection Point 2-3 Kompnente Zweite Aussenwand
+		(*m_GraficStrangRohrKomponenten[i+1]).SetSecondBorderpoint(CumulatedArcCurrent);	
+		(*m_GraficStrangRohrKomponenten[i+1]).SetFourthBorderpoint(CumulatedArcCurrent);
+		dFaktor = CUtiltyHelper::GetFaktorForConnectionPoint( (*m_GraficStrangRohrKomponenten[i]).GetSecondBorderpoint(), (*m_GraficStrangRohrKomponenten[i]).GetPitchCenterLinie(),
+			CPointDouble((*m_GraficStrangRohrKomponenten[i+1]).GetForthBorderpoint().X, (*m_GraficStrangRohrKomponenten[i+1]).GetForthBorderpoint().Y), (*m_GraficStrangRohrKomponenten[i+1]).GetPitchCenterLinie());
+		NullPunktConnectionPointAussenWandII.X = (*m_GraficStrangRohrKomponenten[i]).GetSecondBorderpoint().X + dFaktor * (*m_GraficStrangRohrKomponenten[i]).GetPitchCenterLinie().X;
+		NullPunktConnectionPointAussenWandII.Y = (*m_GraficStrangRohrKomponenten[i]).GetSecondBorderpoint().Y + dFaktor * (*m_GraficStrangRohrKomponenten[i]).GetPitchCenterLinie().Y;
+		(*m_GraficStrangRohrKomponenten[i]).SetForthCornerPoint(NullPunktConnectionPointAussenWandII);
+		(*m_GraficStrangRohrKomponenten[i+1]).SetSecondCornerPoint(NullPunktConnectionPointAussenWandII);
+		if( i+2 < (int)sz )
+		{
+			(*m_GraficStrangRohrKomponenten[i+2]).SetStartPointCenterLine((*m_GraficStrangRohrKomponenten[i+1]).GetEndPointCenterLine());
+		}
+	}
+
+	//EndElement
+	CumulatedArcCurrent += (*m_GraficStrangRohrKomponenten[sz-1]).SetEndPointCenterLine(CumulatedArcCurrent);
+	(*m_GraficStrangRohrKomponenten[sz-1]).SetFirstBorderpoint(CumulatedArcCurrent);
+	(*m_GraficStrangRohrKomponenten[sz-1]).SetSecondBorderpoint(CumulatedArcCurrent);
+	(*m_GraficStrangRohrKomponenten[sz-1]).SetPitchForCenterLinie();
+
+
+	for(int i = 1; i < (int)sz; i++)
+	{
+		(*m_GraficStrangRohrKomponenten[i]).SetKomponentPointfromConectonPoint( m_pCGraficController->m_GraficFileController.strSVGContent);
+	}
+
+	for(int i = 0; i < (int)sz; i++)
+	{
+		(*m_GraficStrangRohrKomponenten[i]).DrawYourSelf( m_pCGraficController->m_GraficFileController.strSVGContent);
+		
+	}
+
+}
+
+
+
+void CGraficRohrContainer::calculatePunktEndePunktForKnick(double winkel,  double x, double y, double& x2, double& y2)
+{
+	x2 = x + cos(winkel  *  3.14 /180) * 100;
+	y2 = y + sin(winkel  *  3.14 /180) * 100;
+};
+
+
+
+void CGraficRohrContainer::CumulatedTubePoints(CPointDouble CumulatedTubePoints)
+{
+	m_CumulatedTubePoints.X += CumulatedTubePoints.X;
+	m_CumulatedTubePoints.Y += CumulatedTubePoints.Y;
+}
+
+
+
+CGraficRohrContainer::~CGraficRohrContainer(void)
+{
+}

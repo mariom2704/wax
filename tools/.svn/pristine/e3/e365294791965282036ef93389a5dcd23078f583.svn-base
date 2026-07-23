@@ -1,0 +1,280 @@
+﻿using MxLib.Dialog;
+namespace WaxEdit
+{
+	partial class Form1
+	{
+		/// <summary>
+		/// Erforderliche Designervariable.
+		/// </summary>
+		private System.ComponentModel.IContainer components = null;
+
+		/// <summary>
+		/// Verwendete Ressourcen bereinigen.
+		/// </summary>
+		/// <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing && (components != null))
+			{
+				components.Dispose();
+			}
+			base.Dispose(disposing);
+		}
+
+		#region Vom Windows Form-Designer generierter Code
+
+		/// <summary>
+		/// Erforderliche Methode für die Designerunterstützung.
+		/// Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+		/// </summary>
+		private void InitializeComponent()
+		{
+            this.buttonLoad = new System.Windows.Forms.Button();
+            this.listView1 = new MxLib.Dialog.ListViewExtended();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.checkBoxVerzinkt = new System.Windows.Forms.CheckBox();
+            this.groupBoxEinstellungen = new System.Windows.Forms.GroupBox();
+            this.comboBoxAuswertung = new System.Windows.Forms.ComboBox();
+            this.labelDnBis = new System.Windows.Forms.Label();
+            this.comboBoxDnBis = new System.Windows.Forms.ComboBox();
+            this.labelDnVon = new System.Windows.Forms.Label();
+            this.comboBoxDNVon = new System.Windows.Forms.ComboBox();
+            this.buttonReset = new System.Windows.Forms.Button();
+            this.buttonExport = new System.Windows.Forms.Button();
+            this.textBoxExcelDat = new System.Windows.Forms.TextBox();
+            this.labelAuswertung = new System.Windows.Forms.Label();
+            this.groupBoxEinstellungen.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // buttonLoad
+            // 
+            this.buttonLoad.Location = new System.Drawing.Point(461, 19);
+            this.buttonLoad.Name = "buttonLoad";
+            this.buttonLoad.Size = new System.Drawing.Size(75, 23);
+            this.buttonLoad.TabIndex = 0;
+            this.buttonLoad.Text = "Laden";
+            this.buttonLoad.UseVisualStyleBackColor = true;
+            this.buttonLoad.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.841584F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.GotoNextFieldAfterEnter = MxLib.Dialog.ListViewExtended.gotoNextFieldAfterEnter.nichts;
+            this.listView1.GridLines = true;
+            this.listView1.Location = new System.Drawing.Point(13, 145);
+            this.listView1.MultiSelect = false;
+            this.listView1.Name = "listView1";
+            this.listView1.RowStyleWhiteGrey = false;
+            this.listView1.Size = new System.Drawing.Size(815, 575);
+            this.listView1.StandardNachkomma = 2;
+            this.listView1.TabIndex = 1;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.Location = new System.Drawing.Point(709, 19);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(118, 23);
+            this.buttonSave.TabIndex = 2;
+            this.buttonSave.Text = "Speichern";
+            this.buttonSave.UseVisualStyleBackColor = true;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // checkBoxVerzinkt
+            // 
+            this.checkBoxVerzinkt.AutoSize = true;
+            this.checkBoxVerzinkt.Location = new System.Drawing.Point(229, 22);
+            this.checkBoxVerzinkt.Name = "checkBoxVerzinkt";
+            this.checkBoxVerzinkt.Size = new System.Drawing.Size(157, 17);
+            this.checkBoxVerzinkt.TabIndex = 3;
+            this.checkBoxVerzinkt.Text = "Preise für verzinkte Bauteile";
+            this.checkBoxVerzinkt.UseVisualStyleBackColor = true;
+            this.checkBoxVerzinkt.CheckedChanged += new System.EventHandler(this.checkBoxVerzinkt_CheckedChanged);
+            // 
+            // groupBoxEinstellungen
+            // 
+            this.groupBoxEinstellungen.Controls.Add(this.comboBoxAuswertung);
+            this.groupBoxEinstellungen.Controls.Add(this.labelDnBis);
+            this.groupBoxEinstellungen.Controls.Add(this.comboBoxDnBis);
+            this.groupBoxEinstellungen.Controls.Add(this.labelDnVon);
+            this.groupBoxEinstellungen.Controls.Add(this.comboBoxDNVon);
+            this.groupBoxEinstellungen.Controls.Add(this.checkBoxVerzinkt);
+            this.groupBoxEinstellungen.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxEinstellungen.Name = "groupBoxEinstellungen";
+            this.groupBoxEinstellungen.Size = new System.Drawing.Size(412, 120);
+            this.groupBoxEinstellungen.TabIndex = 4;
+            this.groupBoxEinstellungen.TabStop = false;
+            this.groupBoxEinstellungen.Text = "Einstellungen";
+            // 
+            // comboBoxAuswertung
+            // 
+            this.comboBoxAuswertung.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxAuswertung.FormattingEnabled = true;
+            this.comboBoxAuswertung.Items.AddRange(new object[] {
+            "Vk3",
+            "Vk2",
+            "Festpreis Artikel (Preis > 0)",
+            "Festpreis Artikel (alle)"});
+            this.comboBoxAuswertung.Location = new System.Drawing.Point(23, 20);
+            this.comboBoxAuswertung.Name = "comboBoxAuswertung";
+            this.comboBoxAuswertung.Size = new System.Drawing.Size(177, 21);
+            this.comboBoxAuswertung.TabIndex = 8;
+            this.comboBoxAuswertung.SelectedIndexChanged += new System.EventHandler(this.comboBoxAuswertung_SelectedIndexChanged);
+            // 
+            // labelDnBis
+            // 
+            this.labelDnBis.AutoSize = true;
+            this.labelDnBis.Location = new System.Drawing.Point(107, 57);
+            this.labelDnBis.Name = "labelDnBis";
+            this.labelDnBis.Size = new System.Drawing.Size(42, 13);
+            this.labelDnBis.TabIndex = 7;
+            this.labelDnBis.Text = "DN bis:";
+            // 
+            // comboBoxDnBis
+            // 
+            this.comboBoxDnBis.DropDownHeight = 300;
+            this.comboBoxDnBis.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDnBis.FormattingEnabled = true;
+            this.comboBoxDnBis.IntegralHeight = false;
+            this.comboBoxDnBis.Items.AddRange(new object[] {
+            "10",
+            "15",
+            "20",
+            "25",
+            "32",
+            "40",
+            "50",
+            "65",
+            "80",
+            "100",
+            "125",
+            "150",
+            "200",
+            "250",
+            "300"});
+            this.comboBoxDnBis.Location = new System.Drawing.Point(107, 79);
+            this.comboBoxDnBis.Name = "comboBoxDnBis";
+            this.comboBoxDnBis.Size = new System.Drawing.Size(65, 21);
+            this.comboBoxDnBis.TabIndex = 6;
+            // 
+            // labelDnVon
+            // 
+            this.labelDnVon.AutoSize = true;
+            this.labelDnVon.Location = new System.Drawing.Point(23, 57);
+            this.labelDnVon.Name = "labelDnVon";
+            this.labelDnVon.Size = new System.Drawing.Size(47, 13);
+            this.labelDnVon.TabIndex = 5;
+            this.labelDnVon.Text = "DN von:";
+            // 
+            // comboBoxDNVon
+            // 
+            this.comboBoxDNVon.DropDownHeight = 300;
+            this.comboBoxDNVon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDNVon.FormattingEnabled = true;
+            this.comboBoxDNVon.IntegralHeight = false;
+            this.comboBoxDNVon.Items.AddRange(new object[] {
+            "0",
+            "10",
+            "15",
+            "20",
+            "25",
+            "32",
+            "40",
+            "50",
+            "65",
+            "80",
+            "100",
+            "125",
+            "150",
+            "200",
+            "250",
+            "300"});
+            this.comboBoxDNVon.Location = new System.Drawing.Point(23, 79);
+            this.comboBoxDNVon.Name = "comboBoxDNVon";
+            this.comboBoxDNVon.Size = new System.Drawing.Size(65, 21);
+            this.comboBoxDNVon.TabIndex = 4;
+            // 
+            // buttonReset
+            // 
+            this.buttonReset.Location = new System.Drawing.Point(461, 56);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(75, 23);
+            this.buttonReset.TabIndex = 5;
+            this.buttonReset.Text = "Reset";
+            this.buttonReset.UseVisualStyleBackColor = true;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
+            // 
+            // buttonExport
+            // 
+            this.buttonExport.Location = new System.Drawing.Point(558, 19);
+            this.buttonExport.Name = "buttonExport";
+            this.buttonExport.Size = new System.Drawing.Size(132, 23);
+            this.buttonExport.TabIndex = 6;
+            this.buttonExport.Text = "Export nach Excel";
+            this.buttonExport.UseVisualStyleBackColor = true;
+            this.buttonExport.Click += new System.EventHandler(this.buttonExport_Click);
+            // 
+            // textBoxExcelDat
+            // 
+            this.textBoxExcelDat.Location = new System.Drawing.Point(558, 58);
+            this.textBoxExcelDat.Name = "textBoxExcelDat";
+            this.textBoxExcelDat.Size = new System.Drawing.Size(132, 20);
+            this.textBoxExcelDat.TabIndex = 7;
+            this.textBoxExcelDat.Text = "c:\\temp\\preise.xls";
+            // 
+            // labelAuswertung
+            // 
+            this.labelAuswertung.AutoSize = true;
+            this.labelAuswertung.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.980198F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelAuswertung.Location = new System.Drawing.Point(458, 115);
+            this.labelAuswertung.Name = "labelAuswertung";
+            this.labelAuswertung.Size = new System.Drawing.Size(92, 17);
+            this.labelAuswertung.TabIndex = 9;
+            this.labelAuswertung.Text = "Auswertung";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(840, 733);
+            this.Controls.Add(this.labelAuswertung);
+            this.Controls.Add(this.textBoxExcelDat);
+            this.Controls.Add(this.buttonExport);
+            this.Controls.Add(this.buttonReset);
+            this.Controls.Add(this.groupBoxEinstellungen);
+            this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.buttonLoad);
+            this.MinimumSize = new System.Drawing.Size(848, 760);
+            this.Name = "Form1";
+            this.Text = "Wax Preise editieren";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_Closing);
+            this.groupBoxEinstellungen.ResumeLayout(false);
+            this.groupBoxEinstellungen.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+		}
+
+		#endregion
+
+		private System.Windows.Forms.Button buttonLoad;
+		private ListViewExtended listView1;
+		private System.Windows.Forms.Button buttonSave;
+		private System.Windows.Forms.CheckBox checkBoxVerzinkt;
+		private System.Windows.Forms.GroupBox groupBoxEinstellungen;
+		private System.Windows.Forms.Button buttonReset;
+		private System.Windows.Forms.Label labelDnVon;
+		private System.Windows.Forms.ComboBox comboBoxDNVon;
+		private System.Windows.Forms.Label labelDnBis;
+		private System.Windows.Forms.ComboBox comboBoxDnBis;
+		private System.Windows.Forms.ComboBox comboBoxAuswertung;
+		private System.Windows.Forms.Button buttonExport;
+		private System.Windows.Forms.TextBox textBoxExcelDat;
+		private System.Windows.Forms.Label labelAuswertung;
+	}
+}
+

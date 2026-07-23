@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Quellcodedateien">
+      <UniqueIdentifier>{1c3a3b5f-523c-4886-b166-3689896e54ac}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header-Dateien">
+      <UniqueIdentifier>{1d836297-7b09-476a-873c-79898ef1a0cb}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{bdd61a7c-9f8b-4d86-80c8-ae25817bffde}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="JScriptHtmlTemplates">
+      <UniqueIdentifier>{9bb686bb-566d-4d5a-a172-753a49cc5cff}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="aboutdlg.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Auftragstest.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ChildFrm.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="DBAuswahl.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="DBInfo.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="DBPrompt.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="HtmlJScriptCoreView.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ImportSAPToWAX.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="JScriptViewTemplate.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="LeftView.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="lizenz.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="lizenzeingabe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MehrfachdruckDlg.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MXHtmlView.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="NeedText.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="StatusAktualisierung.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="TabCtrlView.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="wax.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="waxDoc.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="WaxDocManager.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="WaxHtmlView.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="WaxSplitterChildView.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="WaxSplitterWnd.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="WaxView.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="lizenz.rc">
+      <Filter>Quellcodedateien</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="wax.rc">
+      <Filter>Quellcodedateien</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="aboutdlg.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Auftragstest.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ChildFrm.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="DBAuswahl.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="DBInfo.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="DBPrompt.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="docver.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="HtmlJScriptCoreView.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ImportSAPToWAX.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="JScriptViewTemplate.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="LeftView.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="lizenz.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="lizenz.rc.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="lizenzeingabe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MehrfachdruckDlg.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MXHtmlView.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="NeedText.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="StatusAktualisierung.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="TabCtrlView.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="wax.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="..\WaxDef.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="waxDoc.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WaxDocManager.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WaxHtmlView.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WaxSplitterChildView.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WaxSplitterWnd.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WaxView.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\acad.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\bin00001.bin">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\bitmap1.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\bmp00001.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\entnahmeleitung_a_jpg.bin">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\entnahmeleitung_b_jpg.bin">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="RES\htmlview.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\ico00001.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\ico00002.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\ico00003.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\ico00004.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\ico00005.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\icon1.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\idr_waxt.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\jpg1.bin">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\jpg2.bin">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\jpg3.bin">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\leitkart.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="RES\logo1.bin">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\mainfram.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\mysql_logo.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\pumpenprobierleitung.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\pumpenprobierleitung.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\pumpenprobierleitung_jpg.bin">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\pumpenverteiler.jpg">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\pumpenverteiler_red_jpg.bin">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\StatVert_Abg_jpg.bin">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\sysparam.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\Toolbar.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\toolbar1.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\wax.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\wax.rc2">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\waxDoc.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\waxlogo.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="..\JScriptHtmlTemplates\LoaderForImagesDwfSvg.css">
+      <Filter>JScriptHtmlTemplates</Filter>
+    </None>
+    <None Include="..\JScriptHtmlTemplates\LoaderForImagesDwfSvg.js">
+      <Filter>JScriptHtmlTemplates</Filter>
+    </None>
+    <None Include="..\JScriptHtmlTemplates\WaxViewerForHTMLDWFandSVG.html">
+      <Filter>JScriptHtmlTemplates</Filter>
+    </None>
+  </ItemGroup>
+</Project>

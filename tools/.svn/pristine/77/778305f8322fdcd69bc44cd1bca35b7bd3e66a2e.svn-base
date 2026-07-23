@@ -1,0 +1,15 @@
+#pragma once
+
+#include "Tubes it self\StrangRohr.h"
+#include "..\Controller\GraficController.h"
+class CStranrohrGrafic
+{
+private:
+	 CStrangRohr m_StrangRohr;
+	 CGraficController* m_pCGraficController;
+public:
+	CStranrohrGrafic(CGraficController* pCGraficController, CStrangRohr StrangRohr);
+	void CreateGrafic();
+	~CStranrohrGrafic(void);
+};
+

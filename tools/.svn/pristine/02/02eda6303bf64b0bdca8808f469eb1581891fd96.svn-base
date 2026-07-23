@@ -1,0 +1,77 @@
+#include "stdafx.h"
+#include "StrangrohrGrafic.h"
+
+
+CStranrohrGrafic::CStranrohrGrafic( CGraficController* pCGraficController, CStrangRohr StrangRohr )
+{
+	m_pCGraficController = pCGraficController;
+	m_StrangRohr = StrangRohr;
+}
+
+
+
+
+void CStranrohrGrafic::CreateGrafic()
+{
+	
+	int x1 = 280;
+	int y1 = 20;
+	
+	int x2 = 30;
+	int y2 = 100;
+
+	int tempX = (x2 - x1);
+	int tempY = (y2 - y1);
+
+	int x3 = tempX; //nix´um 90' drehen 
+	int y3 = tempY;
+
+	int x4 = x1 + x3;
+	int y4 = y1 + y3;
+
+	m_pCGraficController->ZeichneLinie(m_pCGraficController->m_GraficFileController.strSVGContent, x1, y1, x4, y4);
+		
+
+	tempX = x4 - x1;
+	tempY = y4 - y1;
+	
+	// drehen
+	int x5 = tempY;    
+	int y5 = -tempX;
+	
+	int x6 = x4 + x5;
+	int y6 = y4 + y5;
+
+	m_pCGraficController->ZeichneLinie(m_pCGraficController->m_GraficFileController.strSVGContent, x4, y4, x6, y6);
+	
+	tempX = x6 - x4;
+	tempY = y6 - y4;
+
+	// drehen
+	int x7 = tempY;
+	int y7 = -tempX;
+
+	int x8 = x6 + x7;
+	int y8 = y6 + y7;
+
+	m_pCGraficController->ZeichneLinie(m_pCGraficController->m_GraficFileController.strSVGContent, x6, y6, x8, y8);
+	
+	tempX = x8 - x6;
+	tempY = y8 - y6;
+
+	int x9 = tempY;
+	int y9 = -tempX;
+	
+	int x10 = x8 + x9;
+	int y10 = y8 + y9;
+	
+	m_pCGraficController->ZeichneLinie(m_pCGraficController->m_GraficFileController.strSVGContent, x8, y8, x10, y10);
+	
+	m_pCGraficController->m_GraficFileController.strSVGContent+= "</svg>";
+	m_pCGraficController->m_GraficFileController.WriteSVGContent();
+}
+
+
+CStranrohrGrafic::~CStranrohrGrafic(void)
+{
+}

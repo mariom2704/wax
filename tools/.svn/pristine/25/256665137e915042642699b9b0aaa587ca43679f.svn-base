@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Einstellung>
+	<InsertKey>HKEY_CURRENT_USER\Software\Autodesk\AutoCAD\R17.1\ACAD-6001:407\Profiles</InsertKey>
+	<InsertVar></InsertVar>
+  <ReplaceKey>*VALUE*</ReplaceKey>
+
+  <Key>HKEY_CURRENT_USER\Software\Autodesk\AutoCAD\R17.1\ACAD-6001:407\Profiles\*VALUE*\General</Key>
+  <Var>PrinterStyleSheetDir</Var>
+
+  <File>D:\temp\Test1.ctb</File>
+  <File>D:\temp\Test2.ctb</File>
+</Einstellung>

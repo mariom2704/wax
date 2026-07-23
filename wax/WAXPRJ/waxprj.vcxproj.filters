@@ -1,0 +1,559 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Quellcodedateien">
+      <UniqueIdentifier>{e350b0ce-244b-491e-a616-01e892050f28}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header-Dateien">
+      <UniqueIdentifier>{410aab8e-9f1b-48f6-a3e5-2160ab68678a}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{ae9af448-5c5b-4480-a500-d4b75e3ae55f}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Drucklisten">
+      <UniqueIdentifier>{3b576fbc-578c-4344-bace-21e8b86ecf23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Drucklisten\Quellcodedateien">
+      <UniqueIdentifier>{6a102fe4-1c73-45dd-a49d-0d179663d193}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Drucklisten\Header-Dateien">
+      <UniqueIdentifier>{2ad03123-7473-45f2-963a-1845a8ba7581}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ArbeitEingabeForm.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ArbeitSammelEingabeForm.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Ausgaben.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="BefehlBase.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="BefehlShowError.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="BefehlUpdateStatistik.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="BeschichtungEingabe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="BeschichtungEingabeForm.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="convcad2xml.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="DbBase.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="DbFreigabe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogStringListe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="EditArbeitsfolge.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="EditMaterial.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="EditProfile.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="EditSoko.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ElementeEingabeForm.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Fortschrittanzeige.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GpBarcode.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GpBase.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GpFreigabe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GpInitialUpdateAfos.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GpMail.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GpSapAuftragsdaten.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GpStatistik.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GpVk3Preis.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="IconManager.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="JScriptDruck.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="KompLeitkarteForm.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialEingabe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialEingabeForm.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialSammelEingabeForm.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="PreisanfrageForm.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Preisausgabe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Preise.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="PrjAnhangForm.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="PrjGliederung.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="PrjGliederungForm.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="PrjLeitkarteData.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="PrjLeitkarteForm.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SammelAuftrag.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Server.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SonderkostenEingabeForm.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SonderkostenSammelEingabeForm.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="WanrSperrung.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="WaxPart.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="WaxPartForm.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="WaxPartListe.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="waxprj.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="WpPreisanfrage.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="zinkkostendlg.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Druckliste.cpp">
+      <Filter>Drucklisten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="drucklistenverwaltung.cpp">
+      <Filter>Drucklisten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="DrucklistePreisanfrage.cpp">
+      <Filter>Drucklisten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="drucklistestationsverteiler.cpp">
+      <Filter>Drucklisten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="drucklistestrangrohr.cpp">
+      <Filter>Drucklisten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="drucklisteverzinkung.cpp">
+      <Filter>Drucklisten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="DrucklisteWap.cpp">
+      <Filter>Drucklisten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="drucklistezuschnitt.cpp">
+      <Filter>Drucklisten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="HtmlDruck.cpp">
+      <Filter>Drucklisten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="maschinenlisten.cpp">
+      <Filter>Drucklisten\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="WaxHtmlFile.cpp">
+      <Filter>Drucklisten\Quellcodedateien</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="waxprj.def">
+      <Filter>Quellcodedateien</Filter>
+    </None>
+    <None Include="waxprj3.def">
+      <Filter>Quellcodedateien</Filter>
+    </None>
+    <None Include="res\acad.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\bmp00001.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\bmp00002.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\bmp00003.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\bmp00004.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\bmp00005.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\bmp00006.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\bmp00007.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\bmp00008.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\flach2.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\flach6.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\GLIED.ICO">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\gliederu.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\HAND.ICO">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\ico00001.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\ico00002.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\ico00003.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\ico00004.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\ico00005.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\icon1.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\icon2.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\icon_nic.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\idc_flac.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\idc_l_2.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\idc_l_5.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\idc_l_8.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\idc_l_a.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\idc_l_b.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\idc_l_b1.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\idc_u_10.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\idc_u_2.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\idc_u_3.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\idc_u_4.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\idc_u_5.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\idc_u_6.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\idc_u_7.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\idc_u_8.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\idc_u_9.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\idr_waxt.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\leitkart.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\pumpenprobierleitung.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\pumpenprobierleitung_jpg.bin">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\storniert.bmp">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\waxDoc.ico">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="res\waxprj.rc2">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="waxprj.rc">
+      <Filter>Quellcodedateien</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ArbeitEingabeForm.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ArbeitSammelEingabeForm.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Ausgaben.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="BefehlBase.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="BefehlShowError.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="BefehlUpdateStatistik.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="BeschichtungEingabe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="BeschichtungEingabeForm.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="convcad2xml.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="DbBase.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="DbFreigabe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogStringListe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="EditArbeitsfolge.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="EditMaterial.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="EditProfile.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="EditSoko.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ElementeEingabeForm.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Fortschrittanzeige.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GpBarcode.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GpBase.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GpFreigabe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GpInitialUpdateAfos.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GpMail.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GpSapAuftragsdaten.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GpStatistik.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GpVk3Preis.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="IconManager.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="JScriptDruck.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="KompLeitkarteForm.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialEingabe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialEingabeForm.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialSammelEingabeForm.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PreisanfrageForm.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Preisausgabe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Preise.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PrjAnhangForm.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PrjGliederung.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PrjGliederungForm.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PrjLeitkarteData.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PrjLeitkarteForm.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SammelAuftrag.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Server.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SonderkostenEingabeForm.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SonderkostenSammelEingabeForm.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WanrSperrung.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WaxPart.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WaxPartForm.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WaxPartListe.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="waxprj_dll.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WpPreisanfrage.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="zinkkostendlg.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Druckliste.h">
+      <Filter>Drucklisten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="drucklistenverwaltung.h">
+      <Filter>Drucklisten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="DrucklistePreisanfrage.h">
+      <Filter>Drucklisten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="drucklistestationsverteiler.h">
+      <Filter>Drucklisten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="drucklistestrangrohr.h">
+      <Filter>Drucklisten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="drucklisteverzinkung.h">
+      <Filter>Drucklisten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="DrucklisteWap.h">
+      <Filter>Drucklisten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="drucklistezuschnitt.h">
+      <Filter>Drucklisten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="HtmlDruck.h">
+      <Filter>Drucklisten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="maschinenlisten.h">
+      <Filter>Drucklisten\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WaxHtmlFile.h">
+      <Filter>Drucklisten\Header-Dateien</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

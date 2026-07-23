@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Einstellung>
+  <InsertKey>HKEY_CURRENT_USER\Software\Autodesk\AutoCAD\R18.1\ACAD-9001:407\Profiles</InsertKey>
+  <InsertVar></InsertVar>
+  <ReplaceKey>*VALUE*</ReplaceKey>
+
+  <Key>HKEY_CURRENT_USER\Software\Autodesk\AutoCAD\R18.1\ACAD-9001:407\Profiles\*VALUE*\General</Key>
+  <Var>TemplatePath</Var>
+  <Separator></Separator>
+
+  <DeleteWert>*</DeleteWert>
+
+  <NewWert Position="0">M:\cad\AutoCad\Vorlagen</NewWert>
+</Einstellung>

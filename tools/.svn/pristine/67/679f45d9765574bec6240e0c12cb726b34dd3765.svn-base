@@ -1,0 +1,14 @@
+#pragma once
+
+
+typedef std::vector<CRohrKomponente*> CRohrBemassungsKomponentenVector;
+typedef std::vector<CRohrBemassungsKomponentenVector*> CRohrBemassungsKomponentenVectorVectorBase;
+
+class WAXGLDLL CRohrBemassungsKomponentenVectorVector :
+	public CRohrBemassungsKomponentenVectorVectorBase
+{
+public:
+	CRohrBemassungsKomponentenVectorVector(void);
+	~CRohrBemassungsKomponentenVectorVector(void);
+};
+

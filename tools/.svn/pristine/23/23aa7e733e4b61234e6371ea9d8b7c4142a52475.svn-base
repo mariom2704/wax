@@ -1,0 +1,13 @@
+#pragma once
+
+
+typedef std::vector<CCRohrOneAssembeldKomponenteVector*> CRohrBemassungsAnbauChildKomponentenVectorVectorBase;
+
+class WAXGLDLL CRohrBemassungsAnbauChildKomponentenVectorVector :
+	public CRohrBemassungsAnbauChildKomponentenVectorVectorBase
+{
+public:
+	CRohrBemassungsAnbauChildKomponentenVectorVector(void);
+	~CRohrBemassungsAnbauChildKomponentenVectorVector(void);
+};
+

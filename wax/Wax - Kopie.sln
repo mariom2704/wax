@@ -1,0 +1,217 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mxparam", "mxparam\mxparam.vcproj", "{532701EF-8ACC-426A-9121-0F76510926E0}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rohrkonst", "rohrkonst\rohrkonst.vcproj", "{E25C6E33-55BE-41F0-B495-16D39492846F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632} = {336243EC-73BC-41EE-BFC7-0A0BAA8C6632}
+		{532701EF-8ACC-426A-9121-0F76510926E0} = {532701EF-8ACC-426A-9121-0F76510926E0}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wax", "wax\wax.vcproj", "{D043E3A3-A91F-44E7-BB11-F0A7365E6020}"
+	ProjectSection(ProjectDependencies) = postProject
+		{433FFB29-C501-4463-BDF6-AC8273F442FF} = {433FFB29-C501-4463-BDF6-AC8273F442FF}
+		{E25C6E33-55BE-41F0-B495-16D39492846F} = {E25C6E33-55BE-41F0-B495-16D39492846F}
+		{89324536-EF5C-4D12-81CB-4A9B98C2C538} = {89324536-EF5C-4D12-81CB-4A9B98C2C538}
+		{B6BA8879-5998-4CB6-8531-0C1D99E96D1E} = {B6BA8879-5998-4CB6-8531-0C1D99E96D1E}
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632} = {336243EC-73BC-41EE-BFC7-0A0BAA8C6632}
+		{532701EF-8ACC-426A-9121-0F76510926E0} = {532701EF-8ACC-426A-9121-0F76510926E0}
+		{F605CEEF-A58E-4DAE-9085-DF51A861A48C} = {F605CEEF-A58E-4DAE-9085-DF51A861A48C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "waxgl", "WAXGL\waxgl.vcproj", "{F605CEEF-A58E-4DAE-9085-DF51A861A48C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E25C6E33-55BE-41F0-B495-16D39492846F} = {E25C6E33-55BE-41F0-B495-16D39492846F}
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632} = {336243EC-73BC-41EE-BFC7-0A0BAA8C6632}
+		{532701EF-8ACC-426A-9121-0F76510926E0} = {532701EF-8ACC-426A-9121-0F76510926E0}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "waxint", "waxint\waxint.vcproj", "{89324536-EF5C-4D12-81CB-4A9B98C2C538}"
+	ProjectSection(ProjectDependencies) = postProject
+		{433FFB29-C501-4463-BDF6-AC8273F442FF} = {433FFB29-C501-4463-BDF6-AC8273F442FF}
+		{E25C6E33-55BE-41F0-B495-16D39492846F} = {E25C6E33-55BE-41F0-B495-16D39492846F}
+		{B6BA8879-5998-4CB6-8531-0C1D99E96D1E} = {B6BA8879-5998-4CB6-8531-0C1D99E96D1E}
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632} = {336243EC-73BC-41EE-BFC7-0A0BAA8C6632}
+		{532701EF-8ACC-426A-9121-0F76510926E0} = {532701EF-8ACC-426A-9121-0F76510926E0}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "waxprj", "WAXPRJ\waxprj.vcproj", "{433FFB29-C501-4463-BDF6-AC8273F442FF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E25C6E33-55BE-41F0-B495-16D39492846F} = {E25C6E33-55BE-41F0-B495-16D39492846F}
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632} = {336243EC-73BC-41EE-BFC7-0A0BAA8C6632}
+		{532701EF-8ACC-426A-9121-0F76510926E0} = {532701EF-8ACC-426A-9121-0F76510926E0}
+		{F605CEEF-A58E-4DAE-9085-DF51A861A48C} = {F605CEEF-A58E-4DAE-9085-DF51A861A48C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "waxstamm", "WAXSTAMM\waxstamm.vcproj", "{336243EC-73BC-41EE-BFC7-0A0BAA8C6632}"
+	ProjectSection(ProjectDependencies) = postProject
+		{532701EF-8ACC-426A-9121-0F76510926E0} = {532701EF-8ACC-426A-9121-0F76510926E0}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "waxui", "waxui\waxui.vcproj", "{B6BA8879-5998-4CB6-8531-0C1D99E96D1E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{433FFB29-C501-4463-BDF6-AC8273F442FF} = {433FFB29-C501-4463-BDF6-AC8273F442FF}
+		{E25C6E33-55BE-41F0-B495-16D39492846F} = {E25C6E33-55BE-41F0-B495-16D39492846F}
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632} = {336243EC-73BC-41EE-BFC7-0A0BAA8C6632}
+		{532701EF-8ACC-426A-9121-0F76510926E0} = {532701EF-8ACC-426A-9121-0F76510926E0}
+		{F605CEEF-A58E-4DAE-9085-DF51A861A48C} = {F605CEEF-A58E-4DAE-9085-DF51A861A48C}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Stammdatabase", "Stammdatabase", "{BC43D85C-0C70-40B4-8E4C-A7477A8D8DAC}"
+	ProjectSection(SolutionItems) = preProject
+		GoodToKnow.txt = GoodToKnow.txt
+		Q:\WaxVk3\waxstamm.mdb = Q:\WaxVk3\waxstamm.mdb
+		..\bin\Wax\Release\DATENBANKEN\WaxUser.mdb = ..\bin\Wax\Release\DATENBANKEN\WaxUser.mdb
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Debug|x64 = Debug|x64
+		Release|Win32 = Release|Win32
+		Release|x64 = Release|x64
+		wax_fuer_3te_Debug|Win32 = wax_fuer_3te_Debug|Win32
+		wax_fuer_3te_Debug|x64 = wax_fuer_3te_Debug|x64
+		wax_fuer_3te_Release|Win32 = wax_fuer_3te_Release|Win32
+		wax_fuer_3te_Release|x64 = wax_fuer_3te_Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{532701EF-8ACC-426A-9121-0F76510926E0}.Debug|Win32.ActiveCfg = Debug|Win32
+		{532701EF-8ACC-426A-9121-0F76510926E0}.Debug|Win32.Build.0 = Debug|Win32
+		{532701EF-8ACC-426A-9121-0F76510926E0}.Debug|x64.ActiveCfg = Debug|x64
+		{532701EF-8ACC-426A-9121-0F76510926E0}.Debug|x64.Build.0 = Debug|x64
+		{532701EF-8ACC-426A-9121-0F76510926E0}.Release|Win32.ActiveCfg = Release|Win32
+		{532701EF-8ACC-426A-9121-0F76510926E0}.Release|Win32.Build.0 = Release|Win32
+		{532701EF-8ACC-426A-9121-0F76510926E0}.Release|x64.ActiveCfg = Release|x64
+		{532701EF-8ACC-426A-9121-0F76510926E0}.Release|x64.Build.0 = Release|x64
+		{532701EF-8ACC-426A-9121-0F76510926E0}.wax_fuer_3te_Debug|Win32.ActiveCfg = wax_fuer_3te_Debug|Win32
+		{532701EF-8ACC-426A-9121-0F76510926E0}.wax_fuer_3te_Debug|Win32.Build.0 = wax_fuer_3te_Debug|Win32
+		{532701EF-8ACC-426A-9121-0F76510926E0}.wax_fuer_3te_Debug|x64.ActiveCfg = wax_fuer_3te_Debug|x64
+		{532701EF-8ACC-426A-9121-0F76510926E0}.wax_fuer_3te_Debug|x64.Build.0 = wax_fuer_3te_Debug|x64
+		{532701EF-8ACC-426A-9121-0F76510926E0}.wax_fuer_3te_Release|Win32.ActiveCfg = wax_fuer_3te_Release|Win32
+		{532701EF-8ACC-426A-9121-0F76510926E0}.wax_fuer_3te_Release|Win32.Build.0 = wax_fuer_3te_Release|Win32
+		{532701EF-8ACC-426A-9121-0F76510926E0}.wax_fuer_3te_Release|x64.ActiveCfg = wax_fuer_3te_Release|x64
+		{532701EF-8ACC-426A-9121-0F76510926E0}.wax_fuer_3te_Release|x64.Build.0 = wax_fuer_3te_Release|x64
+		{E25C6E33-55BE-41F0-B495-16D39492846F}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E25C6E33-55BE-41F0-B495-16D39492846F}.Debug|Win32.Build.0 = Debug|Win32
+		{E25C6E33-55BE-41F0-B495-16D39492846F}.Debug|x64.ActiveCfg = Debug|x64
+		{E25C6E33-55BE-41F0-B495-16D39492846F}.Debug|x64.Build.0 = Debug|x64
+		{E25C6E33-55BE-41F0-B495-16D39492846F}.Release|Win32.ActiveCfg = Release|Win32
+		{E25C6E33-55BE-41F0-B495-16D39492846F}.Release|Win32.Build.0 = Release|Win32
+		{E25C6E33-55BE-41F0-B495-16D39492846F}.Release|x64.ActiveCfg = Release|x64
+		{E25C6E33-55BE-41F0-B495-16D39492846F}.Release|x64.Build.0 = Release|x64
+		{E25C6E33-55BE-41F0-B495-16D39492846F}.wax_fuer_3te_Debug|Win32.ActiveCfg = wax_fuer_3te_Debug|Win32
+		{E25C6E33-55BE-41F0-B495-16D39492846F}.wax_fuer_3te_Debug|Win32.Build.0 = wax_fuer_3te_Debug|Win32
+		{E25C6E33-55BE-41F0-B495-16D39492846F}.wax_fuer_3te_Debug|x64.ActiveCfg = wax_fuer_3te_Debug|x64
+		{E25C6E33-55BE-41F0-B495-16D39492846F}.wax_fuer_3te_Debug|x64.Build.0 = wax_fuer_3te_Debug|x64
+		{E25C6E33-55BE-41F0-B495-16D39492846F}.wax_fuer_3te_Release|Win32.ActiveCfg = wax_fuer_3te_Release|Win32
+		{E25C6E33-55BE-41F0-B495-16D39492846F}.wax_fuer_3te_Release|Win32.Build.0 = wax_fuer_3te_Release|Win32
+		{E25C6E33-55BE-41F0-B495-16D39492846F}.wax_fuer_3te_Release|x64.ActiveCfg = wax_fuer_3te_Release|x64
+		{E25C6E33-55BE-41F0-B495-16D39492846F}.wax_fuer_3te_Release|x64.Build.0 = wax_fuer_3te_Release|x64
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.Debug|Win32.Build.0 = Debug|Win32
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.Debug|x64.ActiveCfg = Debug|x64
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.Debug|x64.Build.0 = Debug|x64
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.Release|Win32.ActiveCfg = Release|Win32
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.Release|Win32.Build.0 = Release|Win32
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.Release|x64.ActiveCfg = Release|x64
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.Release|x64.Build.0 = Release|x64
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.wax_fuer_3te_Debug|Win32.ActiveCfg = wax_fuer_3te_Debug|Win32
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.wax_fuer_3te_Debug|Win32.Build.0 = wax_fuer_3te_Debug|Win32
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.wax_fuer_3te_Debug|x64.ActiveCfg = wax_fuer_3te_Debug|x64
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.wax_fuer_3te_Debug|x64.Build.0 = wax_fuer_3te_Debug|x64
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.wax_fuer_3te_Release|Win32.ActiveCfg = wax_fuer_3te_Release|Win32
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.wax_fuer_3te_Release|Win32.Build.0 = wax_fuer_3te_Release|Win32
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.wax_fuer_3te_Release|x64.ActiveCfg = wax_fuer_3te_Release|x64
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.wax_fuer_3te_Release|x64.Build.0 = wax_fuer_3te_Release|x64
+		{F605CEEF-A58E-4DAE-9085-DF51A861A48C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F605CEEF-A58E-4DAE-9085-DF51A861A48C}.Debug|Win32.Build.0 = Debug|Win32
+		{F605CEEF-A58E-4DAE-9085-DF51A861A48C}.Debug|x64.ActiveCfg = Debug|x64
+		{F605CEEF-A58E-4DAE-9085-DF51A861A48C}.Debug|x64.Build.0 = Debug|x64
+		{F605CEEF-A58E-4DAE-9085-DF51A861A48C}.Release|Win32.ActiveCfg = Release|Win32
+		{F605CEEF-A58E-4DAE-9085-DF51A861A48C}.Release|Win32.Build.0 = Release|Win32
+		{F605CEEF-A58E-4DAE-9085-DF51A861A48C}.Release|x64.ActiveCfg = Release|x64
+		{F605CEEF-A58E-4DAE-9085-DF51A861A48C}.Release|x64.Build.0 = Release|x64
+		{F605CEEF-A58E-4DAE-9085-DF51A861A48C}.wax_fuer_3te_Debug|Win32.ActiveCfg = wax_fuer_3te_Debug|Win32
+		{F605CEEF-A58E-4DAE-9085-DF51A861A48C}.wax_fuer_3te_Debug|Win32.Build.0 = wax_fuer_3te_Debug|Win32
+		{F605CEEF-A58E-4DAE-9085-DF51A861A48C}.wax_fuer_3te_Debug|x64.ActiveCfg = wax_fuer_3te_Debug|x64
+		{F605CEEF-A58E-4DAE-9085-DF51A861A48C}.wax_fuer_3te_Debug|x64.Build.0 = wax_fuer_3te_Debug|x64
+		{F605CEEF-A58E-4DAE-9085-DF51A861A48C}.wax_fuer_3te_Release|Win32.ActiveCfg = wax_fuer_3te_Release|Win32
+		{F605CEEF-A58E-4DAE-9085-DF51A861A48C}.wax_fuer_3te_Release|Win32.Build.0 = wax_fuer_3te_Release|Win32
+		{F605CEEF-A58E-4DAE-9085-DF51A861A48C}.wax_fuer_3te_Release|x64.ActiveCfg = wax_fuer_3te_Release|x64
+		{F605CEEF-A58E-4DAE-9085-DF51A861A48C}.wax_fuer_3te_Release|x64.Build.0 = wax_fuer_3te_Release|x64
+		{89324536-EF5C-4D12-81CB-4A9B98C2C538}.Debug|Win32.ActiveCfg = Debug|Win32
+		{89324536-EF5C-4D12-81CB-4A9B98C2C538}.Debug|Win32.Build.0 = Debug|Win32
+		{89324536-EF5C-4D12-81CB-4A9B98C2C538}.Debug|x64.ActiveCfg = Debug|x64
+		{89324536-EF5C-4D12-81CB-4A9B98C2C538}.Debug|x64.Build.0 = Debug|x64
+		{89324536-EF5C-4D12-81CB-4A9B98C2C538}.Release|Win32.ActiveCfg = Release|Win32
+		{89324536-EF5C-4D12-81CB-4A9B98C2C538}.Release|Win32.Build.0 = Release|Win32
+		{89324536-EF5C-4D12-81CB-4A9B98C2C538}.Release|x64.ActiveCfg = Release|x64
+		{89324536-EF5C-4D12-81CB-4A9B98C2C538}.Release|x64.Build.0 = Release|x64
+		{89324536-EF5C-4D12-81CB-4A9B98C2C538}.wax_fuer_3te_Debug|Win32.ActiveCfg = wax_fuer_3te_Debug|Win32
+		{89324536-EF5C-4D12-81CB-4A9B98C2C538}.wax_fuer_3te_Debug|Win32.Build.0 = wax_fuer_3te_Debug|Win32
+		{89324536-EF5C-4D12-81CB-4A9B98C2C538}.wax_fuer_3te_Debug|x64.ActiveCfg = wax_fuer_3te_Debug|x64
+		{89324536-EF5C-4D12-81CB-4A9B98C2C538}.wax_fuer_3te_Debug|x64.Build.0 = wax_fuer_3te_Debug|x64
+		{89324536-EF5C-4D12-81CB-4A9B98C2C538}.wax_fuer_3te_Release|Win32.ActiveCfg = wax_fuer_3te_Release|Win32
+		{89324536-EF5C-4D12-81CB-4A9B98C2C538}.wax_fuer_3te_Release|Win32.Build.0 = wax_fuer_3te_Release|Win32
+		{89324536-EF5C-4D12-81CB-4A9B98C2C538}.wax_fuer_3te_Release|x64.ActiveCfg = wax_fuer_3te_Release|x64
+		{89324536-EF5C-4D12-81CB-4A9B98C2C538}.wax_fuer_3te_Release|x64.Build.0 = wax_fuer_3te_Release|x64
+		{433FFB29-C501-4463-BDF6-AC8273F442FF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{433FFB29-C501-4463-BDF6-AC8273F442FF}.Debug|Win32.Build.0 = Debug|Win32
+		{433FFB29-C501-4463-BDF6-AC8273F442FF}.Debug|x64.ActiveCfg = Debug|x64
+		{433FFB29-C501-4463-BDF6-AC8273F442FF}.Debug|x64.Build.0 = Debug|x64
+		{433FFB29-C501-4463-BDF6-AC8273F442FF}.Release|Win32.ActiveCfg = Release|Win32
+		{433FFB29-C501-4463-BDF6-AC8273F442FF}.Release|Win32.Build.0 = Release|Win32
+		{433FFB29-C501-4463-BDF6-AC8273F442FF}.Release|x64.ActiveCfg = Release|x64
+		{433FFB29-C501-4463-BDF6-AC8273F442FF}.Release|x64.Build.0 = Release|x64
+		{433FFB29-C501-4463-BDF6-AC8273F442FF}.wax_fuer_3te_Debug|Win32.ActiveCfg = wax_fuer_3te_Debug|Win32
+		{433FFB29-C501-4463-BDF6-AC8273F442FF}.wax_fuer_3te_Debug|Win32.Build.0 = wax_fuer_3te_Debug|Win32
+		{433FFB29-C501-4463-BDF6-AC8273F442FF}.wax_fuer_3te_Debug|x64.ActiveCfg = wax_fuer_3te_Debug|x64
+		{433FFB29-C501-4463-BDF6-AC8273F442FF}.wax_fuer_3te_Debug|x64.Build.0 = wax_fuer_3te_Debug|x64
+		{433FFB29-C501-4463-BDF6-AC8273F442FF}.wax_fuer_3te_Release|Win32.ActiveCfg = wax_fuer_3te_Release|Win32
+		{433FFB29-C501-4463-BDF6-AC8273F442FF}.wax_fuer_3te_Release|Win32.Build.0 = wax_fuer_3te_Release|Win32
+		{433FFB29-C501-4463-BDF6-AC8273F442FF}.wax_fuer_3te_Release|x64.ActiveCfg = wax_fuer_3te_Release|x64
+		{433FFB29-C501-4463-BDF6-AC8273F442FF}.wax_fuer_3te_Release|x64.Build.0 = wax_fuer_3te_Release|x64
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632}.Debug|Win32.ActiveCfg = Debug|Win32
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632}.Debug|Win32.Build.0 = Debug|Win32
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632}.Debug|x64.ActiveCfg = Debug|x64
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632}.Debug|x64.Build.0 = Debug|x64
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632}.Release|Win32.ActiveCfg = Release|Win32
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632}.Release|Win32.Build.0 = Release|Win32
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632}.Release|x64.ActiveCfg = Release|x64
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632}.Release|x64.Build.0 = Release|x64
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632}.wax_fuer_3te_Debug|Win32.ActiveCfg = wax_fuer_3te_Debug|Win32
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632}.wax_fuer_3te_Debug|Win32.Build.0 = wax_fuer_3te_Debug|Win32
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632}.wax_fuer_3te_Debug|x64.ActiveCfg = wax_fuer_3te_Debug|x64
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632}.wax_fuer_3te_Debug|x64.Build.0 = wax_fuer_3te_Debug|x64
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632}.wax_fuer_3te_Release|Win32.ActiveCfg = wax_fuer_3te_Release|Win32
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632}.wax_fuer_3te_Release|Win32.Build.0 = wax_fuer_3te_Release|Win32
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632}.wax_fuer_3te_Release|x64.ActiveCfg = wax_fuer_3te_Release|x64
+		{336243EC-73BC-41EE-BFC7-0A0BAA8C6632}.wax_fuer_3te_Release|x64.Build.0 = wax_fuer_3te_Release|x64
+		{B6BA8879-5998-4CB6-8531-0C1D99E96D1E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B6BA8879-5998-4CB6-8531-0C1D99E96D1E}.Debug|Win32.Build.0 = Debug|Win32
+		{B6BA8879-5998-4CB6-8531-0C1D99E96D1E}.Debug|x64.ActiveCfg = Debug|x64
+		{B6BA8879-5998-4CB6-8531-0C1D99E96D1E}.Debug|x64.Build.0 = Debug|x64
+		{B6BA8879-5998-4CB6-8531-0C1D99E96D1E}.Release|Win32.ActiveCfg = Release|Win32
+		{B6BA8879-5998-4CB6-8531-0C1D99E96D1E}.Release|Win32.Build.0 = Release|Win32
+		{B6BA8879-5998-4CB6-8531-0C1D99E96D1E}.Release|x64.ActiveCfg = Release|x64
+		{B6BA8879-5998-4CB6-8531-0C1D99E96D1E}.Release|x64.Build.0 = Release|x64
+		{B6BA8879-5998-4CB6-8531-0C1D99E96D1E}.wax_fuer_3te_Debug|Win32.ActiveCfg = wax_fuer_3te_Debug|Win32
+		{B6BA8879-5998-4CB6-8531-0C1D99E96D1E}.wax_fuer_3te_Debug|Win32.Build.0 = wax_fuer_3te_Debug|Win32
+		{B6BA8879-5998-4CB6-8531-0C1D99E96D1E}.wax_fuer_3te_Debug|x64.ActiveCfg = wax_fuer_3te_Debug|x64
+		{B6BA8879-5998-4CB6-8531-0C1D99E96D1E}.wax_fuer_3te_Debug|x64.Build.0 = wax_fuer_3te_Debug|x64
+		{B6BA8879-5998-4CB6-8531-0C1D99E96D1E}.wax_fuer_3te_Release|Win32.ActiveCfg = wax_fuer_3te_Release|Win32
+		{B6BA8879-5998-4CB6-8531-0C1D99E96D1E}.wax_fuer_3te_Release|Win32.Build.0 = wax_fuer_3te_Release|Win32
+		{B6BA8879-5998-4CB6-8531-0C1D99E96D1E}.wax_fuer_3te_Release|x64.ActiveCfg = wax_fuer_3te_Release|x64
+		{B6BA8879-5998-4CB6-8531-0C1D99E96D1E}.wax_fuer_3te_Release|x64.Build.0 = wax_fuer_3te_Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {89BF081D-AE55-4418-B194-3E054FE1C0CD}
+	EndGlobalSection
+EndGlobal

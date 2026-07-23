@@ -1,0 +1,20 @@
+; ExcelTable.def : Deklariert die Modul-Parameter für die DLL.
+
+LIBRARY      "ExcelTable"
+
+EXPORTS
+   	; C Functions
+	ExcelTableOffice2010
+	set_ExcelTableOffice2010
+	ExcelExt
+	ExcelTableSetVar
+	ExcelTableSetColumnType
+	ExcelTableSetColumnQuantity
+	ExcelTableSetColumnNames
+	ExcelTableCreateTable
+	ExcelTableOpenTable
+	ExcelTableCloseTable
+	ExcelTableAddColumn
+	ExcelTableInsertInto
+	ExcelTableUpdate
+	

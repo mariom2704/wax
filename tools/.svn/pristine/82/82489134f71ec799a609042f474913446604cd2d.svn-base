@@ -1,0 +1,28 @@
+#include "stdafx.h"
+#include "UtiltyHelper.h"
+
+
+CUtiltyHelper::CUtiltyHelper(void)
+{
+}
+
+double  CUtiltyHelper::GetFaktorForConnectionPoint(CPointDouble GeradePointI,  CPointDouble dOffsetI,
+									  CPointDouble GeradePointII, CPointDouble dOffsetII)
+{
+	
+	
+	double dFaktorI  =  (- GeradePointII.X/dOffsetII.X + GeradePointI.X/dOffsetII.X + GeradePointII.Y/ dOffsetII.Y - GeradePointI.Y / dOffsetII.Y)
+					/
+					(dOffsetI.Y / dOffsetII.Y - dOffsetI.X / dOffsetII.X);
+
+	return dFaktorI;
+}
+
+
+
+
+
+
+CUtiltyHelper::~CUtiltyHelper(void)
+{
+}

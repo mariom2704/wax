@@ -1,0 +1,40 @@
+#include "StdAfx.h"
+
+#include "UtiltyHelper.h"
+
+#include "..\_Tubes Logic Grafic Adapter\RohrKomponente.h"
+
+
+
+#include "GraficTubeController.h"
+#include "..\Mechanicals Geometrics\GraficRohrKomponente.h"
+#include "..\SVG File Operations\GraficFileController.h"
+#include "..\Controller\GraficController.h"
+
+#include "GraficRohrOneAssembeldKomponenteVector.h"
+
+
+CCGraficRohrOneAssembeldKomponenteVector::CCGraficRohrOneAssembeldKomponenteVector(void)
+{	
+}
+
+
+CCGraficRohrOneAssembeldKomponenteVector* CCGraficRohrOneAssembeldKomponenteVector::GetNewAddedChildAssembeldTube()
+{
+	CCGraficRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVector = new CCGraficRohrOneAssembeldKomponenteVector();
+	m_GraficAssembeldTubeVector.push_back(pRohrOneAssembeldKomponenteVector);
+	
+	return pRohrOneAssembeldKomponenteVector;
+}
+
+
+
+void CCGraficRohrOneAssembeldKomponenteVector::AddComponenteForTube(CGraficRohrKomponente* pRohrKomponente)
+{
+	push_back(pRohrKomponente);
+}
+
+
+CCGraficRohrOneAssembeldKomponenteVector::~CCGraficRohrOneAssembeldKomponenteVector(void)
+{	
+}

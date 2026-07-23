@@ -1,0 +1,110 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "lizenz.rc.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Deutsch (Deutschland) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "lizenz.rc.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)\r\n"
+    "LANGUAGE 7, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""afxres.rc""    // Standardkomponenten\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_LICENCE DIALOGEX 0, 0, 296, 154
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Lizenzverwaltung"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,239,132,50,14
+    LTEXT           "Systemkennung",IDC_STATIC,27,29,52,8
+    EDITTEXT        IDC_HWKENNUNG,91,27,82,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Lizenzschlüssel",IDC_STATIC,29,50,48,8
+    EDITTEXT        IDC_LIZENZ,90,47,133,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Prüfen",IDC_CHECKKEY,228,47,50,14
+    GROUPBOX        "Lizenzeingabe",IDC_STATIC,7,7,280,70
+    LTEXT           "gültig von:",IDC_STATIC,31,97,35,8
+    LTEXT           "???",IDC_GUELTIGVON,71,97,71,8
+    GROUPBOX        "Lizenzinfo",IDC_STATIC,7,84,281,40
+    LTEXT           "gültig bis:",IDC_STATIC,31,108,32,8
+    LTEXT           "???",IDC_GUELTIGBIS,71,108,59,8
+    CONTROL         "",IDC_DEMO,"Button",BS_AUTOCHECKBOX | WS_DISABLED | 
+                    WS_TABSTOP,243,107,12,10
+    LTEXT           "30-Tage Schlüssel",IDC_STATIC,181,107,60,8
+END
+
+#endif    // Deutsch (Deutschland) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+LANGUAGE 7, 1
+#pragma code_page(1252)
+#include "afxres.rc"    // Standardkomponenten
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

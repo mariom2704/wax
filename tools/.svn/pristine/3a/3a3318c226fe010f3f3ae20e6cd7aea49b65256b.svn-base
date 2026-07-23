@@ -1,0 +1,43 @@
+#pragma once
+
+
+class CGraficController;
+typedef std::vector<CGraficRohrKomponente*> CGraficComponentsForOneAssembeldTube;
+typedef std::vector<CGraficComponentsForOneAssembeldTube*> CGraficContainerForAssembeldTubes;
+
+
+class CGraficTubeController
+{
+	private:
+	
+		CPointDouble m_TubeStartPoint;
+		CPointDouble m_EqualCornerPoint;
+	
+		//Variables
+	public:
+		CGraficContainerForAssembeldTubes m_GraficContainerForAssembeldTubes;
+
+		// Methodes
+	public: 
+		CGraficTubeController();
+		
+		void CreateGraficModell(bool bOnlyCaculateMainTube);
+	
+		void CreateGraficOneAssembeldTubeFromComponents(double CumulatedWinkel, int i, bool bOnlyCaculateMainTube);
+		void SetStartPointTubeCenterLine(CPointDouble TubeStartPoint)
+		{
+			m_TubeStartPoint = TubeStartPoint;
+		};
+	
+		CPointDouble GetStartPointTubeCenterLine()
+		{
+			return m_TubeStartPoint;
+		};
+
+
+		void RecursiveIteratetingThroughComponentsForOneAssembeldTubeAndDraw(CGraficComponentsForOneAssembeldTube*);
+	
+	
+		~CGraficTubeController(void);
+};
+

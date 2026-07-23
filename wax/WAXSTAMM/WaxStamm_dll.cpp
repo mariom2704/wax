@@ -1,0 +1,48 @@
+// Copyright (C) 2002 Minimax GmbH
+
+#include "stdafx.h"
+#include <afxcoll.h>
+
+
+
+
+static AFX_EXTENSION_MODULE WaxstammDLL = { NULL, NULL };
+
+extern "C" int APIENTRY
+DllMain(HINSTANCE hInstance, DWORD dwReason, LPVOID lpReserved)
+{
+	// Entfernen Sie dies, wenn Sie lpReserved verwenden
+	UNREFERENCED_PARAMETER(lpReserved);
+
+	if (dwReason == DLL_PROCESS_ATTACH)
+	{
+		TRACE0("WAXSTAMM.DLL Initializing!");
+		TRACE(" hInstance = 0X%x\n", hInstance);
+		
+		// One-Time-Initialisierung der Erweiterungs-DLL
+		if (!AfxInitExtensionModule(WaxstammDLL, hInstance))
+			return 0;
+
+		// Diese DLL in Ressourcenkette einfügen
+		// HINWEIS: Wird diese Erweiterungs-DLL implizit durch eine reguläre
+		//  MFC-DLL (wie z.B. ein ActiveX-Steuerelement) anstelle einer
+		//  MFC-Anwendung eingebunden, dann möchten Sie möglicherweise diese
+		//  Zeile aus DllMain entfernen und eine eigene Funktion einfügen,
+		//  die von dieser Erweiterungs-DLL exportiert wird. Die reguläre DLL,
+		//  die diese Erweiterungs-DLL verwendet, sollte dann explizit die 
+		//  Initialisierungsfunktion der Erweiterungs-DLL aufrufen. Anderenfalls 
+		//  wird das CDynLinkLibrary-Objekt nicht mit der Recourcenkette der 
+		//  regulären DLL verbunden, was zu ernsthaften Problemen
+		//  führen kann.
+
+		
+		new CDynLinkLibrary(WaxstammDLL);
+	}
+	else if (dwReason == DLL_PROCESS_DETACH)
+	{
+		TRACE0("WAXSTAMM.DLL Terminating!\n");
+		// Bibliothek vor dem Aufruf der Destruktoren schließen
+		AfxTermExtensionModule(WaxstammDLL);
+	}
+	return 1;   // OK
+}

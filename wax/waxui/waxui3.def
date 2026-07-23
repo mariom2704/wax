@@ -1,0 +1,6 @@
+; waxui.def : Deklariert die Modul-Parameter für die DLL.
+
+LIBRARY      "waxui3"
+
+EXPORTS
+    ; Explizite Exporte können hier eingefügt werden

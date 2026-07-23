@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="base">
+      <UniqueIdentifier>{8c61b79d-b312-4109-a8d2-0e87d556ad04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\Header-Dateien">
+      <UniqueIdentifier>{c9c560a7-7459-4405-bc05-81d96df1cf65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="base\Quellcodedateien">
+      <UniqueIdentifier>{1e50f0e7-54b8-4fad-bb55-0dcf667c584b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Elemente">
+      <UniqueIdentifier>{f6d1dc62-218f-4f98-9437-eeb4ea660320}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Elemente\Quellcodedateien">
+      <UniqueIdentifier>{b7b06bc0-f4f6-40d9-98ca-021396164d97}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Elemente\Header-Dateien">
+      <UniqueIdentifier>{02e0c241-5f9b-409e-b086-1940e233ce26}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bemassung.h">
+      <Filter>base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GlFile.h">
+      <Filter>base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="globj.h">
+      <Filter>base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Kreis.h">
+      <Filter>base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Linie.h">
+      <Filter>base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Polygon.h">
+      <Filter>base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SVGFile.h">
+      <Filter>base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="TextPlot.h">
+      <Filter>base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WaxGl.h">
+      <Filter>base\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructAbgEle.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructBoden.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructBogen.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructBohr.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructCOBockWinkel.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructDoni.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructElement.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructEndEle.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructFflan.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructFitting.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructGewind.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructGlatt.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructKbod.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructKnick.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructKred.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructKStueck.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructMuffe.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructNut.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructRohr.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructRohrEle.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructScheib.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructTStueck.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructVflan.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructWinkel.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Ered.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="RohrQx.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WaxGrafik.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructGewinderohr.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ConstructGraphik.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WaxGl_dll.h">
+      <Filter>Elemente\Header-Dateien</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Bemassung.cpp">
+      <Filter>base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GlFile.cpp">
+      <Filter>base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="globj.cpp">
+      <Filter>base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Kreis.cpp">
+      <Filter>base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Linie.cpp">
+      <Filter>base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Polygon.cpp">
+      <Filter>base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SVGFile.cpp">
+      <Filter>base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="TextPlot.cpp">
+      <Filter>base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="waxgl.cpp">
+      <Filter>base\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructAbgEle.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructBoden.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructBogen.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructBohr.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructCOBockWinkel.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructDoni.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructElement.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructEndEle.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructFflan.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructFitting.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructGewind.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructGlatt.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructKbod.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructKnick.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructKred.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructKStueck.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructMuffe.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructNut.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructRohr.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructRohrEle.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructScheib.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructTStueck.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructVflan.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructWinkel.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Ered.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="RohrQx.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="WaxGrafik.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructGewinderohr.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ConstructGraphik.cpp">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="waxgl.rc">
+      <Filter>Elemente\Quellcodedateien</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Einstellung xmlns="http://tempuri.org/XMLSchema1.xsd">
+	<Server1></Server1>
+	<Datenbank1>D:\temp\WaxStamm.mdb</Datenbank1>
+  <Tabelle1>Artikelstamm</Tabelle1>
+  <Server2></Server2>
+  <Datenbank2>D:\temp\WaxStamm_Test.mdb</Datenbank2>
+  <Tabelle2>Artikelstamm</Tabelle2>
+  <KeySpalte>Artikelnummer</KeySpalte>
+  <Spalten>FestPreis</Spalten>
+</Einstellung>

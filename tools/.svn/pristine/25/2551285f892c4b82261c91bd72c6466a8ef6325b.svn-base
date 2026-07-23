@@ -1,0 +1,52 @@
+// HtmlTestview.cpp: Implementierungsdatei
+//
+
+#include "stdafx.h"
+#include "SplitterWindowTutorial.h"
+#include "HtmlTestview.h"
+
+
+// CHtmlTestview
+
+IMPLEMENT_DYNCREATE(CHtmlTestview, CHtmlView)
+
+CHtmlTestview::CHtmlTestview()
+{
+
+}
+
+CHtmlTestview::~CHtmlTestview()
+{
+}
+
+void CHtmlTestview::DoDataExchange(CDataExchange* pDX)
+{
+	CHtmlView::DoDataExchange(pDX);
+}
+
+BEGIN_MESSAGE_MAP(CHtmlTestview, CHtmlView)
+END_MESSAGE_MAP()
+
+
+// CHtmlTestview-Diagnose
+
+#ifdef _DEBUG
+void CHtmlTestview::AssertValid() const
+{
+	CHtmlView::AssertValid();
+}
+
+void CHtmlTestview::Dump(CDumpContext& dc) const
+{
+	CHtmlView::Dump(dc);
+}
+#endif //_DEBUG
+
+
+// CHtmlTestview-Meldungshandler
+
+
+void CHtmlTestview::OnInitialUpdate()
+{
+	SetSilent(TRUE);
+}

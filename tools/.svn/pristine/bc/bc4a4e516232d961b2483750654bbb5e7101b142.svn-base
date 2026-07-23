@@ -1,0 +1,256 @@
+#include "stdafx.h"
+#include "MXSoftwareCheck.h"
+//#include "strformat.h"
+#include <mxcontrols/msgbox.h>
+#include <mxbase/date.h>
+#include <boost/boost.h>
+#include <fstream>
+
+using namespace MxGui;
+using namespace MxBase;
+
+MXSoftwareCheck::MXSoftwareCheck()
+{
+	/**
+	Inialisiert is_logfile_empty auf true
+	*/
+	is_logfile_empty = true;
+	check_count = 0;
+	silent = false;
+}
+
+MXSoftwareCheck::~MXSoftwareCheck()
+{
+}
+
+bool MXSoftwareCheck::init()
+{
+	/**
+	Löscht die lokale Logdatei und erzeugt sie neu. Prüft, ob die softwarestand.txt gefunden wurde
+	und ob sie älter als conf.get_maxage ist. Ist alles ok wird true zurückgeliefert.
+	*/
+
+	::remove(conf.get_logfile().c_str());
+	
+	// Neubeginn der Logdatei
+	write_log2(conf.get_username(), "----------------------- Beginn der Logdatei -----------------------", false);
+	char lc[255];
+	itoa((unsigned int)conf.lcid, lc, 10);
+
+	write_log2(conf.get_computername(), (string)"lcid = " + (string)lc, false);
+
+	// Kopieren und Prüfen auf Existenz
+	if(check_configfile() == 0)
+	{
+		write_log2("", "Die Steuerdatei konnte nicht gefunden werden. Bitte melden Sie sich im Minimax-Netz an, damit der Softwarestand überprüft werden kann!", false);
+	}
+	
+
+	// Veraltete Steuerdatei ?
+	vector<string> strWrongDate = isFileOlder(conf.get_maxage());
+	if (strWrongDate.size() > 0)
+	{
+		for(int z = 0; z < strWrongDate.size(); z++)
+		{
+			write_log2(strWrongDate[z], "Die Steuerdatei ist veraltet. Bitte melden Sie sich im Minimax-Netz an, damit der Softwarestand überprüft werden kann!", false);
+		
+		}
+		
+		return false;
+	}
+	readfile();	
+	return true;
+}
+
+void MXSoftwareCheck::write_log2(const string& file,const string& msg, bool msgbox)
+{
+	for(int i=0; i < strDoubleInput.size(); i++)
+	{  
+		
+		std::size_t found = path.find(strDoubleInput[i]);
+		if (found!=std::string::npos)
+		{
+			return;
+		}
+	}
+
+	if(!path.empty())
+	{
+		strDoubleInput.push_back(path);
+	}
+
+	FILE *f = fopen(conf.get_logfile().c_str(), "a+");
+	
+	if (!f)
+	{
+		::MessageBox(NULL, "Fehlerhafter Pfad für die Logdatei", conf.get_logfile().c_str(), MB_ICONERROR | MB_TOPMOST |MB_OK);
+		::exit(2);
+	}
+	string strlog;
+	
+	strlog = file + " : " + msg + "\n";
+	fwrite(strlog.c_str(), 1, strlog.length(), f);
+
+	if (msgbox)
+		::MessageBox(NULL, msg.c_str(), file.c_str(), MB_ICONERROR | MB_TOPMOST |MB_OK);
+	fclose(f);
+
+}
+
+bool MXSoftwareCheck::chkSize(const string &fname, const string& val) 
+{
+	unsigned int len = atoi(val.c_str());
+	return isFileSizeOk(fname, len);
+}
+
+
+const time_t MXSoftwareCheck::get_filetime(const string& file) const
+{
+	time_t now;
+	time(&now);
+	struct stat status;
+	
+	if (stat(file.c_str(), &status))
+	{
+		return 0;
+	}
+
+	return status.st_mtime;
+}
+
+
+const unsigned int MXSoftwareCheck::get_filesize(const string& file) const
+{
+	struct stat status;
+	
+	if (stat(file.c_str(), &status))
+	{
+		return 0;
+	}
+
+	return status.st_size;
+}
+
+bool MXSoftwareCheck::chkDate(const string &fname, const string& val)
+{
+	time_t ftime = get_filetime(fname);
+	if (!ftime)
+		return true;
+	struct tm *xx = gmtime(&ftime);
+	
+	return atoi(val.substr(0, 2).c_str()) == xx->tm_mday 
+		&& atoi(val.substr(3, 2).c_str()) == xx->tm_mon+1 
+		&& atoi(val.substr(6, 2).c_str()) == xx->tm_year%100; // bei 2003 steht 103 drin  
+	
+	return true;
+}
+	
+
+bool MXSoftwareCheck::isFileSizeOk(const string &fname, unsigned int size) const 
+{
+	// Länge Null heisst: Datei nicht gefunden. Das ist kein Fehler
+	unsigned long fs = get_filesize(fname);
+	return  fs ? fs == size : true;
+}
+
+void MXSoftwareCheck::readfile()
+{
+	/**
+	Liest die Konfigdatei softwarestand.txt aus und trägt jede Zeile, die ein Gleichheits-
+	zeichen enthält in die Liste content ein.
+	*/
+
+	vector<string> filenames = conf.get_configfile();
+
+	
+	for(int i =0; i < filenames.size(); i++)
+	{
+		ifstream is(filenames[i].c_str());
+		while (!is.eof())
+		{
+			char line[255];
+			is.getline(line, 255);
+			string str(line);
+			int pos = str.find_first_of('=');
+			if (pos >= 0)
+				content.push_back(str.c_str());
+		}
+	}
+}
+
+void MXSoftwareCheck::process()
+{
+	/**
+	Ruft für alle Einträge der Liste content die process_entry Methode auf
+	*/
+	list<string>::iterator it;
+	for (it = content.begin(); it != content.end(); it++)
+		process_entry(*it); 
+}
+
+void MXSoftwareCheck::process_entry(string str)
+{
+	/**
+	Wertet einen Eintrag aus. Mögliche Einträge sind "size", "date", "file", "path" und "text".
+	Jedem Eintrag ist eine Methode zur Auswertung zugeordnet, die mit dem Dateinamen aus dem file
+	Eintrag und dem Wert nach dem Gleichheitszeichen aufgerufen wird. Schlägt der Aufruf fehl, wird ein
+	Eintrag in der Logdatei vorgenommen.
+	*/
+
+	int posval = str.find('=') + 1;
+	string val = str.substr(posval, 255);
+	string cmd = str.substr(0, posval-1);
+	string f = path + "\\" + file;
+
+	bool ret = true;
+	if (cmd == "silent")
+		silent = (val == "true") ? true : false;
+	if (cmd == "size")
+		ret = chkSize(f, val);
+	else if (cmd == "date")
+		ret = chkDate(f, val);
+	else if (cmd == "file")
+		ret = setFile(f, val);
+	else if (cmd == "path")
+		ret = setPath(f, val);
+	else if (!conf.use_english() && cmd == "text")
+		setMsg(f, val);
+	else if (conf.use_english() && cmd == "text_english")
+		setMsg(f, val);
+	
+	if (!ret)
+	{
+		if (!check_count)
+		{
+			write_log2(f, cur_msg);
+			is_logfile_empty = false;
+			check_count++;
+		}
+	}
+}
+
+// liefert true, wenn Prüfung der Dateien anhand von configfile vorgenommen werden soll
+bool MXSoftwareCheck::check_configfile()
+{
+	vector<string> strConfigfiles = conf.get_configfile();
+	return strConfigfiles.size() > 0 ? true : false;
+}
+
+vector<string> MXSoftwareCheck::isFileOlder(double maxdiff)
+{
+	vector<string> strConfigfiles = conf.get_configfile();
+
+	vector<string> strFilesOutOfDate;
+	for(int j = 0; j < strConfigfiles.size(); j++)
+	{
+		time_t now;
+		time(&now);
+		double difftm = difftime(now, get_filetime(strConfigfiles[j]));
+		if( difftm >= maxdiff )
+		{
+			strFilesOutOfDate.push_back(strConfigfiles[j]);
+		}
+	}
+	return strFilesOutOfDate; 
+}
+

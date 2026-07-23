@@ -1,0 +1,27 @@
+#pragma once
+
+
+typedef std::vector<CCGraficRohrOneAssembeldKomponenteVector*> CGraficRohrBemassungsAnbauChildKomponentenVectorVectorBase;
+
+class WAXGLDLL CGraficRohrBemassungsAnbauChildKomponentenVectorVector :	public CGraficRohrBemassungsAnbauChildKomponentenVectorVectorBase
+{
+	private:
+		CRohrBemassungsAnbauChildKomponentenVectorVector* m_pLogicRohrBemassungsAnbauChildKomponentenVectorVector;
+	
+	public:
+
+		CGraficRohrBemassungsAnbauChildKomponentenVectorVector(void);
+		~CGraficRohrBemassungsAnbauChildKomponentenVectorVector(void);
+
+		void SetLogicRohrBemassungsAnbauChildKomponentenVectorVector( CRohrBemassungsAnbauChildKomponentenVectorVector* pLogicRohrBemassungsAnbauChildKomponentenVectorVector)
+		{
+			  m_pLogicRohrBemassungsAnbauChildKomponentenVectorVector = pLogicRohrBemassungsAnbauChildKomponentenVectorVector;
+		}
+
+		CRohrBemassungsAnbauChildKomponentenVectorVector* GetLogicRohrBemassungsAnbauChildKomponentenVectorVector()
+		{
+			 return  m_pLogicRohrBemassungsAnbauChildKomponentenVectorVector;
+		}
+};
+
+

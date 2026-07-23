@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="9,00"
+	Name="SVG Grafic"
+	ProjectGUID="{B9BAE22C-8A0F-4BF6-904D-6A9C1150E553}"
+	RootNamespace="SVGGrafic"
+	Keyword="MFCDLLProj"
+	TargetFrameworkVersion="196613"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="..\Debug"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="2"
+			UseOfMFC="2"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="_DEBUG"
+				MkTypLibCompatible="false"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories=".\"
+				PreprocessorDefinitions="_WAXGLDLL;WIN32;_WINDOWS;_DEBUG;_AFXEXT"
+				MinimalRebuild="true"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="3"
+				UsePrecompiledHeader="2"
+				WarningLevel="3"
+				DebugInformationFormat="4"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="_DEBUG"
+				Culture="1031"
+				AdditionalIncludeDirectories="$(IntDir)"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				OutputFile="$(OutDir)\SVGGrafic.dll"
+				LinkIncremental="2"
+				ModuleDefinitionFile=".\SVG Grafic.def"
+				GenerateDebugInformation="true"
+				SubSystem="2"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
+			IntermediateDirectory="$(ConfigurationName)"
+			ConfigurationType="2"
+			UseOfMFC="2"
+			CharacterSet="1"
+			WholeProgramOptimization="1"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+				PreprocessorDefinitions="NDEBUG"
+				MkTypLibCompatible="false"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="2"
+				EnableIntrinsicFunctions="true"
+				PreprocessorDefinitions="WIN32;_WINDOWS;NDEBUG;_AFXEXT"
+				RuntimeLibrary="2"
+				EnableFunctionLevelLinking="true"
+				UsePrecompiledHeader="2"
+				WarningLevel="3"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+				PreprocessorDefinitions="NDEBUG"
+				Culture="1031"
+				AdditionalIncludeDirectories="$(IntDir)"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				LinkIncremental="1"
+				ModuleDefinitionFile=".\SVG Grafic.def"
+				GenerateDebugInformation="true"
+				SubSystem="2"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="_Tubes Logic Grafic Adapter"
+			>
+			<File
+				RelativePath=".\_Tubes Logic Grafic Adapter\RohrBemassungsAnbauChildKomponentenVectorVector.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\_Tubes Logic Grafic Adapter\RohrBemassungsAnbauChildKomponentenVectorVector.h"
+				>
+			</File>
+			<File
+				RelativePath=".\_Tubes Logic Grafic Adapter\RohrBemassungsRohrKomponentenVector.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\_Tubes Logic Grafic Adapter\RohrBemassungsRohrKomponentenVector.h"
+				>
+			</File>
+			<File
+				RelativePath=".\_Tubes Logic Grafic Adapter\RohrBemassungsRohrKomponentenVectorVector.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\_Tubes Logic Grafic Adapter\RohrBemassungsRohrKomponentenVectorVector.h"
+				>
+			</File>
+			<File
+				RelativePath=".\_Tubes Logic Grafic Adapter\RohrKomponente.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\_Tubes Logic Grafic Adapter\RohrKomponente.h"
+				>
+			</File>
+			<File
+				RelativePath=".\_Tubes Logic Grafic Adapter\RohrOneAssembeldKomponenteVector.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\_Tubes Logic Grafic Adapter\RohrOneAssembeldKomponenteVector.h"
+				>
+			</File>
+			<File
+				RelativePath=".\_Tubes Logic Grafic Adapter\WaxRohrInterfaceAdapter.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\_Tubes Logic Grafic Adapter\WaxRohrInterfaceAdapter.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Controller"
+			>
+			<File
+				RelativePath=".\Controller\GraficController.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Controller\GraficController.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Mechanicals Geometrics"
+			>
+			<File
+				RelativePath=".\Mechanicals Geometrics\GraficRohrBemassungsAnbauChildKomponentenVectorVector.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Mechanicals Geometrics\GraficRohrBemassungsAnbauChildKomponentenVectorVector.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Mechanicals Geometrics\GraficRohrBemassungsRohrKomponentenVector.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Mechanicals Geometrics\GraficRohrBemassungsRohrKomponentenVector.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Mechanicals Geometrics\GraficRohrBemassungsRohrKomponentenVectorVector.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Mechanicals Geometrics\GraficRohrBemassungsRohrKomponentenVectorVector.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Mechanicals Geometrics\GraficRohrKomponente.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Mechanicals Geometrics\GraficRohrKomponente.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Mechanicals Geometrics\GraficRohrOneAssembeldKomponenteVector.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Mechanicals Geometrics\GraficRohrOneAssembeldKomponenteVector.h"
+				>
+			</File>
+			<File
+				RelativePath=".\Mechanicals Geometrics\GraficTubeController.cpp"
+				>
+			</File>
+			<File
+				RelativePath=".\Mechanicals Geometrics\GraficTubeController.h"
+				>
+			</File>
+		</Filter>
+		<File
+			RelativePath=".\Resource.h"
+			>
+		</File>
+		<File
+			RelativePath=".\stdafx.cpp"
+			>
+			<FileConfiguration
+				Name="Debug|Win32"
+				>
+				<Tool
+					Name="VCCLCompilerTool"
+					UsePrecompiledHeader="1"
+				/>
+			</FileConfiguration>
+		</File>
+		<File
+			RelativePath=".\stdafx.h"
+			>
+		</File>
+		<File
+			RelativePath=".\SVG Grafic.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\SVG Grafic.def"
+			>
+		</File>
+		<File
+			RelativePath=".\SVG Grafic.rc"
+			>
+		</File>
+		<File
+			RelativePath=".\UtiltyHelper.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\UtiltyHelper.h"
+			>
+		</File>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

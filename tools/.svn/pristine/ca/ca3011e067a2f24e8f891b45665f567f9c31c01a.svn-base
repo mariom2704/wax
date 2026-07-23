@@ -1,0 +1,50 @@
+////////////////////////////////////////////////////////////////////////
+// CFunctions.h - Header file
+//
+//
+// Company	 : Minimax GmbH
+// Address	 : Industriestrasse 10-12 
+// 			   23843 Bad Oldesloe
+//	           Germany
+// Telephone : +49 4531 803 0		
+// Internet  : www.minimax.de
+//
+// Author    : Henning Kluetz		
+// E-Mail    : kluetzh@minimax.de	
+//
+// Date	     : May.29.2001 	
+//
+
+#ifndef __CFunctions__h
+#define __CFunctions__h
+
+// Achtung: Müssen mit enum SQLTYPES in ExcelTable Klasse übereinstimmen!!!
+#define SQLTEXT 0
+#define SQLINT 1
+#define SQLDOUBLE 2
+
+extern  int ExcelTableSetVar(char * File, char * Table);
+
+extern	int ExcelTableSetColumnQuantity(int value);
+
+extern	int ExcelTableSetColumnNames(char *Names[], int Quantity);
+
+extern	int ExcelTableSetColumnType(int quantity, int type[]);
+
+extern  int  ExcelTableCreateTable();
+
+extern	int  ExcelTableOpenTable(char * File, char * Table);
+
+extern	int  ExcelTableCloseTable(char * File, char * Table);
+
+extern	int  ExcelTableAddColumn(int Number);
+
+extern	int  ExcelTableInsertInto(char * Values[]);
+
+extern	int  ExcelTableUpdate(char * SetColumn, char * SetValue, int SetType, char * WhereColumn, char * WhereValue, int WhereType);
+
+extern int ExcelTableOffice2010();
+
+extern const char* ExcelExt();
+
+#endif 

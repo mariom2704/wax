@@ -1,0 +1,32 @@
+#include "stdafx.h"
+#include "GraficFileController.h"
+
+
+CGraficFileController::CGraficFileController(void)
+{
+}
+
+
+
+void CGraficFileController::CreateSVGFile(CString strFile)
+{
+
+	
+	hPostFile.m_hFile = CreateFile( strFile, GENERIC_READ | GENERIC_WRITE , 0, NULL, CREATE_ALWAYS,	0, 	NULL );        
+	
+	strSVGContent = "<svg xmlns=\"http://www.w3.org/2000/svg\"  viewBox=\"0 0 1300 1760\" version=\"1.1\">\
+					  <line x1=\"0\" y1=\"2\" x2=\"1760\" y2=\"2\" style=\"stroke:rgb(255,0,0);stroke-width:3\" />";
+
+}
+
+
+void CGraficFileController::WriteSVGContent()
+{
+	hPostFile.Write( strSVGContent, strSVGContent.GetLength() );
+	hPostFile.Close();
+}
+
+
+CGraficFileController::~CGraficFileController(void)
+{
+}

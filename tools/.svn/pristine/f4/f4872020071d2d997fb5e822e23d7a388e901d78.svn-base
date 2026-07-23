@@ -1,0 +1,46 @@
+#pragma once
+
+
+class CGraficController;
+typedef std::vector<CGraficRohrKomponente*> CGraficRohrKomponenteVector;
+//typedef std::vector<CGraficOneAssembeldRohrKomponente*> CGraficRohrKomponenteVector;
+
+
+class CGraficRohrContainer
+{
+private:
+	
+	
+
+	 CPointDouble m_TubeStartPoint;
+	 CPointDouble m_EqualCornerPoint;
+	 CPointDouble m_CumulatedTubePoints;
+
+public:
+	CGraficRohrKomponenteVector m_GraficStrangRohrKomponenten;
+
+public: 
+	CGraficRohrContainer();
+	
+
+	void CumulatedTubePoints(CPointDouble CumulatedTubePoints);
+	void CreateGraficModell();
+	
+	void CreateGraficTubeFromComponents(double CumulatedWinkel);
+	void SetStartPointTubeCenterLine(CPointDouble TubeStartPoint)
+	{
+		m_TubeStartPoint = TubeStartPoint;
+	};
+	
+	CPointDouble GetStartPointTubeCenterLine()
+	{
+		return m_TubeStartPoint;
+	};
+
+	void calculatePunktEndePunktForKnick(double winkel, double x, double y, double& x3, double& y3);
+
+	void DrawCompnent(int iLäufer);
+	
+	~CGraficRohrContainer(void);
+};
+

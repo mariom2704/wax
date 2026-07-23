@@ -1,0 +1,192 @@
+#include "stdafx.h"
+#include "StrangrohrGrafic.h"
+#include <math.h>
+#include "UtiltyHelper.h"
+
+CGraficStranrohrContainer::CGraficStranrohrContainer( CGraficController* pCGraficController, CGraficRohrKomponenteVector StrangRohrKomponenten )
+{
+	m_pCGraficController = pCGraficController;
+	m_GraficStrangRohrKomponenten = StrangRohrKomponenten;
+}
+
+
+
+
+
+void CGraficStranrohrContainer::CreateGraficModell()
+{
+	CPointDouble TubeStartPoint;
+	TubeStartPoint.X = 10;
+	TubeStartPoint.Y = 101;
+	SetStartPointTubeCenterLine(TubeStartPoint);
+	
+	//std::vector<int>::size_type sz = m_GraficStrangRohrKomponenten.size();
+	//for(UINT i = 1; i < sz; i++ )
+	{
+		
+		DrawPartTubeGraficWithArc();
+		//SetStartPointCenterLine(m_PointEnde);
+	}
+	
+}
+
+
+
+
+
+
+void CGraficStranrohrContainer::DrawPartTubeGraficWithArc()
+{
+
+	
+	m_GraficStrangRohrKomponenten[0].SetStartPointCenterLine(GetStartPointTubeCenterLine());
+	
+	double CumulatedArcBefore  = 0;
+	double CumulatedArcCurrent = 0;
+	UINT i = 1;
+	//for(UINT i = 1; i < sz; i++ )
+	{
+		m_GraficStrangRohrKomponenten[i-1].calculateMittelPunktEndePunkt(CumulatedArcCurrent);
+		CumulatedArcBefore = CumulatedArcCurrent;
+		double  xDelta1 = m_GraficStrangRohrKomponenten[i-1].getEndPointCenterLine().X - m_GraficStrangRohrKomponenten[i-1].getStartPointCenterLine().X;  // -25
+		double  yDelta1 = m_GraficStrangRohrKomponenten[i-1].getEndPointCenterLine().Y - m_GraficStrangRohrKomponenten[i-1].getStartPointCenterLine().Y;  // 520
+	
+		m_GraficStrangRohrKomponenten[i].SetStartPointCenterLine(m_GraficStrangRohrKomponenten[i-1].getEndPointCenterLine());
+		m_GraficStrangRohrKomponenten[i].calculateMittelPunktEndePunkt(CumulatedArcCurrent);
+
+	
+		double DrehungGradWinkel = -NEUNZIG_GRADWINKEL;
+		int j = 0;
+		for(int j =0; j <=1; j++)
+		{
+			DrehungGradWinkel = -DrehungGradWinkel;
+		
+			double xRadius = cos((CumulatedArcBefore + DrehungGradWinkel)* 3.14 / 180) 
+				* m_GraficStrangRohrKomponenten[i-1].GetLogicalRohrKomponente()->GetRadius();
+
+			double yRadius = sin((CumulatedArcBefore + DrehungGradWinkel)* 3.14 / 180)
+				* m_GraficStrangRohrKomponenten[i-1].GetLogicalRohrKomponente()->GetRadius();
+
+			double xNullPunktBeginAussenWandBefore  = m_GraficStrangRohrKomponenten[i-1].getStartPointCenterLine().X + xRadius; 
+			double yNullPunktBeginAussenWandBefore  = m_GraficStrangRohrKomponenten[i-1].getStartPointCenterLine().Y + yRadius; 
+
+					
+			xRadius = cos ((CumulatedArcCurrent + DrehungGradWinkel) * 3.14 / 180) * m_GraficStrangRohrKomponenten[i].GetLogicalRohrKomponente()->GetRadius();
+			yRadius = sin ((CumulatedArcCurrent + DrehungGradWinkel) * 3.14 / 180) * m_GraficStrangRohrKomponenten[i].GetLogicalRohrKomponente()->GetRadius();
+	
+			double xNullPunktBeginAussenWandCurrent = m_GraficStrangRohrKomponenten[i-1].getEndPointCenterLine().X + xRadius;
+			double yNullPunktBeginAussenWandCurrent = m_GraficStrangRohrKomponenten[i-1].getEndPointCenterLine().Y + yRadius;
+
+			double xNullPunktEndeAussenWandCurrent = m_GraficStrangRohrKomponenten[i].getEndPointCenterLine().X + xRadius;
+			double yNullPunktEndeAussenWandCurrent = m_GraficStrangRohrKomponenten[i].getEndPointCenterLine().Y + yRadius;
+
+			double xDelta2 = xNullPunktEndeAussenWandCurrent - xNullPunktBeginAussenWandCurrent;
+			double yDelta2 = yNullPunktEndeAussenWandCurrent - yNullPunktBeginAussenWandCurrent;
+		
+			double dFaktor = CUtiltyHelper::GetFaktorForConnectionPoint( CPointDouble(xNullPunktBeginAussenWandBefore, yNullPunktBeginAussenWandBefore), CPointDouble(xDelta1, yDelta1),
+																  CPointDouble(xNullPunktEndeAussenWandCurrent, yNullPunktEndeAussenWandCurrent), CPointDouble(xDelta2, yDelta2));
+	
+	
+			double xNullPunktConnectionPointAussenWand =  xNullPunktBeginAussenWandBefore + dFaktor * xDelta1;
+			double yNullPunktConnectionPointAussenWand =  yNullPunktBeginAussenWandBefore + dFaktor * yDelta1;
+
+	
+	
+			//MittellinieI
+			m_pCGraficController->ZeichneLinie(m_pCGraficController->m_GraficFileController.strSVGContent,	"rgb(255,0,0)", m_GraficStrangRohrKomponenten[i-1].getStartPointCenterLine().X, m_GraficStrangRohrKomponenten[i-1].getStartPointCenterLine().Y, m_GraficStrangRohrKomponenten[i-1].getEndPointCenterLine().X,  m_GraficStrangRohrKomponenten[i-1].getEndPointCenterLine().Y );
+
+			CString strFarbe = "rgb(0,0,0)";
+			if(j==1)
+				strFarbe = "rgb(0,0,255)";
+			m_pCGraficController->ZeichneLinie(m_pCGraficController->m_GraficFileController.strSVGContent, strFarbe, xNullPunktBeginAussenWandBefore, yNullPunktBeginAussenWandBefore,  xNullPunktConnectionPointAussenWand, yNullPunktConnectionPointAussenWand);
+	
+			//MittellinieII
+			m_pCGraficController->ZeichneLinie(m_pCGraficController->m_GraficFileController.strSVGContent,	"rgb(255,0,0)", m_GraficStrangRohrKomponenten[i].getStartPointCenterLine().X, m_GraficStrangRohrKomponenten[i].getStartPointCenterLine().Y, m_GraficStrangRohrKomponenten[i].getEndPointCenterLine().X,  m_GraficStrangRohrKomponenten[i].getEndPointCenterLine().Y );
+
+			m_pCGraficController->ZeichneLinie(m_pCGraficController->m_GraficFileController.strSVGContent, strFarbe, xNullPunktEndeAussenWandCurrent, yNullPunktEndeAussenWandCurrent, xNullPunktConnectionPointAussenWand, yNullPunktConnectionPointAussenWand);
+		}
+	}
+
+//	m_pCGraficController->ZeichneLinie(m_pCGraficController->m_GraficFileController.strSVGContent,  getEndPointCenterLine().X,  getEndPointCenterLine().Y,  xPointEqualII,  yPointEqualII);
+	
+}
+
+
+void CGraficStranrohrContainer::calculatePunktEndePunktForKnick(double winkel,  double x, double y, double& x2, double& y2)
+{
+	x2 = x + cos(winkel  *  3.14 /180) * 100;
+	y2 = y + sin(winkel  *  3.14 /180) * 100;
+};
+
+
+
+
+
+void CGraficStranrohrContainer::DrawPartTubeGrafic(CRohrKomponente StrangRohr)
+{
+	/*
+	double  xDelta1 = getEndPointCenterLine().X - getStartPointCenterLine().X;  // -25
+	double  yDelta1 = getEndPointCenterLine().Y - getStartPointCenterLine().Y;  // 520
+	
+	//double Länge = sqrt(xDelta1 * xDelta1 + yDelta1 * yDelta1);
+	
+	static int u = 0;
+	double x1  = getStartPointCenterLine().X + 120; 
+	double y1  = getStartPointCenterLine().Y + 120; 
+	if(u == 1)
+	{
+		x1  = getStartPointCenterLine().X + 40; 
+		y1  = getStartPointCenterLine().Y + 40; 
+	}
+	
+	
+	// drehen
+	double x2 = -yDelta1;  
+	double y2 =  xDelta1;   
+	
+	double x21 = getStartPointCenterLine().X + x2;
+	double y21 = getStartPointCenterLine().Y + y2;
+
+	double  xDelta2 = x21 - getStartPointCenterLine().X; // 25
+	double  yDelta2 = y21 - getStartPointCenterLine().Y; // 520
+	
+	// Faktor ausrechnen zur Ermittlung des Equalpunktes
+	double dFaktor = CUtiltyHelper::GetFaktorForConnectionPoint( CPointDouble( getStartPointCenterLine().X, getStartPointCenterLine().Y), CPointDouble(xDelta2, yDelta2),
+																 CPointDouble( x1, y1),  CUtiltyHelper::ChangeOppositeDirectionOfPoint(CPointDouble(xDelta1, yDelta1)));
+	double xPointEqual =  getStartPointCenterLine().X + dFaktor * xDelta2;
+	double yPointEqual =  getStartPointCenterLine().Y + dFaktor * yDelta2;
+
+	
+	if( StrangRohr.GetprevStrangRohr() != 0 && StrangRohr.GetWinkel() != 0)
+	{
+		CPointDouble  PointDouble = getFirstBorderPoint();
+		xPointEqual = PointDouble.X;
+		yPointEqual = PointDouble.Y;
+	}
+	
+	dFaktor = CUtiltyHelper::GetFaktorForConnectionPoint( CPointDouble(getEndPointCenterLine().X, getEndPointCenterLine().Y), CPointDouble(xDelta2, yDelta2),
+														  CPointDouble(xPointEqual, yPointEqual), CPointDouble(xDelta1, yDelta1));
+	//dFaktor = dFaktorII * -1;
+	m_CornerPointEqualII.X =  getEndPointCenterLine().X + dFaktor * xDelta2;
+	m_CornerPointEqualII.Y =  getEndPointCenterLine().Y + dFaktor * yDelta2;
+	CalculateWinkel( StrangRohr, dFaktor,  xDelta2,  yDelta2);
+
+	
+	{
+		m_pCGraficController->ZeichneLinie(m_pCGraficController->m_GraficFileController.strSVGContent,	getStartPointCenterLine().X, getStartPointCenterLine().Y, getEndPointCenterLine().X,  getEndPointCenterLine().Y );
+
+		m_pCGraficController->ZeichneLinie(m_pCGraficController->m_GraficFileController.strSVGContent, getStartPointCenterLine().X, getStartPointCenterLine().Y,  xPointEqual, yPointEqual);
+	
+		m_pCGraficController->ZeichneLinie(m_pCGraficController->m_GraficFileController.strSVGContent, xPointEqual, yPointEqual, m_CornerPointEqualII.X,  m_CornerPointEqualII.Y);
+	}
+   u++;
+   */
+//	m_pCGraficController->ZeichneLinie(m_pCGraficController->m_GraficFileController.strSVGContent,  getEndPointCenterLine().X,  getEndPointCenterLine().Y,  xPointEqualII,  yPointEqualII);
+	
+}
+
+
+
+CGraficStranrohrContainer::~CGraficStranrohrContainer(void)
+{
+}

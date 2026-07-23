@@ -1,0 +1,49 @@
+﻿Der Buildvorgang wurde am 21.03.2013 09:45:21 gestartet.
+     1>Projekt "D:\work\wax\_SVG Wax Grafic\SplitterWindowTutorial.vcxproj" auf Knoten "2", build Ziel(e).
+     1>InitializeBuildStatus:
+         ".\Debug\SplitterWindowTutorial.unsuccessfulbuild" wird erstellt, da "AlwaysCreate" angegeben wurde.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I.\ /ZI /nologo /W4 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _MBCS /D _AFXDLL /Gm /EHsc /RTC1 /MDd /GS /Gy- /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp".\Debug\SplitterWindowTutorial.pch" /Fo".\Debug\\" /Fd".\Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt "Grafic\SVG File Operations\GraficFileController.cpp" HtmlTestview.cpp MainFrm.cpp SplitterWindowTutorial.cpp SplitterWindowTutorialDoc.cpp SplitterWindowTutorialView.cpp StdAfx.cpp TestEingabe.cpp "Tubes it self\StrangRohr.cpp" UtiltyHelper.cpp
+         UtiltyHelper.cpp
+         StrangRohr.cpp
+         TestEingabe.cpp
+         StdAfx.cpp
+         SplitterWindowTutorialView.cpp
+         SplitterWindowTutorialDoc.cpp
+         SplitterWindowTutorial.cpp
+         MainFrm.cpp
+         HtmlTestview.cpp
+         GraficFileController.cpp
+       ResourceCompile:
+         Alle Ausgaben sind aktuell.
+       ManifestResourceCompile:
+         Alle Ausgaben sind aktuell.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug\SplitterWindowTutorial.exe" /INCREMENTAL /NOLOGO /MANIFEST /ManifestFile:".\Debug\SplitterWindowTutorial.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\work\wax\_SVG Wax Grafic\Debug\SplitterWindowTutorial.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\Debug\SplitterWindowTutorial.lib" /MACHINE:X86 .\Debug\SplitterWindowTutorial.res
+         .\Debug\SplitterWindowTutorial.exe.embed.manifest.res
+         .\Debug\GraficController.obj
+         .\Debug\StrangrohrGrafic.obj
+         .\Debug\GraficFileController.obj
+         .\Debug\HtmlTestview.obj
+         .\Debug\MainFrm.obj
+         .\Debug\SplitterWindowTutorial.obj
+         .\Debug\SplitterWindowTutorialDoc.obj
+         .\Debug\SplitterWindowTutorialView.obj
+         .\Debug\StdAfx.obj
+         .\Debug\StrangRohr.obj
+         .\Debug\TestEingabe.obj
+         .\Debug\UtiltyHelper.obj
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:".\Debug\SplitterWindowTutorial.exe.embed.manifest" /manifest .\Debug\SplitterWindowTutorial.exe.intermediate.manifest "C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\Include\Manifest\dpiaware.manifest"
+         Alle Ausgaben sind aktuell.
+       LinkEmbedManifest:
+         Alle Ausgaben sind aktuell.
+         SplitterWindowTutorial.vcxproj -> D:\work\wax\_SVG Wax Grafic\.\Debug\SplitterWindowTutorial.exe
+       FinalizeBuildStatus:
+         Die Datei ".\Debug\SplitterWindowTutorial.unsuccessfulbuild" wird gelöscht.
+         Aktualisieren des Timestamps von ".\Debug\SplitterWindowTutorial.lastbuildstate".
+     1>Die Erstellung des Projekts "D:\work\wax\_SVG Wax Grafic\SplitterWindowTutorial.vcxproj" ist abgeschlossen, build Ziel(e).
+
+Das Erstellen war erfolgreich.
+
+Verstrichene Zeit 00:00:02.09

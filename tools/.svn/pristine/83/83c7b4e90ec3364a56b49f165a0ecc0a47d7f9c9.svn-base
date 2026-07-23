@@ -1,0 +1,376 @@
+#include "stdafx.h"
+#include "UtiltyHelper.h"
+#include "_Tubes Logic Grafic Adapter\RohrKomponente.h"
+
+#include "..\SVG File Operations\GraficFileController.h"
+#include "GraficTubeController.h"
+#include "GraficRohrKomponente.h"
+#include "GraficRohrOneAssembeldKomponenteVector.h"
+
+#include "..\Controller\GraficController.h"
+
+#include <math.h>
+
+
+
+
+CGraficTubeController::CGraficTubeController(CGraficController*pGraficController)
+{
+	m_pGraficController = pGraficController;
+}
+
+
+CGraficTubeController::CGraficTubeController()
+{
+}
+
+
+
+void CGraficTubeController::CalculateDimisions()	
+{/*
+	m_pGraficController->ResetSetDimisions();
+	CreateGraficModell(true);
+	CGraficComponentsForOneAssembeldTube* pRohrOneAssembeldKomponente = m_pGraficContainerForAssembeldTubes;
+	std::vector<int>::size_type sz = pRohrOneAssembeldKomponente->size();
+	for(int t = 0; t < (int) sz; t++)
+	{
+		CGraficRohrKomponente* pGraficRohrKomponente  = pRohrOneAssembeldKomponente->at(t);
+		pGraficRohrKomponente->SetCalculateDemisions(false);
+		
+	}
+	*/
+}
+
+
+
+void CGraficTubeController::CreateGraficModell(bool bOnlyCaculateMainTube)
+{
+	CPointDouble TubeStartPoint;
+	TubeStartPoint.X = 50;
+	TubeStartPoint.Y = 800;
+	SetStartPointTubeCenterLine(TubeStartPoint);
+
+	std::vector<int>::size_type sz = m_pGraficContainerForAssembeldTubes->size();
+	//for(int t = 0; t < (int) sz; t++)
+	{
+		// Das erste Element des Hauptrohres muss gesondert behandelt werden, da das erste Element um 180 gedreht werden muss
+		// als gegen die allgemeine Konstruktionsrichtung
+		
+
+		CGraficRohrKomponente* pGraficRohrKomponente  = m_pGraficContainerForAssembeldTubes->at(0);
+		CGraficRohrKomponente* pGraficRohrKomponenteI = m_pGraficContainerForAssembeldTubes->at(1);
+
+		pGraficRohrKomponente->SetStartPointCenterLine(GetStartPointTubeCenterLine());
+		double iWinkel = pGraficRohrKomponente->GetLogicalRohrKomponente()->GetWinkel();
+		pGraficRohrKomponente->GetLogicalRohrKomponente()->SetWinkel(iWinkel+180);
+		pGraficRohrKomponente->SetGraficRohrKomponentenWinkel(pGraficRohrKomponenteI);
+		double dCumulatedDummyWinkel = 0;
+		dCumulatedDummyWinkel += pGraficRohrKomponente->SetEndPointCenterLine(dCumulatedDummyWinkel);
+		pGraficRohrKomponente->SetFirstBorderpoint(dCumulatedDummyWinkel);
+		pGraficRohrKomponente->SetSecondBorderpoint(dCumulatedDummyWinkel);
+		pGraficRohrKomponente->SetThirdBorderpoint(dCumulatedDummyWinkel);
+		pGraficRohrKomponente->SetFourthBorderpoint(dCumulatedDummyWinkel);
+		pGraficRohrKomponente->SetPitchForCenterLinie();
+		pGraficRohrKomponenteI->SetStartPointCenterLine(pGraficRohrKomponente->getStartPointCenterLine());
+		pGraficRohrKomponente->SetKomponentPointfromConectonPoint();
+				
+		CreateGraficOneAssembeldTubeFromComponents(pGraficRohrKomponente->GetLogicalRohrKomponente()->GetWinkel()-180, 0, bOnlyCaculateMainTube);
+		pGraficRohrKomponente->GetLogicalRohrKomponente()->SetWinkel(iWinkel);
+	}
+	
+}
+
+
+
+
+void CGraficTubeController::RecursiveIteratetingThroughComponentsForOneAssembeldTubeAndDraw( CCGraficRohrOneAssembeldKomponenteVector* pGraficRohrOneAssembeldKomponenteVector)
+{
+	
+	std::vector<int>::size_type sz = pGraficRohrOneAssembeldKomponenteVector->size();
+	//First Draw your one Komponents
+	for(int i = 0; i < (int)sz; i++)
+	{
+		CGraficRohrKomponente* pGraficRohrKomponente = pGraficRohrOneAssembeldKomponenteVector->at(i);
+		pGraficRohrKomponente->DrawYourSelf();
+	}
+
+	if(pGraficRohrOneAssembeldKomponenteVector->HasAssembeldTubes())
+	{	
+		//Now delegate DrawProcess to the Child Tubes
+		CGraficContainerForAssembeldTubes& GraficContainerForAssembeldTubes = pGraficRohrOneAssembeldKomponenteVector->GetChildAssembeldTubes();
+		sz = GraficContainerForAssembeldTubes.size();
+		for(int i = 0; i < (int)sz; i++)
+		{
+				CCGraficRohrOneAssembeldKomponenteVector* pGraficRohrOneAssembeldChildKomponenteVector = GraficContainerForAssembeldTubes[i];
+				RecursiveIteratetingThroughComponentsForOneAssembeldTubeAndDraw(pGraficRohrOneAssembeldChildKomponenteVector);
+		}
+	}
+
+}
+
+
+
+
+
+void CGraficTubeController::CreateGraficOneAssembeldTubeFromComponents(double CumulatedArcCurrent, int z, bool bOnlyCaculateMainTube)
+{
+	
+	
+		std::vector<int>::size_type kk =  m_pGraficContainerForAssembeldTubes->size();
+	
+		for(int i = 2; i < (int)kk+2; i=i+3)
+		{
+			CGraficRohrKomponente* pRohrKomponenteMII = NULL, *pRohrKomponenteMI = NULL, *pRohrKomponente = NULL, *pRohrKomponentePI = NULL, *pRohrKomponentePII = NULL;
+
+			
+			if( i < (int) kk-2)
+			{
+				pRohrKomponenteMII = m_pGraficContainerForAssembeldTubes->at(i-2);
+			}
+			if( i < (int)kk-1)
+			{
+				pRohrKomponenteMII = m_pGraficContainerForAssembeldTubes->at(i-2);
+				pRohrKomponenteMI  = m_pGraficContainerForAssembeldTubes->at(i-1);
+			}
+			if( i < (int)kk)
+			{
+				pRohrKomponenteMII = m_pGraficContainerForAssembeldTubes->at(i-2);
+				pRohrKomponenteMI  = m_pGraficContainerForAssembeldTubes->at(i-1);
+				pRohrKomponente	   = m_pGraficContainerForAssembeldTubes->at(i);
+			}
+			if( i + 1 < (int)kk)
+			{
+				pRohrKomponenteMII = m_pGraficContainerForAssembeldTubes->at(i-2);
+				pRohrKomponenteMI  = m_pGraficContainerForAssembeldTubes->at(i-1);
+				pRohrKomponente	   = m_pGraficContainerForAssembeldTubes->at(i);
+				pRohrKomponentePI  = m_pGraficContainerForAssembeldTubes->at(i+1);
+			}
+			if( i + 2 < (int)kk)
+			{
+				pRohrKomponenteMII = m_pGraficContainerForAssembeldTubes->at(i-2);
+				pRohrKomponenteMI  = m_pGraficContainerForAssembeldTubes->at(i-1);
+				pRohrKomponente	   = m_pGraficContainerForAssembeldTubes->at(i);
+				pRohrKomponentePI  = m_pGraficContainerForAssembeldTubes->at(i+1);
+				pRohrKomponentePII = m_pGraficContainerForAssembeldTubes->at(i+2);
+			}
+
+
+			//Erste Kompnente
+			if(i < (int) kk)
+			{
+				pRohrKomponenteMI->SetGraficRohrKomponentenWinkel(pRohrKomponente);
+			}
+			else
+			{ 
+				break;
+			}
+			CumulatedArcCurrent += pRohrKomponenteMI->SetEndPointCenterLine(CumulatedArcCurrent);
+			pRohrKomponenteMI->SetFirstBorderpoint(CumulatedArcCurrent);
+			pRohrKomponenteMI->SetSecondBorderpoint(CumulatedArcCurrent);
+			pRohrKomponenteMI->SetThirdBorderpoint(CumulatedArcCurrent);
+			pRohrKomponenteMI->SetFourthBorderpoint(CumulatedArcCurrent);
+			pRohrKomponenteMI->SetPitchForCenterLinie();
+			if(i < (int) kk)
+			{
+				;
+			}
+			else
+			{ 
+				break;
+			}
+		
+			if(i > 2)
+			{
+				//Connection Point 1-2 Kompnente erste Aussenwand
+				double dFaktorZeroI = CUtiltyHelper::GetFaktorForConnectionPoint( pRohrKomponenteMII->GetFirstBorderpoint(), pRohrKomponenteMII->GetPitchCenterLinie(),
+					CPointDouble(pRohrKomponenteMI->GetThirdBorderpoint().X, pRohrKomponenteMI->GetThirdBorderpoint().Y), pRohrKomponenteMI->GetPitchCenterLinie());
+				CPointDouble ullPunktConnectionPointAussenWand;
+				ullPunktConnectionPointAussenWand.X = pRohrKomponenteMII->GetFirstBorderpoint().X + dFaktorZeroI * pRohrKomponenteMII->GetPitchCenterLinie().X;
+				ullPunktConnectionPointAussenWand.Y = pRohrKomponenteMII->GetFirstBorderpoint().Y + dFaktorZeroI * pRohrKomponenteMII->GetPitchCenterLinie().Y;
+				pRohrKomponenteMII->SetThirdCornerPoint(ullPunktConnectionPointAussenWand);
+				pRohrKomponenteMI->SetFirstCornerPoint(ullPunktConnectionPointAussenWand);
+
+				//Connection Point 1-2 Kompnente Zweite Aussenwand
+				pRohrKomponenteMI->SetSecondBorderpoint(CumulatedArcCurrent);	
+				pRohrKomponenteMI->SetFourthBorderpoint(CumulatedArcCurrent);
+				dFaktorZeroI = CUtiltyHelper::GetFaktorForConnectionPoint( pRohrKomponenteMII->GetSecondBorderpoint(), pRohrKomponenteMII->GetPitchCenterLinie(),
+					CPointDouble(pRohrKomponenteMI->GetForthBorderpoint().X, pRohrKomponenteMI->GetForthBorderpoint().Y), pRohrKomponenteMI->GetPitchCenterLinie());
+				CPointDouble ullPunktConnectionPointAussenWandII;
+				ullPunktConnectionPointAussenWandII.X = pRohrKomponenteMII->GetSecondBorderpoint().X + dFaktorZeroI * pRohrKomponenteMII->GetPitchCenterLinie().X;
+				ullPunktConnectionPointAussenWandII.Y = pRohrKomponenteMII->GetSecondBorderpoint().Y + dFaktorZeroI * pRohrKomponenteMII->GetPitchCenterLinie().Y;
+				pRohrKomponenteMII->SetForthCornerPoint(ullPunktConnectionPointAussenWandII);
+				pRohrKomponenteMI->SetSecondCornerPoint(ullPunktConnectionPointAussenWandII);
+
+			}
+
+		
+			//Zweite Kompnente
+			//CumulatedArcCurrentII = CumulatedArcCurrentI;
+			 pRohrKomponente->SetStartPointCenterLine( pRohrKomponenteMI->GetEndPointCenterLine());
+			if(i < (int) kk-1)
+			{
+				 pRohrKomponente->SetGraficRohrKomponentenWinkel( pRohrKomponentePI );
+			}
+			else
+			{ 
+				break;
+			}
+			CumulatedArcCurrent +=  pRohrKomponente->SetEndPointCenterLine(CumulatedArcCurrent);
+			 pRohrKomponente->SetFirstBorderpoint(CumulatedArcCurrent);	
+			 pRohrKomponente->SetThirdBorderpoint(CumulatedArcCurrent);
+			 pRohrKomponente->SetPitchForCenterLinie();
+			if(i < (int) kk-1)
+			{
+				;
+			}
+			else
+			{ 
+				break;
+			}
+
+			//Connection Point 1-2 Kompnente erste Aussenwand
+			double dFaktor = CUtiltyHelper::GetFaktorForConnectionPoint(  pRohrKomponenteMI->GetFirstBorderpoint(),  pRohrKomponenteMI->GetPitchCenterLinie(),
+				CPointDouble( pRohrKomponente->GetThirdBorderpoint().X,  pRohrKomponente->GetThirdBorderpoint().Y),  pRohrKomponente->GetPitchCenterLinie());
+			CPointDouble NullPunktConnectionPointAussenWand;
+			NullPunktConnectionPointAussenWand.X =  pRohrKomponenteMI->GetFirstBorderpoint().X + dFaktor *  pRohrKomponenteMI->GetPitchCenterLinie().X;
+			NullPunktConnectionPointAussenWand.Y =  pRohrKomponenteMI->GetFirstBorderpoint().Y + dFaktor *  pRohrKomponenteMI->GetPitchCenterLinie().Y;
+			pRohrKomponenteMI->SetThirdCornerPoint(NullPunktConnectionPointAussenWand);
+			pRohrKomponente->SetFirstCornerPoint(NullPunktConnectionPointAussenWand);
+
+			//Connection Point 1-2 Kompnente Zweite Aussenwand
+			pRohrKomponente->SetSecondBorderpoint(CumulatedArcCurrent);	
+			pRohrKomponente->SetFourthBorderpoint(CumulatedArcCurrent);
+			dFaktor = CUtiltyHelper::GetFaktorForConnectionPoint( pRohrKomponenteMI->GetSecondBorderpoint(), pRohrKomponenteMI->GetPitchCenterLinie(),
+				CPointDouble(pRohrKomponente->GetForthBorderpoint().X, pRohrKomponente->GetForthBorderpoint().Y), pRohrKomponente->GetPitchCenterLinie());
+			CPointDouble NullPunktConnectionPointAussenWandII;
+			NullPunktConnectionPointAussenWandII.X = pRohrKomponenteMI->GetSecondBorderpoint().X + dFaktor * pRohrKomponenteMI->GetPitchCenterLinie().X;
+			NullPunktConnectionPointAussenWandII.Y = pRohrKomponenteMI->GetSecondBorderpoint().Y + dFaktor * pRohrKomponenteMI->GetPitchCenterLinie().Y;
+			pRohrKomponenteMI->SetForthCornerPoint(NullPunktConnectionPointAussenWandII);
+			pRohrKomponente->SetSecondCornerPoint(NullPunktConnectionPointAussenWandII);
+
+
+
+			//Dritte Kompnente
+			pRohrKomponentePI->SetStartPointCenterLine(pRohrKomponente->GetEndPointCenterLine());
+			if(i < (int) kk-2)
+			{
+				pRohrKomponentePI->SetGraficRohrKomponentenWinkel(pRohrKomponentePII);
+			}
+			else
+			{ 
+				break;
+			}
+		//	(*m_GraficStrangRohrKomponenten[i+1]).SetGraficRohrKomponentenWinkel(m_GraficStrangRohrKomponenten[i+1]);
+			CumulatedArcCurrent += pRohrKomponentePI->SetEndPointCenterLine(CumulatedArcCurrent);
+			pRohrKomponentePI->SetFirstBorderpoint(CumulatedArcCurrent);	
+			pRohrKomponentePI->SetThirdBorderpoint(CumulatedArcCurrent);
+			pRohrKomponentePI->SetPitchForCenterLinie();
+			if(i < (int) kk-2)
+			{
+				;
+			}
+			else
+			{ 
+				break;
+			}
+			//Connection Point 2-3 Kompnente erste Aussenwand
+			double dFaktor12 = CUtiltyHelper::GetFaktorForConnectionPoint( pRohrKomponente->GetFirstBorderpoint(), pRohrKomponente->GetPitchCenterLinie(),
+				CPointDouble(pRohrKomponentePI->GetThirdBorderpoint().X, pRohrKomponentePI->GetThirdBorderpoint().Y), pRohrKomponentePI->GetPitchCenterLinie());
+			NullPunktConnectionPointAussenWand.X = pRohrKomponente->GetFirstBorderpoint().X + dFaktor12 * pRohrKomponente->GetPitchCenterLinie().X;
+			NullPunktConnectionPointAussenWand.Y = pRohrKomponente->GetFirstBorderpoint().Y + dFaktor12 * pRohrKomponente->GetPitchCenterLinie().Y;
+			pRohrKomponente->SetThirdCornerPoint(NullPunktConnectionPointAussenWand);
+			pRohrKomponentePI->SetFirstCornerPoint(NullPunktConnectionPointAussenWand);		
+		
+			//Connection Point 2-3 Kompnente Zweite Aussenwand
+			pRohrKomponentePI->SetSecondBorderpoint(CumulatedArcCurrent);	
+			pRohrKomponentePI->SetFourthBorderpoint(CumulatedArcCurrent);
+			dFaktor = CUtiltyHelper::GetFaktorForConnectionPoint( pRohrKomponente->GetSecondBorderpoint(), pRohrKomponente->GetPitchCenterLinie(),
+				CPointDouble(pRohrKomponentePI->GetForthBorderpoint().X, pRohrKomponentePI->GetForthBorderpoint().Y), pRohrKomponentePI->GetPitchCenterLinie());
+			NullPunktConnectionPointAussenWandII.X = pRohrKomponente->GetSecondBorderpoint().X + dFaktor * pRohrKomponente->GetPitchCenterLinie().X;
+			NullPunktConnectionPointAussenWandII.Y = pRohrKomponente->GetSecondBorderpoint().Y + dFaktor * pRohrKomponente->GetPitchCenterLinie().Y;
+			pRohrKomponente->SetForthCornerPoint(NullPunktConnectionPointAussenWandII);
+			pRohrKomponentePI->SetSecondCornerPoint(NullPunktConnectionPointAussenWandII);
+			if( i+2 < (int)kk )
+			{
+				pRohrKomponentePII->SetStartPointCenterLine(pRohrKomponentePI->GetEndPointCenterLine());
+			}
+
+		}
+	
+
+		//EndElement
+		CGraficRohrKomponente* pRohrKomponentePEnd = m_pGraficContainerForAssembeldTubes->at(kk-1);
+		CumulatedArcCurrent += pRohrKomponentePEnd->SetEndPointCenterLine(CumulatedArcCurrent);
+		pRohrKomponentePEnd->SetFirstBorderpoint(CumulatedArcCurrent);
+		pRohrKomponentePEnd->SetSecondBorderpoint(CumulatedArcCurrent);
+		pRohrKomponentePEnd->SetPitchForCenterLinie();
+	
+				
+		for(int i = 1; i < (int)kk; i++)
+		{
+			CGraficRohrKomponente* pRohrKomponente = m_pGraficContainerForAssembeldTubes->at(i);
+			pRohrKomponente->SetKomponentPointfromConectonPoint();
+		}
+	
+
+
+		if(!bOnlyCaculateMainTube)
+		{
+			// Make Childs 
+			//vorher int i = 1	
+		//	for(int i = 0; i < (int)kk; i++)
+			{
+				//CGraficRohrKomponente* pRohrKomponenteParent = m_pGraficContainerForAssembeldTubes->at(i);
+				//CGraficRohrKomponente* pRohrKomponenteI = m_GraficStrangRohrKomponenten[z]->at(i+1);
+
+				if(m_pGraficContainerForAssembeldTubes->HasAssembeldTubes())
+				{
+					CGraficContainerForAssembeldTubes& GraficContainerForAssembeldTubes = m_pGraficContainerForAssembeldTubes->GetChildAssembeldTubes();
+					std::vector<int>::size_type sz = GraficContainerForAssembeldTubes.size();
+					for(int w = 0; w < (int)sz; w++)
+					{
+	
+						CCGraficRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVectorLokal = GraficContainerForAssembeldTubes[w];
+						std::vector<int>::size_type kk =  pRohrOneAssembeldKomponenteVectorLokal->size();
+						//vorher int i = 1	
+						for(int i = 0; i < (int)kk-1; i++)
+						{
+							CGraficRohrKomponente* pRohrKomponente =  pRohrOneAssembeldKomponenteVectorLokal->at(i);
+							CGraficRohrKomponente* pRohrKomponenteI =  pRohrOneAssembeldKomponenteVectorLokal->at(i+1);
+							CGraficRohrKomponente* pRohrKomponenteParent = m_pGraficContainerForAssembeldTubes->at(1);
+
+							double RelativerAbstandzumNaechsten = pRohrKomponente->GetLogicalRohrKomponente()->GetRelativerAbstandzumNaechsten();
+							CPointDouble PointConnectionForAbgaenge = pRohrKomponenteParent->GetConnectionPointForAbgaenge(RelativerAbstandzumNaechsten); 
+							pRohrKomponente->SetStartPointCenterLine(PointConnectionForAbgaenge);
+							pRohrKomponente->SetGraficRohrKomponentenWinkel(NULL);
+	
+							double dCumulatedDummyWinkel = pRohrKomponenteParent->GetWinkelRohrZuXundYAchse() + 270;
+							dCumulatedDummyWinkel += pRohrKomponente->SetEndPointCenterLine(dCumulatedDummyWinkel);
+							pRohrKomponente->SetFirstBorderpoint(dCumulatedDummyWinkel);
+							pRohrKomponente->SetSecondBorderpoint(dCumulatedDummyWinkel);
+							pRohrKomponente->SetThirdBorderpoint(dCumulatedDummyWinkel);
+							pRohrKomponente->SetFourthBorderpoint(dCumulatedDummyWinkel);
+							pRohrKomponente->SetPitchForCenterLinie();
+							pRohrKomponenteI->SetStartPointCenterLine( pRohrKomponente->GetEndPointCenterLine());
+							pRohrKomponenteI->SetGraficRohrKomponentenWinkel(NULL);
+							pRohrKomponente->SetKomponentPointfromConectonPoint();
+
+							//CreateGraficOneAssembeldTubeFromComponents(dCumulatedDummyWinkel, z, bOnlyCaculateMainTube);
+						}
+					
+					}
+				}
+			}
+			
+		}
+		
+}
+
+
+
+
+
+
+CGraficTubeController::~CGraficTubeController(void)
+{
+}

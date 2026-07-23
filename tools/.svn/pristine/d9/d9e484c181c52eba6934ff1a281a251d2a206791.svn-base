@@ -1,0 +1,215 @@
+#include "stdafx.h"
+#include "MXSoftwareCheck.h"
+#include "resource.h"
+
+#define MAX_LOADSTRING 100
+
+char cmdline[255];
+#define WM_EXECUTE_TEST (WM_USER+1)
+
+// Globale Variablen:
+HINSTANCE hInst;					// aktuelle Instanz
+TCHAR szTitle[MAX_LOADSTRING];								// Text der Titelzeile
+TCHAR szWindowClass[MAX_LOADSTRING];								// Text der Titelzeile
+
+// Vorausdeklarationen von Funktionen, die in diesem Code-Modul enthalten sind:
+ATOM				MyRegisterClass( HINSTANCE hInstance );
+BOOL				InitInstance( HINSTANCE, int );
+LRESULT CALLBACK	WndProc( HWND, UINT, WPARAM, LPARAM );
+LRESULT CALLBACK	About( HWND, UINT, WPARAM, LPARAM );
+HWND hWnd;
+
+
+int APIENTRY WinMain(HINSTANCE hInstance,
+                     HINSTANCE hPrevInstance,
+                     LPSTR     lpCmdLine,
+                     int       nCmdShow )
+{
+ 	// ZU ERLEDIGEN: Fügen Sie hier den Code ein.
+	MSG msg;
+	HACCEL hAccelTable;
+
+	strcpy(cmdline, lpCmdLine);
+
+	// Globale Zeichenfolgen initialisieren
+	LoadString(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
+	LoadString(hInstance, IDC_TEST, szWindowClass, MAX_LOADSTRING);
+	MyRegisterClass(hInstance);
+
+	// Initialisierung der Anwendung durchführen:
+	if( !InitInstance( hInstance, nCmdShow ) ) 
+	{
+		return FALSE;
+	}
+
+	hAccelTable = LoadAccelerators(hInstance, (LPCTSTR)IDC_TEST);
+
+	PostMessage(hWnd, WM_COMMAND, WM_EXECUTE_TEST, 0);
+	// Hauptnachrichtenschleife:
+	while( GetMessage(&msg, NULL, 0, 0) ) 
+	{
+		if( !TranslateAccelerator (msg.hwnd, hAccelTable, &msg) ) 
+		{
+			TranslateMessage( &msg );
+			DispatchMessage( &msg );
+		}
+	}
+
+	return msg.wParam;
+}
+
+
+
+//
+//  FUNKTION: MyRegisterClass()
+//
+//  AUFGABE: Registriert die Fensterklasse.
+//
+//  KOMMENTARE:
+//
+//    Diese Funktion und ihre Verwendung sind nur notwendig, wenn dieser Code
+//    mit Win32-Systemen vor der 'RegisterClassEx'-Funktion kompatibel sein soll,
+//    die zu Windows 95 hinzugefügt wurde. Es ist wichtig diese Funktion aufzurufen,
+//    damit der Anwendung kleine Symbole mit den richtigen Proportionen zugewiesen
+//    werden.
+//
+ATOM MyRegisterClass( HINSTANCE hInstance )
+{
+	WNDCLASSEX wcex;
+
+	wcex.cbSize = sizeof(WNDCLASSEX); 
+
+	wcex.style			= CS_HREDRAW | CS_VREDRAW;
+	wcex.lpfnWndProc	= (WNDPROC)WndProc;
+	wcex.cbClsExtra		= 0;
+	wcex.cbWndExtra		= 0;
+	wcex.hInstance		= hInstance;
+	wcex.hIcon			= LoadIcon(hInstance, (LPCTSTR)IDI_TEST);
+	wcex.hCursor		= LoadCursor(NULL, IDC_ARROW);
+	wcex.hbrBackground	= (HBRUSH)(COLOR_BACKGROUND);
+	wcex.lpszMenuName	= NULL;
+	wcex.lpszClassName	= szWindowClass;
+	wcex.hIconSm		= LoadIcon(wcex.hInstance, (LPCTSTR)IDI_SMALL);
+
+	return RegisterClassEx(&wcex);
+}
+
+//
+//   FUNKTION: InitInstance(HANDLE, int)
+//
+//   AUFGABE: Speichert die Instanzzugriffsnummer und erstellt das Hauptfenster
+//
+//   KOMMENTARE:
+//
+//        In dieser Funktion wird die Instanzzugriffsnummer in einer globalen Variable
+//        gespeichert und das Hauptprogrammfenster erstellt und angezeigt.
+//
+
+BOOL InitInstance( HINSTANCE hInstance, int nCmdShow )
+{
+   
+
+   hInst = hInstance; // Instanzzugriffsnummer in unserer globalen Variable speichern
+
+   hWnd = CreateWindow(szWindowClass, szTitle, WS_DLGFRAME,
+      0, 0, 300, 60, NULL, NULL, hInstance, NULL);
+
+   if( !hWnd ) 
+   {
+      return FALSE;
+   }
+
+   ShowWindow( hWnd, nCmdShow );
+   UpdateWindow( hWnd );
+
+	
+
+   return TRUE;
+}
+
+//
+//  FUNKTION: WndProc(HWND, unsigned, WORD, LONG)
+//
+//  AUFGABE:  Verarbeitet Nachrichten für das Hauptfenster.
+//
+//  WM_COMMAND	- Anwendungsmenü verarbeiten
+//  WM_PAINT	- Hauptfenster darstellen
+//  WM_DESTROY	- Beendigungsnachricht ausgeben und zurückkehren
+//
+//
+LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
+{
+	int wmId, wmEvent;
+	PAINTSTRUCT ps;
+	HDC hdc;
+	TCHAR szHello[MAX_LOADSTRING];
+	LoadString(hInst, IDS_HELLO, szHello, MAX_LOADSTRING);
+
+	switch( message ) 
+	{
+		case WM_COMMAND:
+			wmId    = LOWORD(wParam); 
+			wmEvent = HIWORD(wParam); 
+			// Menüauswahlen analysieren:
+			switch( wmId ) 
+			{
+				
+				case IDM_EXIT:
+				   DestroyWindow( hWnd );
+				   break;
+				case WM_EXECUTE_TEST:
+					{
+						int offset;
+						for (offset = 0; cmdline[offset] != ' ' && offset < (int)strlen(cmdline); offset++);
+
+						MXSoftwareCheck sc;
+						char argv1[255];
+						char argv2[255];
+						memset(argv1, 0, 255);
+						strncpy(argv1, cmdline, offset);
+						strcpy(argv2, &cmdline[offset+1]);
+						
+						
+						sc.conf.init_localfiles(argv1);
+						sc.conf.init_logfile_server(argv2);
+
+						if (!sc.init())
+						{
+							PostQuitMessage(1);
+							return 1;
+						}
+
+						sc.process();
+
+						PostQuitMessage(0);
+					}
+					break;
+				default:
+				   return DefWindowProc( hWnd, message, wParam, lParam );
+			}
+			break;
+		case WM_PAINT:
+			
+			MxSoftwareCheck::Konfiguration::lcid = ::GetThreadLocale();
+			RECT rt;
+			GetClientRect( hWnd, &rt );
+			hdc = BeginPaint (hWnd, &ps);
+			SetBkColor(hdc, RGB(167,167,167));
+			strcpy(szHello, MxSoftwareCheck::Konfiguration::use_english() ? "Testing installations..." : "Teste Installationen...");
+			ExtTextOut(hdc, 10, 10, ETO_OPAQUE, &rt, szHello, strlen(szHello), NULL);
+			EndPaint( hWnd, &ps );
+			
+
+			break;
+		
+			
+		case WM_DESTROY:
+			PostQuitMessage( 0 );
+			break;
+
+		
+		default:
+			return DefWindowProc( hWnd, message, wParam, lParam );
+   }
+   return 0;
+}

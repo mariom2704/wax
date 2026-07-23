@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegChange", "RegEdit\RegChange.csproj", "{45E01E63-DB55-4D9F-8ED5-C0F39786FF03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RegCopy", "RegCopy\RegCopy.csproj", "{A6A188F1-1D3F-479F-B52C-170760A72DA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyDatToReg", "CopyDatToReg\CopyDatToReg.csproj", "{B26B1839-CAEA-4A68-8DE0-C0C3635A81F4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{45E01E63-DB55-4D9F-8ED5-C0F39786FF03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45E01E63-DB55-4D9F-8ED5-C0F39786FF03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45E01E63-DB55-4D9F-8ED5-C0F39786FF03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45E01E63-DB55-4D9F-8ED5-C0F39786FF03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6A188F1-1D3F-479F-B52C-170760A72DA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6A188F1-1D3F-479F-B52C-170760A72DA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6A188F1-1D3F-479F-B52C-170760A72DA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6A188F1-1D3F-479F-B52C-170760A72DA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B26B1839-CAEA-4A68-8DE0-C0C3635A81F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B26B1839-CAEA-4A68-8DE0-C0C3635A81F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B26B1839-CAEA-4A68-8DE0-C0C3635A81F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B26B1839-CAEA-4A68-8DE0-C0C3635A81F4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

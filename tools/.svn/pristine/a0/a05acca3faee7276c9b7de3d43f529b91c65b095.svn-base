@@ -1,0 +1,59 @@
+#include "stdafx.h"
+#include "GraficRohrKomponente.h"
+#include <math.h>
+#include "UtiltyHelper.h"
+
+CGraficRohrKomponente::CGraficRohrKomponente( CRohrKomponente LogicRohrKomponente)
+{
+	m_LogicRohrKomponente = LogicRohrKomponente;
+}
+
+
+void CGraficRohrKomponente::SetStartPointCenterLine(CPointDouble PointAnfang)
+{ 
+	 m_PointAnfangCenterLinie = PointAnfang;
+};
+
+
+
+
+
+CPointDouble CGraficRohrKomponente::getStartPointCenterLine()
+{ 
+	return m_PointAnfangCenterLinie;
+};
+
+
+
+CPointDouble CGraficRohrKomponente::getEndPointCenterLine()
+{	
+	return m_PointEndeCenterLinie; //650 Pixel insgesamt
+};
+
+
+void CGraficRohrKomponente::SetFirstBorderpoint()
+{
+	return;
+}
+
+
+void CGraficRohrKomponente::calculateMittelPunktEndePunkt( double& CumulatedArc )
+{
+	m_PointEndeCenterLinie.X =  getStartPointCenterLine().X + cos( (GetLogicalRohrKomponente()->GetWinkel() + CumulatedArc) *  3.14 /180) * GetLogicalRohrKomponente()->GetLaenge();
+	m_PointEndeCenterLinie.Y =  getStartPointCenterLine().Y + sin( (GetLogicalRohrKomponente()->GetWinkel() + CumulatedArc)*  3.14 /180) * GetLogicalRohrKomponente()->GetLaenge();
+
+	CumulatedArc += GetLogicalRohrKomponente()->GetWinkel();
+};
+
+
+void CGraficRohrKomponente::calculatePunktEndePunktForKnick(double winkel, CGraficRohrKomponente GraficRohrKomponente, double x, double y, double& x2, double& y2)
+{	
+	x2 = x + cos((winkel + GraficRohrKomponente.GetLogicalRohrKomponente()->GetWinkel()) *  3.14 /180) * 100;
+	y2 = y + sin((winkel + GraficRohrKomponente.GetLogicalRohrKomponente()->GetWinkel()) *  3.14 /180) * 100;
+};
+
+
+
+CGraficRohrKomponente::~CGraficRohrKomponente(void)
+{
+}

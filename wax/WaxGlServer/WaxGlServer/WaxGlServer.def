@@ -1,0 +1,13 @@
+; WaxGlServer.def : Deklariert die Modulparameter für die DLL.
+
+LIBRARY      "WaxGlServer"
+
+EXPORTS
+	dummy
+	convert_init_waxsys
+	convert_init_stammdb
+	convert2dwf
+	convert2svg
+	convert_terminate
+	convert
+   

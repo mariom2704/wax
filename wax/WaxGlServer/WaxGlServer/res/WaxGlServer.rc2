@@ -1,0 +1,13 @@
+//
+// WaxGlServer.RC2: Ressourcen, die von Microsoft Visual C++ nicht direkt bearbeitet werden.
+//
+
+#ifdef APSTUDIO_INVOKED
+#error Diese Datei kann nicht in Microsoft Visual C++ bearbeitet werden.
+#endif //APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Fügen Sie hier manuell bearbeitete Ressourcen hinzu...
+
+/////////////////////////////////////////////////////////////////////////////

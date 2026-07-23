@@ -1,0 +1,132 @@
+
+
+		
+			
+			if(af->get_id() == 1070)
+			{
+				CString strContent;
+
+				strContent.Format("Element =000%d, Zeit gesamt =%f", ele->get_id(), af->get_zeit() );
+				if(ele->get_id()  == 1)
+				{
+					strContent.Format("Element =Rohr  , Zeit gesamt =%f", af->get_zeit() );
+				}
+				if(ele->get_id() == 5000)
+				{
+					strContent.Format("Element =Flansch, Zeit gesamt =%f", af->get_zeit() );
+				}
+				if(ele->get_id() == 5001 || ele->get_id() == WINKEL_RECHTS_COII)
+				{
+					strContent.Format("Element =Winkel , Zeit gesamt =%f", af->get_zeit() );
+				}
+				if(ele->get_id() == MUFFE_COII)	
+				{
+						strContent.Format("Element =Muffe , Zeit gesamt =%f", af->get_zeit() );
+				}
+				if(ele->get_id() > 9)
+				{
+					if(ele->get_id() == 1)
+					{
+						strContent.Format("Element =Rohr  , Zeit gesamt =%f", af->get_zeit() );
+					}
+					if(ele->get_id() == 5000)
+					{
+						strContent.Format("Element =Flansch, Zeit gesamt =%f", af->get_zeit() );
+					}
+					if(ele->get_id() == 5001 || ele->get_id() == WINKEL_RECHTS_COII )
+					{
+						strContent.Format("Element =Winkel , Zeit gesamt =%f", af->get_zeit() );
+					}
+					if(ele->get_id() == MUFFE_COII)	
+					{
+						strContent.Format("Element =Muffe , Zeit gesamt =%f", af->get_zeit() );
+					}
+				}
+
+				if(ele->get_id() > 99)
+				{
+					if(ele->get_id() == 1)
+					{
+						strContent.Format("Element =Rohr  , Zeit gesamt =%f", af->get_zeit() );
+					}
+					if(ele->get_id() == 5000)
+					{
+						strContent.Format("Element =Flansch, Zeit gesamt =%f", af->get_zeit() );
+					}
+					if(ele->get_id() == 5001 || ele->get_id() == WINKEL_RECHTS_COII)
+					{
+						strContent.Format("Element =Winkel , Zeit gesamt =%f", af->get_zeit() );
+					}
+					if(ele->get_id() == MUFFE_COII)	
+					{
+						strContent.Format("Element =Muffe , Zeit gesamt =%f", af->get_zeit() );
+					}
+					if(ele->get_id() == MUFFE_COII)	
+					{
+						strContent.Format("Element =Muffe , Zeit gesamt =%f", af->get_zeit() );
+					}
+				}
+				if(ele->get_id() > 999)
+				{
+					if(ele->get_id() == 1)
+					{
+						strContent.Format("Element =Rohr  , Zeit gesamt =%f", af->get_zeit() );
+					}
+					if(ele->get_id() == 5000)
+					{
+						strContent.Format("Element =Flansch, Zeit gesamt =%f", af->get_zeit() );
+					}
+					if(ele->get_id() == 5001 || ele->get_id() == WINKEL_RECHTS_COII)
+					{
+						strContent.Format("Element =Winkel , Zeit gesamt =%f", af->get_zeit() );
+					}
+					if(ele->get_id() == MUFFE_COII)	
+					{
+						strContent.Format("Element =Muffe , Zeit gesamt =%f", af->get_zeit() );
+					}
+				}
+				//strContent.Format("Element =%d  , Zeit gesamt =%f", ele->get_id());
+				DumpHtmlFile("Test.txt",  strContent, TRUE);
+
+version 4.1.1
+
+version 4.0.3
+Hildebrandt
+	Doku namen Hildebrandt ändern
+Olaf Carlson
+	350 400 Rohr fuer Verteiler eingebaut
+
+Heiko Lenz
+	dn < 25 wird kein schwarzes Rohr gewählt,obwohl gepulvert ausgewählt wurde
+Olaf Carlson/Regine Lange
+	HandelsLaenge <> 6000 geaendert auf = 6000
+Neils/Hildebrandt
+	Bei der ersten Anmeldung des Anwenders wird die User.mdb im Wax Verzeichnis gesucht
+
+
+version 4.0.2
+Heiko Lenz
+	Die Meldung "Achtung, Positionstexte sind vorhanden." wird jetzt angezeigt wenn nur Fertighinweise für die Positionen eingegeben wurden( Rohrnetzkonfigurator )
+	Gestreckte Länge bei Biegungen wird jetzt 'richtig' berechnet
+
+
+version 4.0.1
+Christian Scheel
+	Büros können ihre Rohrnetzkonfiguratoraufträge
+	im Wax über PSPElement Wanr oder  SD Auftragsnr aufrufen 
+
+Version 3.4.8
+Semih Uslu
+	Grafikdruck Kopf wird jetzt wieder gedruckt
+
+	Teilenummern geändert 
+	Alt:912180 Neu:849348
+	Alt:840333 kann entfernt werden.(XM-Art:849285 vorhanden)
+
+Olaf Carlson
+	Sägenutanlage wird auch das zweite Rohr übergeben, wenn das erste Verteileranlagenelemente hat
+	Neue Excel muss ünterstützt werden (sollte erstmal auf einem Arbeitsplatz ausprobiert werden)
+
+
+
+ 

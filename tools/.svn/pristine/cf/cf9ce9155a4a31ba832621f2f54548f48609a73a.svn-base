@@ -1,0 +1,33 @@
+#pragma once
+
+
+
+
+
+
+class CGraficController
+{
+private:
+	CHtmlView* m_pHtmlView;
+	CRohrOneAssembeldKomponenteVector m_RohrKomponenten;
+	CGraficTubeController m_GraficRohrContainer;
+
+	CPointDouble m_PointTubeLength;
+	
+
+public:
+	CGraficFileController m_GraficFileController;
+	CGraficController(void);
+	CGraficController(CHtmlView* pHtmlView):m_GraficRohrContainer(this)
+	{
+		m_pHtmlView = pHtmlView;
+	};
+
+	void CalculateTubeDimisions(CPointDouble PointEndeCenterLinie);
+	void ResetSetDimisions();
+	void AddGraficChildComponent(CRohrKomponente*);
+	void GenerateDrawingOfTubes(CRohrOneAssembeldKomponenteVector StrangRohrVector);
+
+	~CGraficController(void);
+};
+

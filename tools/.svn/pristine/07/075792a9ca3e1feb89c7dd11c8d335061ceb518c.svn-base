@@ -1,0 +1,215 @@
+#include "stdafx.h"
+
+
+#include "UtiltyHelper.h"
+
+#include "..\_Tubes Logic Grafic Adapter\RohrKomponente.h"
+#include "..\_Tubes Logic Grafic Adapter\RohrBemassungsAnbauChildKomponentenVectorVector.h"
+#include "..\_Tubes Logic Grafic Adapter\RohrBemassungsRohrKomponentenVector.h"
+#include "..\_Tubes Logic Grafic Adapter\RohrBemassungsRohrKomponentenVectorVector.h"
+#include "..\_Tubes Logic Grafic Adapter\RohrOneAssembeldKomponenteVector.h"
+
+#include "..\SVG File Operations\GraficFileController.h"
+#include "..\Mechanicals Geometrics\GraficTubeController.h"
+#include "..\Mechanicals Geometrics\GraficRohrKomponente.h"
+
+#include "..\Mechanicals Geometrics\GraficRohrBemassungsAnbauChildKomponentenVectorVector.h"
+#include "..\Mechanicals Geometrics\GraficRohrBemassungsRohrKomponentenVector.h"
+#include "..\Mechanicals Geometrics\GraficRohrBemassungsRohrKomponentenVectorVector.h"
+#include "..\Mechanicals Geometrics\GraficRohrOneAssembeldKomponenteVector.h"
+#include "..\Controller\GraficController.h"
+
+
+
+
+CGraficController::CGraficController(void):m_GraficRohrContainer(this)
+{}
+
+
+
+void CGraficController::AdaptLogicTubesToGraficTubes(CCRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVector, CCGraficRohrOneAssembeldKomponenteVector* pGraficRohrOneAssembeldKomponenteVector)
+{
+	//m_GraficRohrContainer.m_pGraficContainerForAssembeldTubes->clear();
+	
+	std::vector<int>::size_type sz = pRohrOneAssembeldKomponenteVector->NumberOfComponents();
+	for(UINT i = 0; i < sz; i++ )
+	{
+		CRohrKomponente* pRohrKomponente = pRohrOneAssembeldKomponenteVector->at(i);
+		CGraficRohrKomponente* pGraficRohrKomponente = pRohrKomponente->GetGraficRohrKomponente(this);
+		pGraficRohrKomponente->SetCalculateDemisions(true);
+		pGraficRohrOneAssembeldKomponenteVector->AddComponenteForTube(pGraficRohrKomponente);
+	}
+	
+	AddGraficChildassembeldTubeChildComponent(pRohrOneAssembeldKomponenteVector, pGraficRohrOneAssembeldKomponenteVector);
+}
+
+
+CCGraficRohrOneAssembeldKomponenteVector*  CGraficController::GenerateDrawingOfTubes(CCRohrOneAssembeldKomponenteVector* RohrOneAssembeldKomponenteVector)
+{
+	
+	ReArangeBemassungsAndAbstandsObject(RohrOneAssembeldKomponenteVector, 0);
+
+	CCGraficRohrOneAssembeldKomponenteVector* pGraficRohrOneAssembeldKomponenteVector = new CCGraficRohrOneAssembeldKomponenteVector();
+
+	AdaptLogicTubesToGraficTubes(RohrOneAssembeldKomponenteVector, pGraficRohrOneAssembeldKomponenteVector);
+
+	m_GraficRohrContainer.m_GraficRohrOneAssembeldKomponenteVectorWrapper.SetGraficRohrOneAssembeldKomponenteVector(pGraficRohrOneAssembeldKomponenteVector);
+	
+	m_GraficFileController.CreateSVGFile(_T("D:\\work\\samples\\tools\\diverse\\SVG  Grafic\\Debug\\HTML Test\\Test.svg"));
+	
+	m_GraficRohrContainer.CalculateDimisions();	
+	m_GraficRohrContainer.CreateGraficModell();
+	
+	m_GraficRohrContainer.RecursiveIteratetingThroughComponentsForOneAssembeldTubeAndDraw(m_GraficRohrContainer.m_GraficRohrOneAssembeldKomponenteVectorWrapper.GetGraficRohrOneAssembeldKomponenteVector());
+	
+	m_GraficRohrContainer.CalculateDimensionKomponents(m_GraficRohrContainer.m_GraficRohrOneAssembeldKomponenteVectorWrapper.GetGraficRohrOneAssembeldKomponenteVector());
+
+	m_GraficFileController.strSVGContent+= _T("</svg>");
+	m_GraficFileController.WriteSVGContent();
+	m_pHtmlView->Navigate(_T("D:\\work\\samples\\tools\\diverse\\SVG  Grafic\\Debug\\HTML Test\\Test.html"), NULL, NULL, NULL, NULL);
+	return pGraficRohrOneAssembeldKomponenteVector;	
+}
+
+
+
+void CGraficController::ReArangeBemassungsAndAbstandsObject(CCRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVector, int iFromwhere)
+{
+	
+
+	CRohrBemassungsKomponentenVectorVector& BemassungsKomponentenVectorVector = pRohrOneAssembeldKomponenteVector->GetBemassungsKomponentenVectorVector();
+	std::vector<int>::size_type sz  = pRohrOneAssembeldKomponenteVector->NumberOfComponents();
+	int i = 0;
+	// Einzelkomponenten, aus denen das Bemassungs- und abstandsobject besteht
+	while(true)
+	{
+		 CRohrBemassungsRohrKomponentenVector* pBemassungsRohrKomponentenVector = new CRohrBemassungsRohrKomponentenVector();
+		
+		 for( i = iFromwhere; i < (int)sz; i++)
+		 {
+			 CRohrKomponente* pRohrKomponente =  pRohrOneAssembeldKomponenteVector->at(i);
+			 pBemassungsRohrKomponentenVector->AddRohrKomponente(pRohrKomponente);
+			 if((pRohrKomponente->GetKlassenName() == CRohrKomponente::RohrKomponenteBogen) && i > iFromwhere)
+			 {
+				 break;
+			 }
+		 }
+		 iFromwhere = i;
+		 BemassungsKomponentenVectorVector.push_back(pBemassungsRohrKomponentenVector);
+		 if(i == sz)
+			 break;
+	}
+
+
+	if(pRohrOneAssembeldKomponenteVector->HasAssembeldCommonTubes())
+	{
+		CRohrKomponenteVectorVector& AssembledCommonTubeVectorVector = pRohrOneAssembeldKomponenteVector->GetAssembledCommonTubeVectorVector();
+		CRohrBemassungsKomponentenVectorVector& RohrBemassungsKomponentenVectorVector = pRohrOneAssembeldKomponenteVector->GetBemassungsKomponentenVectorVector();
+
+		std::vector<int>::size_type SizeAssembledCommonTubeVectorVector = AssembledCommonTubeVectorVector.size();
+		std::vector<int>::size_type sz  =  RohrBemassungsKomponentenVectorVector.NumberOfTheUniqueBemassungsvectoren();
+
+		for(int z = 0; z < (int) SizeAssembledCommonTubeVectorVector; z++)
+		{
+			CCRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVector = AssembledCommonTubeVectorVector[z];
+			//for(int w = 0; w < (int) sz; w++)
+			{
+			 CRohrBemassungsRohrKomponentenVector* pRohrBemassungsKomponentenVector  = RohrBemassungsKomponentenVectorVector[0];
+			 CRohrBemassungsAnbauChildKomponentenVectorVector& RohrBemassungsAnbauChildKomponentenVectorVector =  pRohrBemassungsKomponentenVector->GetRohrBemassungsAnbauChildKomponentenVectorVector();
+			 // Komponente mit Abstand zum Naechsten
+			// CRohrKomponente* pRohrKomponente = RohrBemassungsAnbauChildKomponentenVectorVector.at(0);
+			 //Wo muss noch bestimmt werden
+				 RohrBemassungsAnbauChildKomponentenVectorVector.push_back(pRohrOneAssembeldKomponenteVector); 
+			}
+		}
+
+	}
+	
+}
+
+
+void CGraficController::ResetSetDimisions()
+{
+	m_PointTubeLength.X = 0;
+	m_PointTubeLength.Y = 0;
+}
+
+
+
+void CGraficController::CalculateTubeDimisions(CPointDouble PointEndeCenterLinie)
+{
+	m_PointTubeLength.X += PointEndeCenterLinie.X;
+	m_PointTubeLength.Y += PointEndeCenterLinie.Y;
+}
+
+
+
+double CGraficController::GetFactorPhysicalTubeDimisionsToPixelDimison()
+{
+	return 1200 / m_PointTubeLength.X;
+}
+
+
+
+void CGraficController::AddGraficChildassembeldTubeChildComponent(CCRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVector,  CCGraficRohrOneAssembeldKomponenteVector* pGraficRohrOneAssembeldKomponenteVectore)
+{
+	
+	CRohrBemassungsKomponentenVectorVector&   RohrBemassungsKomponentenVectorVector  = pRohrOneAssembeldKomponenteVector->GetBemassungsKomponentenVectorVector();
+	CGraficRohrBemassungsKomponentenVectorVector& GraficRohrBemassungsKomponentenVectorVector = pGraficRohrOneAssembeldKomponenteVectore->GetGraficBemassungsKomponentenVectorVector();
+	
+	std::vector<int>::size_type aa = RohrBemassungsKomponentenVectorVector.NumberOfTheUniqueBemassungsvectoren();
+
+	for(int a = 0; a < (int) aa; a++)
+	{
+		CGraficRohrBemassungsRohrKomponentenVector* pGraficRohrBemassungsRohrKomponentenVector = new CGraficRohrBemassungsRohrKomponentenVector(this);
+		
+		pGraficRohrBemassungsRohrKomponentenVector->SetRohrLogicBemassungsKomponentenVector(RohrBemassungsKomponentenVectorVector[a]);
+		
+		// First add all common Items to the vector
+		std::vector<int>::size_type bb  = pGraficRohrBemassungsRohrKomponentenVector->GetRohrLogicBemassungsKomponentenVector()->NumberOfComponents();
+		for(int b = 0; b < (int) bb; b++)
+		{
+			CGraficRohrKomponente* pGraficRohrKomponente = pGraficRohrBemassungsRohrKomponentenVector->GetRohrLogicBemassungsKomponentenVector()->at(b)->GetGraficRohrKomponente(this);
+			pGraficRohrBemassungsRohrKomponentenVector->push_back(pGraficRohrKomponente);
+
+		}
+
+		pGraficRohrBemassungsRohrKomponentenVector->m_GraficRohrBemassungsAnbauChildKomponentenVectorVector.SetLogicRohrBemassungsAnbauChildKomponentenVectorVector( 
+												pGraficRohrBemassungsRohrKomponentenVector->GetRohrLogicBemassungsKomponentenVector()->GetPointerRohrBemassungsAnbauChildKomponentenVectorVector());
+
+		
+		 bool bHasChildTubes =  pGraficRohrBemassungsRohrKomponentenVector->m_GraficRohrBemassungsAnbauChildKomponentenVectorVector.GetLogicRohrBemassungsAnbauChildKomponentenVectorVector()->HasChildTubes();
+		
+		if( bHasChildTubes )
+		{
+			std::vector<int>::size_type iNumberOfChilds = pGraficRohrBemassungsRohrKomponentenVector->m_GraficRohrBemassungsAnbauChildKomponentenVectorVector.GetLogicRohrBemassungsAnbauChildKomponentenVectorVector()->NumberOfChildTubes();
+			for(int c = 0; c < (int)iNumberOfChilds; c++)
+			{	
+				CCRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVector = pGraficRohrBemassungsRohrKomponentenVector->m_GraficRohrBemassungsAnbauChildKomponentenVectorVector.GetLogicRohrBemassungsAnbauChildKomponentenVectorVector()->at(c);
+				CCGraficRohrOneAssembeldKomponenteVector* pGraficRohrOneAssembeldKomponenteVector = new CCGraficRohrOneAssembeldKomponenteVector();
+			
+				pGraficRohrOneAssembeldKomponenteVector->SetRohrOneAssembeldKomponenteVector(pRohrOneAssembeldKomponenteVector);
+				std::vector<int>::size_type iNumberOfChilds =  pRohrOneAssembeldKomponenteVector->NumberOfComponents();
+				for( int d = 0; d < (int)iNumberOfChilds; d++)
+				{
+					CGraficRohrKomponente* pGroficRohrKomponente = pRohrOneAssembeldKomponenteVector->at(d)->GetGraficRohrKomponente(this);
+					pGraficRohrOneAssembeldKomponenteVector->push_back(pGroficRohrKomponente);
+				}
+		
+				pGraficRohrBemassungsRohrKomponentenVector->m_GraficRohrBemassungsAnbauChildKomponentenVectorVector.push_back(pGraficRohrOneAssembeldKomponenteVector);
+				/*
+				if(pRohrOneAssembeldKomponenteVector->HasAssembeldComponents())
+				{
+					AddGraficChildassembeldTubeChildComponent( pRohrOneAssembeldKomponenteVector,  pGraficRohrOneAssembeldKomponenteVectore);
+				}
+				*/
+			}
+		}
+		GraficRohrBemassungsKomponentenVectorVector.push_back(pGraficRohrBemassungsRohrKomponentenVector);	
+	};
+}
+
+
+
+
+CGraficController::~CGraficController(void)
+{}

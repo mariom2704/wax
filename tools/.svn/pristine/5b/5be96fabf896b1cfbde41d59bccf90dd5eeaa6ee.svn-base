@@ -1,0 +1,34 @@
+#pragma once
+
+#include "Tubes it self\StrangRohr.h"
+#include "..\Controller\GraficController.h"
+
+
+class CStranrohrGrafic
+{
+private:
+	 CRohrKomponenteVector m_StrangRohrKomponenten;
+	 CGraficController* m_pCGraficController;
+
+	 CPointDouble m_PointAnfang;
+	 CPointDouble m_PointEnde;
+	 CPointDouble m_CornerPointEqualII;
+
+public:
+	CStranrohrGrafic(CGraficController* pCGraficController, CRohrKomponenteVector StrangRohr);
+	void CreateGrafic();
+	void DrawPartTubeGrafic(CRohrKomponente StrangRohr);
+	void  DrawPartTubeGraficWithArc(CRohrKomponente StrangRohr);
+	void SetStartPointCenterLine(CPointDouble StartPoint)
+	{
+		m_PointAnfang = StartPoint;
+	};
+	CPointDouble  getStartPointCenterLine();
+	CPointDouble getEndPointCenterLine();
+	CPointDouble getFirstBorderPoint(){ return m_CornerPointEqualII;};
+	void calculateMittelPunktEndePunkt(CRohrKomponente StrangRohr);
+	void calculatePunktEndePunktForKnick(double winkel, CRohrKomponente StrangRohr, double x, double y, double& x3, double& y3);
+	void CalculateWinkel(CRohrKomponente StrangRohr, double dFaktor, double xDelta2, double yDelta2);
+	~CStranrohrGrafic(void);
+};
+

@@ -1,0 +1,150 @@
+#pragma once
+
+
+class CGraficRohrKomponente;
+class CGraficRohrKomponenteTeilRohr;
+class CGraficRohrKomponenteBogen;
+class CGraficTubeController;
+class CRohrKomponente;
+class CGraficController;
+
+typedef std::vector<CRohrKomponente*> CRohrOneAssembeldKomponenteVector;
+typedef std::vector<CRohrOneAssembeldKomponenteVector*> CRohrKomponenteVector;
+
+class CRohrKomponente
+{
+private:
+	
+	 bool m_FirstKomponent;
+	
+	 
+	
+public:
+	CRohrKomponente(void);
+	~CRohrKomponente(void);
+
+	CRohrKomponenteVector RohrKomponenteChildVector;
+
+	virtual void AddChildren(CRohrKomponente* pRohr);
+
+	void AddOneassembeldRohr();
+
+	
+	bool HasKomponenteChildren()
+	{
+		return  RohrKomponenteChildVector.size() > 0 ?  true : false; 
+	}
+
+	double GetWinkel()
+	{
+		return winkel;
+	};
+	int GetDn()
+	{
+		return m_iDN;
+	};
+
+	void SetDn(int iDN)
+	{
+		m_iDN = iDN;
+	};
+
+	int GetRadius()
+	{
+		return m_iDN/2;
+	};
+
+	void SetFirstKomponent()
+	{
+		m_FirstKomponent = true;
+	}
+
+	bool GetFirstKomponent()
+	{
+		return m_FirstKomponent;
+	}
+
+	void SetRadius(int iLocalRedius)
+	{
+		m_iDN = iLocalRedius * 2;
+		return;
+	};
+	void SetWinkel(double lWinkel)
+	{
+		winkel = lWinkel + 0.000001;
+	};
+	int GetLaenge()
+	{
+		return iLaenge;
+	};
+
+	void SetLaenge(int iLocalLaenge)
+	{
+		iLaenge = iLocalLaenge;
+	};
+
+	void SetRelativerAbstandzumNaechsten(int RelativerAbstand)
+	{
+		m_RelativerAbstand = RelativerAbstand;
+	}
+	
+	int GetRelativerAbstandzumNaechsten()
+	{
+		return m_RelativerAbstand;
+	}
+
+	void SetName(CString strName)
+	{
+		m_strName = strName;
+	}
+
+	virtual CGraficRohrKomponente* GetGraficRohrKomponente( CGraficController* StrangRohrVector);
+	
+
+
+private:
+	int m_RelativerAbstand;
+	int m_iDN;
+	int iLaenge;
+	int NutIdEnde;
+	int NutIdAnfang;
+	double winkel;
+	CRohrKomponente* m_prevStrangRohr;
+	CRohrKomponente* m_pNextStrangRohr;
+	CString m_strName;
+
+protected:
+	CGraficRohrKomponente* m_pGraficRohrKomponente;
+
+};
+
+
+
+
+class CRohrKomponenteTeilRohr : public CRohrKomponente
+{
+	virtual CGraficRohrKomponente*  GetGraficRohrKomponente(CGraficController* pRohController);
+};
+
+
+
+
+class CRohrKomponenteBogen : public CRohrKomponente
+{
+	
+	virtual CGraficRohrKomponente* GetGraficRohrKomponente(CGraficController* StrangRohrVector);
+};
+
+
+
+
+class CRohrKomponenteNut : public CRohrKomponente
+{
+	virtual CGraficRohrKomponente* GetGraficRohrKomponente(CGraficController* StrangRohrVector);
+};
+
+
+class CRohrKomponenteGlatt : public CRohrKomponente
+{
+	virtual CGraficRohrKomponente* GetGraficRohrKomponente(CGraficController* StrangRohrVector);
+};

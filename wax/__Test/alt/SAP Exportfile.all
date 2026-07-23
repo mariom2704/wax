@@ -1,0 +1,12 @@
+#M190168                        1.000                                                                                  078678687667680400020                 29.68 EUR    15.36 KG   6000 MM                                                            
++       M190168                              840241     1.000      0010ST
++       M190168                              841248     6.300      0020M
+*   M190168                                      000108501   0.00   0.00       
+&   M190168                                      000108501   0.00   0.00       001Übergabe Produktion
+*   M190168                                      00058621    0.07   0.00       
+&   M190168                                      00058621    0.07   0.00       001Schweissrohrstr. nach Arbeitsplan
+*   M190168                                      012022010   0.02   0.00       
+&   M190168                                      012022010   0.02   0.00       001Pulvern "rot gepulvert (ähnlich RAL 3000 feuerrot)"
+*   M190168                                      012532999   0.00   0.00       
+&   M190168                                      012532999   0.00   0.00       001Bündeln, 15 kg, Länge 6.0 m, anliefern 7114
+§M190168 Positionsnr.        1 Anzahl    1 DN  32 Länge   6000 Gewicht 15.36                             kein Hinweis

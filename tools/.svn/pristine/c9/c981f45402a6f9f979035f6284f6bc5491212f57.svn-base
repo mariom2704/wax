@@ -1,0 +1,151 @@
+
+#include "stdafx.h"
+
+#include "SplitterWindowTutorial.h"
+#include "Tubes it self\RohrKomponente.h"
+
+#include "Grafic\SVG File Operations\GraficFileController.h"
+#include "Grafic\Mechanicals Geometrics\GraficRohrKomponentenContainer.h"
+#include "Grafic\Mechanicals Geometrics\GraficRohrKomponente.h"
+
+#include "Grafic\Controller\GraficController.h"
+#include "TestEingabe.h"
+#include "MainFrm.h"
+
+#include <math.h>
+
+
+
+
+IMPLEMENT_DYNCREATE(CTestEingabe, CFormView)
+
+
+
+CRohrOneAssembeldKomponenteVector StrangRohrVector;
+
+CTestEingabe::CTestEingabe()
+	: CFormView(CTestEingabe::IDD)
+{
+
+}
+
+
+
+
+CTestEingabe::~CTestEingabe()
+{
+	delete m_pGraficController;
+}
+
+
+
+void CTestEingabe::DoDataExchange(CDataExchange* pDX)
+{
+	CFormView::DoDataExchange(pDX);
+}
+
+
+
+BEGIN_MESSAGE_MAP(CTestEingabe, CFormView)
+	ON_BN_CLICKED(IDC_BUTTON1, &CTestEingabe::OnBnClickedButton1)
+END_MESSAGE_MAP()
+
+
+
+void CTestEingabe::OnBnClickedButton1()
+{
+	StrangRohrVector.clear();
+
+	CRohrKomponenteTeilRohr StrangRohrI, StrangRohrII, StrangRohrIII, StrangRohrIV, StrangRohrV, StrangRohrVI;
+	CRohrKomponenteBogen  RohrKomponenteBogen, RohrKomponenteBogenII, RohrKomponenteBogenIII, RohrKomponenteBogenIV;
+	CRohrKomponenteNut StrangRohrnNutI, StrangRohrnNutII;
+	
+
+	StrangRohrnNutI.SetWinkel( 0.1 );
+	StrangRohrnNutI.SetLaenge(10);
+	StrangRohrnNutI.SetFirstKomponent();
+	StrangRohrVector.push_back(&StrangRohrnNutI);
+	
+	
+	//StrangRohrI.SetprevStrangRohr(&StrangRohrI);
+   	StrangRohrI.SetWinkel( 0 );
+	StrangRohrI.SetLaenge(100);
+	StrangRohrVector.push_back(&StrangRohrI);
+
+	AddChildren(&StrangRohrI, 30);
+	
+	RohrKomponenteBogen.SetLaenge(50);
+	StrangRohrVector.push_back(&RohrKomponenteBogen);
+	
+	StrangRohrII.SetWinkel( -90 );
+	StrangRohrII.SetLaenge(100);
+	StrangRohrVector.push_back(&StrangRohrII);
+
+	
+	RohrKomponenteBogenII.SetLaenge(50);
+	StrangRohrVector.push_back(&RohrKomponenteBogenII);//StrangRohrVector.push_back(&StrangRohrIII);
+
+	StrangRohrIV.SetWinkel( 50.01 );
+	StrangRohrIV.SetLaenge(800);
+	StrangRohrVector.push_back(&StrangRohrIV);
+
+	AddChildren(&StrangRohrIV, 30);
+	
+	AddChildren(&StrangRohrIV, 70);
+
+	RohrKomponenteBogenIII.SetLaenge(50);
+	StrangRohrVector.push_back(&RohrKomponenteBogenIII);//StrangRohrVector.push_back(&StrangRohrIII);
+
+	StrangRohrV.SetWinkel( 90 );
+	StrangRohrV.SetLaenge(100);
+	StrangRohrVector.push_back(&StrangRohrV);
+
+
+
+	RohrKomponenteBogenIV.SetLaenge(50);
+	StrangRohrVector.push_back(&RohrKomponenteBogenIV);//StrangRohrVector.push_back(&StrangRohrIII);
+
+
+	StrangRohrVI.SetWinkel( -90.1 );
+	StrangRohrVI.SetLaenge(100);
+	StrangRohrVector.push_back(&StrangRohrVI);
+	
+	AddChildren(&StrangRohrVI, 30);
+	
+	StrangRohrnNutII.SetWinkel( 10 );
+	StrangRohrnNutII.SetLaenge(10);
+	StrangRohrVector.push_back(&StrangRohrnNutII);
+	
+	m_pGraficController->GenerateDrawingOfTubes(StrangRohrVector);
+}
+
+
+
+void CTestEingabe::OnInitialUpdate()
+{
+	CFormView::OnInitialUpdate();
+	CMainFrame*  pF =  (CMainFrame*)AfxGetMainWnd();
+	m_pHTML = (CHtmlTestview*) pF->m_mainSplitter.GetPane(1,0);
+	m_pGraficController = new CGraficController(m_pHTML);
+	PostMessage(WM_COMMAND, IDC_BUTTON1);
+}
+
+
+
+void CTestEingabe::AddChildren(CRohrKomponente* pRohrKomponente, int RelativerAbstandzumNaechsten)
+{
+	CRohrKomponenteTeilRohr* Rohrstutzen = new CRohrKomponenteTeilRohr();
+	CRohrKomponenteNut* StrangRohrnNut = new CRohrKomponenteNut();
+
+	Rohrstutzen->SetRelativerAbstandzumNaechsten(RelativerAbstandzumNaechsten);
+	Rohrstutzen->SetLaenge(40);
+	Rohrstutzen->SetDn(25);
+	pRohrKomponente->AddOneassembeldRohr();
+	pRohrKomponente->AddChildren(Rohrstutzen);
+	
+	StrangRohrnNut->SetLaenge(10);
+	StrangRohrnNut->SetDn(25);
+	pRohrKomponente->AddChildren(StrangRohrnNut);
+
+}
+

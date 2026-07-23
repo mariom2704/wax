@@ -1,0 +1,15 @@
+<link rel="stylesheet" type="text/css" href="cssSvg.css"/>
+<HTML><body bgcolor="rgb(228,228,228)">
+<center>
+		
+ <object
+ height=880
+ width=650 
+ data="file://D:\work\samples\tools\diverse\SVG  Grafic\Debug\HTML Test\Test.svg"  type="image/svg+xml"> </object>
+ <p>Hier beginnt ein Absatz, und hier ist er zu Ende.</p>
+ <object
+ height=880
+ width=650 
+ data="file://D:\work\samples\tools\diverse\SVG  Grafic\Debug\HTML Test\TestII.svg"  type="image/svg+xml"> </object>
+ </center>
+ </body></HTML>

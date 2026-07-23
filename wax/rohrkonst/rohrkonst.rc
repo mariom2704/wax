@@ -1,0 +1,433 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+#include "..\WaxDef.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Deutsch (Deutschland) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "#include ""..\\WaxDef.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 7, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\rohrkonst.rc2""  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen\r\n"
+    "#include ""l.deu\\afxres.rc""          // Standardkomponenten\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 4,6,0,0
+ PRODUCTVERSION 4,6,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040704b0"
+        BEGIN
+            VALUE "FileDescription", "rohrkonst DLL"
+            VALUE "FileVersion", "4, 6, 0, 0"
+            VALUE "InternalName", "rohrkonst"
+            VALUE "LegalCopyright", "Copyright (C) 2015 Minimax GmbH & Co KG"
+            VALUE "OriginalFilename", "rohrkonst.dll"
+            VALUE "ProductName", "rohrkonst Dynamic Link Library"
+            VALUE "ProductVersion", "4, 6, 0, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x407, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_APAX_STDBEZEICHNUNG "Werkauftrag/Arbeitsplan"
+    IDS_ENTNAHME            "EntnahmeleitungDWB"
+    IDS_NENNWEITE_LETZTES_ROHR 
+                            "Nennweite des letzten Rohrstücks entspricht nicht Nennweite des vorherigen Fittings!"
+    IDS_LAENGE1             "Länge 1"
+    IDS_LAENGE2             "Länge 2"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FORMFITT            "Formstücke/Fitting"
+    IDS_GEWINDEROHR         "Gewinderohr"
+    IDS_FORMAT_ELE_ERROR    "Pos.%s %d.Element: "
+    IDS_WASSERSPRINKLER     "Wasser-Sprinkler"
+    IDS_HANDELSLAENGE       "Handelslänge"
+    IDS_ERROR1              "Die Maximallänge beträgt %i mm."
+    IDS_ERROR2              "Nennweite der Abgänge grösser Rohrnennweite ist ungültig!"
+    IDS_ERROR3              "Nennweite ungültig!"
+    IDS_ERROR4              "Bitte Abgangstyp auswählen!"
+    IDS_ERROR5              "Bei Rohrstutzen muss Nennweite zwischen DN 20 und 300 sein!"
+    IDS_ERROR6              "Bei Muffe muss Nennweite zwischen DN 10 und 65 sein!"
+    IDS_ERROR7              "Bei flacher R-Muffe muss DN zwischen 10 und 25 sein!"
+    IDS_ERROR8              "Bei DN %i muss AnschlussDN zwischen %i und %i sein!"
+    IDS_ERROR9              "Bei gekehlter R-Muffe muss DN zwischen 10 und 25 sein!"
+    IDS_ERROR10             "Bei Nutstutzen muss DN zwischen 32 und 50 sein!"
+    IDS_ERROR11             "Bei Gewinderohrstutzen muss DN 65 sein!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR103A           "Abstand sollte mindestens die Hälfte der beiden Aussendurchmesser + %dmm = %dmm sein!"
+    IDS_FERTHINWEIS1        "Achtung: Keine Standardwinkel der Abgänge! "
+    IDS_PUMPENVERT          "Pumpenverteiler"
+    IDS_ERROR67             "Schweissmuffe muss vor der Reduzierung liegen!"
+    IDS_ERROR68             "L3 darf nicht kleiner L4 sein!"
+    IDS_ERROR69             "Probieranschluss muss %i mm Abstand zu Ende haben!"
+    IDS_ERROR70             "DN1 Pumpendruckstutzen passt nicht zu DN3 Sprinkleranlagenanschluss. \nMöglich sind:\n"
+    IDS_ERROR71             "DN1 Angabe fehlerhaft. Der Wert sollte zwischen DN50 und DN150 liegen!"
+    IDS_ERROR72             "%d. Element sitzt bei Rohrtrennstelle!\nMindestabstand ist halber Durchmesser+50mm=%dmm!\nSchweissnaht wird verschoben!"
+    IDS_ERROR73             "Es konnte keine gültige Rohrtrennstelle ermittelt werden!"
+    IDS_ERROR74             "Fehler in elementList_setRohr"
+    IDS_ERROR75             "Es muss ein Abschlusselement eingegeben werden, auch bei 'glatt'!"
+    IDS_ERROR76             "Bei NUT od. GEWINDE am Ende darf absoluter Abstand nur Rohrlaenge-Elementlänge-50mm=%dmm sein!"
+    IDS_ERROR77             "Absoluter Abstand darf nur Rohrlänge-Elementlänge=%dmm sein!"
+    IDS_ERROR78             "Bei NUT od. GEWINDE am Anfang muss absoluter Abstand min. 50mm sein!"
+    IDS_ERROR79             "Abstand zum Rohrende muss min. Elementdurchmesser(%dmm)/2+50mm=%dmm sein!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR61             " < DN25 & > DN300 ungültig!"
+    IDS_ERROR62             " < DN %d ungültig!"
+    IDS_ERROR63             " > DN %d ungültig!"
+    IDS_ERROR64             " nur DN 25-50 gültig!"
+    IDS_SOKO1               "Aufschlag für Mindermenge"
+    IDS_SOKO2               "Aufschlag für Verzinkung"
+    IDS_SOKO3               "Aufschlag für Verschnitt"
+    IDS_SOKO4               "Aufschlag für Rohrstutzen pulvern"
+    IDS_SOKO5               "Aufschlag für Sonderfarbe, RAL %d"
+    IDS_PUMPENPROBIER       "Pumpenprobierleitung"
+    IDS_ERROR65             "Diese DN1/DN2 Kombination ist nicht erlaubt!"
+    IDS_ERROR66             "Diese Länge muss mindestens %s mm betragen!"
+    IDS_STDTEXT_PUMPENPROBIER 
+                            "Hinweise für Werk OD:\r\n-Rohre L1, L2, L3 DIN2458, Druckst. PN10, Flansche DIN2576. Stellung d. Flansche DIN2501-Muffen DIN2986 R½""\r\n<i>Nicht im Lieferumfang enthalten:</i>\r\n-Messblende einschliesslich Anzeigegerät und Einbaumaterial nach M2-03-05 Teil 3 bzw. Teil 4\r\n-(Baulänge Platon-Messblende 38 mm; Baulänge Turbo-Messblende 55 mm)\r\n-Probierschieber einschliesslich Umgebung und Einbaumaterial nach WN M2-03-05 Teil 2"
+    IDS_BOHR_MUFFE          "Bohrung für Muffen"
+    IDS_ERROR106            "Länge der Abgänge grösser %dmm ungültig!"
+    IDS_ERROR109            "%s CRC Fehler in Tabelle %s"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_STATIONSVERT        "Stationsverteiler"
+    IDS_STDTEXT_STATIONSVERT 
+                            "\tHinweis für Besteller:\r\n-Zur Feuerverz. sollten die Rohrenden offen sein!\r\nHinweise für Werk OD:\r\n-Flansche DIN 2576 bei PN 10(PN 16: V-Flansche DIN 2633)\r\n-Lage der Flansche nach DIN 2501\r\n-Gewinde bei Fertigung und Transport schützen\r\n-Blindflansch mit Schrauben und Dichtung nach der Oberflächenbehandlung montiert!\r\n-Boden: Gewölbte Scheiben sind nur bis Druckstufe PN10 zulässig!\r\n"
+    IDS_BITTE1              "Bitte als Verteiler eingeben!"
+    IDS_ERROR105            "Länge > %d mm nicht zulässig!"
+    IDS_ERROR107            "Abstand des unteren Abgangs grösser als Rohrlänge ungültig!"
+    IDS_ERROR108            "Abstand des oberen extra Abgangs grösser als Rohrlänge ungültig!"
+    IDS_VERTEILER           "Verteiler"
+    IDS_ERROR126            "Nur Rohrstutzen mit Nut, Glatt oder Gewinde für Anlage möglich!"
+    IDS_ERROR127            "Vorheriges Element für Anlage hat gleiche Position!"
+    IDS_ERROR128            "Typ für Anlage nicht geeignet!"
+    IDS_ERROR129            "Winkel stimmt nicht mit vorherigem Element für Anlage überein!"
+    IDS_ERROR130            "Absoluter Abstand liegt bei Rohrtrennstelle!"
+    IDS_ERROR131            "Rohrlänge %d mm < %d mm nicht zulässig!"
+    IDS_ERROR132            "%d. Rohrstück: Länge %d mm < %d mm mit Standardelementen nicht zulässig!"
+    IDS_ERROR133            "%d. Rohrstück: Nennweite DN %d ungültig, muss zwischen %d und %d sein!"
+    IDS_ERROR134            "Fehler bei Element!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_STRANG              "Strangrohr"
+    IDS_ERROR110            "Absoluter Abstand muss kleiner Rohrlänge - %dmm sein!"
+    IDS_ERROR111            "Länge < %d mm nicht zulässig!"
+    IDS_ERROR112            "Bitte Typ auswählen!"
+    IDS_ERROR113            "Bei Bohrung nur Durchmesser 24, 31 und 35 mm zulässig. Andere Durchmesser als Nacharbeit erfassen!"
+    IDS_ERROR114            "Bei Muffe muss DN 10/15/20/25 sein!"
+    IDS_BITTE2              "Bitte als Nacharbeit erfassen!"
+    IDS_ERROR115            "Strangrohre ohne Elemente nicht zulässig!"
+    IDS_ERROR116            "Abstand vom 1.Element zum Rohranfang muss min. %dmm sein!"
+    IDS_ERROR117            "Relativer Abstand zwischen den Elementen muss min. %dmm sein!"
+    IDS_ERROR118            "Hinter Bogen dürfen keine Standardelemente mehr sein!"
+    IDS_ERROR119            "Absoluter Abstand und Winkel entspricht einer anderen Elementposition!\nBitte Winkel oder Abstand ändern!"
+    IDS_ERROR120            "Bei verzinktem Strangrohr ist keine Scheibe möglich.\nBitte Gewinde auswählen und Kappe vor Ort aufschrauben!"
+    IDS_FERTHINWEIS3        "Bei Länge > %d müssen die Rohrlängen definiert werden.\nBitte auf die Verbindung achten!"
+    IDS_ERROR121            "Es dürfen nur Zahlen getrennt durch Leerzeichen eingegeben werden!"
+    IDS_ERROR122            "Fehler beim Auswerten des Rohrlängenfeldes. Bitte Eingabe überprüfen."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR80             "Abstand zum Rohranfang muss min. Elementdurchmesser(%dmm)/2+50mm=%dmm sein!"
+    IDS_ERROR81             "Abstand zum Rohrende sollte min. Elementdurchmesser(%dmm)/2=%dmm sein!"
+    IDS_ERROR82             "Abstand zum Rohranfang sollte min. Elementdurchmesser(%dmm)/2=%dmm sein!"
+    IDS_ERROR83             "Bei verzinktem Rohr und DN < 65 ist keine Scheibe möglich.\nBitte Gewinde auswählen und Kappe vor Ort aufschrauben!"
+    IDS_ERROR84             " nur bis 6000mm!"
+    IDS_ERROR85             " kann nicht geschweisst werden!"
+    IDS_ERROR86             " nur DN 100/150 gültig!"
+    IDS_ERROR87             "Bitte Verbindung auswählen!"
+    IDS_ERROR88             "Bitte Anfang und Ende auswählen!"
+    IDS_ERROR89             "Gewinde ist bei dieser Rohrqualität und Nennweite nicht möglich. Bitte andere Rohrqualität auswählen\noder als Element NUT wählen und über SAP ein Verbindungsstück Nut/Gewinde bestellen!"
+    IDS_FERTHINWEIS2        "Verbindungsstück Nut/Gewinde am %s!"
+    IDS_ABSTAND_RED_ABGANG  "Abstand sollte mindestens die Hälfte des Aussendurchmessers + 50mm = %dmm sein!"
+    IDS_SPUELANSCHLUSS_ZU_SCHEIBE 
+                            "Achtung: Da Spülanschluss nicht mehr verfügbar ist, wird nun Scheibe gesetzt!"
+    IDS_ANFANG_ENDE         "Anfang und Ende"
+    IDS_ERROR104            "Bei %s Abstand %i zu gering!"
+    IDS_STANDARDVERT        "Standardverteiler"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR50             "%sDN1=%d u. DN3=%d entsprechen nicht aktueller Nennweite DN=%d vom vorherigen Rohrstück oder Fitting!"
+    IDS_ERROR51             "%sDN1=%d u. DN2=%d entsprechen nicht aktueller Nennweite DN=%d vom vorherigen Rohrstück oder Fitting!"
+    IDS_ERROR52             "%sDN1=%d entspricht nicht aktueller Nennweite DN=%d vom vorherigen Rohrstück oder Fitting!"
+    IDS_ERROR53             "%sDN2=%d vom vorherigen Fitting entspricht nicht DN1=%d vom aktuellen Fitting!"
+    IDS_ERROR54             "%sDN1=%d bzw. DN2=%d vom vorherigen Fitting entspricht nicht DN1=%d vom aktuellen Fitting!"
+    IDS_ERROR55             "Bei DN 50 muss AnschlussDN 65 sein!"
+    IDS_STDTEXT_ENTNAHME    "Hinweise für Werk OD:\r\n- Flansche nach DIN 2576 und DIN 2632 (PN 10)\r\n- Lage der Flansche nach DIN 2501\r\n- Dichtfläche der Flansche ungepulvert\r\n- Bogen DIN 2605 (114,3 x 5,6 / 168,3 x 7,1) Bauart 3\r\n- Gewinde bei Fertigung und Transport schützen\r\n- Materialnachweis mit 3.1 Werkzeugnis\r\n- Fertigung durch geprüfte Schweißer (nach EN 287)\r\n- Schweißnahtgüte C nach DIN EN 25817\r\n- Kennzeichnung aller Schweißnähte\r\n- Wasserdruckprobe mit 15 bar\r\n- MX-Prüfbescheinigung 3.1-B nach EN 10204 (Druckprobe, Oberfläche, Schweißer), durch QW/0D archiviert, keine Kopie an NL/IB\r\n"
+    IDS_SCHWEISSGUETE       " Schweissgüte nach Bewertungsgruppe C EN 25817"
+    IDS_KAPPE_GELB          "Schutzkappe gelb"
+    IDS_ERROR31             "Mit Kopf-T-Stück ist Position beendet!"
+    IDS_ERROR40             "Bitte Rohrqualität auswählen!"
+    IDS_ERROR41             "Unbekannte Rohrqualität"
+    IDS_KB                  "Bitte Herstellverfahren der Rohre auswählen. Streckreduziertes Rohr ist qualitativ höherwertiger."
+    IDS_ERROR43             "Wunschliefertermin liegt in der Vergangenheit. Bitte ändern!"
+    IDS_ERROR44             "Konnte Element nicht initialisieren.\nElement: %s (Id=%i, Artikelnr: %i), DN: %d, anDN: %d\nCodezeile:%i"
+    IDS_CA                  "ca."
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_KOPF                "Kopf-"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ANFANG              "Anfang"
+    IDS_ENDE                "Ende"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR135            "Max. Länge des Rohrstutzens von Rohrmitte ist %d mm."
+    IDS_ERROR136            "Min. Länge der Rohrstutzen von Rohroberkante ist %d mm."
+    IDS_ERROR137            "DN < %d & > %d bei Muffen ungültig."
+    IDS_ERROR138            "DN < %d & > %d bei Rohrstutzen ungültig."
+    IDS_ERROR139            "Die Nennweite der Stutzen muss kleiner der Nennweite des Rohres sein!"
+    IDS_ERROR140            "Winkel der Standardelemente auf einem Rohr muss gleich sein!"
+    IDS_ROHR_ELE            "%d.Rohr %d.Stdele: "
+    IDS_ERROR141            "Der Abstand von Außenkante Abgang zum Rohranfang (min. %d mm) bzw. -ende (min. %d mm) ist zu klein!"
+    IDS_ERROR142            "Abstand zum Rohranfang %dmm muss min. %d sein!"
+    IDS_ERROR143            "Rel. Abstand %dmm muss min. %d sein!"
+    IDS_KUPPLUNG            "Kupplung"
+    IDS_GEW                 "Gew"
+    IDS_HINWEIS_GLEICHE_MUFFE 
+                            "Achtung: 2 gleiche Muffen 90° versetzt zu dicht zusammen, Abstand min. %dmm. Schweissnähte kreuzen sich. Druckprobe erforderlich."
+    IDS_ZEITLOHN            " 'Zeitlohn'"
+    IDS_FLANSCH_NICHT_PULVERN 
+                            ", Flanschfläche nicht pulvern, Schichtdicke prüfen u. dokumentieren "
+    IDS_NENNWEITE_UNGUELTIG " Nennweite < DN %i & > DN %i ungültig!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FEHLENDE_DATEN1     "\nAuftragsbezeichnung/Bau"
+    IDS_FEHLENDE_DATEN2     "\nBau Ort"
+    IDS_FEHLENDE_DATEN3     "Postleitzahl fehlt!"
+    IDS_FEHLENDE_DATEN4     "\nNiederlassungskennung"
+    IDS_FEHLENDE_DATEN5     "\nSachbearbeiter"
+    IDS_FEHLENDE_DATEN6     " Bauabschnitt fehlt!"
+    IDS_FEHLENDE_DATEN7     "\nPSP Element bzw. CO Auftrag"
+    IDS_LOCTITE_GEPULVERT   "Wenn Beschichtung gepulvert, dann kein %s. Bitte %s wählen!"
+    IDS_FEHLENDE_DATEN9     "\nSD Auftragsnummer"
+    IDS_FEHLENDE_DATEN10    "\nSD Materialnummer"
+    IDS_FEHLENDE_DATEN11    "\nSD Positionsnummer"
+    IDS_ERROR56             " und DN < 65 nicht grundiert erhältlich!"
+    IDS_ERROR57             " und DN 32/40 und Länge > 9000 ungültig!"
+    IDS_ERROR58             " < DN 32 ungültig!"
+    IDS_ERROR59             " nicht grundiert erhältlich!"
+    IDS_ERROR60             " < DN 32 und > DN 50 ungültig!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR12             "Bei Red. muss DN und AnschlussDN unterschiedlich sein!"
+    IDS_ERROR13             "Bei Red. muss DN zwischen 25 und 300 sein!"
+    IDS_ERROR14             "Bei Einziehung muss DN zwischen 25 und 50 sein!"
+    IDS_ERROR15             "Bei Bogen muss DN zwischen 25 und 300 sein!"
+    IDS_ERROR16             "Bei Bogen muss DN gleich AnschlussDN sein!"
+    IDS_ERROR17             "Bei Bohrung muss DN 0 sein!"
+    IDS_ERROR18             "Bei Nut muss DN zwischen 25 und 300 sein!"
+    IDS_ERROR19             "Bei Gewinde muss DN zwischen 15 und 65 sein!"
+    IDS_ERROR20             "Bei Flachflansch und V-Flansch PN16 muss DN zwischen 32 und 300 sein!"
+    IDS_ERROR21             "Bei PN10 und DN 32-150 ist der Flachflansch Standard."
+    IDS_ERROR22             "Bei Ansi-Flansch und Slipon-Flansch muss DN zwischen 40 und 300 sein!"""
+    IDS_ERROR23             "Bei Scheibe muss DN zwischen %d und %d sein!"
+    IDS_ERROR24             "Bei Boden muss DN zwischen 40 und 300 sein!"
+    IDS_ERROR25             "Element DN ungültig!"
+    IDS_ERROR26             "Die Minimallänge bei %s beträgt %i mm."
+    IDS_ERROR27             "Das Dichtmittel '%s' wird nur beim Anlagentyp '%s' verwendet!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR28             "Ungültiges Dichtmittel!"
+    IDS_ERROR29             "Es dürfen nicht mehr als 6 Rohre/Pos. eingegeben werden!"
+    IDS_ERROR30             "Rohre nur mit Nut oder Glatt am Anfang und Ende bitte als Verteiler eingeben!"
+    IDS_ERROR32             "Kopfanschluss nur bei T-Stück möglich!"
+    IDS_ERROR33             "Fitting am Anfang, Z-Mass links für 1. Rohrstück nicht möglich!"
+    IDS_ERROR34             "Mit Rohr ohne Fitting ist Pos. beendet"
+    IDS_ERROR35             "Vorheriges Element ist Stopfen od. Kappe, weitere Eingabe nicht möglich!"
+    IDS_ERROR36             "Bei Fittingen mit Aussengewinde muss 'nur Fitting' ausgewählt sein!"
+    IDS_ERROR37             "Vorheriger Fitting muss Innengewinde haben!"
+    IDS_ERROR38             "Vorheriger Fitting muss Aussengewinde haben!"
+    IDS_ERROR39             "Vorheriger Fitting muss T/Kreuz-Stück sein!"
+    IDS_ERROR45             "Bei DN %d muss AnschlussDN %d sein!"
+    IDS_ERROR46             "Bei DN %d muss AnschlussDN %d od. %d sein!"
+    IDS_ERROR47             "%s mit Nennweite < DN65 und grundiert bei Handelslänge nicht möglich!"
+    IDS_ERROR48             "%sRohrDN=%d entspricht nicht aktueller DN=%d!"
+    IDS_ERROR49             "%sDN2=%d entspricht nicht aktueller DN=%d!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ERROR123            "Rohrlängen grösser %d mm sind ungültig!"
+    IDS_ERROR124            "%s und DN 32/40 und Länge > %d mm ungültig!"
+    IDS_ERROR125            "Die Gesamtlänge darf nicht überschritten werden!"
+    IDS_ERROR90             "Bei %s muss DN zwischen %i und %i sein!"
+    IDS_ERROR91             "Rohrnennweite DN %d ungültig!"
+    IDS_ERROR92             "Posnr. darf nur die Zahlen '0'-'9', die Großbuchstaben 'A'-'Z' und die Zeichen '.' und '-' enthalten. '%c' ist nicht erlaubt"
+    IDS_ERROR93             "Negativer Abstand nicht möglich!"
+    IDS_FEHLER_GLEICHER_WINKEL_SELBE_POS "Relativer Abstand 0 nicht zulässig!"
+    IDS_ERROR95             "Erstes Element kann nicht verkettet sein!"
+    IDS_ERROR96             "Länge vom Rohrstutzen muss min. 1/2*Rohrdurchmesser+Länge Flansch+50mm=%dmm sein!"
+    IDS_ERROR97             "Winkel der Abgänge kleiner 0° und grösser 359° ungültig!"
+    IDS_ERROR98             "Abschlusselement nicht direkt in Rohrleitung einfügbar!"
+    IDS_ERROR99             "Vorheriges Element war schon ein Abschlusselement!"
+    IDS_ERROR100            "Vorheriges Element muss bei Abschlusselement ein Rohrstutzen sein!"
+    IDS_ERROR101            "Rohrstutzen muss gleichen Winkel haben wie Abschlusselement!"
+    IDS_ERROR102            "Der relative Abstand muss 0 sein!"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PROBZUDICHTANRED    "Probieranschluss zu dicht an Reduzierung!"
+    IDS_PROBZUKURZ          "Probieranschluss zu kurz!"
+    IDS_PROBZULANG          "Probieranschluss zu lang!"
+    IDS_FEHLER_HL_LAENGEN   "Es dürfen nur folgende Längen eingegeben werden: %i, %i, %i, %i u. %i!"
+    IDS_ERROR144            "Der Abstand von Mitte Abgang zum Rohranfang (min. %d mm) bzw. -ende (min. %d mm) ist zu klein!"
+    IDS_ERROR103B           "Der Abstand zwischen den Abgängen sollte min. %dmm betragen."
+    IDS_SONDERMUFFEN_LAENGE "Die Länge der Sondermuffe muß zwischen 10 und 80 mm liegen!"
+    IDS_VERZINKT_ANLAGE     "Bei Oberfläche verzinkt darf nicht über die Anlage gefahren werden."
+    IDS_SCHNITTLAENGE       "Schnittlänge falsch. Es dürfen sich keine Rohrstücke ergeben, die größer als 6000 sind."
+    IDS_CADWERKAUFTRAG      "Cad Werkauftrag"
+    IDS_WERKSVERZ           "Bei Verwendung von werksverzinkten HL / Lagerlängen reduziert sich die Lieferzeit und der Preis."
+    IDS_ERROR_BOGENLAENGE   "Länge des Rohres (%i mm) zu kurz für Bogen (Länge = %i mm)"
+    IDS_ERROR_BOGENLAENGE2  "Abstand des Bogens (%i mm) zu kurz, muss mindestens %i mm sein"
+    IDS_KEIN_PREIS          "Kein Vk3 Preis eingeben"
+    IDS_KEINE_MENGE         "Anzahl muß gößer Null sein"
+    IDS_POSLAENGE           "Die Positionsnummer darf max. 5 Zeichnen enthalten"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FALSCHEROHRQUALI    " Kaltbandgeschweißtes Rohr nur bei Dichtmittel Hanf und Kitt"
+    IDS_FARBE_ROT           "rot"
+    IDS_FARBE_BLAU          "blau"
+    IDS_FARBE_GELB          "gelb"
+    IDS_FARBE_GRUEN         "grün"
+    IDS_FARBE_WEISS         "weiss"
+    IDS_FARBE_SCHWARZ       "schwarz"
+    IDS_FARBE_GRAU          "grau"
+    IDS_STRING2232          "Zuviele Abgänge: Maximal %d Abgänge über die Anlage"
+    IDS_STRING2233          "Der Probieranschluss darf nicht größer als der Sprinkleranlagenanschluss sein."
+END
+
+#endif    // Deutsch (Deutschland) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE 7, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\rohrkonst.rc2"  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen
+#include "l.deu\afxres.rc"          // Standardkomponenten
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

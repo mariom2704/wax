@@ -1,0 +1,1719 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RohrKonfBase</name>
+    </assembly>
+    <members>
+        <member name="M:RohrKonfBase.Entities.EnResultBase.getIsError">
+            <summary>
+            True wenn ein Error gesetzt ist
+            </summary> 
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnCadTeil">
+            <summary>
+            Entity Klasse für ein Teil im CAD
+            </summary>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnCadTeil.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnCadTeil.getTagName">
+            <summary>
+            Tagname für XML Ausgabe
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnCadTeil.getEinheit">
+            <summary>
+            Einheit (Stück, mm, kg, ...)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnCadTeil.setReferenzen(System.Collections.Generic.List{RohrKonfBase.Entities.EnObjectId})">
+            <summary>
+            Referenzierte Obejkte setzen
+            </summary>
+            <param name="sel"></param>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnCadTeil.getNearestAnschlusspunkt(MxLib.Math.Point,RohrKonfBase.Entities.EnAnschlussPunkt@)">
+            <summary>
+            Den Anschlusspunkt suchen, der am nächsten zum Start. bzw Endpunkt liegt
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnCadTeil.getAnschlusspunkt(MxLib.Math.Point,System.Double,RohrKonfBase.Entities.EnAnschlussPunkt@)">
+            <summary>
+            Anschlusspunkt zurückgeben der auf dem Punkt liegt. Wenn keiner gefunden wird, wird false zurückgegeben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnCadTeil.getAnschlussPunkteAsPoints">
+            <summary>
+            Anschlußpunkte als Punkteliste
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnCadTeil.getDefPunkte">
+            <summary>
+            Gibt beschreibende Definitionspunkte des Artikel zurück. (Beim Rohr z.B. die Segmentpunkte)
+            </summary>
+            <param name="points"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnCadTeil.exportData(MxLib.Basis.DataElement)">
+            <summary>
+            XML Ausgabe
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnCadTeil.importData(MxLib.Basis.DataElement)">
+            <summary>
+            Werte aus den XML Daten einlesen
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnCadTeil.export(MxLib.Basis.DataElement)">
+            <summary>
+            XML Ausgabe
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnCadTeil.import(MxLib.Basis.DataElement)">
+            <summary>
+            Werte aus den XML Daten einlesen
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnCadTeil.compareAttribute(System.Collections.Generic.List{System.String})">
+            <summary>
+            Die CAD Attribute vergleichen
+            </summary>
+            <param name="attrib"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnCadTeil.ToString">
+            <summary>
+            ToSting Methode
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnCadTeil.CadTyp">
+            <summary>
+            Art des Teils
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnCadTeil.Counter">
+            <summary>
+            Elementcounter. Wenn das Bauteil aus mehreren Teilen besteht, bekommt jedes Teil eine eindeutige Nummer.
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnCadTeil.Id">
+            <summary>
+            Eindeutige Id für kopierte Objekte
+            </summary> 
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnCadTeil.Basis">
+            <summary>
+            Basisbunkt des Teils in WKS
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnCadTeil.Referenzen">
+            <summary>
+            Liste mit Referenzen des Bauteils (z.B. die Mittellinien)
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnCadTeil.Attribute">
+            <summary>
+            Liste der CAD Attribute des Blocks
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnCadTeil.Bks">
+            <summary>
+            Koordinatensystem des Bauteils
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnCadTeil.ObjectId">
+            <summary>
+            Eindeutige ID des Bauteil (entspricht auch der Id des CadObjektes)
+            </summary> 
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnCadTeil.MinExtents">
+            <summary>
+            Punkt der linken unteren Ecke des Bauteils in WKS
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnCadTeil.MaxExtents">
+            <summary>
+            Punkt der rechten oberen Ecke des Bauteils in WKS
+            </summary>
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnCadTeil.Einheit">
+            <summary>
+            Einheiten
+            </summary>
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnCadTeil.CADTYP">
+            <summary>
+            Art des Bauteils
+            </summary>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnApaxDruckrahmen.getOptimalenMassstab">
+            <summary>
+            Optimale Maßstabsgröße für Schrift und Posblock anhand der Rahmengröße berechnen
+            
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnApaxDruckrahmen.getAbstandPosVonLinkenRand">
+            <summary>
+            Abstand ab der die Position vom linken Rand gesetzt werden kann, ohne das der Text überschrieben wird
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Gp.GpBase.appendErrorListeAndClear(MxLib.Basis.IMxError)">
+            <summary>
+            Errorliste kopieren und Ursprungsliste zurücksetzen
+            </summary> 
+        </member>
+        <member name="P:RohrKonfBase.Gp.GpBase.ToleranzGeo">
+            <summary>
+            Toleranzwert für Punkt und Vektorvergleiche
+            </summary> 
+        </member>
+        <member name="P:RohrKonfBase.Gp.GpBase.ToleranzRechnung">
+            <summary>
+            Toleranz für hohe Genauigkeit
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Gp.GpPreis.kumulieren(System.Collections.Generic.List{RohrKonfBase.Entities.EnVk3},System.Int32,System.Collections.Generic.List{RohrKonfBase.Entities.EnVk3})">
+            <summary>
+            - Preise mit gleichem Counter zusammenfassen
+            - Preise nach Vk3 Regeln runden
+            
+            preise: Liste mit preisen, die nach id, dn, dnvl zusammengefasst werden
+            globalAnzahl: Muliplikator für Menge
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Gp.GpPreis.hasNullPreise(System.Collections.Generic.List{RohrKonfBase.Entities.EnVk3})">
+            <summary>
+            prüfen ob in der Liste Preise ohne Preis stehen
+            </summary> 
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnRohr">
+            <summary>
+            Entity Klasse Rohr
+            </summary>
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnArtikel">
+            <summary>
+            Entity Klasse für einen Artikel
+            </summary>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.copy(RohrKonfBase.Entities.EnArtikel)">
+            <summary>
+            Werte nur kopieren, wenn es gültige Werte sind
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.copy(RohrKonfBase.Entities.EnArtikel,System.Boolean)">
+            <summary>
+            Werte kopieren
+            </summary>
+            <param name="artikel"></param>
+            <param name="mitStueckliste"></param>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.copyStueckliste(System.Collections.Generic.Dictionary{RohrKonfBase.Entities.EnArtikel,System.Double})">
+            <summary>
+            Stückliste kopieren
+            </summary>
+            <param name="stl">Zu kopierende Stückliste</param>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.addStueckliste(RohrKonfBase.Entities.EnArtikel,System.Double)">
+            <summary>
+            Stückliste des Artikels übernehmen
+            </summary>
+            <param name="artikel">Artikel von dem die Stückliste kopiert wird</param>
+            <param name="menge">Anzahl mit dem die Werte multipliziert werden</param>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.getTagName">
+            <summary>
+            Tagname für XML Ausgabe
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.getGewichtProStandardEinheit">
+            <summary>
+            Gewicht des Bauteils bezogen auf Stück bzw. Meter
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.getGewicht(System.Double)">
+            <summary>
+            Gewicht bezogen auf Stück bzw. Meter
+            </summary>
+            <param name="menge">Anzahl mit dem das Gewicht multipliziert wird</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.getPreis(System.Double)">
+            <summary>
+            Preis des Bauteils. Wenn ein Festpreis definiert ist, wird dieser genommen
+            </summary>
+            <param name="menge">Anzahl mit dem der Preis multipliziert wird</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.getEinheit">
+            <summary>
+            Einheit des Bauteils
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.mengeToString">
+            <summary>
+            Anzahl bzw. Menge des Bauteils als Stringwert
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.checkArtikelgruppe(System.Int32[])">
+            <summary>
+            prüfen die this.Artikelgruppe in artGruppen vorkommt
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.getLaenge">
+            <summary>
+             Länge des Artikels
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.compare(RohrKonfBase.Entities.EnArtikel,System.Double)">
+            <summary>
+            prüfen ob Artikel gleich sind
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.compareStueckliste(System.Collections.Generic.Dictionary{RohrKonfBase.Entities.EnArtikel,System.Double},System.Double)">
+            <summary>
+            Stücklisten vergleichen
+            </summary>
+            <param name="other"></param>
+            <param name="toleranz"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.ToString">
+            <summary>
+            ToString Methode
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.Equals(System.Object)">
+            <summary>
+            prüfen ob es sich um den gleichen Artikel handelt. Im Gegensatz zu Compare wird nicht die Menge geprüft.
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.GetHashCode">
+            <summary>
+            HashCode entspricht der Artikelnummer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.exportData(MxLib.Basis.DataElement)">
+            <summary>
+            XML Ausgabe
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArtikel.importData(MxLib.Basis.DataElement)">
+            <summary>
+            Daten aus XML einlesen
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnArtikel.Stueckliste">
+            <summary>
+            Zusätzliche Stückliste des Artikels
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnArtikel.AppendSchweissnahtToBauteil">
+            <summary>
+            Ob die Schweißnaht(länge) bei den Anschlußpunkten berücksichtigt wird
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnArtikel.Artikelnummer">
+            <summary>
+            Artikelnummer
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnArtikel.SubstituteArtikelnummer">
+            <summary>
+            Substituierte Artikelnummer (z.B. Maschinen- zu Handfertigung)
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnArtikel.SubstituteArtikelgruppe">
+            <summary>
+            Substituierte Artikelgruppe (z.B. Maschinen- zu Handfertigung)
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnArtikel.ClassId">
+            <summary>
+            ClassID
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnArtikel.GewichtProEinheit">
+            <summary>
+            Gewicht bezogen auf die Einheit des Bauteils. Siehe auch Methode getGewichtProStandardEinheit()
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnArtikel.SapPreis">
+            <summary>
+            Sap Preis
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnArtikel.FestPreis">
+            <summary>
+            Festpreis
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnArtikel.Bezeichnung">
+            <summary>
+            Artikelbezeichnung
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnArtikel.BezeichnungEinheit">
+            <summary>
+            Bezeichnung der Einheit
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnArtikel.Menge">
+            <summary>
+            Anzahl bzw. Länge des Bauteils
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnArtikel.IsFertigung">
+            <summary>
+            Ob das Bauteil für die Vorfertigung genommen wird
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnArtikel.IsAnlagenFertigung">
+            <summary>
+            Ob das Bauteil über die Maschine gefertigt wird.
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnArtikel.RefStl">
+            <summary>
+            Ids von referenzierten Bauteilen
+            </summary>
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnArtikel.CLASSID">
+            <summary>
+            ClassID. Entspricht den Werten in der Stammdatenbank Tabelle Unterartikelgruppe2 Spalte ClassId
+            </summary>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.isVerzinkt">
+            <summary>
+            prüfen ob Rohr lagerverzinkt ist
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.isSet">
+            <summary>
+            True wenn das Rohr gültige Punkte hat
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.getTagName">
+            <summary>
+            Tagname für XML
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.getDefPunkte">
+            <summary>
+            Bei einem geknickten Rohr die Knickpunkte zurückgeben (also ohne Start- und Endpunkt)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.getLaengeMitRohrverlaengerung(System.Boolean)">
+            <summary>
+            Rohrlänge zurückgeben.
+            Wenn mitRohrverlaengerung werden Werte für Einschraubtiefe oder Schweißnaht aus den Anschlusspunkten 
+            berücksichtigt
+            
+            Wenn mitSchweissnaht =true, werden auch negative Werte berücksichtigt
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.getLaenge">
+            <summary>
+            Rohrlänge
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.getDnId">
+            <summary>
+            Dn Id des Rohres
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.setNewPunkt(MxLib.Math.Point,System.Int32)">
+            <summary>
+            einen Punkt im Rohr neu setzen. 
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.set(System.Collections.Generic.List{MxLib.Math.Point},System.Boolean)">
+            <summary>
+            (Segment)Punkte des Rohres setzen. Dabei auch die Absoluten Koordinaten, das Bks und die Extens 
+            aktualisieren aktualisieren
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.set(System.Collections.Generic.List{MxLib.Math.Point},RohrKonfBase.Entities.EnRohrDn,RohrKonfBase.Entities.EnAnschlussPunkt.Verbindungsart,RohrKonfBase.Entities.EnAnschlussPunkt.Verbindungsart,MxLib.Math.Point,System.Boolean)">
+            <summary>
+            (Segment)Punkte des Rohres setzen. Dabei auch die Absoluten Koordinaten, das Bks und die Extens 
+            aktualisieren aktualisieren
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.startEndpunkteDrehen">
+            <summary>
+            (Segment)punkte des Rohres drehen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.getRichtungsVektorVonSegment(MxLib.Math.Point,System.Double,MxLib.Math.Vector@)">
+            <summary>
+            Richtungsvektor von dem Segment auf dem der Punkt liegt. Es wird der Radius des Rohres berücksichtigt.
+            Der Punkt darf also auch auf dem Umfang des Rohres liegen.
+            Wenn der Punkt nicht auf/im Rohr liegt, wird false zurückgegegben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.exportData(MxLib.Basis.DataElement)">
+            <summary>
+            XML Ausgabe
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.importData(MxLib.Basis.DataElement)">
+            <summary>
+            Daten aus XML einlesen
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.isPointOnRohr(MxLib.Math.Point,System.Double@,System.Int32@,MxLib.Math.Point@,System.Double)">
+            <summary>
+            pürfen ob Punkt auf einem Rohrsegment liegt. Werte des Schnittpunktes zurückgeben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.getSegmentPoints(System.Int32,MxLib.Math.Point@,MxLib.Math.Point@)">
+            <summary>
+            Zu dem Rohrsegment die Punkte lesen
+            </summary>
+            <param name="nr"></param>
+            <param name="start"></param>
+            <param name="ende"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.isPointOnStartOrEndpunkt(MxLib.Math.Point,System.Double)">
+            <summary>
+            Prüfen ob der Punkt auf dem Start- oder Endpunkt liegt
+            </summary>
+            <param name="po"></param>
+            <param name="tol">Toleranz</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.isOnStartpunkt(MxLib.Math.Point,System.Double)">
+            <summary>
+            Prüfen ob der Punkt auf dem Startpunkt liegt
+            </summary>
+            <param name="po"></param>
+            <param name="tol"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.isOnEndpunkt(MxLib.Math.Point,System.Double)">
+            <summary>
+            Prüfen ob der Punkt auf dem Endpunkt liegt
+            </summary>
+            <param name="po"></param>
+            <param name="tol"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.ToString">
+            <summary>
+            ToString Methode
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.getStartpunkt">
+            <summary>
+            Startpunkt
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnRohr.getEndpunkt">
+            <summary>
+            Endpunkt
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnRohr.RohrTyp">
+            <summary>
+            Rohrtyp
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnRohr.OldStartPunkt">
+            <summary>
+            Wenn beim Einlesen aus den CAD Daten virtuelle Rohr(segmente) generiert werden, enthält OldStart den ursprünglichen Startpunkt.
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnRohr.OldEndPunkt">
+            <summary>
+            Wenn beim Einlesen aus den CAD Daten virtuelle Rohr(segmente) generiert werden, enthält OldEnde den ursprünglichen Endpunkt.
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnRohr.IsRohrAnVirtualTStueck">
+            <summary>
+            Wenn das Rohr ein virtuelles Rohrstück ist
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnRohr.RohrAnVirtualTStueck">
+            <summary>
+            Id des Rohres in der Zeichnung, aus dem die virtuellen Rohrstücke generiert wurden
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnRohr.Punkte">
+            <summary>
+            Segmentpunkte des Rohres (Startpunkt, Endpunkt und Knicke)
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnRohr.Dn">
+            <summary>
+            DN Wert 
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnRohr.Wandstaerke">
+            <summary>
+            Wandstärke
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnRohr.IsGewinderohr">
+            <summary>
+            Ob das Rohr auch als Gewinderohr verwendet werden kann
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnRohr.CWert">
+            <summary>
+            C-Wert
+            </summary>
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnRohr.rohrtyp">
+            <summary>
+            Rohrtyp
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnCadPosition.Positionsnummer">
+            <summary>
+            Positionsnummer
+            </summary> 
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnCadPosition.Bauteile">
+            <summary>
+            Liste mit Ids von Bauteilen, die zur Position gehören
+            </summary> 
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnCadPosition.Waid">
+            <summary>
+            Datenbankkennziffer
+            </summary> 
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnCadPosition.Wanr">
+            <summary>
+            Werkauftragsnummer
+            </summary> 
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnCadPosition.Status">
+            <summary>
+            Datenbankstatus der Position
+            </summary> 
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe">
+            <summary>
+            		 * feste Artikelgruppen auf die im Programm verwiesen wird
+            		 * Im Artikelstamm entspricht MuffeGekehltStrangrohr -> MuffeHandschweissung
+                     * 
+                     * Bei Änderungen auch in EnArtikelGruppe.h ändern!!!
+            		 * </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArbeitsplan.getKumuliert">
+            <summary>
+            Arbeitsplan kumuliert ausgeben
+            </summary> 
+        </member>
+        <member name="T:RohrKonfBase.Db.DbArtikel">
+            <summary>
+            Artikelwerte aus der Datenbank lesen
+            </summary>
+        </member>
+        <member name="F:RohrKonfBase.Db.DbArtikel.tabArtikelstamm">
+            <summary>
+            Tabellenname des Artikelstamms
+            </summary>
+        </member>
+        <member name="F:RohrKonfBase.Db.DbArtikel.sprachId">
+            <summary>
+            Name der Sprache in den Spaltennamen
+            </summary>
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikel.#ctor(MxLib.Db.DbConnection,System.String)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="conectionData"></param>
+            <param name="sprachId"></param>
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikel.readArtikelDaten(System.Int32,RohrKonfBase.Entities.EnArtikel)">
+            <summary>
+             Artikelwerte einlesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikel.readFlanschDaten(System.Int32,RohrKonfBase.Entities.EnFlansch)">
+            <summary>
+            Flanschdaten einlesen
+            </summary>
+            <param name="artnr">Artikelnummer</param>
+            <param name="artikel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikel.readKupplungsDaten(System.Int32,RohrKonfBase.Entities.EnKupplung)">
+            <summary>
+            Kupplungsdaten einlesen
+            </summary>
+            <param name="artnr">Artikelnummer</param>
+            <param name="artikel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikel.readReduzierungsDaten(System.Int32,RohrKonfBase.Entities.EnReduzierung)">
+            <summary>
+            Reduzierungsdaten einlesen
+            </summary>
+            <param name="artnr"></param>
+            <param name="artikel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikel.readArtikelgruppe(System.Int32,System.Int32@)">
+            <summary>
+            Artikelgruppe aus der Db lesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikel.readScheibenLaenge(System.Int32,System.Double@)">
+            <summary>
+            Breite der Scheibe bzw Boden einlesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteilPosition.getAbstand(RohrKonfBase.Entities.EnObjectId,System.Double,System.Boolean,System.Double@)">
+            <summary>
+            relativer Abstand zum Startpunkt des Bauteils ermitteln. (nur bei Rohren)
+            wenn mitRohrverlaengerung=true wird die Rohrverlängerung berücksichtigt. (z.B. bei Rohren an Fittingen oder Flachflanschen)
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteilPosition.getAbstand(RohrKonfBase.Entities.EnAnschlussPunkt,System.Double,System.Boolean,System.Double@)">
+            <summary>
+            relativer Abstand zum Startpunkt des Bauteils ermitteln. (nur bei Rohren)
+            wenn mitRohrverlaengerung=true wird die Rohrverlängerung berücksichtigt. (z.B. bei Rohren an Fittingen oder Flachflanschen)
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteilPosition.getAnbauteileSortiertNachAbstand(System.Collections.Generic.List{RohrKonfBase.Entities.EnBauteilAnschluss},System.Double)">
+            <summary>
+            Die Anbauteile sortieren nach dem Abstand zum Startpunkt. (nur bei Rohren)
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteilPosition.getAsRohr">
+            <summary>
+            Den Artikel als Rohr zurückgeben. (Wenn möglich)
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteilPosition.isRohr">
+            <summary>
+            true, wenn this ein Rohr ist
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteilPosition.getMaxAnschluss(RohrKonfBase.Entities.EnAnschlussPunkt@)">
+            <summary>
+            Aus der Liste mit Anschlusspunkten, den mit dem größten DN Wert suchen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteilPosition.getMinAnschluss(RohrKonfBase.Entities.EnAnschlussPunkt@)">
+            <summary>
+            Aus der Liste mit Anschlusspunkten, den mit dem kleinsten DN Wert suchen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteilPosition.getLaenge">
+            <summary>
+            Länge des Bauteil ermitteln
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteilPosition.getAnbauteileMitAnschluss(RohrKonfBase.Entities.EnAnschlussPunkt.Verbindungsart)">
+            <summary>
+            Alle Bauteile suchen, die mit der Verbindungsart vart mit dem Bauteil verbunden sind
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteilPosition.isFitting">
+            <summary>
+            Prüfen ob es ein Fitting ist.
+            Dazu prüfen ob Bauteil Anschlusspunkte mit Innengewinde hat.
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteilPosition.getAnschluesse(MxLib.Math.Point,System.Boolean,System.Boolean,System.Double,System.Collections.Generic.List{RohrKonfBase.Entities.EnBauteilAnschluss})">
+            <summary>
+            Anschluesse am Punkt po zurückgeben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteilPosition.changeIdImAnschlusspunkt(RohrKonfBase.Entities.EnObjectId,RohrKonfBase.Entities.EnObjectId,RohrKonfBase.Entities.EnAnschlussPunkt@)">
+            <summary>
+            ObjektID im Anschlusspunkt tauschen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteilPosition.getBauteilAnschluss(RohrKonfBase.Entities.EnObjectId)">
+            <summary>
+            In den Anschlusspunkten den Bauteilanschluss suchen der mit dem Bauteil "id" verbunden ist.
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteilPosition.export(MxLib.Basis.DataElement)">
+            <summary>
+            Daten exportieren.
+            Stuktur:
+            Anschluesse
+              Anschluss 1
+              Anschluss 2
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteilPosition.import(MxLib.Basis.DataElement)">
+            <summary>
+            Daten importieren
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.getBauteilPosition(RohrKonfBase.Entities.EnObjectId)">
+            <summary>
+            Zu der id die Bauteilposition aus der Liste ermitteln
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.getBauteilPosition(RohrKonfBase.Entities.EnObjectId,System.Boolean)">
+            <summary>
+            Zu der id die Bauteilposition aus der Liste ermitteln
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.getAsBauteilPositionListe(System.Collections.Generic.List{RohrKonfBase.Entities.EnBauteilAnschluss})">
+            <summary>
+            Liste in eine BauteilPositions Liste konvertieren
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.getStartElemente">
+            <summary>
+            Rückgabe aller Startelemente. Startelement ist ein Bauteil, dass nur auf einer Seite 
+            einen Anschluss hat
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.getChilds(RohrKonfBase.Entities.EnBauteilPosition,System.Collections.Generic.List{RohrKonfBase.Entities.EnBauteilPosition})">
+            <summary>
+            Alle Anbauteile und Anschlussteile in einer Liste zurückgeben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.getChilds(RohrKonfBase.Entities.EnBauteilPosition,System.Collections.Generic.List{RohrKonfBase.Entities.EnBauteilPosition},System.Collections.Generic.List{RohrKonfBase.Entities.EnBauteilPosition})">
+            <summary>
+            Anschlussbauteile und Anbauteile von element zurückgeben. 
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.getChilds(RohrKonfBase.Entities.EnBauteilPosition,System.Collections.Generic.List{RohrKonfBase.Entities.EnBauteilPosition},System.Collections.Generic.List{RohrKonfBase.Entities.EnBauteilPosition},System.Collections.Generic.List{RohrKonfBase.Entities.EnBauteilPosition})">
+            <summary>
+            Anschlussbauteile und Anbauteile von element zurückgeben. Allerdings nur wenn sie nicht schon im Filter stehen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.isInListe(RohrKonfBase.Entities.EnObjectId,System.Collections.Generic.List{RohrKonfBase.Entities.EnBauteilPosition})">
+            <summary>
+            		 * prüfen ob Teil in der Liste steht
+            		* </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.getArtikelListe">
+            <summary>
+            Bauteile als Artikelliste.
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.firstArtikel">
+            <summary>
+            ersten Artikel aus dem Bauteil zurückgeben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.firstObjecId">
+            <summary>
+            ObjectId des ersten Artikels aus dem Bauteil zurückgeben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.getMaxBauteil(System.Boolean,System.Boolean)">
+            <summary>
+            Bauteil mit dem größten Durchmesser holen.
+            
+            Wenn onlyRohr=true wird das längste Rohr mit dem größten Durchmesser aus dem Bauteil zurückgeben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.getMaxRohrMitAbgaengen(System.Boolean)">
+            <summary>
+            größtes Rohr mit den meisten Abgängen suchen. 
+            onlyStartRohr = true: nur wenn es ein Start- bzw EndRohre nehmen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.getMinBauteil(System.Boolean)">
+            <summary>
+            Bauteil mit dem kleinsten Durchmesser holen.
+            
+            Wenn onlyRohr=true wird das kleinste Rohr mit dem kleinsten Durchmesser aus dem Bauteil zurückgeben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.getHauptstrang">
+            <summary>
+            Liste mit Bauteilen die den Hauptstrang bilden. Ausgehend vom größten und längsten Rohr.
+            Enthält das Bauteil kein Rohr wird null zurückgegeben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.getStrang(RohrKonfBase.Entities.EnObjectId,System.Collections.Generic.List{RohrKonfBase.Entities.EnBauteilPosition})">
+            <summary>
+            Einen Strang ermitteln, ausgehend von startPos
+            Rekursive Methode
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.isAbgang(RohrKonfBase.Entities.EnBauteilPosition,RohrKonfBase.Entities.EnBauteilAnschluss@)">
+            <summary>
+            prüfen ob das Teil "pos" ein Abgang innerhalb des Bauteils ist (Muffe, Stutzem, abgehendes Rohr, ...)
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.getMaxDn">
+            <summary>
+            größten Dn Wert des Bauteils ermitteln
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.getMinDn">
+            <summary>
+            Kleinste Dn im Bauteil ermitteln
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.hasFittinge">
+            <summary>
+            prüfen ob Fittinge Bauteil Fittinge enthält
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.isGewinderohr">
+            <summary>
+            prüfen ob Artikel in dem Bauteil einem Gewinderohr entspricht. 
+            Achtung: Es werden keine Längen und sontige Plausis geprüft
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.isApax">
+            <summary>
+            Prüfen ob das Bauteil ein Apax Bauteil ist
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBauteil.getBauteillaenge(System.Double@)">
+            <summary>
+            Länge des Bauteils ermitteln.
+            Wenn von einem Bauteil keine Länge ermittelt werden konnte wird false zurückgegeben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnPosition.copy(RohrKonfBase.Entities.EnPosition)">
+            <summary>
+            Eine Kopie der Position zurückgeben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnPosition.getAnzahlAnlagenTeile">
+            <summary>
+            Anlagenteile in der Position zählen.
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnPosition.hasAvTeile">
+            <summary>
+            prüfen ob Positionen AV Teile hat
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnPosition.resetAnlagenFlag">
+            <summary>
+            Flag für Anlage zurücksetzen
+            </summary> 
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnPosition.Positionsnummer">
+            <summary>
+            Positionsnummer (Nummer in der Montagezeichnung)
+            </summary> 
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnPosition.DateiName">
+            <summary>
+            Dateiname der Zeichnung in dem sich die Position befindet. Wenn die Position aus dem CAD kommt,
+            muss diese Variable gesetzt sein.
+            </summary> 
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnPosition.Anzahl">
+            <summary>
+            Anzahl der Position
+            </summary> 
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnPosition.Oberlaeche">
+            <summary>
+            Oberfläche (Beschichtung + evt. Ral)
+            </summary> 
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnPosition.Waid">
+            <summary>
+            Datenbankkennziffer
+            </summary> 
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnPosition.SdMaterialnummer">
+            <summary>
+            SD Materialnummer für die Position
+            </summary> 
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnPosition.Wanr">
+            <summary>
+            Werkauftragsnummer zu dem die Position gehört
+            </summary> 
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnStatus">
+            <summary>
+            Status des Werkauftrages
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnMuffeStutzen.setMuffenlaenge(System.Double)">
+            <summary>
+            Sondermuffenlänge zuweisen und zweiten Anschlußpunkt an Länge anpassen
+            </summary> 
+        </member>
+        <member name="T:RohrKonfBase.Db.DbText">
+            <summary>
+            Texte aus der Tabelle Texte einlesen
+            </summary>
+        </member>
+        <member name="M:RohrKonfBase.Db.DbText.#ctor(MxLib.Db.DbConnection)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="conectionData"></param>
+        </member>
+        <member name="M:RohrKonfBase.Db.DbText.readFromDb(System.String,System.String,System.String@)">
+            <summary>
+            Anhand der übergebenen ID den Text einlesen
+            </summary>
+            <param name="id">ID</param>
+            <param name="sprachId">Sprache</param>
+            <param name="result">Text aus der Datenbank</param>
+            <returns></returns>
+        </member>
+        <member name="T:RohrKonfBase.Db.DbArtikelgruppen">
+            <summary>
+            Daten zu den Artikelgruppen einlesen
+            </summary>
+        </member>
+        <member name="F:RohrKonfBase.Db.DbArtikelgruppen.tabNameArtikelgruppe">
+            <summary>
+            Tabellenname der Artikelgruppen
+            </summary>
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelgruppen.#ctor(MxLib.Db.DbConnection,System.String)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="conectionData">Verbindungsdaten</param>
+            <param name="sprachId">Sprache</param>
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelgruppen.readHauptgruppen(System.Collections.Generic.List{RohrKonfBase.Entities.EnArtikelgruppe},System.Boolean)">
+            <summary>
+            Alle Hauptgruppen einlesen
+            </summary>
+            <param name="list"></param>
+            <param name="alphabetischeSortierung"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelgruppen.readClassId(System.Int32,System.Int32@)">
+            <summary>
+            zu der Artikelgruppe die ClassId lesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelgruppen.readClassIdAndIsFertigung(System.Int32,System.Int32@,System.Boolean@)">
+            <summary>
+            zu der Artikelgruppe die ClassId lesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelgruppen.readUntergruppen1(System.Int32,System.Collections.Generic.List{RohrKonfBase.Entities.EnArtikelgruppe},System.Boolean)">
+            <summary>
+            Einträge aus der Tabelle Untergruppe1 lesen die den Parent idHauptGruppe haben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelgruppen.readUntergruppen1(System.Collections.Generic.List{System.Int32},System.Collections.Generic.List{System.Int32},MxLib.Entities.EnSqlFilter,System.Collections.Generic.List{RohrKonfBase.Entities.EnArtikelgruppe},System.Boolean)">
+            <summary>
+            Einträge aus der Tabelle Untergruppe1 lesen, die in Untergruppe2 die ClassId gesetzt haben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelgruppen.readUntergruppen2(System.Int32,System.Collections.Generic.List{RohrKonfBase.Entities.EnArtikelgruppe},System.Boolean)">
+            <summary>
+            Unterartikelgruppe 2 (Artikelgruppen) lesen, gefiltert nach ParentId der Unterartikelgruppe 1
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelgruppen.readUntergruppen2(System.Int32,System.Collections.Generic.List{System.Int32},MxLib.Entities.EnSqlFilter,System.Collections.Generic.List{RohrKonfBase.Entities.EnArtikelgruppe},System.Boolean)">
+            <summary>
+            Unterartikelgruppe 2 (Artikelgruppen) lesen, gefiltert nach ParentId der Unterartikelgruppe 1, classId und evt. gesetzten Typfilter
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelgruppen.readArtikelgruppeDaten(System.Int32,RohrKonfBase.Entities.EnArtikelgruppe)">
+            <summary>
+            Werte zu der Artikelgruppe artGr ermitteln
+            </summary>
+            <param name="artGr"></param>
+            <param name="artgruppe"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelgruppen.executeSqlStatementArtGruppe(System.String,System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.List{RohrKonfBase.Entities.EnArtikelgruppe})">
+            <summary>
+            Werte einlesen
+            </summary>
+            <param name="sql"></param>
+            <param name="mitClassId"></param>
+            <param name="mitNormblatt"></param>
+            <param name="isSetSortierung"></param>
+            <param name="liste"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelgruppen.readArtikelgruppen(System.Int32,System.Boolean,System.Collections.Generic.List{RohrKonfBase.Entities.EnArtikelgruppe},System.Boolean)">
+            <summary>
+            Werte aus den Artikelgruppen zu einer bestimmten ClassId lesen
+            </summary>
+            <param name="classId">ClassId</param>
+            <param name="nurVorauswahl">true, wenn nur Werte zur Vorauswahl gelesen werden sollen</param>
+            <param name="artGruppen">Liste, die mit den eingelesenen Artikelgruppen gefüllt wird</param>
+            <param name="alphabetischeSortierung">true, wenn alphabetisch sortiert werden soll</param>
+            <returns></returns>
+        </member>
+        <member name="T:RohrKonfBase.Gp.GpBaseTransfer">
+            <summary>
+            Klasse für Abläufe die EnResult zurückliefern oder aus Xml Daten einlesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Gp.GpBaseTransfer.importModell(System.String,MxLib.Basis.IDataTransfer,RohrKonfBase.Entities.EnResult)">
+            <summary>
+            Daten aus der xml Struktur lesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Gp.GpBaseTransfer.setAndGetResult(System.Boolean,RohrKonfBase.Entities.EnResult)">
+            <summary>
+            Result Objekt mit ErrorWerten füllen und Status zurückgeben
+            </summary> 
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnSammelauftrag">
+            <summary>
+            Entspricht einem Werkauftrag bzw. einer SD-Auftrag + SD-Position + SD-Materialnummer
+            Hat eine Liste von CAD-Positionen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSammelauftrag.setProjekt(RohrKonfBase.Entities.EnProjekt)">
+            <summary>
+            Allen Positionen die Psp Nummer zuweisen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSammelauftrag.getArbeitsplan">
+            <summary>
+            Arbeitspläne der einzelnen Positionen zusammenfassen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSammelauftrag.getPspNummer">
+            <summary>
+            Psp Nummer aus den Positionen lesen. Muss für alle Positionen gleich sein. Wenn nicht
+            wird null zurückgegeben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSammelauftrag.getStatus">
+            <summary>
+            Status der Positionen zurückgeben. Dieser muss für alle Positionen gleich sein, sonst 
+            wird 0 zurückgegeben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSammelauftrag.copyAuftragsdatenToPos(System.Boolean)">
+            <summary>
+            Allen Positionen die Sd Nummer zuweisen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSammelauftrag.readAuftragsdatenFromPos">
+            <summary>
+            Aus den Positionen die gespeicherten Auftragsdaten lesen.
+            Müssen für alle Positionen gleich sein
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSammelauftrag.getPosition(System.String,System.Int32)">
+            <summary>
+            Erste Position aus der Liste mit Positionen mit der Positionsnummer "posNr" und "waid" zurückgeben.   
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSammelauftrag.getPositionen(System.String,System.Int32,System.Collections.Generic.List{RohrKonfBase.Entities.EnPosition})">
+            <summary>
+            Liste mit Positionen zurückgeben, die die Positionsnummer posNr und waid haben haben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSammelauftrag.setDateiName(System.String,System.String)">
+            <summary>
+            den Positionen den CAD Dateinamen zuweisen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSammelauftrag.getRohrQuali(System.Int32@)">
+            <summary>
+            Hauptrohrquali des Sammelauftrages holen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSammelauftrag.getAnzahlAnlagenTeile">
+            <summary>
+            gibt die Anzahl der Anlagenteile im Sammelauftrag zurück
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSammelauftrag.hasAvTeile">
+            <summary>
+            Ermitteln ob Sammelauftrag AV Teile hat
+            </summary> 
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnResultAnlagenTeile">
+            <summary>
+            gibt zusätzlich eine Liste der Bauteile zurück, die über die Anlage gefertigt werden können.
+            Bei Strangrohren sind es die Standardelemente.
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnProjekt.bereinigNummer">
+            <summary>
+            Nummer bereinigen, so das entweder nur die Servicenummer oder nur die PSP Nummer gesetzt ist.
+            </summary> 
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnSdAuftragsNr">
+            <summary>
+            Sales and Distribution Number (Sap Bezeichnung)
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelzuordnung.#ctor(MxLib.Db.DbConnection)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="conectionData">Verbindungsdaten</param>
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelzuordnung.getArtikelnummer(System.Int32,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Artikelnummer in der Tabelle Artikelzuordnung aus der Tabelle Artikelzuordnung suchen. 
+            Wenn mit artikelDnId und rohrDnId keine Artikelnummer gefunden wurde, prüfen ob eine Artikelnummer
+            gefunden wird wenn rohrDnId=0 gesetzt ist. Das bedeutet, das der Artikel mit der DN auf alle Rohrgrößen gesetzt werden kann.
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelzuordnung.getArtikelnummer(System.Int32,System.Int32,System.Int32,System.Int32@,System.Double@)">
+            <summary>
+            Artikelnummer zu den übergebenen Werten aus der Tabelle Artikelzuordnung suchen
+            </summary>
+            <param name="artikelDnId"></param>
+            <param name="rohrDnId"></param>
+            <param name="artGruppe"></param>
+            <param name="artnr"></param>
+            <param name="laenge"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelzuordnung.readArtikelnummer(System.Int32,System.Int32,System.Int32,System.Int32@,System.Double@)">
+            <summary>
+            Aus der Tabelle Artikelzuordnung die den passenden Eintrag suchen.
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelzuordnung.getRohrArtikelnr(System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Zu der Artikelgruppe und dem DN Wert die richtige Artikelnummer aus der Tabelle TypRohr einlesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelzuordnung.getMuffeArtikelnr(System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Muffenartikelnummer aus der Tabelle TypMuffeStutzen suchen
+            </summary>
+            <param name="dn"></param>
+            <param name="artGr"></param>
+            <param name="artnr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelzuordnung.getBogenArtikelnr(System.Int32,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Zu der Artikelgruppe und dem DN Wert die richtige Artikelnummer aus der Tabelle TypBogen einlesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelzuordnung.getReduzierungArtikelnr(System.Int32,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Artikelnummer aus der Tabelle TypReduzierung suchen
+            </summary>
+            <param name="dn1"></param>
+            <param name="dn2"></param>
+            <param name="artGr"></param>
+            <param name="artnr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelzuordnung.getKupplungArtikelnr(System.Int32,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Zu der Artikelgruppe und dem DN Wert die richtige Artikelnummer aus der Tabelle TypKupplung einlesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelzuordnung.getFlanschArtikelnr(System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Artikelnummer aus der Tabelle TypFlansch suchen
+            </summary>
+            <param name="dn"></param>
+            <param name="artGr"></param>
+            <param name="artnr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelzuordnung.getTStueckArtikelnr(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Zu der Artikelgruppe und dem DN Wert die richtige Artikelnummer aus der Tabelle TypTStueck einlesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Db.DbArtikelzuordnung.getSchelleArtikelnr(System.Int32,System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Zu der Artikelgruppe und dem DN Wert die richtige Artikelnummer aus der Tabelle TypAnbohrschelle einlesen
+            </summary> 
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnSprinkler">
+            <summary>
+            Entity Klasse für einen Sprinkler bzw. Düse
+            </summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.MinHoehe">
+            <summary>
+            Mindeststeigerhöhe
+            </summary>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSprinkler.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSprinkler.getBasisAuswinklung(MxLib.Math.Point@)">
+            <summary>
+            Basispunkt des ausgewinkelten Sprinkers
+            </summary>
+            <param name="po"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSprinkler.isHaengend">
+            <summary>
+            Anhand der Symbolnummer prüfen ob es ein hängender Sprinkler ist
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSprinkler.isSeitenwand">
+            <summary>
+            Anhand der Symbolnummer prüfen ob es ein Seitenwandsprinkler ist
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSprinkler.copy(RohrKonfBase.Entities.EnSprinkler,System.Boolean)">
+            <summary>
+            Werte nur kopieren, wenn es gültige Werte sind
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSprinkler.getWasserausfluss">
+            <summary>
+            Wasserfluss aus dem Sprinkler. (Wba * Schutzfläche) Wenn allerdings
+            der Mindesfasserfluss (KFaktor * Sqrt(Druck)) unterschritten wird, gilt der 
+            Mindeswasserfluss.
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSprinkler.exportData(MxLib.Basis.DataElement)">
+            <summary>
+            XML Export
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSprinkler.importData(MxLib.Basis.DataElement)">
+            <summary>
+            Import aus XML Daten
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSprinkler.hasStlSchlauch">
+            <summary>
+            prüfen ob die Stückliste des Sprinklers einen Schlauch enthält
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSprinkler.hasStlSteiger">
+            <summary>
+            prüfen ob die Stückliste des Sprinklers einen Steiger enthält
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSprinkler.isArtGrInStl(RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe[])">
+            <summary>
+            prüfen ob in der Stückliste des Sprinkler ein Bauteil mit der Artikelgruppe aus der Liste artgr vorkommt
+            </summary> 
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.TagNameSprinkler">
+            <summary>
+            Tagname für XML
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.Druck">
+            <summary>
+            Druck für Hyd. Berechnung
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.AequivalentLaenge">
+            <summary>
+            Äquivalentlänge für Steiger am Sprinkler für die Hyd. Berechnung
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.Hoehe">
+            <summary>
+            Höhe des Steigers (darf auch negativ sein)
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.BasisAuswinklung">
+            <summary>
+            Basispunkt des ausgewinkelten Sprinkers
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.WirkflaechenArt">
+            <summary>
+            Wirkflächeart 
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.Wba">
+            <summary>
+            Wasserbeaufschlagung für Hyd. Berechnung
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.Schutzflaeche">
+            <summary>
+            Schutzfläche für Hyd. Berechnung
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.Ausrichtung">
+            <summary>
+            Vorgesehene Ausrichtung des Sprinklers aus den Stammdaten
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.Typ">
+            <summary>
+            Art des Sprinklers 
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.verbindungsDn">
+            <summary>
+            DN der Verbindung zum Strangrohr
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.verbindung">
+            <summary>
+            Art der Verbindung zum Strangrohr
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.symbol">
+            <summary>
+            Symbolnummer des Sprinklers
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.Sondermuffenlaenge">
+            <summary>
+            Länge der Sondermuffe
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.Dn">
+            <summary>
+            DN des Sprinklers
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.Temperatur">
+            <summary>
+            Temperatur
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.AnzeigeTemperatur">
+            <summary>
+            Ob die Temperatur am Sprinkler in der Zeichnung angezeigt werden soll
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.AnzeigeKFaktor">
+            <summary>
+            Ob der K-Faktor am Sprinkler in der Zeichnung angezeigt werden soll
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.Text">
+            <summary>
+            Zusatztext
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnSprinkler.AnzeigeText">
+            <summary>
+            Ob der Zusatztext am Sprinkler in der Zeichnung angezeigt werden soll
+            </summary>
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnSprinkler.SprinklerArt">
+            <summary>
+            Definition für die Art des Sprinklers in der Wirkfläche bei der Hydraulischen Berechnung 
+            </summary>
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnSprinkler.AUSRICHTUNG">
+            <summary>
+            Ausrichtung des Sprinklers. (Wie der Sprinkler laut Stammdaten definiet wurde)
+            </summary>
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnSprinkler.TYP">
+            <summary>
+            Art des Sprinklers 
+            </summary>
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnSprinkler.Verbindung">
+            <summary>
+            Verbindung zum Strangrohr
+            </summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Verbindung.Muffe">
+            <summary>Verbindung über eine Muffe</summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Verbindung.Tstueck">
+            <summary>Verbindung über ein T-Stück </summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Verbindung.Sondermuffe">
+            <summary>Verbindung über eine Sondermuffe mit variabler Länge </summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Verbindung.SprinklerschelleVirotec">
+            <summary>Verbindung über eine Sprinklerschelle </summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Verbindung.SprinklerschelleFig522">
+            <summary>Verbindung über eine Sprinklerschelle </summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Verbindung.Winkel">
+            <summary>Verbindung über einen Winkel am Rohrende </summary>
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnSprinkler.Symbol">
+            <summary>
+            Symbolnummer
+            </summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Symbol.nichtGesetzt">
+            <summary>Nicht gesetzt</summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Symbol.SymStehend">
+            <summary>Stehender Sprinkler</summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Symbol.SymHaengend">
+            <summary>Hängender Sprinkler</summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Symbol.SymAuswinklung_1">
+            <summary>Alte Variante, nicht mehr verwenden!!</summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Symbol.SymAuswinklung_2">
+            <summary>Hängender Sprinkler mit Auswinklung</summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Symbol.SymAuswinklungStehend">
+            <summary>Stehender Sprinkler mit Auswinklung</summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Symbol.SymAuswinklungWWH">
+            <summary>WWH Sprinkler</summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Symbol.SymHohlraumschutz">
+            <summary>Sprinkler für Hohlraumschutz</summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Symbol.SymPrallblechStehend">
+            <summary>Stehender Sprinkler mit Prallblech</summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Symbol.SymPrallblechHaengend">
+            <summary>Hängender Sprinkler mit Prallblech</summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Symbol.SymSondersprinklerStehend">
+            <summary>Stehender Sondersprinkler</summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Symbol.SymSondersprinklerHaengend">
+            <summary>Hängender Sondersprinkler</summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Symbol.SymTrockensprinkler">
+            <summary>Sprinkler hängend, Muffe stehend</summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Symbol.SymDueseHaengend">
+            <summary>Düse hängend</summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Symbol.SymDueseStehend">
+            <summary>Düse stehend</summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Symbol.SymDueseAusgerichtet">
+            <summary>Düse ausgerichtet</summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.Symbol.SymDueseHohlraumschutz">
+            <summary>Düse für Hohlraumschutz</summary>
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnSprinkler.VerbindungsDn">
+            <summary>
+            DN Wert für die Verbindung zum Strangrohr
+            </summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.VerbindungsDn.NachSprinkler">
+            <summary>DN Wert wird vom Sprinkler genommen</summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.VerbindungsDn.Dn20">
+            <summary> 3/4"</summary>
+        </member>
+        <member name="F:RohrKonfBase.Entities.EnSprinkler.VerbindungsDn.Dn25">
+            <summary> 1"</summary>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnSchriftkopf.setZeichnungsNrFromString(System.String)">
+            <summary>
+            Die letzte Nummer im String ist die Zeichnungsnummer. Ein Suffix wird nicht berücksichtigt.
+            </summary> 
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnPspNummer">
+            <summary>
+             Projekt Stuktur Plan Nummer (Sap Bezeichnung)
+             1-123456-123-12-123
+            					|- Lieferlos
+            				 |---- Sparte (11=Wasser)
+            			  |------- Niederlassung
+                  |------------- Zählnummer
+             |------------------ Bereich (1=Wasser, 6=Service)
+             </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnPspNummer.setPspFromString(System.String)">
+            <summary>
+            PSP Werte aus einem String  1-123456-123-12-123  erzeugen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnPspNummer.setPsp(System.String,System.Int32,System.Int32)">
+            <summary>
+            PSP Werte aus einem String  Bereich + PSP + Lieferlos  erzeugen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnPspNummer.checkPsp(System.String)">
+            <summary>
+            Psp Nummer auf Gültigkeit prüfen
+            </summary> 
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnBauteilAnschlussExt">
+            <summary>
+            zusätzliches Feld zum Speichern eines Abstandes
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Gp.GpEnObjectCreator.createEnObjectFromClassId(System.Int32)">
+            <summary>
+            Anhand der ClassId das Objekt erzeugen
+            </summary>
+            <param name="classId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Gp.GpEnObjectCreator.createEnArtikelFromClassId(System.Int32)">
+            <summary>
+            als Artikel zurückgeben
+            </summary>
+            <param name="classId"></param>
+            <returns></returns>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnResultFreigabe.Waids">
+            <summary>
+            Datenbankkennziffer
+            </summary>
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnVk3">
+            <summary>
+            Preis der einem Teil zugeordnet werden kann
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnVk3.getGesamtPreis">
+            <summary>
+            Gibt den Preis multipliziert  mit der Menge zurück
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnVk3.GetHashCode">
+            <summary>
+            eindeutige Id und Sortierreihenfolge
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnObjectIdList.Add(RohrKonfBase.Entities.EnObjectId,System.Boolean)">
+            <summary>
+            Id  wird nur in die Liste eingefügt, wenn das es noch nicht in der Liste steht
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnArbeitsfolge.GetHashCode">
+            <summary>
+            eindeutige Id und Sortierreihenfolge
+            </summary> 
+        </member>
+        <member name="M:RohrKonfBase.Gp.GpTextBase.clear">
+            <summary>
+            Dictionary löschen. Nötig bei einem Sprachwechsel
+            </summary> 
+        </member>
+        <member name="T:RohrKonfBase.Entities.EnError">
+            <summary>
+            Error Klasse
+            </summary>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnError.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnError.#ctor(RohrKonfBase.Entities.EnObjectId,System.String)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="objId"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnError.#ctor(RohrKonfBase.Entities.EnObjectId,System.String,System.String)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="objId"></param>
+            <param name="text"></param>
+            <param name="errorId"></param>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnError.#ctor(RohrKonfBase.Entities.EnObjectId,System.String,System.String,System.Object)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="objId"></param>
+            <param name="text"></param>
+            <param name="errorId"></param>
+            <param name="param1"></param>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnError.#ctor(RohrKonfBase.Entities.EnObjectId,System.String,System.String,System.Object,System.Object)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="objId"></param>
+            <param name="text"></param>
+            <param name="errorId"></param>
+            <param name="param1"></param>
+            <param name="param2"></param>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnError.exportData(MxLib.Basis.DataElement)">
+            <summary>
+            XML Ausgabe
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnError.importData(MxLib.Basis.DataElement)">
+            <summary>
+            Daten aus XML einlesen
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnError.TagName">
+            <summary>
+            Tagname für XML Ausgabe
+            </summary>
+        </member>
+        <member name="P:RohrKonfBase.Entities.EnError.ObjectIds">
+            <summary>
+            Liste mit Id der Bauteile zu dem Fehler
+            </summary>
+        </member>
+        <member name="M:RohrKonfBase.Entities.EnBaugruppe.Equals(System.Object)">
+            <summary>
+            Bei Equals wird die Menge nicht miteinander verglichen, sonst so wie compare
+            </summary> 
+        </member>
+    </members>
+</doc>

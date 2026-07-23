@@ -1,0 +1,18 @@
+#include "StdAfx.h"
+
+#include "RohrKomponente.h"
+#include "RohrBemassungsRohrKomponentenVectorVector.h"
+#include "RohrBemassungsAnbauChildKomponentenVectorVector.h"
+#include "RohrOneAssembeldKomponenteVector.h"
+
+
+
+
+CRohrBemassungsAnbauChildKomponentenVectorVector::CRohrBemassungsAnbauChildKomponentenVectorVector(void)
+{
+}
+
+
+CRohrBemassungsAnbauChildKomponentenVectorVector::~CRohrBemassungsAnbauChildKomponentenVectorVector(void)
+{
+}

@@ -1,0 +1,177 @@
+// TestEingabe.cpp: Implementierungsdatei
+//
+
+#include "stdafx.h"
+#include "SplitterWindowTutorial.h"
+#include "TestEingabe.h"
+#include "MainFrm.h"
+#include "HtmlTestview.h"
+#include <math.h>
+
+// CTestEingabe
+
+IMPLEMENT_DYNCREATE(CTestEingabe, CFormView)
+
+CTestEingabe::CTestEingabe()
+	: CFormView(CTestEingabe::IDD)
+{
+
+}
+
+CTestEingabe::~CTestEingabe()
+{
+}
+
+void CTestEingabe::DoDataExchange(CDataExchange* pDX)
+{
+	CFormView::DoDataExchange(pDX);
+}
+
+BEGIN_MESSAGE_MAP(CTestEingabe, CFormView)
+	ON_BN_CLICKED(IDC_BUTTON1, &CTestEingabe::OnBnClickedButton1)
+END_MESSAGE_MAP()
+
+
+// CTestEingabe-Diagnose
+
+#ifdef _DEBUG
+void CTestEingabe::AssertValid() const
+{
+	CFormView::AssertValid();
+}
+
+#ifndef _WIN32_WCE
+void CTestEingabe::Dump(CDumpContext& dc) const
+{
+	CFormView::Dump(dc);
+}
+#endif
+#endif //_DEBUG
+
+
+// CTestEingabe-Meldungshandler
+
+
+void CTestEingabe::OnBnClickedButton1()
+{
+	CMainFrame*  pF =  (CMainFrame*)AfxGetMainWnd();
+	CHtmlTestview* pHTML = (CHtmlTestview*) pF->m_mainSplitter.GetPane(1,0);
+	
+	CFile hPostFile;
+	CString strFile = "D:\\work\\samples\\SplitterWindowTutorial\\Debug\\HTML Test\\Test.svg";
+	
+	hPostFile.m_hFile = CreateFile( strFile, GENERIC_READ | GENERIC_WRITE , 0, NULL, CREATE_ALWAYS,	0, 	NULL );        
+	
+	CString strPost = "<svg xmlns=\"http://www.w3.org/2000/svg\"  viewBox=\"0 0 650 880\" version=\"1.1\">\
+					  <line x1=\"0\" y1=\"2\" x2=\"650\" y2=\"2\" style=\"stroke:rgb(255,0,0);stroke-width:3\" />";
+
+
+	int x1 = 0;
+	int y1 = 100;
+
+	int x2 = 280;
+	int y2 = 70;
+	ZeichneLinie(strPost, x1, y1, x2, y2);
+	double xSquare = (x2- x1) * (x2- x1);
+	double ySquare = (y1 -y2) * (y1 -y2);
+	double iLaengeVector1 = sqrt( xSquare + ySquare );
+	
+	int x3 = 0;
+	int y3 = 100;
+	int x4 = y1 - y2;
+	int y4 = y1  + x2;
+	double x5 = x4 - x3;
+	double y5 = y4 - y3;
+
+	x5 = x5 * 0.2;
+	y5 = y5 * 0.2;
+	y5 = y3 + y5;
+	x5 = x3 + x5;
+
+
+	ZeichneLinie(strPost, x3, y3, x5, y5);
+
+	strPost +=  "<line x1=\"0\" y1=\"877\" x2=\"650\" y2=\"877\" style=\"stroke:rgb(255,0,0);stroke-width:3\" /></svg>";
+
+	hPostFile.Write( strPost, strPost.GetLength() );
+
+	hPostFile.Close();
+
+	OnBnSecondSVG();
+	
+	pHTML->Navigate("D:\\work\\samples\\SplitterWindowTutorial\\Debug\\HTML Test\\Test.html",
+	 NULL, NULL, NULL, NULL);
+}
+
+
+void CTestEingabe::ZeichneLinie(CString& strPost, int x1, int y1, int x2,  int y2)
+{ 
+	CString strTemp;
+	strTemp.Format( "<line  x1='%d' y1='%d' x2='%d'  y2='%d'   style='stroke:rgb(0,0,0);stroke-width:2'/>", x1, y1, x2, y2); //links nach unten
+	strPost += strTemp;
+	//strPost += "<line  x1='0'  x2='60'  y1='100'  y2='200'  style='stroke:rgb(0,0,0);stroke-width:2'/>"; //links nach unten
+	//strPost += "<line x1=\"40\" y1=\"80\" x2=\"50\" y2=\"80\" style=\"stroke:rgb(0,0,0);stroke-width:2\" />"; // x von links nach rechts
+	//strPost += "<line x1=\"50\" y1=\"80\" x2=\"50\" y2=\"40\" style=\"stroke:rgb(0,0,0);stroke-width:2\" />"; // y von unten nach oben
+	//strPost += "<line x1=\"50\" y1=\"40\" x2=\"40\" y2=\"40\" style=\"stroke:rgb(0,0,0);stroke-width:2\" />"; // x von rechts nach links
+}
+
+
+
+void CTestEingabe::ConstructSchiefRohr(CString& strPost)
+{ //-100
+	strPost += "<line  y1='100'  y2='40'  x1='0'  x2='100' style='stroke:rgb(0,0,0);stroke-width:2'/>"; //links nach unten
+	strPost += "<line  y1='100'   x1='0'   y2='200' x2='60' style='stroke:rgb(0,0,0);stroke-width:2'/>"; //links nach unten
+	//strPost += "<line x1=\"40\" y1=\"80\" x2=\"50\" y2=\"80\" style=\"stroke:rgb(0,0,0);stroke-width:2\" />"; // x von links nach rechts
+	//strPost += "<line x1=\"50\" y1=\"80\" x2=\"50\" y2=\"40\" style=\"stroke:rgb(0,0,0);stroke-width:2\" />"; // y von unten nach oben
+	//strPost += "<line x1=\"50\" y1=\"40\" x2=\"40\" y2=\"40\" style=\"stroke:rgb(0,0,0);stroke-width:2\" />"; // x von rechts nach links
+}
+
+/*
+  a    -b
+	=>
+  b     a
+  */
+
+void CTestEingabe::ConstructStrnrohr(CString& strPost)
+{
+	strPost += "<line x1='40' y1='40' x2='40' y2='80' style='stroke:rgb(0,0,0);stroke-width:2'/>"; //links nach unten
+	strPost += "<line x1=\"40\" y1=\"80\" x2=\"50\" y2=\"80\" style=\"stroke:rgb(0,0,0);stroke-width:2\" />"; // x von links nach rechts
+	strPost += "<line x1=\"50\" y1=\"80\" x2=\"50\" y2=\"40\" style=\"stroke:rgb(0,0,0);stroke-width:2\" />"; // y von unten nach oben
+	strPost += "<line x1=\"50\" y1=\"40\" x2=\"40\" y2=\"40\" style=\"stroke:rgb(0,0,0);stroke-width:2\" />"; // x von rechts nach links
+
+	
+	strPost += "<line x1=\"50\" y1=\"50\" x2=\"60\" y2=\"50\" style=\"stroke:rgb(0,0,0);stroke-width:2\" />"; 
+	strPost += "<line x1=\"50\" y1=\"70\" x2=\"60\" y2=\"70\" style=\"stroke:rgb(0,0,0);stroke-width:2\" />"; 
+	
+
+	strPost += "<line x1='60' y1='40' x2='60' y2='80' style='stroke:rgb(0,0,0);stroke-width:2'/>"; //links nach unten
+	strPost += "<line x1=\"60\" y1=\"80\" x2=\"600\" y2=\"80\" style=\"stroke:rgb(0,0,0);stroke-width:2\" />"; // x von links nach rechts
+	strPost += "<line x1=\"600\" y1=\"80\" x2=\"600\" y2=\"40\" style=\"stroke:rgb(0,0,0);stroke-width:2\" />"; // y von unten nach oben
+	strPost += "<line x1=\"600\" y1=\"40\" x2=\"60\" y2=\"40\" style=\"stroke:rgb(0,0,0);stroke-width:2\" />"; // x von rechts nach links
+
+	strPost += "<line x1=\"600\" y1=\"50\" x2=\"610\" y2=\"50\" style=\"stroke:rgb(0,0,0);stroke-width:2\" />"; 
+	strPost += "<line x1=\"600\" y1=\"70\" x2=\"610\" y2=\"70\" style=\"stroke:rgb(0,0,0);stroke-width:2\" />"; 
+
+	strPost += "<line x1='610' y1='40' x2='610' y2='80' style='stroke:rgb(0,0,0);stroke-width:2'/>"; //links nach unten
+	strPost += "<line x1=\"610\" y1=\"80\" x2=\"620\" y2=\"80\" style=\"stroke:rgb(0,0,0);stroke-width:2\" />"; // x von links nach rechts
+	strPost += "<line x1=\"620\" y1=\"80\" x2=\"620\" y2=\"40\" style=\"stroke:rgb(0,0,0);stroke-width:2\" />"; // y von unten nach oben
+	strPost += "<line x1=\"620\" y1=\"40\" x2=\"610\" y2=\"40\" style=\"stroke:rgb(0,0,0);stroke-width:2\" />"; // x von rechts nach links
+
+}
+
+
+void CTestEingabe::OnBnSecondSVG()
+{
+	CFile hPostFile;
+	CString strFile = "D:\\work\\samples\\SplitterWindowTutorial\\Debug\\HTML Test\\TestII.svg";
+	
+	hPostFile.m_hFile = CreateFile( strFile, GENERIC_READ | GENERIC_WRITE , 0, NULL, CREATE_ALWAYS,	0, 	NULL );        
+	
+	CString strPost = "<svg xmlns=\"http://www.w3.org/2000/svg\"  viewBox=\"0 0 650 880\" version=\"1.1\"> \
+	<line x1=\"0\" y1=\"2\" x2=\"650\" y2=\"2\" style=\"stroke:rgb(0,0,255);stroke-width:3\" />\
+	<line x1=\"0\" y1=\"877\" x2=\"650\" y2=\"877\" style=\"stroke:rgb(0,0,255);stroke-width:3\" /></svg>";
+
+	hPostFile.Write( strPost, strPost.GetLength() );
+
+	hPostFile.Close();
+}

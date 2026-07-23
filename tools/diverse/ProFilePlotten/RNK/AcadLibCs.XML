@@ -1,0 +1,382 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AcadLibCs</name>
+    </assembly>
+    <members>
+        <member name="M:AcadLib.Entities.EnAcLinie.getClosestPointTo(MxLib.Math.Line,System.Double)">
+            <summary>
+            Punkte auf den beiden Linie berechnen, die den kürzesten Abstand zwischen den beiden geraden bilden.
+            (kürzester Abstand zweier windschiefer Geraden)
+            </summary> 
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcTools.GetCurDwg">
+            <summary>
+            shortcut for getting the current DWG's database
+            </summary>
+            <returns>Database for the current drawing</returns>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcTools.IsPaperSpace(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            Is Paper Space active in the given database?
+            </summary>
+            <param name="db">Specific database to use</param>
+            <returns></returns>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcTools.GetUcsMatrix(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            Figure out the current UCS matrix for the given database.  If
+            PaperSpace is active, it will return the UCS for PaperSpace.
+            Otherwise, it will return the UCS for the current viewport in 
+            ModelSpace.
+            </summary>
+            <param name="db">Specific database to use</param>
+            <returns>UCS Matrix for the specified database</returns>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcTools.GetUcsZAxis(Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            Get the UCS Z Axis for the given database
+            </summary>
+            <param name="db">Specific database to use</param>
+            <returns>UCS Z Axis</returns>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcTools.GetUcsToWcsOriginMatrix(Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            Get the Matrix that is the Xform between UCS and WCS Origin.  This is useful
+            for operations like creating a block definition.  For those cases you want the
+            origin of the block to be in a reasonable spot.
+            </summary>
+            <param name="wcsBasePt">Base point to use as the origin</param>
+            <param name="db">Specific database to use</param>
+            <returns>Xform between UCS and WCS Origin</returns>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcTools.UcsToWcs(Autodesk.AutoCAD.Geometry.Point3d)">
+            <summary>
+            Get a transformed copy of a point from UCS to WCS
+            </summary>
+            <param name="pt">Point to transform</param>
+            <returns>Transformed copy of point</returns>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcTools.UcsToWcs(Autodesk.AutoCAD.Geometry.Point3d@)">
+            <summary>
+            Transform a given point from UCS to WCS
+            </summary>
+            <param name="pt">point to transform</param>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcTools.UcsToWcs(Autodesk.AutoCAD.Geometry.Vector3d)">
+            <summary>
+            Get a transformed copy of a vector from UCS to WCS
+            </summary>
+            <param name="vec">Vector3d to transform</param>
+            <returns>Transformed copy of vector</returns>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcTools.WcsToUcs(Autodesk.AutoCAD.Geometry.Point3d)">
+            <summary>
+            Get a transformed copy of a point from WCS to UCS
+            </summary>
+            <param name="pt">Point to transform</param>
+            <returns>Transformed copy of point</returns>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcTools.WcsToUcs(Autodesk.AutoCAD.Geometry.Point3d@)">
+            <summary>
+            Transform a given point from WCS to UCS
+            </summary>
+            <param name="pt">point to transform</param>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcTools.TransformToWcs(Autodesk.AutoCAD.DatabaseServices.Entity,Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            Transform an Entity from UCS to WCS
+            </summary>
+            <param name="ent">Entity to transform</param>
+            <param name="db">Database the entity belongs to (or will belong to)</param>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcTools.TransformToWcs(Autodesk.AutoCAD.DatabaseServices.DBObjectCollection,Autodesk.AutoCAD.DatabaseServices.Database)">
+            <summary>
+            Transform a collection of Entities from UCS to WCS
+            </summary>
+            <param name="ents">Entities to transform</param>
+            <param name="db">Database the entities belong to (or will belong to)</param>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcConsole.show(System.String)">
+            <summary>
+            	 	 * Hinweis: Die Meldung wird in der Console erst angezeigt wenn der String mit einem "\n" abgeschlossen wird.
+            		 * </summary> 
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcConsole.show(System.String,System.Boolean,AcadLib.AcadDb.DbAcConsole.steuerzeichen)">
+            <summary>
+            Hinweis: Die Meldung wird in der Console erst angezeigt wenn der String mit einem "\n" oder "\r" abgeschlossen wird.
+            </summary> 
+        </member>
+        <member name="P:AcadLib.AcadDb.DbAcBase.ToleranzGeo">
+            <summary>
+            Toleranzwert für Punkt und Vektorvergleiche
+            </summary>
+        </member>
+        <member name="P:AcadLib.AcadDb.DbAcBase.ToleranzHoch">
+            <summary>
+            Toleranz für hohe Genauigkeit
+            </summary>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcBlockEinfuegen.getBlock(System.String,Autodesk.AutoCAD.DatabaseServices.Database,Autodesk.AutoCAD.DatabaseServices.Transaction,Autodesk.AutoCAD.DatabaseServices.BlockTableRecord@,Autodesk.AutoCAD.DatabaseServices.ObjectId@,System.Collections.Generic.List{Autodesk.AutoCAD.DatabaseServices.AttributeDefinition})">
+            <summary>
+            Block aus dem Blocktable lesen
+            </summary> 
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcBlockEinfuegen.getBlockAttributes(Autodesk.AutoCAD.DatabaseServices.Transaction,Autodesk.AutoCAD.DatabaseServices.ObjectId,System.Collections.Generic.List{Autodesk.AutoCAD.DatabaseServices.AttributeDefinition})">
+            <summary>
+            Attribute des Blockes einlesen
+            </summary> 
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcGruppe.create(AcadLib.Entities.EnAcSelectionSet,System.String,System.String)">
+            <summary>
+            Objekte zu einer Gruppe zusammenfassen
+            gruppennamenID: Name der Gruppe. Muß eindeutig sein
+            gruppenBeschreibung: Beschreibung der Gruppe
+            </summary> 
+        </member>
+        <member name="M:AcadLib.Editor.EdAcAuswahl.getObjekteFromPickSet(AcadLib.Entities.EnAcSelectionSet)">
+            <summary>
+            Vor einem Befehl ausgewählte Objekte einlesen. (Auswahl über die Griffe)
+            
+            Die CommandMethod muß folgendermaßen definiert werden:
+            
+             [CommandMethod("Befehlxx", CommandFlags.UsePickSet)]
+            </summary> 
+        </member>
+        <member name="M:AcadLib.Editor.EdAcAuswahl.getAllObjekteFromDatabase(System.String,AcadLib.Entities.EnAcSelectionSet)">
+            <summary>
+            Alle Objekte der aktuellen Zeichnung mit XDatas die den Aplicationname haben einlesen
+            </summary> 
+        </member>
+        <member name="M:AcadLib.Entities.EnAcBks.set(Autodesk.AutoCAD.Geometry.Point3d,Autodesk.AutoCAD.Geometry.Vector3d,Autodesk.AutoCAD.Geometry.Vector3d,System.Double)">
+            <summary>
+            Bks aus Basispunkt und x-undy Achse setzten. Aus der yAchse wird nur der Senkrechte Teil zur X Achse genommen.
+            </summary>
+            <param name="basis"></param>
+            <param name="xAchse"></param>
+            <param name="yAchse"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AcadLib.Entities.EnAcBks.konvertIntoBks(MxLib.Math.Point@)">
+            <summary>
+            Punkt in das Bks Koordinatensystem umwandeln
+            </summary> 
+        </member>
+        <member name="M:AcadLib.Entities.EnAcBks.konvertIntoWks(MxLib.Math.Point@)">
+            <summary>
+            Punkt in das WKS Koordinatensystem umwandeln. 
+            Der Punkt muß BKS Koordinaten haben.
+            </summary> 
+        </member>
+        <member name="M:AcadLib.Entities.EnAcBks.konvertIntoBks(MxLib.Math.Vector@)">
+            <summary>
+            Vektor in das Bks Koordinatensystem umwandeln
+            </summary> 
+        </member>
+        <member name="M:AcadLib.Entities.EnAcBks.konvertIntoWks(MxLib.Math.Vector@)">
+            <summary>
+            Vektor in das WKS Koordinatensystem umwandeln. 
+            Der Vektor  muß BKS Koordinaten haben.
+            </summary> 
+        </member>
+        <member name="T:AcadLib.AcadDb.DbAcPlot">
+            <summary>
+            Klasse zum Plotten im CAD
+            </summary>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcPlot.getPlotEndung(AcadLib.AcadDb.DbAcPlot.Plotter)">
+            <summary>
+            Endung der Plotterdatei 
+            </summary>
+            <param name="typ">Plottertyp</param>
+            <returns></returns>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcPlot.getMediaList">
+            <summary>
+            Liste mit den verfügbaren Formaten
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcPlot.getPlotSettings(Autodesk.AutoCAD.DatabaseServices.Extents2d,System.String@,Autodesk.AutoCAD.DatabaseServices.StdScaleType@,Autodesk.AutoCAD.DatabaseServices.PlotRotation@)">
+            <summary>
+            Ermitteln der Ploteinstellungen auf Grund der Plotgröße in plotsize
+            </summary>
+            <param name="plotsize">Min Max Punkte des Plotbereichs</param>
+            <param name="medianame">Papiergröße</param>
+            <param name="scaleTyp">Skaliertyp</param>
+            <param name="pr">Rotation des Plots</param>
+            <returns></returns>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcPlot.plotCurrentLayout(AcadLib.AcadDb.DbAcPlot.Plotter,System.String)">
+            <summary>
+            Aktuelles Layout mit den aktuellen Einstelungen plotten. (Bereich, Ctb-Datei)
+            </summary>
+            <param name="pltTyp">Welcher Plotter verwendet werden soll</param>
+            <param name="filename">Name der Plotdatei (Hinweis: Wenn die Extension weggelassen wird, wird sie automatisch vergeben)</param>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcPlot.plotAllLayouts(AcadLib.AcadDb.DbAcPlot.Plotter,System.String)">
+            <summary>
+            Alle Layouts plotteb
+            </summary>
+            <param name="pltTyp">Plotter Typ</param>
+            <param name="filename">Plotfilename</param>
+            <returns></returns>
+        </member>
+        <member name="T:AcadLib.AcadDb.DbAcPlot.Plotter">
+            <summary>
+            Plottertypen
+            </summary>
+        </member>
+        <member name="T:AcadLib.AcadDb.DbAcPlot.Format">
+            <summary>
+            Formate
+            </summary>
+        </member>
+        <member name="T:AcadLib.AcadDb.DbAcPlot.media">
+            <summary>
+            Papierformate zum Drucken
+            </summary>
+        </member>
+        <member name="F:AcadLib.AcadDb.DbAcPlot.media.Name">
+            <summary>
+            Key - Name des Papierformats
+            </summary>
+        </member>
+        <member name="F:AcadLib.AcadDb.DbAcPlot.media.Size">
+            <summary>
+            Größe des Formats (X=Breite, Y=Höhe)
+            </summary>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcPlot.media.#ctor(System.String,Autodesk.AutoCAD.Geometry.Point2d)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="m">Key - Name des Papierformats</param>
+            <param name="p">Größe des Formats (X=Breite, Y=Höhe)</param>
+        </member>
+        <member name="M:AcadLib.Entities.EnAcZylinder.getNormal(MxLib.Math.Point,MxLib.Math.Point)">
+            <summary>
+            Normalenvektor der Achse (vom Startpunkt zum Endpunkt)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AcadLib.Entities.EnAcZylinder.isOnZylinder(MxLib.Math.Point,System.Double,MxLib.Math.Point,MxLib.Math.Point,AcadLib.Entities.EnAcZylinder.Status@,System.Double@)">
+            <summary>
+            prüfen ob der Punkt im oder auf dem Zylinder liegt
+            </summary>
+            <param name="po"></param>
+            <param name="start">Startpunkt des Zylinders</param>
+            <param name="ende">Endpunkt des Zylinders</param>
+            <param name="art"></param>
+            <param name="radiusPunkt">Radius von Zylinderachse zum Punkt po</param>
+            <returns></returns>
+        </member>
+        <member name="M:AcadLib.Entities.EnAcZylinder.isOnZylinder(MxLib.Math.Point,System.Double,System.Collections.Generic.List{MxLib.Math.Point},AcadLib.Entities.EnAcZylinder.Status@,System.Double@)">
+            <summary>
+            prüfen ob der Punkt auf dem Zylinder liegt
+            </summary>
+            <param name="po"></param>
+            <param name="punkte">Segmentpunkte des Zylinders</param>
+            <param name="art"></param>
+            <param name="radius"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcBks.DbAcBks_setBks(System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            Bks in der Zeichnung setzen
+            </summary> 
+        </member>
+        <member name="M:AcadLib.Entities.EnAcXData.setFromTypedValueArray(Autodesk.AutoCAD.DatabaseServices.TypedValue[],System.Int32@,System.Boolean,System.Boolean)">
+            <summary>
+            aus dem Array das Xdata Element auslesen. Den Counter dabei auf das nächste Element setzen
+            </summary>
+            <param name="ar"></param>
+            <param name="start"></param>
+            <param name="hasUserCodeDefinitons"></param>
+            <param name="unterlisteHasUserCodeDefinitons"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcText.insert(System.String,System.String,AcadLib.AcadDb.DbAcText.TextVerticalMode,AcadLib.AcadDb.DbAcText.TextHorizontalMode,System.Double,System.Double,System.Double,MxLib.Math.Vector,MxLib.Math.Point,System.Int32,AcadLib.AcadDb.DbAcBase.bereich)">
+            <summary>
+            Text einfügen.
+            "normale" ist die ZAchse des Bks des Textes (textBks.getZAchse())
+            "winkel" ist der Drehwinkel des Textes zum textBks gesehen.
+            z.B. Winkelberechnung zum WKS
+            winkel = wks.XAchse.angleTo(textBks.XAchse, wks.YAchse);
+            Bei der Winkelberechnung muss darauf geachtet werden dass beide Koordinatensysteme parallele Ebenen haben
+            </summary> 
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcText.getWinkelForText(MxLib.Math.Bks,MxLib.Math.Bks,MxLib.Math.Vector@,MxLib.Math.Vector@,System.Double@,System.Boolean)">
+            <summary>
+            Winkel so berechnen, dass der Text immer von oben bzw. von links lesbar ist. 
+            Wenn projektionXY = true dann wird der Text in die XY-Ebene des "refBks" projiziert.
+            Ausnahme:
+            Steht das bksText senkrecht auf dem refBks, wird der Winkel immer auf Null gesetzt und es findet keine Projektion statt.
+            In "normale" wird die Z-Achse des TextBks zurückgegeben
+            </summary> 
+        </member>
+        <member name="M:AcadLib.Entities.EnAcXDataListe.setFromTypedValueArray(Autodesk.AutoCAD.DatabaseServices.TypedValue[],System.Int32@,System.Boolean,System.Boolean)">
+            <summary>
+            TypeValueArray in eine XDataliste umwandeln. Es wird entweder bis zum Ende eingelesen oder wenn der Marker für 
+            das Listenende kommt
+            </summary>
+            <param name="ar"></param>
+            <param name="start"></param>
+            <param name="hasUserCodeDefinitons"></param>
+            <param name="unterlisteHasUserCodeDefinitons"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AcadLib.Entities.EnAcXDataListe.getAsResultBufferListe(Autodesk.AutoCAD.DatabaseServices.ResultBuffer,System.Boolean)">
+            <summary>
+            Xdataliste als ResultBuffer zurückgegen
+            </summary> 
+        </member>
+        <member name="P:AcadLib.Entities.EnAcObject.Classname">
+            <summary>
+            AutoCAD Klassenname des Objektes
+            </summary>
+        </member>
+        <member name="P:AcadLib.Entities.EnAcObject.ObjectId">
+            <summary>
+            AutoCAD ObjectId
+            </summary>
+        </member>
+        <member name="P:AcadLib.Entities.EnAcObject.Punkte">
+            <summary>
+            Start-, End- und Segmentpunkte bei einer Linie bzw. Polylinie
+            </summary>
+        </member>
+        <member name="M:AcadLib.Start.plottenTest">
+            <summary>
+            Plotten
+            Code von:
+            http://through-the-interface.typepad.com/through_the_interface/2007/10/allowing-select.html
+            </summary> 
+        </member>
+        <member name="T:AcadLib.AcadDb.DbAcDictionary">
+            <summary>
+            Werte ins Dictionary schreiben bzw. lesen
+            </summary>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcDictionary.writeXRecord(System.String,System.String,AcadLib.Entities.EnAcXDataListe,System.Boolean)">
+            <summary>
+            Werte ins Dictionary schreiben
+            </summary>
+            <param name="dicName">Dictionary Name</param>
+            <param name="keyName">Key Name</param>
+            <param name="xdatas">Liste die in das Dictionary geschrieben werden soll</param>
+            <param name="hasUserCodeDefintion">true wenn UserCodes in der Liste gesetzt sind</param>
+            <returns></returns>
+        </member>
+        <member name="M:AcadLib.AcadDb.DbAcDictionary.readXRecord(System.String,System.String,AcadLib.Entities.EnAcXDataListe,System.Boolean)">
+            <summary>
+            Eintrag aus dem Dictionary lesen
+            </summary>
+            <param name="dicName">Dictionary Name</param>
+            <param name="keyName">Key Name</param>
+            <param name="xdatas">Liste mit Werten</param>
+            <param name="hasUserCodeDefintion">true wenn UserCodes in der Liste gesetzt sind</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,66 @@
+#include "StdAfx.h"
+
+#include "UtiltyHelper.h"
+
+#include "..\_Tubes Logic Grafic Adapter\RohrKomponente.h"
+#include "..\_Tubes Logic Grafic Adapter\RohrBemassungsAnbauChildKomponentenVectorVector.h"
+#include "..\_Tubes Logic Grafic Adapter\RohrBemassungsRohrKomponentenVector.h"
+#include "..\_Tubes Logic Grafic Adapter\RohrBemassungsRohrKomponentenVectorVector.h"
+#include "..\_Tubes Logic Grafic Adapter\RohrOneAssembeldKomponenteVector.h"
+
+
+#include "GraficTubeController.h"
+#include "..\Mechanicals Geometrics\GraficRohrKomponente.h"
+#include "..\SVG File Operations\GraficFileController.h"
+#include "..\Controller\GraficController.h"
+
+#include "GraficRohrBemassungsRohrKomponentenVector.h"
+#include "GraficRohrBemassungsRohrKomponentenVectorVector.h"
+#include "GraficRohrOneAssembeldKomponenteVector.h"
+
+
+
+CCGraficRohrOneAssembeldKomponenteVector::CCGraficRohrOneAssembeldKomponenteVector(void)
+{	
+}
+
+
+CCGraficRohrOneAssembeldKomponenteVector* CCGraficRohrOneAssembeldKomponenteVector::GetNewAddedChildAssembeldTube()
+{
+	CCGraficRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVector = new CCGraficRohrOneAssembeldKomponenteVector();
+	m_GraficAssembeldTubeVector.push_back(pRohrOneAssembeldKomponenteVector);
+	
+	return pRohrOneAssembeldKomponenteVector;
+}
+
+
+
+void CCGraficRohrOneAssembeldKomponenteVector::AddComponenteForTube(CGraficRohrKomponente* pRohrKomponente)
+{
+	push_back(pRohrKomponente);
+}
+
+
+bool CCGraficRohrOneAssembeldKomponenteVector::HasAssembeldTubes()
+{	
+	return  m_GraficAssembeldTubeVector.size() > 0 ?  true : false; 
+}
+
+
+CGraficRohrKomponenteVectorVector& CCGraficRohrOneAssembeldKomponenteVector::GetChildAssembeldTubes()
+{	
+	return  m_GraficAssembeldTubeVector; 
+}
+
+
+
+CGraficRohrBemassungsKomponentenVectorVector& CCGraficRohrOneAssembeldKomponenteVector::GetGraficBemassungsKomponentenVectorVector()
+{
+	return m_GraficBemassungsKomponentenVectorVector;
+}
+
+
+
+CCGraficRohrOneAssembeldKomponenteVector::~CCGraficRohrOneAssembeldKomponenteVector(void)
+{	
+}

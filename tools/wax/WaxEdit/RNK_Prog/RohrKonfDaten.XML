@@ -1,0 +1,1484 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RohrKonfDaten</name>
+    </assembly>
+    <members>
+        <member name="T:RohrKonfDaten.Db.DbBrandschutztechnik">
+            <summary>
+            Brandschutztechnik aus den Stammdaten lesen
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbBrandschutztechnik.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbBrandschutztechnik.readTechniken(System.String,System.Collections.Generic.List{RohrKonfBase.Entities.EnBrandschutztechnik})">
+            <summary>
+            Brandschutztechnik aus den Stammdaten lesen
+            </summary>
+            <param name="sprachId"></param>
+            <param name="techniken"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RohrKonfDaten.Gp.GpTextBase">
+            <summary>
+            Texte aus der DB lesen
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpTextBase.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpTextBase.idToText(System.String,System.Object,System.Object)">
+            <summary>
+            Text zur 'id' aus der Stammdatenbank einlesen
+            </summary>
+            <param name="id"></param>
+            <param name="param1">Wert für 1. Platzhalter {0} im Text</param>
+            <param name="param2">Wert für 2. Platzhalter {1} im Text</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpTextBase.idToText(System.String,System.Object)">
+            <summary>
+            Text zur 'id' aus der Stammdatenbank einlesen
+            </summary>
+            <param name="id"></param>
+            <param name="param1">Wert für 1. Platzhalter {0} im Text</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpTextBase.idToText(System.String)">
+            <summary>
+            Text zur 'id' aus der Stammdatenbank einlesen
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpTextBase.clear">
+            <summary>
+            Dictionary löschen. Nötig bei einem Sprachwechsel
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Gp.GpTextBase.DbConectionData">
+            <summary>
+            Andere Stamdatenbank zuweisen
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Gp.GpTextBase.HasError">
+            <summary>
+            True, wenn beim Einlesen eines Textes ein Fehler aufgetreten ist. (z.B. Id nicht vorhanden oder DB läßt sich nicht öffnen)
+            </summary>
+        </member>
+        <member name="T:RohrKonfDaten.Db.DbArtikelgruppen">
+            <summary>
+            Daten zu den Artikelgruppen einlesen
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikelgruppen.tabNameArtikelgruppe">
+            <summary>
+            Tabellenname der Artikelgruppen
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikelgruppen.classIds">
+            <summary>
+            ClassIds in static Liste speichen, damit die DB Abfragen reduziert werden
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikelgruppen.dicArtikelgruppen">
+            <summary>
+            Artikelgruppendaten nach Sprache in static Liste speichern
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikelgruppen.dicArtGrHinweis">
+            <summary>
+            Artikelgruppenhinweis pro Sprache speichern
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelgruppen.#ctor">
+            <summary>
+            Konstruktor. Die Sprache wird aus den globalen Einstellungen gelesen
+            </summary>        
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelgruppen.#ctor(System.String)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="sprachId">Sprache</param>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelgruppen.readHauptgruppen(System.Collections.Generic.List{RohrKonfBase.Entities.EnArtikelgruppe},System.Boolean)">
+            <summary>
+            Alle Hauptgruppen einlesen
+            </summary>
+            <param name="list"></param>
+            <param name="alphabetischeSortierung"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelgruppen.readClassId(RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,RohrKonfBase.Entities.EnClassId)">
+            <summary>
+            zu der Artikelgruppe die ClassId lesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelgruppen.readClassIdIsFertigungAndIsFitting(RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,RohrKonfBase.Entities.EnClassId,System.Boolean@,System.Boolean@)">
+            <summary>
+            zu der Artikelgruppe die ClassId lesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelgruppen.readUntergruppen1(System.Int32,System.Collections.Generic.List{RohrKonfBase.Entities.EnArtikelgruppe},System.Boolean)">
+            <summary>
+            Einträge aus der Tabelle Untergruppe1 lesen die den Parent idHauptGruppe haben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelgruppen.readUntergruppen1(System.Collections.Generic.List{RohrKonfBase.Entities.EnArtikelgruppe.Hauptgruppe},System.Collections.Generic.List{System.Int32},MxLib.Entities.EnSqlFilter,System.Collections.Generic.List{RohrKonfBase.Entities.EnArtikelgruppe},System.Boolean)">
+            <summary>
+            Einträge aus der Tabelle Untergruppe1 lesen, die in Untergruppe2 die ClassId gesetzt haben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelgruppen.readUntergruppen2(RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.Collections.Generic.List{RohrKonfBase.Entities.EnArtikelgruppe},System.Boolean,System.Boolean,System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Unterartikelgruppe 2 (Artikelgruppen) lesen, gefiltert nach ParentId der Unterartikelgruppe 1
+            </summary>
+            <param name="idUGrup1"></param>
+            <param name="liste"></param>
+            <param name="alphabetischeSortierung"></param>
+            <param name="onlyArtikelExist">wenn True, dann wirden die Artikelgruppen nur eingelesen, wenn es dazu auch Einträge im Artikelsatmm gibt</param>
+            <param name="werke">Liste mit Werken zu denen die Artikelgruppen eingelesen werden</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelgruppen.readUntergruppen2(RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.Collections.Generic.List{System.Int32},MxLib.Entities.EnSqlFilter,System.Collections.Generic.List{RohrKonfBase.Entities.EnArtikelgruppe},System.Boolean,System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Unterartikelgruppe 2 (Artikelgruppen) lesen, gefiltert nach ParentId der Unterartikelgruppe 1, classId und evt. gesetzten Typfilter
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelgruppen.readArtikelgruppeDaten(RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,RohrKonfBase.Entities.EnArtikelgruppe)">
+            <summary>
+            Werte zu der Artikelgruppe artGr ermitteln. Bezeichnungen werden in der Programmsprache eingelesen
+            </summary>        
+            <param name="artGr"></param>
+            <param name="artgruppe"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelgruppen.readArtikelgruppeDaten(System.String,RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,RohrKonfBase.Entities.EnArtikelgruppe)">
+            <summary>
+            Werte zu der Artikelgruppe artGr ermitteln
+            </summary>
+            <param name="sprache"></param>
+            <param name="artGr"></param>
+            <param name="artgruppe"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelgruppen.executeSqlStatementArtGruppe(System.String,System.Boolean,System.Boolean,System.Boolean,System.Collections.Generic.List{RohrKonfBase.Entities.EnArtikelgruppe})">
+            <summary>
+            Artikelgruppen einlesen. Gefundene Gruppen werden an die Liste angehängt
+            </summary>
+            <param name="sql"></param>
+            <param name="mitClassId"></param>
+            <param name="mitNormblatt"></param>
+            <param name="isSetSortierung"></param>
+            <param name="liste">Liste an die die Artikelgruppen angehängt werden</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelgruppen.readArtikelgruppen(System.Int32,System.Boolean,System.Boolean,System.Collections.Generic.List{RohrKonfBase.Entities.EnArtikelgruppe},System.Boolean,System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Werte aus den Artikelgruppen zu einer bestimmten ClassId lesen
+            </summary>
+            <param name="classId">ClassId</param>
+            <param name="nurVorauswahl">true, wenn nur Werte zur Vorauswahl gelesen werden sollen</param>
+            <param name="isFitting">true=nur Fittinge, false=keine Fittinge</param>
+            <param name="artGruppen">Liste, die mit den eingelesenen Artikelgruppen gefüllt wird</param>
+            <param name="alphabetischeSortierung">true, wenn alphabetisch sortiert werden soll</param>
+            <param name="werke">Liste mit Werken denen die Artikel zugeordnet sind</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelgruppen.readArtikelgruppen(System.Int32,System.Boolean,System.Collections.Generic.List{RohrKonfBase.Entities.EnArtikelgruppe},System.Boolean,System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Werte aus den Artikelgruppen zu einer bestimmten ClassId lesen
+            </summary>
+            <param name="classId">ClassId</param>
+            <param name="nurVorauswahl">true, wenn nur Werte zur Vorauswahl gelesen werden sollen</param>
+            <param name="artGruppen">Liste, die mit den eingelesenen Artikelgruppen gefüllt wird</param>
+            <param name="alphabetischeSortierung">true, wenn alphabetisch sortiert werden soll</param>
+            <param name="werke">Liste mit Werken denen die Artikel zugeordnet sind</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelgruppen.readArtikelgruppen(System.Int32,System.Boolean,System.Int32,System.Collections.Generic.List{RohrKonfBase.Entities.EnArtikelgruppe},System.Boolean,System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Werte aus den Artikelgruppen zu einer bestimmten ClassId lesen
+            </summary>
+            <param name="classId">ClassId</param>
+            <param name="nurVorauswahl">true, wenn nur Werte zur Vorauswahl gelesen werden sollen</param>
+            <param name="fitting">1=nur Fittinge, 0=keine Fittinge, 2=keine Prüfung auf Fittinge</param>
+            <param name="artGruppen">Liste, die mit den eingelesenen Artikelgruppen gefüllt wird</param>
+            <param name="alphabetischeSortierung">true, wenn alphabetisch sortiert werden soll</param>
+            <param name="werke">Liste mit Werken denen die Artikel zugeordnet sind</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelgruppen.readArtikelgruppenHinweis(RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.String@)">
+            <summary>
+            Hinweistext zur Artikelgruppe ermitteln
+            </summary>
+            <param name="artgr"></param>
+            <param name="hinweis"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RohrKonfDaten.Gp.GpNiederlassungen">
+            <summary>
+            Niederlassungen in einer globalen Liste
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpNiederlassungen.getNiederlassungen(System.Collections.Generic.List{RohrKonfBase.Entities.EnNiederlassung}@)">
+            <summary>
+            Niederlassungen auslesen
+            </summary>
+            <param name="nls"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpNiederlassungen.getNiederlassungsbezeichnung(System.Int32)">
+            <summary>
+            Niederlassungsbezeichnung
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpNiederlassungen.getNiederlassung(System.Int32)">
+            <summary>
+            Niederlassungsdaten
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RohrKonfDaten.Gp.GpKappenfarbe">
+            <summary>
+            Liste mit Kappenfarben. Klasse ist Singleton
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Gp.GpKappenfarbe.dicKappenfarben">
+            <summary>
+            Kappenfarben pro Sprache speichern
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpKappenfarbe.getKappenfarben(System.String,System.Collections.Generic.List{RohrKonfBase.Entities.EnKappenfarbe}@)">
+            <summary>
+            Liste mit den Kappenfarben einlesen
+            </summary>
+            <param name="sprachId"></param>
+            <param name="kappenfarben"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpKappenfarbe.getKappenfarbe(System.String,System.Int32,RohrKonfBase.Entities.EnKappenfarbe)">
+            <summary>
+            Kappenfarbe anhand der ID ermitteln
+            </summary>
+            <param name="sprachId"></param>
+            <param name="id"></param>
+            <param name="kpfarbe"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RohrKonfDaten.Gp.GpOberflaeche">
+            <summary>
+            Oberfläche
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpOberflaeche.getOberflaechen(System.String,System.Collections.Generic.List{RohrKonfBase.Entities.EnOberflaeche}@)">
+            <summary>
+            Liste mit den Oberflächen aus der Db lesen und zurückgeben
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpOberflaeche.getBeschichtungsTyp(System.String,System.Int32,RohrKonfBase.Entities.EnOberflaeche.BeschichtungsTyp@)">
+            <summary>
+            Zu der BeschichtungsID den Typ ermitteln
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpOberflaeche.getIsSonderfarbe(System.String,System.Int32,System.Boolean@)">
+            <summary>
+            prüfen od es eine Sonderfarbe ist
+            </summary>
+            <param name="sprachId"></param>
+            <param name="beschichtungsId"></param>
+            <param name="isSonder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpOberflaeche.getRalFarben(System.String,System.Collections.Generic.List{RohrKonfBase.Entities.EnRalFarbe}@)">
+            <summary>
+            Liste der Ralfarben lesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpOberflaeche.getRalBezeichnung(System.String,System.Int32,System.String@)">
+            <summary>
+            Bezeichnung zu der Ralnr ermitteln.
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpOberflaeche.getOberflaeche(System.String,System.Int32,System.Int32,RohrKonfBase.Entities.EnOberflaeche)">
+            <summary>
+            Zur ID die Oberfläche ermitteln
+            </summary>
+            <param name="sprachId"></param>
+            <param name="beschichtungsId"></param>
+            <param name="ralNr"></param>
+            <param name="oberflaeche"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RohrKonfDaten.Dialog.UserControlPsp">
+            <summary>
+            Control für Projektnummerabfrage
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Dialog.UserControlPsp.#ctor(System.Boolean,System.Boolean,System.Boolean,System.String)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="showLos">Ob das Textfeld Los Angezeigt werden soll</param>
+            <param name="sprachId">Sprache</param>
+        </member>
+        <member name="M:RohrKonfDaten.Dialog.UserControlPsp.UserControlPsp_IsNextGenerationChanged(System.Object,RohrKonfDaten.Dialog.IsNextGenerationChangedEventArgs)">
+            <summary>
+            Message abfangen, wenn es nicht von der aufrufenden Methode gemacht wird.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:RohrKonfDaten.Dialog.UserControlPsp.UserControlPsp_NlChanged(System.Object,RohrKonfDaten.Dialog.NlChangedEventArgs)">
+            <summary>
+            Message abfangen, wenn es nicht von der aufrufenden Methode gemacht wird.
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="M:RohrKonfDaten.Dialog.UserControlPsp.#ctor(System.Int32,RohrKonfBase.Entities.EnPspNummer,System.Boolean,RohrKonfBase.Entities.EnServiceNr)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="nl">Niederlassungsnummer</param>
+            <param name="psp">PSP Nummer</param>
+            <param name="showLos">Ob das Textfeld Los Angezeigt werden soll</param>
+            <param name="snr">Servicenummer</param>
+        </member>
+        <member name="M:RohrKonfDaten.Dialog.UserControlPsp.setComboboxNl">
+            <summary>
+            ComboBox mit Niederlassungen setzen und Nl in der Pspnummer aktualisieren
+            
+            Die Psp Nummer wird automatisch aktualisiert, da beim Setzen des SelectedItem eine Message ausgelöst wird und
+            onSelecredIndexChanged aufgerufen wird.
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Dialog.UserControlPsp.checkNummer">
+            <summary>
+            Nummern prüfen
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Dialog.UserControlPsp.load">
+            <summary>
+            Control mit Werten füllen
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Dialog.UserControlPsp.toStringNl(System.Int32)">
+            <summary>
+            Niederlassungsnummer setzen
+            </summary>
+            <param name="nl"></param>
+        </member>
+        <member name="M:RohrKonfDaten.Dialog.UserControlPsp.setAuftragsnummer">
+            <summary>
+            Auftragsnummer in die Textfelder schreiben
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Dialog.UserControlPsp.setError(System.String)">
+            <summary>
+            Fehlermeldungen zuweisen
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="F:RohrKonfDaten.Dialog.UserControlPsp.components">
+            <summary> 
+            Erforderliche Designervariable.
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Dialog.UserControlPsp.Dispose(System.Boolean)">
+            <summary> 
+            Verwendete Ressourcen bereinigen.
+            </summary>
+            <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
+        </member>
+        <member name="M:RohrKonfDaten.Dialog.UserControlPsp.InitializeComponent">
+            <summary> 
+            Erforderliche Methode für die Designerunterstützung. 
+            Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Dialog.UserControlPsp.Projekt">
+            <summary>
+            Werte zuweisen
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Dialog.UserControlPsp.ShowLos">
+            <summary>
+            Ob die Textbos Los sichtbar ist
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Dialog.UserControlPsp.SetMitLosAuswahl">
+            <summary>
+            Ob der Schalter Los Ein/AUS sichtbar íst
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Dialog.UserControlPsp.ShowIsNextGeneration">
+            <summary>
+            Ob Schalter und Eingabefeld für den Bauabschnitt gezeigt wird
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Dialog.UserControlPsp.ShowBezeichnung">
+            <summary>
+            Ob die Beschriftung Büro, Psp, Bauabschnitt angezeigt wird
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Dialog.UserControlPsp.IsService">
+            <summary>
+            True, wenn die Servicenummer angezeigt werden soll
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Dialog.UserControlPsp.SprachId">
+            <summary>
+            Sprache
+            </summary>
+        </member>
+        <member name="E:RohrKonfDaten.Dialog.UserControlPsp.NlChanged">
+            <summary>
+            Event Niederlassung geändert
+            </summary>
+        </member>
+        <member name="T:RohrKonfDaten.Dialog.UserControlPsp.NlChangedEventHandler">
+            <summary>
+            Eventhandler
+            </summary>
+            <param name="sender"></param>
+            <param name="args"></param>
+        </member>
+        <member name="T:RohrKonfDaten.Dialog.NlChangedEventArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Dialog.NlChangedEventArgs.#ctor(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+        </member>
+        <member name="P:RohrKonfDaten.Dialog.NlChangedEventArgs.NlId">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="T:RohrKonfDaten.Dialog.IsNextGenerationChangedEventArgs">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Dialog.IsNextGenerationChangedEventArgs.#ctor(System.Boolean)">
+            <summary>
+            
+            </summary>
+            <param name="val"></param>
+        </member>
+        <member name="P:RohrKonfDaten.Dialog.IsNextGenerationChangedEventArgs.IsNextGeneration">
+            <summary>
+            ID
+            </summary>
+        </member>
+        <member name="T:RohrKonfDaten.Db.DbArtikelzuordnung">
+            <summary>
+            Artikelnummern anhand des Typs oder Artikelgruppe aus den Stammdaten lesen
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelzuordnung.#ctor">
+            <summary>
+            Konstruktor
+            </summary>       
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelzuordnung.getArtikelnummer(System.Int32,System.Int32,RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.Int32@)">
+            <summary>
+            Artikelnummer in der Tabelle Artikelzuordnung aus der Tabelle Artikelzuordnung suchen. 
+            Wenn mit artikelDnId und rohrDnId keine Artikelnummer gefunden wurde, prüfen ob eine Artikelnummer
+            gefunden wird wenn rohrDnId=0 gesetzt ist. Das bedeutet, das der Artikel mit der DN auf alle Rohrgrößen gesetzt werden kann.
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelzuordnung.getArtikelnummer(System.Int32,System.Int32,RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.Int32@,System.Double@)">
+            <summary>
+            Artikelnummer zu den übergebenen Werten aus der Tabelle Artikelzuordnung suchen
+            </summary>
+            <param name="artikelDnId"></param>
+            <param name="rohrDnId"></param>
+            <param name="artGruppe"></param>
+            <param name="artnr"></param>
+            <param name="laenge"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelzuordnung.readArtikelnummer(System.Int32,System.Int32,RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.Int32@,System.Double@)">
+            <summary>
+            Aus der Tabelle Artikelzuordnung die den passenden Eintrag suchen.
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelzuordnung.getRohrArtikelnr(System.Int32,RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.Int32@)">
+            <summary>
+            Zu der Artikelgruppe und dem DN Wert die richtige Artikelnummer aus der Tabelle TypRohr einlesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelzuordnung.getMuffeArtikelnr(System.Int32,RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.Int32@)">
+            <summary>
+            Muffenartikelnummer aus der Tabelle TypMuffeStutzen suchen
+            </summary>
+            <param name="dn"></param>
+            <param name="artGr"></param>
+            <param name="artnr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelzuordnung.getBogenArtikelnr(System.Int32,System.Int32,RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.Int32@)">
+            <summary>
+            Zu der Artikelgruppe und dem DN Wert die richtige Artikelnummer aus der Tabelle TypBogen einlesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelzuordnung.getReduzierungArtikelnr(System.Int32,System.Int32,RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.Int32@)">
+            <summary>
+            Artikelnummer aus der Tabelle TypReduzierung suchen
+            </summary>
+            <param name="dn1"></param>
+            <param name="dn2"></param>
+            <param name="artGr"></param>
+            <param name="artnr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelzuordnung.getKupplungArtikelnr(System.Int32,System.Int32,RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.Int32@)">
+            <summary>
+            Zu der Artikelgruppe und dem DN Wert die richtige Artikelnummer aus der Tabelle TypKupplung einlesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelzuordnung.getFlanschArtikelnr(System.Int32,RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.Int32@)">
+            <summary>
+            Artikelnummer aus der Tabelle TypFlansch suchen
+            </summary>
+            <param name="dn"></param>
+            <param name="artGr"></param>
+            <param name="artnr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelzuordnung.getSchieberArtikelnr(System.Int32,RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.Int32@)">
+            <summary>
+            Artikelnummer aus der Tabelle TypSchieber suchen
+            </summary>
+            <param name="dn"></param>
+            <param name="artGr"></param>
+            <param name="artnr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelzuordnung.getScheibeArtikelnr(System.Int32,RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.Int32@)">
+            <summary>
+            Artikelnummer aus der Tabelle TypScheibe ermitteln
+            </summary>
+            <param name="dn"></param>
+            <param name="artGr"></param>
+            <param name="artnr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelzuordnung.getRueckschlagklappenArtikelnr(System.Int32,RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.Int32@)">
+            <summary>
+            Artikelnummer aus der Tabelle TypRueckschlagklappe suchen
+            </summary>
+            <param name="dn"></param>
+            <param name="artGr"></param>
+            <param name="artnr"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelzuordnung.getTStueckArtikelnr(System.Int32,System.Int32,System.Int32,RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.Int32@)">
+            <summary>
+            Zu der Artikelgruppe und dem DN Wert die richtige Artikelnummer aus der Tabelle TypTStueck einlesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelzuordnung.getSchelleArtikelnr(System.Int32,System.Int32,RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.Int32@)">
+            <summary>
+            Zu der Artikelgruppe und dem DN Wert die richtige Artikelnummer aus der Tabelle TypAnbohrschelle einlesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelzuordnung.getSonstigesArtikelnummer(System.Int32,RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.Int32@)">
+            <summary>
+            Im Artikelstamm und der Tabelle TypSonstiges nach der passenden Artikelnummer suchen. Zu der Kombination Artikelgruppe - DN darf es nur eine Artikelnummer im Artikelstamm geben
+            </summary>
+            <param name="dnId"></param>
+            <param name="artGr"></param>
+            <param name="artnr"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RohrKonfDaten.Db.DbArtikelgruppenZuordnung">
+            <summary>
+            Artikelzuodnungen aus der Datenbank lesen
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelgruppenZuordnung.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikelgruppenZuordnung.getArtikelgruppe(RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.Int32,RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe@)">
+            <summary>
+            Zuordnung einlesen
+            </summary>
+            <param name="artgr"></param>
+            <param name="nr"></param>
+            <param name="artgrResult"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RohrKonfDaten.Properties.Resources">
+            <summary>
+              Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Properties.Resources.ResourceManager">
+            <summary>
+              Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Properties.Resources.Culture">
+            <summary>
+              Überschreibt die CurrentUICulture-Eigenschaft des aktuellen Threads für alle
+              Ressourcenzuordnungen, die diese stark typisierte Ressourcenklasse verwenden.
+            </summary>
+        </member>
+        <member name="T:RohrKonfDaten.Db.DbKappenfarben">
+            <summary>
+            Kappenfarben aus der DB lesen
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbKappenfarben.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbKappenfarben.readKappenfarben(System.String,System.Collections.Generic.List{RohrKonfBase.Entities.EnKappenfarbe})">
+            <summary>
+            Kappenfraben einlesen
+            </summary>
+            <param name="sprachId"></param>
+            <param name="kfarben"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RohrKonfDaten.En.EnWerk">
+            <summary>
+            Werk aus SAP
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.En.EnWerk.#ctor(System.Int32,System.String)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="id"></param>
+            <param name="bez"></param>
+        </member>
+        <member name="M:RohrKonfDaten.En.EnWerk.ToString">
+            <summary>
+            ToString Bsp: 2000 - Deutschland
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:RohrKonfDaten.En.EnWerk.Id">
+            <summary>
+            Werksnummer
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.En.EnWerk.Bezeichnung">
+            <summary>
+            Bezeichnung
+            </summary>
+        </member>
+        <member name="T:RohrKonfDaten.Db.DbSchema">
+            <summary>
+            Schema Daten aus der DB lesen
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbSchema.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbSchema.readGruppen(System.Collections.Generic.Dictionary{System.Int32,System.String})">
+            <summary>
+            Schemagruppen aus der Datenbank einlesen (Hauptebene)
+            </summary>
+            <param name="gruppen"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbSchema.readBaugruppen(System.Int32,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Baugruppen einlesen (Unterebene)
+            </summary>
+            <param name="gruppe">Gruppe zu der die Baugruppen eingelesen werden</param>
+            <param name="gruppen"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbSchema.readBaugruppe(System.String,System.Int32@,System.String@,System.Boolean@)">
+            <summary>
+            Werte zu der Baugruppe einlesen
+            </summary>
+            <param name="key"></param>
+            <param name="gruppe"></param>
+            <param name="bezeichnung"></param>
+            <param name="isUrsprung"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RohrKonfDaten.Gp.GpWerke">
+            <summary>
+            Werke aus der DB lesen
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpWerke.getWerke(System.String,System.Collections.Generic.List{RohrKonfDaten.En.EnWerk})">
+            <summary>
+            Werke einlesen
+            </summary>
+            <param name="sprachId"></param>
+            <param name="werkliste"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbWerke.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbWerke.readWerke(System.String,System.Collections.Generic.List{RohrKonfDaten.En.EnWerk})">
+            <summary>
+            Brandschutztechnik aus den Stammdaten lesen
+            </summary>
+            <param name="sprachId"></param>
+            <param name="werke"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RohrKonfDaten.Db.DbSprinkler">
+            <summary>
+            Sprinklerdaten aus der DB einlesen
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbSprinkler.DummySprinklerArtikelNrStehend">
+            <summary>
+            Dummyartikelnummer
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbSprinkler.DummySprinklerArtikelNrHaengend">
+            <summary>
+            Dummyartikelnummer
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbSprinkler.DummyHydrantArtikelNr">
+            <summary>
+            Dummyartikelnummer für Hydrant
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbSprinkler.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbSprinkler.readSprinklerTemperaturen(System.Collections.Generic.List{System.Object})">
+            <summary>
+            Liste mit möglichen Temperaturen aus der Sprinklertabelle lesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbSprinkler.readSprinklerKFaktoren(RohrKonfBase.Entities.EnSprinkler.SprinklerTyp,System.Collections.Generic.List{System.Object})">
+            <summary>
+            Liste mit möglichen K-Faktoren aus der Sprinklertabelle lesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbSprinkler.readSprinklerDaten(System.Int32,RohrKonfBase.Entities.EnSprinkler)">
+            <summary>
+            Sprinklerwerte einlesen
+            </summary> 
+        </member>
+        <member name="T:RohrKonfDaten.Db.DbSettings">
+            <summary>
+            Singleton Klasse, die die Datenbank Connection speichert. Es muß die Sprache für die Stammdaten und den Artikelstamm und die Db Parameter definiert werden. 
+            Die Klasse ist Singleton.
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbSettings.closeDb">
+            <summary>
+            Datenbank Verbindung schließen
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Db.DbSettings.Sprache">
+            <summary>
+            SpracheID für Tabellenspalten setzen bzw. zurückgeben (außer Artikelstamm)
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Db.DbSettings.SpracheArtikelstamm">
+            <summary>
+            Sprache des Artikelstamms setzen bzw. zurückgeben
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Db.DbSettings.ConnectionData">
+            <summary>
+            Datenbank Verbindungsdaten setzen bzw. zurückgeben
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Db.DbSettings.Connection">
+            <summary>
+            Zugriff auf das DbConnection Objekt. 
+            </summary>
+        </member>
+        <member name="T:RohrKonfDaten.Db.DbNiederlassungen">
+            <summary>
+            Niederlassungsdaten aus der DB lesen
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbNiederlassungen.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbNiederlassungen.getNiederlassungen(System.Collections.Generic.List{RohrKonfBase.Entities.EnNiederlassung})">
+            <summary>
+            Liste der Niederlassungen
+            </summary>
+            <param name="nls"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RohrKonfDaten.Db.DbText">
+            <summary>
+            Texte aus der Tabelle Texte einlesen
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbText.#ctor">
+            <summary>
+            Konstruktor
+            </summary>        
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbText.#ctor(MxLib.Db.DbConnection)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="connection"></param>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbText.readFromDb(System.String,System.String,System.String@)">
+            <summary>
+            Anhand der übergebenen ID den Text einlesen
+            </summary>
+            <param name="id">ID</param>
+            <param name="sprachId">Sprache</param>
+            <param name="result">Text aus der Datenbank</param>
+            <returns></returns>
+        </member>
+        <member name="T:RohrKonfDaten.Db.DbArtikel">
+            <summary>
+            Artikelwerte aus der Datenbank lesen
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikel.tabArtikelstamm">
+            <summary>
+            Tabellenname des Artikelstamms
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikel.tabBaugruppe">
+            <summary>
+            Tabellename TypBaugruppe
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikel.tabAnschlusspunkteBaugruppe">
+            <summary>
+            Tabellename TypBaugruppeEinfAnschlusspunkte
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikel.tabBaugruppeStueckliste">
+            <summary>
+            Tabellename TypBaugruppeStueckliste
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikel.tabSonstigesAnschlusspunkte">
+            <summary>
+            Tabellename TypSonstigesEinfAnschlusspunkte
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikel.tabSonstiges">
+            <summary>
+            Tabellename TypSonstiges
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikel.spalteArtikelnummer">
+            <summary>
+            Spaltenname Artikelnummer
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikel.spalteArtikelgruppe">
+            <summary>
+            Spaltenname Artikelgruppe
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikel.spalteBezeichnung">
+            <summary>
+            Spaltenname Bezeichnung (Die SprachID muss dann noch hinzugefügt werden) 
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikel.spalteEinheit">
+            <summary>
+            Spaltenname Einheit 
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikel.spalteSapPreis">
+            <summary>
+            Spaltenname SapPreis 
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikel.spalteFestPreis">
+            <summary>
+            Spaltenname Festpreis
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikel.spalteGewicht">
+            <summary>
+            Spaltenname Gewicht
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikel.spalteBaugruppenId">
+            <summary>
+            Spaltenname Baugruppenid 
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikel.sprache">
+            <summary>
+            Name der Sprache in den Spaltennamen
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikel.spracheArtikelstamm">
+            <summary>
+            Sprache des Artikelstamms
+            </summary>
+        </member>
+        <member name="F:RohrKonfDaten.Db.DbArtikel.artikelgruppen">
+            <summary>
+            Abfragen aus der DB speichern
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readArtikelDaten(System.Int32,RohrKonfBase.Entities.EnArtikel)">
+            <summary>
+            Artikelwerte einlesen. Als Sprache für die Bezeichnung wird der voreingestellte Wert genommen
+            </summary>
+            <param name="artnr"></param>
+            <param name="artikel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readArtikelDaten(System.Int32,RohrKonfBase.Entities.EnArtikel,System.String)">
+            <summary>
+            Artikelwerte einlesen
+            </summary>
+            <param name="artnr"></param>
+            <param name="artikel"></param>
+            <param name="artikelstammSprachId">Sprache, in der die Artikelbezeichnung gelesen werden soll</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readFlanschDaten(System.Int32,RohrKonfBase.Entities.EnFlansch)">
+            <summary>
+            Flanschdaten einlesen
+            </summary>
+            <param name="artnr">Artikelnummer</param>
+            <param name="artikel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readKupplungsDaten(System.Int32,RohrKonfBase.Entities.EnKupplung)">
+            <summary>
+            Kupplungsdaten einlesen
+            </summary>
+            <param name="artnr">Artikelnummer</param>
+            <param name="artikel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readReduzierungsDaten(System.Int32,RohrKonfBase.Entities.EnReduzierung)">
+            <summary>
+            Reduzierungsdaten einlesen
+            </summary>
+            <param name="artnr"></param>
+            <param name="artikel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readArtikelgruppe(System.Int32,RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe@)">
+            <summary>
+            Artikelgruppe aus der Db lesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readArtikelgruppe(System.String,RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe@)">
+            <summary>
+            Artikelgruppe aus der Db lesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readBaugruppenDaten(System.String,RohrKonfBase.Entities.EnBaugruppe)">
+            <summary>
+            Artikeldaten der Baugruppe aus der Stammdatenbank lesen. Für die Sprache wird der voreingestellte Wert genommen
+            </summary>
+            <param name="id">Id der Baugruppe</param>
+            <param name="bg">Objekt wird mit den Daten gefüllt</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readBaugruppenDaten(System.String,RohrKonfBase.Entities.EnBaugruppe,System.String)">
+            <summary>
+            Artikeldaten der Baugruppe aus der Stammdatenbank lesen.
+            </summary>
+            <param name="id"></param>
+            <param name="bg"></param>
+            <param name="sprachId">Sprache für die Bezeichnung</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readBaugruppenStueckliste(RohrKonfBase.Entities.EnBaugruppe)">
+            <summary>
+            In der Baugruppe bg die Stückliste einlesen. Ein bestehende Liste wid überschrieben
+            </summary>
+            <param name="bg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readAnschlussWerteBaugruppe(System.String,System.Collections.Generic.List{RohrKonfBase.Entities.EnAnschlussPunkt})">
+            <summary>
+            Anschlusspunkte aus der Datenbank einlesen
+            </summary>
+            <param name="id"></param>
+            <param name="apunkte"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readEinfuegepunkteBaugruppe(System.String,System.Collections.Generic.List{MxLib.Math.Point})">
+            <summary>
+            Einfügepunkte für Baugruppen aus der Datenbank einlesen
+            </summary>
+            <param name="id">Baugruppen ID</param>
+            <param name="punkte">Einfügepunkte</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readRohrWerte(System.Int32,RohrKonfBase.Entities.EnRohr)">
+            <summary>
+            Rohrwerte einlesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readSchlauchWerte(System.Int32,RohrKonfBase.Entities.EnSchlauch)">
+            <summary>
+            Schlauchwerte einlesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readSchaltschrankDaten(System.Int32,RohrKonfBase.Entities.EnSchaltschrank)">
+            <summary>
+            Geometriewerte zum Schaltschrank einlesen
+            </summary>
+            <param name="artnr"></param>
+            <param name="artikel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readBogenDaten(System.Int32,RohrKonfBase.Entities.EnBogen)">
+            <summary>
+            Artikel- und Geometriedaten einlesen
+            </summary>
+            <param name="artnr"></param>
+            <param name="artikel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readArtikelnummern(System.Int32,System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Zu der Artikelgruppe die Artikelnummern aus dem Artikelstamm einlesen
+            </summary>
+            <param name="artikelgruppe"></param>
+            <param name="artikelnummern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readArtikelnummernTypSonstiges(RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,System.Int32,System.Collections.Generic.List{System.Int32})">
+            <summary>
+            Zu der Artikelgruppe die Artikelnummern aus dem Artikelstamm einlesen
+            </summary>
+            <param name="artikelgruppe"></param>
+            <param name="dnId"></param>
+            <param name="artikelnummern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readAnschlussWerteSonstiges(System.Int32,System.Collections.Generic.List{RohrKonfBase.Entities.EnAnschlussPunkt})">
+            <summary>
+            Anschlusspunkte aus der Datenbank einlesen
+            </summary>
+            <param name="artikelnmmmer"></param>
+            <param name="apunkte"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.writeAnschlussWerteSonstiges(System.Int32,System.Collections.Generic.List{System.Object})">
+            <summary>
+            Anschlusswerte in die Tabelle TypSonstiges schreiben
+            </summary>
+            <param name="artikelnmmmer"></param>
+            <param name="apunkte">Liste mit Anschlüssen und Einfügepunkten vom Typ EnAnschlussPunkt oder Point</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.writeSonstiges(System.Int32,System.Collections.Generic.List{RohrKonfBase.Entities.EnAnschlussPunkt})">
+            <summary>
+            In die Tabelle TypSonstiges die DN Werte der Anschlusspunkte schreiben
+            </summary>
+            <param name="artikelnmmmer"></param>
+            <param name="apunkte"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readEinfuegepunkteSonstiges(System.Int32,System.Collections.Generic.List{MxLib.Math.Point})">
+            <summary>
+            Einfügepunkte aus der Datenbank einlesen
+            </summary>
+            <param name="artikelnmmmer"></param>
+            <param name="punkte"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readMuffenDaten(System.Int32,RohrKonfBase.Entities.EnMuffeStutzen)">
+            <summary>
+            Muffen bzw. Stutzendaten aus der Stammdatenbank lesen
+            </summary>
+            <param name="artnr"></param>
+            <param name="artikel">Muffenobjekt</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readSchieberDaten(System.Int32,RohrKonfBase.Entities.EnSchieber)">
+            <summary>
+            Schieberdaten einlesen
+            </summary>
+            <param name="artnr"></param>
+            <param name="artikel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readRueckschlagklappenDaten(System.Int32,RohrKonfBase.Entities.EnRKlappe)">
+            <summary>
+            Geometriedaten der Rückschlagklappe einlesen
+            </summary>
+            <param name="artnr"></param>
+            <param name="artikel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readBaugruppen(RohrKonfBase.Entities.EnArtikelgruppe.ArtGruppe,MxLib.Entities.EnMatrix)">
+            <summary>
+            Baugruppen aus den Stammdaten lesen
+            </summary>
+            <param name="artgruppe">Artikelgruppe zu der die Baugruppen eingelesen werden</param>
+            <param name="matrix">Matrix wird mit Werten gefüllt (Spalte 0 = ID, Spalte 1 = Bezeichnung)</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readSchellenDaten(System.Int32,RohrKonfBase.Entities.EnSchelle)">
+            <summary>
+            Daten der Schelle einlesen
+            </summary>
+            <param name="artnr">Artikelnummer</param>
+            <param name="artikel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readTStueckDaten(System.Int32,RohrKonfBase.Entities.EnTStueck)">
+            <summary>
+            Artikeldaten für ein T-Stück einlesen
+            </summary>
+            <param name="artnr"></param>
+            <param name="artikel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.searchArtikel(System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.String},System.String,System.Collections.Generic.List{RohrKonfBase.Entities.EnArtikel})">
+            <summary>
+            Artikel in der Datenbank suchen
+            </summary>
+            <param name="andStrings"></param>
+            <param name="orStrings"></param>
+            <param name="notStrings"></param>
+            <param name="artikelstammSprachId"></param>
+            <param name="artikel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.writeAnschlussWerteBaugruppen(System.String,System.Collections.Generic.List{System.Object})">
+            <summary>
+            Anschlusswerte für Baugruppen in die Tabelle schreiben
+            </summary>
+            <param name="baugruppe"></param>
+            <param name="apunkte">Liste mit Anschlüssen und Einfügepunkten vom Typ EnAnschlussPunkt oder Point</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.writeBaugruppe(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            In die Tabelle TypBaugruppe die Bezeichnung eintragen
+            </summary>
+            <param name="baugruppe"></param>
+            <param name="artikelgruppe"></param>
+            <param name="bezDeutsch"></param>
+            <param name="bezEnglisch"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.writeBaugruppeStueckliste(System.String,System.Collections.Generic.Dictionary{RohrKonfBase.Entities.EnArtikel,System.Double})">
+            <summary>
+            Stückliste für baugruppen in die DB schreiben
+            </summary>
+            <param name="baugruppe"></param>
+            <param name="artnummern"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbArtikel.readScheibeDaten(System.Int32,RohrKonfBase.Entities.EnScheibe)">
+            <summary>
+            Artikeldaten zur Scheibe aus der DB lesen
+            </summary>
+            <param name="artnr"></param>
+            <param name="artikel"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RohrKonfDaten.Gp.GpArtikelDaten">
+            <summary>
+            Gp Klasse um Artikeldaten aus der DB einzulesen. Die Klasse ist Singleton.
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpArtikelDaten.getDaten(System.String,RohrKonfBase.Entities.EnBaugruppe)">
+            <summary>
+            Daten zu der Baugruppe einlesen
+            </summary>
+            <param name="baugruppenId"></param>
+            <param name="bg"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpArtikelDaten.getArtikel(System.Int32,System.Double)">
+            <summary>
+            Erzeugt einen neuen Artikel mit allen Stammdaten
+            </summary>
+            <param name="artnr"></param>
+            <param name="einheitenFaktor">Umrechnungsfaktor der Einheit bezogen auf MM</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpArtikelDaten.getDaten(System.Int32,System.Double,RohrKonfBase.Entities.EnArtikel)">
+            <summary>
+            Stammdaten einlesen (Erweiterte Stammdaten von z.B Rohren werden auch eingelesen, wenn der entsprechende Typ übergeben wird)
+            </summary>
+            <param name="artnr">Artikelnummer</param>
+            <param name="einheitenFaktor">Umrechnungsfaktor der Einheit bezogen auf MM</param>
+            <param name="artikel">Diesem Objekt werden die Stammdaten zugewiesen</param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpArtikelDaten.readDaten(System.Int32,System.Double,RohrKonfBase.Entities.EnArtikel)">
+            <summary>
+            Stammdaten zu der Artikelnummer einlesen. 
+            Hinweis: In dem übergebenen Artikel werden die Einheiten umgerechnet. Der Rückgabewert ist der Artikel aus der globalen Liste, der noch nicht in die
+            altuelle Einheit umgerehnet ist.
+            </summary>
+            <param name="artnr">Artikelnummer</param>
+            <param name="einheitenFaktor">Umrechnungsfaktor der Einheit bezogen auf MM</param>
+            <param name="artikel">In diesem Artikel werden die Daten kopiert und Längen in die richtige Einheit konvertiert</param>
+            <returns>Verweis auf den Artikel aus der globalen Liste (ACHTUNG: ist noch nicht in die aktuelle Einheit konvertiert)</returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpArtikelDaten.readExtArtikeldaten(System.Int32,RohrKonfBase.Entities.EnArtikel)">
+            <summary>
+            Anhand des übergebenen Artikelobjektes die erweiterten Artikeldaten einlesen
+            </summary>
+            <param name="artnr"></param>
+            <param name="extArtikel"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpArtikelDaten.getFromListe(System.Int32)">
+            <summary>
+            Artikel aus gespeicherter Liste suchen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpArtikelDaten.readArtikelDaten(System.Int32,RohrKonfBase.Entities.EnArtikel)">
+            <summary>
+            Artikeldaten aus dem Artikelstamm lesen (inkl. classid, isFertigung und isFtting aus der Tabelle Unterartikelgruppe2)
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpArtikelDaten.clear">
+            <summary>
+            Liste zurücksetzen. Wird z.B. bei einem Sprachwechsel benötigt
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpArtikelDaten.copyStueckliste(System.Collections.Generic.Dictionary{RohrKonfBase.Entities.EnArtikel,System.Double},System.Collections.Generic.Dictionary{RohrKonfBase.Entities.EnArtikel,System.Double},System.Double)">
+            <summary>
+            Eine echte Kopie der Artikelobjekte in der Stückliste erstellen
+            </summary>
+            <param name="from"></param>
+            <param name="ziel"></param>
+            <param name="einheitenFaktor"></param>
+        </member>
+        <member name="T:RohrKonfDaten.Gp.GpBrandschutztechnik">
+            <summary>
+            Brandschutztechnik einlesen
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpBrandschutztechnik.getTechniken(System.String,System.Collections.Generic.List{RohrKonfBase.Entities.EnBrandschutztechnik})">
+            <summary>
+            Brandschutztechnik einlesen
+            </summary>
+            <param name="sprachId"></param>
+            <param name="bst"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RohrKonfDaten.Gp.GpRohrDn">
+            <summary>
+            Rohr DN Werte
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpRohrDn.getDnWerte">
+            <summary>
+            Liste mit den DN Werten ermitteln
+            </summary>        
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpRohrDn.getDnWert(System.Int32,System.Int32@)">
+            <summary>
+            DN Wert ermitteln
+            </summary>
+            <param name="dnId"></param>
+            <param name="dn"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpRohrDn.getDnWert(System.Int32)">
+            <summary>
+            zu der dnId den DN Wert ermitteln
+            </summary>
+            <param name="dnId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpRohrDn.getZoll(System.Int32,System.String@)">
+            <summary>
+            
+            </summary>
+            <param name="dnId"></param>
+            <param name="zoll"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpRohrDn.getDnBezeichnung(System.Int32,System.String@)">
+            <summary>
+            
+            </summary>
+            <param name="dnId"></param>
+            <param name="dnBez"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpRohrDn.getEinschraubtiefe(System.Int32,System.Double,System.Double@)">
+            <summary>
+            Einschraubtiefe bei Gewindeverbindungen
+            </summary>
+            <param name="dnId"></param>
+            <param name="einheitenFaktor"></param>
+            <param name="laenge"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpRohrDn.getRadius(System.Int32,System.Double,System.Double@)">
+            <summary>
+            
+            </summary>
+            <param name="dnId"></param>
+            <param name="einheitenFaktor"></param>
+            <param name="radius"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpRohrDn.getDurchmesser(System.Int32,System.Double,System.Double@)">
+            <summary>
+            Durchmesser zur DN ID
+            </summary>
+            <param name="dnId"></param>
+            <param name="einheitenFaktor"></param>
+            <param name="d"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpRohrDn.getRohrDn(System.Int32,System.Double,RohrKonfBase.Entities.EnRohrDn)">
+            <summary>
+            DN Werte zur ID ermitteln
+            </summary>
+            <param name="dnId"></param>
+            <param name="einheitenFaktor"></param>
+            <param name="dn"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RohrKonfDaten.Db.DbOberflaechen">
+            <summary>
+            Oberflächen aus der DB lesen
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbOberflaechen.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbOberflaechen.readOberflaechen(System.String,System.Collections.Generic.List{RohrKonfBase.Entities.EnOberflaeche})">
+            <summary>
+            Oberflächen aus der DB lesen
+            </summary>
+            <param name="sprachId"></param>
+            <param name="oberflaechen"></param>
+            <returns></returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbOberflaechen.readRalFarben(System.String,System.Collections.Generic.List{RohrKonfBase.Entities.EnRalFarbe})">
+            <summary>
+            RAL Farben aus der DB lesen
+            </summary>
+            <param name="sprachId"></param>
+            <param name="rals"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RohrKonfDaten.Db.DbCombobox">
+            <summary>
+            Werte für die <c>ComboboxExt</c> aus der Tabelle Combobox aus der Stammdatenbank lesen. 
+            </summary>
+            <example>Beispiel:
+            \code
+            int voreinstellungOberflNrId = 1;
+            List[EnComboBoxWerte] werteOberfl = new List[EnComboBoxWerte]();
+            DbCombobox dbCb = new DbCombobox();
+            if (!dbCb.readWerte("Oberflaeche", werteOberfl))
+                return;
+                
+            MxLib.Dialog.ComboBoxExt comboBox = new MxLib.Dialog.ComboBoxExt();
+            comboBox.load(werteOberfl, voreinstellungOberflNrId, false);
+            \endcode
+            </example>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbCombobox.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbCombobox.#ctor(MxLib.Db.DbConnection,System.String)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="connection"></param>
+            <param name="sprachId"></param>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbCombobox.#ctor(System.String)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="sprachId"></param>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbCombobox.readWerte(System.String,System.Collections.Generic.List{MxLib.Entities.EnComboBoxWerte})">
+            <summary>
+            Anhand der übergebenen ID die Werte aus der Tabelle Combobox lesen
+            </summary>
+            <param name="comboId">Zu dieser ID werden alle Werte eingelesen</param>
+            <param name="werte">Liste mit den Werten</param>
+            <returns>false wenn ein Fehler aufgetreten ist</returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbCombobox.readWert(System.String,System.Int32,MxLib.Entities.EnComboBoxWerte)">
+            <summary>
+            Wert aus der Tabelle Combobox lesen
+            </summary>
+            <param name="comboId">Wert der ID Spalte ComboId</param>
+            <param name="id">Wert der ID Spalte idCounter</param>
+            <param name="cbWert">Eingelesener Wert aus der Datenbank</param>
+            <returns></returns>
+        </member>
+        <member name="P:RohrKonfDaten.Db.DbCombobox.SprachId">
+            <summary>
+            Sprache der Texte
+            </summary>
+        </member>
+        <member name="T:RohrKonfDaten.Db.DbRohrDn">
+            <summary>
+            DN werte aus der Datenbank lesen
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbRohrDn.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbRohrDn.readDnWerte(System.Collections.Generic.List{RohrKonfBase.Entities.EnRohrDn})">
+            <summary>
+            DN Werte aus der Datenbank lesen
+            </summary>
+            <param name="liste"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

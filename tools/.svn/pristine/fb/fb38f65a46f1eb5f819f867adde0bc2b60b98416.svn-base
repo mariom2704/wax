@@ -1,0 +1,23 @@
+#pragma once
+
+
+typedef std::vector<CCRohrOneAssembeldKomponenteVector*> CRohrBemassungsAnbauChildKomponentenVectorVectorBase;
+
+class WAXGLDLL CRohrBemassungsAnbauChildKomponentenVectorVector :
+	public CRohrBemassungsAnbauChildKomponentenVectorVectorBase
+{
+public:
+	CRohrBemassungsAnbauChildKomponentenVectorVector(void);
+	~CRohrBemassungsAnbauChildKomponentenVectorVector(void);
+
+	bool HasChildTubes()
+	{
+		return size() > 0 ? true : false;
+	};
+	
+	int NumberOfChildTubes()
+	{
+		return (int) size() ;
+	};
+};
+

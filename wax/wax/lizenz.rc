@@ -1,0 +1,141 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "lizenz.rc.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Deutsch (Deutschland) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "lizenz.rc.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)\r\n"
+    "LANGUAGE 7, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""afxres.rc""    // Standardkomponenten\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_LICENCE DIALOGEX 0, 0, 296, 166
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_TOPMOST | WS_EX_TOOLWINDOW
+CAPTION "Lizenzverwaltung"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "Beenden",IDOK,239,142,50,14
+    LTEXT           "Systemkennung",IDC_STATIC_SYSTEMKENNUNG,16,29,61,8
+    EDITTEXT        IDC_HWKENNUNG,76,27,82,14,ES_AUTOHSCROLL | ES_READONLY
+    LTEXT           "Lizenzschlüssel",IDC_STATIC_LICKEY,16,50,57,8
+    EDITTEXT        IDC_LIZENZ,75,47,206,14,ES_AUTOHSCROLL | WS_DISABLED
+    GROUPBOX        "Lizenzeingabe",IDC_STATIC_LIC_EINGABE,7,7,280,70
+    LTEXT           "gültig von:",IDC_STATIC_LIC_VON,31,96,35,8
+    LTEXT           "???",IDC_GUELTIGVON,71,96,71,8
+    GROUPBOX        "Lizenzinfo",IDC_STATIC_LIC_INFO,7,84,281,28
+    LTEXT           "gültig bis:",IDC_STATIC_LIC_BIS,171,96,32,8
+    LTEXT           "???",IDC_GUELTIGBIS,211,96,59,8
+    DEFPUSHBUTTON   "Licence File einlesen",ID_READ_LICENCE_FILE,6,142,82,14
+    DEFPUSHBUTTON   "Licence File erzeugen",ID_CREATE_LICENCE_FILE,92,142,82,14
+    LTEXT           "",IDC_STATIC_FAULT_TEXT,12,118,274,18
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_LICENCE, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 152
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDC_LIZENZ              "&Lizenz..."
+    IDS_TIME_LEFT           "Ihre Lizenz ist nur noch %i Tage gültig!"
+    IDS_NO_RIGHTS           "Sie haben nicht ausreichende Rechte zum installieren von Wax, bitte melden Sie sich als Administrator an und wiederholen Sie die Lizenzeingabe. "
+    IDS_ERROR_INVALID_CHECKSUM "Dieser Lizenzschlüssel ist ungültig!"
+    IDS_ERROR_EXPIRED       "Die Lizenz ist abgelaufen!\r\n Bitte fordern Sie einen neuen Lizenzschlüssel an."
+    IDS_ERROR_INVALID_DATE  "Systemzeit wurde zurückgestellt!\r\nBitte Systemuhr auf das richtige Datum setzen."
+END
+
+#endif    // Deutsch (Deutschland) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+LANGUAGE 7, 1
+#pragma code_page(1252)
+#include "afxres.rc"    // Standardkomponenten
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

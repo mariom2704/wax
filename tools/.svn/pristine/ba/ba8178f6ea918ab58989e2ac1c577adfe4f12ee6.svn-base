@@ -1,0 +1,109 @@
+#include "stdafx.h"
+
+#include "UtiltyHelper.h"
+
+#include "..\_Tubes Logic Grafic Adapter\RohrKomponente.h"
+#include "..\_Tubes Logic Grafic Adapter\RohrOneAssembeldKomponenteVector.h"
+
+#include "..\SVG File Operations\GraficFileController.h"
+#include "..\Mechanicals Geometrics\GraficTubeController.h"
+#include "..\Mechanicals Geometrics\GraficRohrKomponente.h"
+#include "..\Mechanicals Geometrics\GraficRohrOneAssembeldKomponenteVector.h"
+#include "..\Controller\GraficController.h"
+
+CGraficController::CGraficController(void):m_GraficRohrContainer(this)
+{
+}
+
+
+
+void CGraficController::GenerateDrawingOfTubes(CCRohrOneAssembeldKomponenteVector StrangRohrVector)
+{
+	m_RohrKomponenten = StrangRohrVector;
+	m_RohrKomponenten.CumulateBemassungscomponents();
+	//m_GraficRohrContainer.m_pGraficContainerForAssembeldTubes->clear();
+	CCGraficRohrOneAssembeldKomponenteVector* pGraficRohrOneAssembeldKomponenteVector = new CCGraficRohrOneAssembeldKomponenteVector();
+	std::vector<int>::size_type sz = m_RohrKomponenten.size();
+	for(UINT i = 0; i < sz; i++ )
+	{
+		CGraficRohrKomponente* pGraficRohrKomponente = (*m_RohrKomponenten[i]).GetGraficRohrKomponente(this);
+		pGraficRohrKomponente->SetCalculateDemisions(true);
+		pGraficRohrOneAssembeldKomponenteVector->AddComponenteForTube(pGraficRohrKomponente);
+		
+	}
+
+	AddGraficChildComponent(&m_RohrKomponenten, pGraficRohrOneAssembeldKomponenteVector);
+
+	m_GraficRohrContainer.m_GraficRohrOneAssembeldKomponenteVectorWrapper.SetGraficRohrOneAssembeldKomponenteVector(pGraficRohrOneAssembeldKomponenteVector);
+	
+	m_GraficFileController.CreateSVGFile(_T("D:\\work\\samples\\tools\\diverse\\SVG  Grafic\\Debug\\HTML Test\\Test.svg"));
+	
+	m_GraficRohrContainer.CalculateDimisions();	
+	m_GraficRohrContainer.CreateGraficModell();
+	
+	//CGraficComponentsForOneAssembeldTube* pGraficRohrOneAssembeldKomponenteVectorI = m_GraficRohrContainer.m_pGraficContainerForAssembeldTubes;
+	m_GraficRohrContainer.RecursiveIteratetingThroughComponentsForOneAssembeldTubeAndDraw(m_GraficRohrContainer.m_GraficRohrOneAssembeldKomponenteVectorWrapper.GetGraficRohrOneAssembeldKomponenteVector());
+	
+		
+	m_GraficFileController.strSVGContent+= _T("</svg>");
+	m_GraficFileController.WriteSVGContent();
+	m_pHtmlView->Navigate(_T("D:\\work\\samples\\tools\\diverse\\SVG  Grafic\\Debug\\HTML Test\\Test.html"), NULL, NULL, NULL, NULL);
+}
+
+
+
+void CGraficController::ResetSetDimisions()
+{
+	m_PointTubeLength.X = 0;
+	m_PointTubeLength.Y = 0;
+}
+
+
+void CGraficController::CalculateTubeDimisions(CPointDouble PointEndeCenterLinie)
+{
+	m_PointTubeLength.X += PointEndeCenterLinie.X;
+	m_PointTubeLength.Y += PointEndeCenterLinie.Y;
+}
+
+
+
+double CGraficController::GetFactorPhysicalTubeDimisionsToPixelDimison()
+{
+	return 1200 / m_PointTubeLength.X;
+}
+
+
+
+void CGraficController::AddGraficChildComponent(CCRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVector, CCGraficRohrOneAssembeldKomponenteVector* pGraficRohrOneAssembeldKomponenteVector )
+{
+		
+	if(pRohrOneAssembeldKomponenteVector->HasAssembeldTubes())
+	{
+	
+		CRohrKomponenteVector& RohrKomponenteVectorChlidTubes = pRohrOneAssembeldKomponenteVector->GetChildAssembeldTubes();
+		
+		std::vector<int>::size_type sz = RohrKomponenteVectorChlidTubes.size();
+		
+		for(int i =0; i< (int) sz; i++)
+		{
+			CCRohrOneAssembeldKomponenteVector* pRohrOneAssembeldChildTubeVector = RohrKomponenteVectorChlidTubes[i];
+			CCGraficRohrOneAssembeldKomponenteVector* pGraficChildForOneAssembeldTube = pGraficRohrOneAssembeldKomponenteVector->GetNewAddedChildAssembeldTube();
+						
+			std::vector<int>::size_type ss = pRohrOneAssembeldChildTubeVector->size();
+			for(int z = 0; z < (int) ss; z++)
+			{
+				CRohrKomponente* pRohrKomponente =  pRohrOneAssembeldChildTubeVector->at(z);
+				pGraficChildForOneAssembeldTube->push_back(pRohrKomponente->GetGraficRohrKomponente(this));
+			}
+			AddGraficChildComponent(pRohrOneAssembeldChildTubeVector, pGraficChildForOneAssembeldTube);
+		}
+	}
+	
+}
+
+
+
+
+CGraficController::~CGraficController(void)
+{
+}

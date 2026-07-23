@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "wax", "wax.vcproj", "{D043E3A3-A91F-44E7-BB11-F0A7365E6020}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		wax_fuer_3te|Win32 = wax_fuer_3te|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.Debug|Win32.Build.0 = Debug|Win32
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.Release|Win32.ActiveCfg = Release|Win32
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.Release|Win32.Build.0 = Release|Win32
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.wax_fuer_3te|Win32.ActiveCfg = wax_fuer_3te|Win32
+		{D043E3A3-A91F-44E7-BB11-F0A7365E6020}.wax_fuer_3te|Win32.Build.0 = wax_fuer_3te|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,27 @@
+\\ODWERK1\prod1\Fertigung
+
+
+waid 538895
+waid 538896
+
+wanr null sachbe null status 2
+
+---
+
+SELECT werkauftrag.* FROM werkauftrag INNER JOIN status ON werkauftrag.waid = status.waid  WHERE (wanr = 0 OR sachbesegment IS NULL OR sachbesegment = '') 
+AND NOT status.storniert AND (status.status=2 or status.status is null)
+
+SELECT werkauftrag.* FROM werkauftrag where waid in(
+
+SELECT status.* FROM status where wanr = xxxx
+
+
+SELECT status.* FROM status where waid in(536755,
+536756,
+536757,
+536758,
+536759,
+536760,
+536761,
+536762,
+536763)

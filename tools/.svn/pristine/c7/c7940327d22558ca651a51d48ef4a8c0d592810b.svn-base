@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="SVG Grafic.cpp" />
+    <ClCompile Include="Controller\GraficController.cpp">
+      <Filter>Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Mechanicals Geometrics\GraficRohrKomponente.cpp">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClCompile>
+    <ClCompile Include="SVG File Operations\GraficFileController.cpp">
+      <Filter>SVG File Operations</Filter>
+    </ClCompile>
+    <ClCompile Include="UtiltyHelper.cpp" />
+    <ClCompile Include="_Tubes Logic Grafic Adapter\RohrKomponente.cpp">
+      <Filter>_Tubes Logic Grafic Adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="Mechanicals Geometrics\GraficTubeController.cpp">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClCompile>
+    <ClCompile Include="_Tubes Logic Grafic Adapter\RohrOneAssembeldKomponenteVector.cpp">
+      <Filter>_Tubes Logic Grafic Adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="Mechanicals Geometrics\GraficRohrOneAssembeldKomponenteVector.cpp">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClCompile>
+    <ClCompile Include="_Tubes Logic Grafic Adapter\RohrBemassungsRohrKomponentenVectorVector.cpp">
+      <Filter>_Tubes Logic Grafic Adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="_Tubes Logic Grafic Adapter\RohrBemassungsAnbauChildKomponentenVectorVector.cpp">
+      <Filter>_Tubes Logic Grafic Adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="Mechanicals Geometrics\GraficRohrBemassungsAnbauChildKomponentenVectorVector.cpp">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClCompile>
+    <ClCompile Include="Mechanicals Geometrics\GraficRohrBemassungsRohrKomponentenVectorVector.cpp">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClCompile>
+    <ClCompile Include="_Tubes Logic Grafic Adapter\RohrBemassungsRohrKomponentenVector.cpp">
+      <Filter>_Tubes Logic Grafic Adapter</Filter>
+    </ClCompile>
+    <ClCompile Include="Mechanicals Geometrics\GraficRohrBemassungsRohrKomponentenVector.cpp">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Controller\GraficController.h">
+      <Filter>Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Mechanicals Geometrics\GraficRohrKomponente.h">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClInclude>
+    <ClInclude Include="SVG File Operations\GraficFileController.h">
+      <Filter>SVG File Operations</Filter>
+    </ClInclude>
+    <ClInclude Include="UtiltyHelper.h" />
+    <ClInclude Include="_Tubes Logic Grafic Adapter\RohrKomponente.h">
+      <Filter>_Tubes Logic Grafic Adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="Mechanicals Geometrics\GraficTubeController.h">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClInclude>
+    <ClInclude Include="_Tubes Logic Grafic Adapter\RohrOneAssembeldKomponenteVector.h">
+      <Filter>_Tubes Logic Grafic Adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="Mechanicals Geometrics\GraficRohrOneAssembeldKomponenteVector.h">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClInclude>
+    <ClInclude Include="_Tubes Logic Grafic Adapter\RohrBemassungsRohrKomponentenVectorVector.h">
+      <Filter>_Tubes Logic Grafic Adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="_Tubes Logic Grafic Adapter\RohrBemassungsAnbauChildKomponentenVectorVector.h">
+      <Filter>_Tubes Logic Grafic Adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="Mechanicals Geometrics\GraficRohrBemassungsAnbauChildKomponentenVectorVector.h">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClInclude>
+    <ClInclude Include="Mechanicals Geometrics\GraficRohrBemassungsRohrKomponentenVectorVector.h">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClInclude>
+    <ClInclude Include="_Tubes Logic Grafic Adapter\RohrBemassungsRohrKomponentenVector.h">
+      <Filter>_Tubes Logic Grafic Adapter</Filter>
+    </ClInclude>
+    <ClInclude Include="Mechanicals Geometrics\GraficRohrBemassungsRohrKomponentenVector.h">
+      <Filter>Mechanicals Geometrics</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="SVG Grafic.def" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Basic Geometrics">
+      <UniqueIdentifier>{3290678d-b9d4-4d7d-91c7-020e2022420a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controller">
+      <UniqueIdentifier>{8fc3a6c0-2ca3-4f95-8d7f-6a132a0eb94e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mechanicals Geometrics">
+      <UniqueIdentifier>{1fe2add1-e14e-4b8c-8912-9732873d2cbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SVG File Operations">
+      <UniqueIdentifier>{87ecf8eb-da41-404b-8d11-66cf0a75d5f4}</UniqueIdentifier>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
+    <Filter Include="_Tubes Logic Grafic Adapter">
+      <UniqueIdentifier>{9ece770c-7caa-4461-bc76-d0d8f022fcff}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

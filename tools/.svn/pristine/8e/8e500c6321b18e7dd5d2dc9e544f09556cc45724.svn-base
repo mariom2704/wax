@@ -1,0 +1,75 @@
+#include "stdafx.h"
+
+
+#include "Tubes it self\\RohrKomponente.h"
+
+#include "Grafic\SVG File Operations\GraficFileController.h"
+#include "Grafic\Mechanicals Geometrics\GraficRohrKomponentenContainer.h"
+#include "Grafic\Mechanicals Geometrics\GraficRohrKomponente.h"
+
+#include "..\Controller\GraficController.h"
+
+CGraficController::CGraficController(void)
+{
+}
+
+
+
+void CGraficController::GenerateDrawingOfTubes(CRohrKomponenteVector StrangRohrVector)
+{
+		m_StrangRohrKomponenten = StrangRohrVector;
+		m_GraficRohrKomponentenContainer.clear();
+
+		std::vector<int>::size_type sz = m_StrangRohrKomponenten.size();
+				
+		for(int i =0; i< (int) sz; i++)
+		{
+			AddGraficTubeKomponeten(m_StrangRohrKomponenten[i]);
+		}
+
+		CGraficRohrContainer GraficRohrContainer(this);
+		for(UINT i = 0; i < sz; i++ )
+		{
+			CGraficRohrKomponente* pGraficRohrKomponente = (*m_StrangRohrKomponenten[i]).GetGraficRohrKomponente(this);
+			GraficRohrContainer.m_GraficStrangRohrKomponenten.push_back(pGraficRohrKomponente);
+		}
+		
+		m_GraficFileController.CreateSVGFile("D:\\work\\samples\\tools\\diverse\\SVG  Grafic\\Debug\\HTML Test\\Test.svg");
+		
+		GraficRohrContainer.CreateGraficModell();
+
+		for(UINT i = 0; i < sz; i++ )
+		{
+			GraficRohrContainer.DrawCompnents(GraficRohrContainer.m_GraficStrangRohrKomponenten[i]);
+		}
+	
+		
+		m_GraficFileController.strSVGContent+= "</svg>";
+		m_GraficFileController.WriteSVGContent();
+		m_pHtmlView->Navigate("D:\\work\\samples\\tools\\diverse\\SVG  Grafic\\Debug\\HTML Test\\Test.html", NULL, NULL, NULL, NULL);
+}
+
+
+void CGraficController::AddGraficTubeKomponeten(CRohrKomponente* pStrangRohrKomponente )
+{
+		
+	CGraficRohrKomponente* pGraficRohrKomponente = pStrangRohrKomponente->GetGraficRohrKomponente(this);
+	if(pStrangRohrKomponente->HasKomponenteChildren())
+	{
+		std::vector<int>::size_type sz = pStrangRohrKomponente->RohrKomponenteChildVector.size();
+		for(int i =0; i< (int) sz; i++)
+		{
+			pGraficRohrKomponente->GetChildGraficContainer()->m_GraficStrangRohrKomponenten.push_back(pStrangRohrKomponente->RohrKomponenteChildVector[i]->GetGraficRohrKomponente(this));
+			AddGraficTubeKomponeten(pStrangRohrKomponente->RohrKomponenteChildVector[i]);
+		}
+	}
+	
+	
+}
+
+
+
+
+CGraficController::~CGraficController(void)
+{
+}

@@ -1,0 +1,76 @@
+#pragma once
+
+#include "Tubes it self\StrangRohr.h"
+
+
+
+class CGraficRohrKomponente
+{
+private:
+	 CRohrKomponente m_LogicRohrKomponente;
+	
+
+	 CPointDouble m_PointAnfangCenterLinie;
+	 CPointDouble m_PointEndeCenterLinie;
+	 CPointDouble m_FirstBorderPoint;
+	 CPointDouble m_xNullPunktBeginAussenWandBefore, m_xNullPunktSecondAussenWandBefore;
+	 CPointDouble m_xNullPunktThirdWandPoint, m_xNullPunktForthWandPoint;
+	 CPointDouble m_NullPointConnectionPoint, m_NullPointConnectionPointII;
+	 int m_DrehWinkel; 
+	 CPointDouble  DeltaPitch;; 
+		
+	
+
+public:
+	CGraficRohrKomponente(CRohrKomponente LogicRohrKomponente);
+	
+	
+	void SetStartPointCenterLine(CPointDouble StartPoint);
+	void SetPitch();
+	CPointDouble GetPitch();
+	CPointDouble getStartPointCenterLine();
+	
+	void SetFirstBorderpoint(double CumulatedArcBefore);
+	CPointDouble GetFirstBorderpoint();
+	void SetSecondBorderpoint(double CumulatedArcBefore);
+	CPointDouble GetSecondBorderpoint();
+	void SetThirdBorderpoint(double CumulatedArcBefore);
+	CPointDouble GetThirdBorderpoint();
+	void SetFourthBorderpoint(double CumulatedArcBefore);
+	CPointDouble GetForthBorderpoint();
+	void SetConnectionPoint(CPointDouble ConnectionPoint)
+	{
+		m_NullPointConnectionPoint = ConnectionPoint;
+	};
+
+	CPointDouble GetConnectionPoint()
+	{
+		return m_NullPointConnectionPoint;
+	};
+
+	void SetConnectionPointII(CPointDouble ConnectionPoint)
+	{
+		m_NullPointConnectionPointII = ConnectionPoint;
+	};
+
+	CPointDouble GetConnectionPointII()
+	{
+		return m_NullPointConnectionPointII;
+	};
+	
+	void SetDrehWinkelForBorederPoint(double DrehWinkel);
+
+	CPointDouble GetEndPointCenterLine();
+	void SetEndPointCenterLine(double& CumulatedArc);
+	//void calculatePunktEndePunktForKnick(double winkel, CGraficRohrKomponente StrangRohr, double x, double y, double& x3, double& y3);
+	//void CalculateWinkel(CGraficRohrKomponente StrangRohr, double dFaktor, double xDelta2, double yDelta2);
+	
+	CRohrKomponente* GetLogicalRohrKomponente(){ return &m_LogicRohrKomponente;};
+	
+
+	
+
+	~CGraficRohrKomponente(void);
+};
+
+typedef std::vector<CGraficRohrKomponente> CGraficRohrKomponenteVector;

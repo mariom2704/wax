@@ -1,0 +1,37 @@
+        table,
+        p,
+        blockqoute 
+        { 
+         orphans :20;
+        }
+        
+        .arialfontsixteen
+		{
+			font: bold 16px arial;
+			font-size: 16px;
+		}
+		
+		
+		.arialbold
+		{			
+			font-weight: bold;
+		}
+	
+		.arialtwelve
+		{
+			font-size: 13px;
+			font-family: Arial;
+		}
+		
+		.divinline
+		{
+			display: inline;
+		}
+           
+		.aligncenter
+		{
+			text-align: center;
+		}
+    
+        
+   

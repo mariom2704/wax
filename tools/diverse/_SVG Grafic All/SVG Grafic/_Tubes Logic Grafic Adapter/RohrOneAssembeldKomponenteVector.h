@@ -1,0 +1,45 @@
+#pragma once
+
+
+
+
+
+
+class WAXGLDLL CCRohrOneAssembeldKomponenteVector : public CRohrOneAssembeldKomponenteVector
+{
+ private:
+	 int m_iFromWhere, m_iToCurrent;
+	 double m_dRelativerAbstand; 
+	
+	std::vector<int>::size_type size()
+	{
+		return CRohrOneAssembeldKomponenteVector::size();
+	}
+	
+	 // Logische Zusammenfassung von Komponeten zu einem Bemassungs objekt(im allgemeinen Bestweht dieses
+	 // aus einem Teilrohr mit Nut oder Bogen usw.
+	 CRohrBemassungsKomponentenVectorVector m_BemassungsKomponentenVectorVector;
+	// Alle Komponenten zum erstellen eines Rohres
+	CRohrKomponenteVectorVector m_AssembeldCommonTubeVectorVector;
+ public:
+	CCRohrOneAssembeldKomponenteVector(void);
+	~CCRohrOneAssembeldKomponenteVector(void);
+
+	CCRohrOneAssembeldKomponenteVector* GetNewAddedCommonChildToVector();
+	bool HasAssembeldCommonTubes();
+	CRohrKomponenteVectorVector& GetAssembledCommonTubeVectorVector();
+
+
+	CCRohrOneAssembeldKomponenteVector* GetNewAddedChildToBemassungsVector();
+	void AddComponenteForTube(CRohrKomponente* pRohrKomponente);
+	
+    int  NumberOfComponents()
+	{
+		return (int) size();
+	}
+	bool HasChildTubes();
+	CRohrBemassungsKomponentenVectorVector& GetBemassungsKomponentenVectorVector();
+
+	double GetRelativerAbstandzumNaechsten();
+	void SetRelativerAbstandNextNeigbour(double dRelativerAbstand );
+};

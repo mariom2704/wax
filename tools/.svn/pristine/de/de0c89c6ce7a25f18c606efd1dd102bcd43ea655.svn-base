@@ -1,0 +1,13 @@
+#pragma once
+
+
+class WAXGLDLL CCRohrOneAssembeldKomponenteVector : public CRohrOneAssembeldKomponenteVector
+{
+	
+public:
+	CCRohrOneAssembeldKomponenteVector(void);
+	~CCRohrOneAssembeldKomponenteVector(void);
+
+	CCRohrOneAssembeldKomponenteVector* m_pRohrOneAssembeldKomponenteVector;
+};
+

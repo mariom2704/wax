@@ -1,0 +1,426 @@
+Carlson Rechner
+mxodw34934
+Uslu Rechner
+64794
+
+lenz rechner
+mxodw40201
+
+
+AV Fertigung
+\\ODWERK1\PROD1\Fertigung
+
+ää
+
+joerg
+astrid123
+Zeiten m�ssen in einer Zeile seien f�r den Zeitantrag
+
+4533 2066-828
+
+504005401
+4305
+04533 / 861828
+
+Wax f�r Dritte
+V:\Software\Wax3
+
+https://100.65.168.216:443/shares
+********ICONS**** 
+http://individual.icons-land.com/icon/10353-eraser-icon
+
+WME4533421K208777
+
+DHL 00340433951002320287  00340434177224068854
+
+
+2a.bat ausf�hren f�r RNK
+
+Design GUI Tool 
+ 
+Balsamiq Mockups k�nnt ihr �ber NAL runterladen.
+Pfad: Technical Apllications --> Design
+ 
+Licence Name: Minimax GmbH & Co. KG
+
+Lizenzschl�ssel: eJzzzU/OLi0ods7PLUjMy8zPq/HNzMvMTaxQcM9N8lBQU3DO11Pwdq8xNDGzMLUwtLA0NDAwqHGusQQANvUR3w==
+Beste Gr��e
+
+
+V:\Konfiguratoren\1_RNK\Programmdaten\Datenbank
+
+V:\RNKBibo\Db Datenbank
+V:\RNKBibo\PipeCo\Dokumentation\PipeCo_ToDo_Programmierung.xlsx
+V:\RNKBibo\PipeCo
+unter V:\RNKBibo\InstDateien liegt das neue PipeCo Setup zum Testen.
+
+V:\RNKBibo\Db
+
+macio kiel
+
+Du hast doch Geschmack und Stil wei�t,was zusammen passt
+Welche Smart wirkt am besten
+
+rot schwarz 
+schwarz blau
+schwarz sliber
+grau silber
+
+
+SELECT werkauftrag FROM werkauftrag INNER JOIN status ON werkauftrag.waid = status.waid  WHERE (wanr = 0 OR 
+sachbesegment IS NULL OR sachbesegment = '') 
+AND NOT status.storniert AND (status.status=2 or status.status is null)
+
+
+SELECT MAX(wanr) FROM werkauftrag INNER JOIN status ON werkauftrag.waid = status.waid WHERE (  sdmaterialnr = 400010 OR  sdmaterialnr = 400011 )
+
+
+SELECT * FROM status where wanr in(  600000, 600001, 600002, 600003, 600004, 600005, 600002);
+
+SELECT * FROM status where waid = 774781
+
+-User: prietoj
+-Pass: winter 
+
+SELECT werkauftrag.* FROM werkauftrag INNER JOIN status ON werkauftrag.waid = status.waid  WHERE (wanr = 0 OR 
+sachbesegment IS NULL OR sachbesegment = '') 
+AND NOT status.storniert AND (status.status=2 or status.status is null)
+
+
+\\Odwerk1\prod1\Fertigung\Projekt\waxplus
+V:\GPS\20_Specialist-Documents\40_Test\20_Testpl�ne\10_PC
+
+N:\BM Service\02_Projekte\#Liste_Umgesetzte Change Requests_Entwicklungen_Verbesserungen
+
+
+
+P:\Technische-Anwendungen\Projekte\Rohrnetzkonfigurator\Projekte\Microstation
+P:\Technische-Anwendungen\Projekte\Rohrnetzkonfigurator\Dokumentation\Dictionary
+V:\GPS\10_Management-Documents\00_Policies+Templates
+
+V:\GPS\20_Specialist-Documents\20_Design\10_PipeCo\PipeCo
+
+mxLib 
+
+
+
+File Tranfer
+https://10.1.2.75/
+
+
+bootstrap sniped
+Browser reload on save
+
+javascript snipped
+
+get Xmarin
+
+telerik
+101 linq samples
+zen 
+ajaxload.info
+jscript handle bar
+
+lind 
+
+web Essentials
+
+EMS SQL Manament Studio
+rheinwerk verlag
+
+zoom it pr�sentation
+Resharper
+typescript
+angular
+ionic
+native script.org
+
+Produkt Key 2016
+X2Y2M-JQNTH-GV8CF-729BD-XHJVB
+
+T:\TechnischeAnwendungen\VisualStudio2015pro
+
+Heinssohn
+
+\\odmvsn\VOL1\GRUPPE\MVSN\WAXplus 
+V:\GPS\20_Specialist-Documents\20_Design\10_Stammdaten\20_Prozess-Doku\WAX2.0\Beispiele
+V:\GPS\20_Specialist-Documents\20_Design\10_Stammdaten\20_Prozess-Doku\WAX2.0
+
+V:\GPS\20_Specialist-Documents\20_Design\10_Stammdaten\PipeCo
+V:\GPS\20_Specialist-Documents\20_Design\10_Stammdaten\20_Prozess-Doku\PipeCo
+
+
+Hildebrandt, J�rg 
++49 4531 803-8049
+
+wax f�r Dritte 
+Christian; Heinsohn, Henning; Keller, Karl; Kurtius, Bj�rn; Morina, Muradija; Smak, Julian
+
+
+MXODN352\SQLEXPRESS
+
+DIR_WAXTOSAP	M:\WAXplus\projekte\was400.all
+
+schul17
+astrid	
+schuldner				
+
+
+26.02.2015
+09.03.2015
+
+7-000120-291-60-0002
+
+\\odinst\vol1\install\novell\zen\TECH\Ins_Waxplus_Lokal
+
+P:\Technische-Anwendungen\update\update_waxplus.bat
+
+
+Uslu 109 Rechner mxodw923
+Felberg  628  => Rechner mxodw350
+Lenz 617
+Carlson 441
+Scheel 749 RESER4T => 2
+Peter Jacobs 298
+Vanslambrouck
+
+void ArbeitSammelEingabeForm::prepareArbeitsfolgen()
+D:\Users\HILDEB~1\AppData\Local\Temp\wax\3Mx gebaeude.pdf
+
+
+SAP materialpreis
+P:\Technische-Anwendungen\Projekte\WAX+\Dokumentation\Schnittstellen\SAP_Schnittstelle\Preise-Aktualisieren
+
+
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+SELECT werkauftrag.isNextGeneration, werkauftrag.* FROM werkauftrag INNER JOIN status ON werkauftrag.waid = status.waid  WHERE sachbesegment = 'Herr Carlson'
+AND bearbeitungsdatum >= 423540000 AND bearbeitungsdatum <= 423549999 AND sap = 1 AND NOT status.storniert
+
+
+
+SELECT * FROM  anhang where filename like '%.5' LIMIT 0,10
+SELECT * FROM werkauftrag WHERE waid in (647666, 647602);
+SELECT * FROM status WHERE waid in (647666, 647602);
+
+SELECT werkauftrag.classid, werkauftrag.GUID, werkauftrag.*, status.* FROM werkauftrag
+INNER JOIN status ON werkauftrag.waid = status.waid  
+WHERE (wanr = 0 OR sachbesegment IS NULL OR sachbesegment = '')
+ 
+AND NOT status.storniert AND (status.status=2 or status.status is null)
+
+SELECT status.* FROM status WHERE  freigabedatum > 419675000 and wanr > 0
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+SELECT werkauftrag.posnr, werkauftrag.classid, status.* FROM werkauftrag, status WHERE werkauftrag.waid = status.waid  AND wanr = 81719
+
+
+\\halx1\sys\public\MXSoftwareCheck				Hannover
+\\halx1\vol1\Install\Novell\zen\Tech\ins_waxplus_lokal
+\\halx1\vol1\Gruppe\NL\WAXplus
+
+
+\\kolx1\vol1\gruppe\nl\waxplus
+
+\\hglx1\sys\public\MXSoftwareCheck				Hagen
+\\hglx1\vol1\Install\Novell\zen\Tech\ins_waxplus_lokal
+\\hglx1\vol1\Gruppe\NL\WAXplus
+
+\\eslx1\sys\public\MXSoftwareCheck				essen
+\\eslx1\vol1\Install\Novell\zen\Tech\ins_waxplus_lokal
+\\eslx1\vol1\Gruppe\NL\WAXplus
+
+\\rnlx1 Solar
+\\Relx1\sys\public\MXSoftwareCheck				Reinfeld
+\\Relx1\vol1\Install\Novell\zen\Tech\ins_waxplus_lokal
+
+\\Relx1\vol1\gruppe\nl\waxplus
+\\rnlx1\vol1\Gruppe\NL\WAXplus aus
+\\halx1\vol1\gruppe\nl\waxplus aus
+\\aplx1\vol1\Gruppe\NL\WAXplus
+\\hglx1\vol1\gruppe\nl\waxplus aus
+\\frlx1\vol1\Gruppe\NL\WAXplus aus
+\\eslx2\vol1\Gruppe\NL\WAXplus
+
+
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+Magic Nummer nur wenn sich der Stream �ndert
+#define MAGIC
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+AV Fertigung
+\\ODWERK1\PROD1\Fertigung
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+NichtGesetzt	= 0,
+Positioniert	= 1,	
+Freigegeben	= 2,	//Werkauftrag wurde vom User freigegeben
+InBearbeitungAv = 3,	//Werkauftrag wurde im SegmentRohr eingelesen
+FreigegebenAv	= 4,	//Werkauftrag wurde im SegmentRohr freigegeben und nach SAP �bertragen
+Preisanfrage    = 7,    
+Angebot         = 8,    
+Storniert		= 10,
+PreisanfrageStorniert   = 11, 
+AngebotAbgelehnt	= 12,
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+V:\MV Pipe\01 Projektteams\09 Controlling\Analyse FAUF\WAX-Daten
+\\ODINST\Install\Novell\Zen\
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+wax Update
+P:\Technische-Anwendungen\Testumgebung\StammdatenUpdate\spanx_wax
+Wax checkliste
+P:\Technische-Anwendungen\update\Dokumentation
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+waxplus lokal in den B�ros
+\\Relx1\vol1\Install\Novell\Zen\tech\ins_waxplus_lokal
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Produktoionsserver
+odwax2 odwaxDB
+Testserver
+odwax
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+Felberg  
+\\Odnwcl_verwt_server\vw\Alle\FM_UL-Zulassung_Chemie\Wax CO2 Verteiler
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+install svg
+X:\Install\Novell\Zen\Tech\Ins_SVG_Viewer
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Software\Minimax\Wax+\Database]
+"Path"="D:\\work\\bin\\Wax\\Release\\DATENBANKEN\\waxuser.mdb"
+"Path2"=""
+"Name"=""
+"Name2"=""
+"prompt"=dword:00000000
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+boost lib32 richtig umbenennen
+
+z.B
+lib32_vs2010 libs32
+
+richtigen DOS Compiler aufrufen  und dann 
+
+
+und los gehts
+
+
+nmake all
+
+bjam --toolset=msvc-9.0 address-model=32 architecture=x86 --build-type=complete stage
+bjam --toolset=msvc-9.0 address-model=64 --build-type=complete stage
+
+
+bjam --toolset=msvc-10.0 address-model=32 architecture=x86  --build-type=complete stage
+bjam --toolset=msvc-10.0 address-model=64 --build-type=complete stage
+mysql -h odwax2 -u wax+ -pro;;;;;;;;;
+nmake /F Makefile all
+bjam --toolset=msvc-9.0 address-model=64 --build-type=complete stage
+
+b2 --toolset=msvc-9.0 address-model=64 --build-type=complete
+
+
+Parser classe
+CadXmlParser
+cmd /k copy /v /y ..\bin\release\wa.exe "p:\Technische-Anwendungen\Testumgebung\wax"
+cmd /k copy /v /y ..\bin\release\*.dll "p:\Technische-Anwendungen\Testumgebung\wax"
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Wax neues update erzeugen
+IDS_MAINFRAME wax nummer aendern 
+Versions info �ndern
+
+Magic Nummer nur wenn sich der Stream �ndert
+#define MAGIC
+
+
+void dump_att(string name, DOM::AttributeList& att)
+		{
+/*
+#ifdef _DEBUG
+			TRACE("%s\n", name.c_str());
+			for (unsigned int i = 0; i < att.getLength(); i++)
+				TRACE("-> %s = %s\n", XStr(att.getName(i)).to_string().substr(0,255).c_str(), XStr(att.getValue(i)).to_string().substr(0,255).c_str());
+#endif
+*/
+		}
+
+*((afoNummern).m_pData+4)
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+svn
+hildebrandtj
+wax
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+sqLMY
+Testwaxserver
+root
+
+Waxserver
+admin
+lgabm5
+
++++++++++++++++++++++++++
+
+intgrated product and processing  endineering
+
+//Test
+[WaxFreigabe]
+Port=15000
+Server=odwaxtst01
+
+//Produktiv
+[WaxFreigabe]
+Port=19000
+Server=odefd
+
+
+   CC: Bj�rn Kurtius (KurtiusB@viking-emea.com) Gelesen 04.11.2015 08:43   
+    CC: Christian Breidenbach (BreidenbachC@viking-emea.com) Von Fremdhersteller heruntergeladen 04.11.2015 08:18   
+    CC: Henning Heinsohn (HeinsohnH@viking-emea.com) Gelesen 04.11.2015 08:19   
+    CC: Jan Meletzki (MeletzkiJ@viking-emea.com) Gelesen 04.11.2015 08:23   
+    CC: Julian Smak (SmakJ@viking-emea.com) Beantwortet 04.11.2015 08:23   
+    An: Karl Keller (KellerK@viking-emea.com) Von Fremdhersteller heruntergeladen 04.11.2015 08:18   
+    CC: Muradija Morina (MorinaM@viking-emea.com) Gelesen 04.11.2015 08:30   
+ 
+
+Man sieht die Sonne langsam untergehen und erschrickt doch, wenn es pl�tzlich dunkel wird/ist."
+ 
+ 
+ 
+ 
+
+

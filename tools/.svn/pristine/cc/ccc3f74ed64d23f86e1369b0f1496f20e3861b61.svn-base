@@ -1,0 +1,46 @@
+#include "stdafx.h"
+
+
+#include "Tubes it self\\StrangRohr.h"
+
+#include ".\Grafic\SVG File Operations\GraficFileController.h"
+#include ".\Grafic\Mechanicals Geometrics\StrangrohrGrafic.h"
+#include ".\Grafic\Mechanicals Geometrics\GraficRohrKomponente.h"
+
+#include "..\Controller\GraficController.h"
+
+CGraficController::CGraficController(void)
+{
+}
+
+
+
+void CGraficController::GenerateDrawingOfTubes(CRohrKomponenteVector StrangRohrVector)
+{
+		m_StrangRohrKomponenten = StrangRohrVector;
+		
+		std::vector<int>::size_type sz = m_StrangRohrKomponenten.size();
+		m_GraficRohrKomponentenContainer.clear();
+		CGraficRohrContainer RohrGrafic(this, m_GraficRohrKomponentenContainer);
+		for(UINT i = 0; i < sz; i++ )
+		{
+			CGraficRohrKomponente* pGraficRohrKomponente = (*m_StrangRohrKomponenten[i]).GetGraficRohrKomponente();
+			m_GraficRohrKomponentenContainer.push_back(pGraficRohrKomponente);
+		}
+		
+		m_GraficFileController.CreateSVGFile("D:\\work\\samples\\tools\\diverse\\SVG  Grafic\\Debug\\HTML Test\\Test.svg");
+
+		RohrGrafic.CreateGraficModell();
+		
+		m_GraficFileController.strSVGContent+= "</svg>";
+		m_GraficFileController.WriteSVGContent();
+		m_pHtmlView->Navigate("D:\\work\\samples\\tools\\diverse\\SVG  Grafic\\Debug\\HTML Test\\Test.html", NULL, NULL, NULL, NULL);
+}
+
+
+
+
+
+CGraficController::~CGraficController(void)
+{
+}

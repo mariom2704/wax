@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="SplitterWindowTutorial.cpp" />
+    <ClCompile Include="HtmlTestview.cpp" />
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="SplitterWindowTutorialDoc.cpp" />
+    <ClCompile Include="SplitterWindowTutorialView.cpp" />
+    <ClCompile Include="TestEingabe.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SplitterWindowTutorial.h" />
+    <ClInclude Include="HtmlTestview.h" />
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="SplitterWindowTutorialDoc.h" />
+    <ClInclude Include="SplitterWindowTutorialView.h" />
+    <ClInclude Include="TestEingabe.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+    <None Include="SplitterWindowTutorial.aps" />
+    <None Include="res\MDIFrameBackground.ico" />
+    <None Include="res\Toolbar.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SplitterWindowTutorial.rc" />
+  </ItemGroup>
+</Project>

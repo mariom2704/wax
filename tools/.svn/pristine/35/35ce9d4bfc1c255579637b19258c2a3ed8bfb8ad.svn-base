@@ -1,0 +1,62 @@
+#pragma once
+
+#include "Tubes it self\StrangRohr.h"
+
+
+
+class CGraficRohrKomponente
+{
+private:
+	 CRohrKomponente m_LogicRohrKomponente;
+	
+
+	 CPointDouble m_PointAnfangCenterLinie;
+	 CPointDouble m_PointEndeCenterLinie;
+	 CPointDouble m_FirstBorderPoint;
+	 CPointDouble m_xNullPunktBeginAussenWandBefore;
+	 CPointDouble m_xNullPunktSecondWandPoint;
+	 CPointDouble m_NullPointConnectionPoint;
+	 int m_DrehWinkel; 
+	 CPointDouble  DeltaPitch;; 
+		
+	
+
+public:
+	CGraficRohrKomponente(CRohrKomponente LogicRohrKomponente);
+	
+	
+	void SetStartPointCenterLine(CPointDouble StartPoint);
+	void SetPitch();
+	CPointDouble GetPitch();
+	CPointDouble getStartPointCenterLine();
+	
+	void SetFirstBorderpoint(double CumulatedArcBefore);
+	CPointDouble GetFirstBorderpoint();
+	void SetSecondBorderpoint(double CumulatedArcBefore);
+	CPointDouble GetsecondBorderpoint();
+	void SetConnectionPoint(CPointDouble ConnectionPoint)
+	{
+		m_NullPointConnectionPoint = ConnectionPoint;
+	};
+
+	CPointDouble GetConnectionPoint()
+	{
+		return m_NullPointConnectionPoint;
+	};
+	
+	void SetDrehWinkelForBorederPoint(double DrehWinkel);
+
+	CPointDouble GetEndPointCenterLine();
+	void SetEndPointCenterLine(double& CumulatedArc);
+	//void calculatePunktEndePunktForKnick(double winkel, CGraficRohrKomponente StrangRohr, double x, double y, double& x3, double& y3);
+	//void CalculateWinkel(CGraficRohrKomponente StrangRohr, double dFaktor, double xDelta2, double yDelta2);
+	
+	CRohrKomponente* GetLogicalRohrKomponente(){ return &m_LogicRohrKomponente;};
+	
+
+	
+
+	~CGraficRohrKomponente(void);
+};
+
+typedef std::vector<CGraficRohrKomponente> CGraficRohrKomponenteVector;

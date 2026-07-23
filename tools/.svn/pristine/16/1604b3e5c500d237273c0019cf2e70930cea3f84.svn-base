@@ -1,0 +1,71 @@
+#include "StdAfx.h"
+
+#include "RohrKomponente.h"
+
+#include "RohrOneAssembeldKomponenteVector.h"
+
+
+CCRohrOneAssembeldKomponenteVector::CCRohrOneAssembeldKomponenteVector(void)
+{
+	m_iFromWhere = -1;
+}
+
+
+
+CCRohrOneAssembeldKomponenteVector* CCRohrOneAssembeldKomponenteVector::GetNewAddedChildAssembeldTube()
+{
+	CCRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVector = new CCRohrOneAssembeldKomponenteVector();
+	m_AssembeldTubeVector.push_back(pRohrOneAssembeldKomponenteVector);
+	
+	return pRohrOneAssembeldKomponenteVector;
+}
+
+
+
+CRohrKomponenteVector& CCRohrOneAssembeldKomponenteVector::GetChildAssembeldTubes()
+{	
+	return  m_AssembeldTubeVector; 
+}
+
+
+
+bool CCRohrOneAssembeldKomponenteVector::HasAssembeldTubes()
+{	
+	return  m_AssembeldTubeVector.size() > 0 ?  true : false; 
+}
+
+
+
+void CCRohrOneAssembeldKomponenteVector::AddComponenteForTube(CRohrKomponente* pRohrKomponente)
+{
+	push_back(pRohrKomponente);
+}
+
+
+
+void CCRohrOneAssembeldKomponenteVector::CumulateBemassungscomponents()
+{
+	std::vector<int>::size_type sz  = size();
+
+	for(int k = 0; k < (int)sz; k++)
+	{
+		 CBemassungsRohrKomponentenVector* pBemassungsRohrKomponentenVector = new CBemassungsRohrKomponentenVector();
+		 int i = 0;
+		 for(int i = m_iFromWhere; i < m_iToCurrent; i++)
+		 {
+			 CRohrKomponente* pRohrKomponente =  at(i);
+			 pBemassungsRohrKomponentenVector->push_back(pRohrKomponente); 
+			 if(pRohrKomponente->GetKlassenName() == CRohrKomponente::RohrKomponenteBogen)
+			 {
+				 break;
+			 }
+		 }
+		 m_iFromWhere = i;
+	}
+}
+
+
+
+CCRohrOneAssembeldKomponenteVector::~CCRohrOneAssembeldKomponenteVector(void)
+{
+}

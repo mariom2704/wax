@@ -1,0 +1,160 @@
+#pragma once
+
+
+class CGraficRohrKomponente
+{
+protected:
+	 CRohrKomponente m_LogicRohrKomponente;
+	 CGraficRohrContainer* m_pGraficRohrContainer;
+
+
+private:
+
+	 CPointDouble m_PointAnfangCenterLinie;
+	 CPointDouble m_PointEndeCenterLinie;
+	 CPointDouble m_FirstBorderPoint;
+	 CPointDouble m_xNullPunktBeginAussenWandBefore, m_xNullPunktSecondAussenWandBefore;
+	 CPointDouble m_xNullPunktThirdWandPoint, m_xNullPunktForthWandPoint;
+	 CPointDouble m_NullPointConnectionPoint, m_NullPointConnectionPointII;
+	 CPointDouble m_FirstCornerPoint, m_SecondCornerPoint, m_ThridCornerPoint, m_ForthCornerPoint;
+	 int m_DrehWinkel; 
+	 
+	 CPointDouble  DeltaPitch;
+	 double m_CumulatedWinkelRohrZuXundYAchse;
+	
+	
+		
+protected:
+	double m_KomponentenWinkel;
+	
+
+public:
+	CGraficRohrKomponente(CGraficRohrContainer*, CRohrKomponente LogicRohrKomponente);
+	CGraficRohrKomponente(CGraficRohrContainer*, CRohrKomponente *pLogicRohrKomponente);
+	CGraficRohrKomponente();
+
+	virtual void SetGraficRohrKomponentenWinkel(CGraficRohrKomponente* GraficRohrKomponente);
+	
+	
+	void SetStartPointCenterLine(CPointDouble StartPoint);
+	void SetPitchForCenterLinie();
+	CPointDouble GetPitchCenterLinie();
+	CPointDouble getStartPointCenterLine();
+	
+	void SetFirstCornerPoint(CPointDouble FirstCornerPoint);
+	CPointDouble  GetFirstCornerPoint();
+	void SetSecondCornerPoint(CPointDouble FirstCornerPoint);
+	CPointDouble  GetSecondCornerPoint();
+	void SetThirdCornerPoint(CPointDouble ThridCornerPoint);
+	CPointDouble GetThridCornerPoint();
+	void SetForthCornerPoint(CPointDouble FirstCornerPoint);
+	CPointDouble  GetForthCornerPoint();
+
+	void SetFirstBorderpoint(double CumulatedArcBefore);
+	CPointDouble GetFirstBorderpoint();
+	void SetSecondBorderpoint(double CumulatedArcBefore);
+	CPointDouble GetSecondBorderpoint();
+	void SetThirdBorderpoint(double CumulatedArcBefore);
+	CPointDouble GetThirdBorderpoint();
+	void SetFourthBorderpoint(double CumulatedArcBefore);
+	CPointDouble GetForthBorderpoint();
+	void SetConnectionPoint(CPointDouble ConnectionPoint)
+	{
+		m_NullPointConnectionPoint = ConnectionPoint;
+	};
+
+	CPointDouble GetConnectionPoint()
+	{
+		return m_NullPointConnectionPoint;
+	};
+
+	void SetConnectionPointII(CPointDouble ConnectionPoint)
+	{
+		m_NullPointConnectionPointII = ConnectionPoint;
+	};
+
+	CPointDouble GetConnectionPointII()
+	{
+		return m_NullPointConnectionPointII;
+	};
+	
+
+
+	CPointDouble GetEndPointCenterLine();
+	double SetEndPointCenterLine(double CumulatedArc);
+
+	double GetWinkelRohrZuXundYAchse()
+	{   
+		return m_CumulatedWinkelRohrZuXundYAchse;
+		
+	}
+	
+	CRohrKomponente* GetLogicalRohrKomponente(){ return &m_LogicRohrKomponente;};
+	virtual void DrawYourSelf(CString& strSVGContent);
+	void ZeichneLinie(CString& strPost, double x1, double y1, double x2,  double y2);
+	void ZeichneLinie(CString& strPost, CString strFarbe, double x1, double y1, double x2,  double y2);
+	void ZeichneLinie(CString& strPost, int stroke, double x1, double y1, double x2, double y2);
+
+
+	virtual void SetKomponentPointfromConectonPoint(CString&){return;};
+	
+
+	~CGraficRohrKomponente(void);
+};
+
+
+
+class CGraficRohrKomponenteTeilRohr: public  CGraficRohrKomponente
+{
+	double m_RadiusFirstBorder;
+	double m_RadiusSecondBorder;
+	double m_RadiusCenterLinie;
+public:
+	CGraficRohrKomponenteTeilRohr(CGraficRohrContainer*, CRohrKomponente LogicRohrKomponente );
+	CGraficRohrKomponenteTeilRohr(CGraficRohrContainer*, CRohrKomponente *pLogicRohrKomponente);
+
+};
+
+
+class CGraficRohrKomponenteBogen : public  CGraficRohrKomponente
+{
+		double m_RadiusFirstBorder;
+		double m_RadiusSecondBorder;
+		double m_RadiusCenterLinie;
+	public:
+		CGraficRohrKomponenteBogen(CGraficRohrContainer*, CRohrKomponente LogicRohrKomponente);
+		CGraficRohrKomponenteBogen(CGraficRohrContainer*, CRohrKomponente *pLogicRohrKomponente);
+		virtual void SetKomponentPointfromConectonPoint(CString& strPost);
+		virtual void DrawYourSelf(CString& strSVGContent);
+		virtual void SetGraficRohrKomponentenWinkel(CGraficRohrKomponente* GraficRohrKomponente);
+		
+	void SetGraficRohrKomponentenWinkelDirect(double Winkel)
+	{
+		m_KomponentenWinkel = Winkel;
+	}
+
+	double  GetGraficRohrKomponentenWinkel()
+	{
+		return m_KomponentenWinkel;
+	}
+	
+	};
+
+
+class CGraficRohrKomponenteNut : public  CGraficRohrKomponente
+{
+	private:
+		CPointDouble m_RohrFirstEndPoint, m_RohrFirstEndPointI;
+		CPointDouble m_RohrSecondEndPoint, m_RohrSecondEndPointI;
+		CPointDouble m_RohrThridEndPoint, m_RohrThridEndPointI; 
+		CPointDouble m_RohrForthEndPoint, m_RohrForthEndPointI; 
+	public:
+		CGraficRohrKomponenteNut(CGraficRohrContainer*, CRohrKomponente LogicRohrKomponente);
+		CGraficRohrKomponenteNut(CGraficRohrContainer*, CRohrKomponente *pLogicRohrKomponente);
+		virtual void SetKomponentPointfromConectonPoint(CString& strPost);
+		virtual void DrawYourSelf(CString& strSVGContent);
+};
+
+
+
+

@@ -1,0 +1,134 @@
+#pragma once
+
+
+class CGraficRohrKomponente;
+class CGraficRohrKomponenteTeilRohr;
+class CGraficRohrKomponenteBogen;
+class CGraficRohrContainer;
+
+
+class CRohrKomponente
+{
+private:
+	
+	 bool m_FirstKomponent;
+	
+public:
+	CRohrKomponente(void);
+
+	~CRohrKomponente(void);
+	double GetWinkel()
+	{
+		return winkel;
+	};
+	int GetDn()
+	{
+		return m_iDN;
+	};
+
+	int SetDn(int iDN)
+	{
+		m_iDN = iDN;
+	};
+
+	int GetRadius()
+	{
+		return m_iDN/2;
+	};
+
+	void SetFirstKomponent()
+	{
+		m_FirstKomponent = true;
+	}
+
+	bool GetFirstKomponent()
+	{
+		return m_FirstKomponent;
+	}
+
+	void SetRadius(int iLocalRedius)
+	{
+		m_iDN = iLocalRedius * 2;
+		return;
+	};
+	void SetWinkel(double lWinkel)
+	{
+		winkel = lWinkel;
+	};
+	int GetLaenge()
+	{
+		return iLaenge;
+	};
+
+	void SetLaenge(int iLocalLaenge)
+	{
+		iLaenge = iLocalLaenge;
+	};
+
+	void SetprevStrangRohr(CRohrKomponente* prevStrangRohr)
+	{
+		m_prevStrangRohr = prevStrangRohr;
+	};
+
+	CRohrKomponente* GetprevStrangRohr()
+	{
+		return m_prevStrangRohr;
+	};
+
+	void SetnextStrangRohr(CRohrKomponente* nextStrangRohr)
+	{
+		m_pNextStrangRohr = nextStrangRohr;
+	};
+
+	
+	CRohrKomponente* GetnextStrangRohr()
+	{
+		return m_pNextStrangRohr;
+	};
+
+	
+	
+	virtual CGraficRohrKomponente* GetGraficRohrKomponente(CGraficRohrContainer* StrangRohrVector);
+	
+
+
+private:
+	int m_iDN;
+	int iLaenge;
+	int NutIdEnde;
+	int NutIdAnfang;
+	double winkel;
+	CRohrKomponente* m_prevStrangRohr;
+	CRohrKomponente* m_pNextStrangRohr;
+protected:
+	CGraficRohrKomponente* m_pGraficRohrKomponente;
+
+};
+
+
+
+
+class CRohrKomponenteTeilRohr : public CRohrKomponente
+{
+	virtual CGraficRohrKomponente*  GetGraficRohrKomponente(CGraficRohrContainer* StrangRohrVector);
+};
+
+
+
+
+class CRohrKomponenteBogen : public CRohrKomponente
+{
+	
+	virtual CGraficRohrKomponente* GetGraficRohrKomponente(CGraficRohrContainer* StrangRohrVector);
+};
+
+
+
+
+class CRohrKomponenteNut : public CRohrKomponente
+{
+	virtual CGraficRohrKomponente* GetGraficRohrKomponente(CGraficRohrContainer* StrangRohrVector);
+};
+
+
+typedef std::vector<CRohrKomponente*> CRohrKomponenteVector;

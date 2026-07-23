@@ -1,0 +1,387 @@
+
+#include "stdafx.h"
+
+#include "SplitterWindowTutorial.h"
+#include "..\SVG Grafic\_Tubes Logic Grafic Adapter\RohrKomponente.h"
+#include "..\SVG Grafic\_Tubes Logic Grafic Adapter\RohrBemassungsAnbauChildKomponentenVectorVector.h"
+#include "..\SVG Grafic\_Tubes Logic Grafic Adapter\RohrBemassungsRohrKomponentenVector.h"
+#include "..\SVG Grafic\_Tubes Logic Grafic Adapter\RohrBemassungsRohrKomponentenVectorVector.h"
+#include "..\SVG Grafic\_Tubes Logic Grafic Adapter\RohrOneAssembeldKomponenteVector.h"
+
+#include "..\SVG Grafic\SVG File Operations\GraficFileController.h"
+#include "..\SVG Grafic\Mechanicals Geometrics\GraficTubeController.h"
+#include "..\SVG Grafic\Mechanicals Geometrics\GraficRohrKomponente.h"
+
+#include "..\SVG Grafic\Controller\GraficController.h"
+#include "TestEingabe.h"
+#include "MainFrm.h"
+
+#include <math.h>
+
+
+
+
+IMPLEMENT_DYNCREATE(CTestEingabe, CFormView)
+
+
+
+
+
+CTestEingabe::CTestEingabe()
+	: CFormView(CTestEingabe::IDD)
+{
+
+}
+
+
+
+
+CTestEingabe::~CTestEingabe()
+{
+	delete m_pGraficController;
+}
+
+
+
+void CTestEingabe::DoDataExchange(CDataExchange* pDX)
+{
+	CFormView::DoDataExchange(pDX);
+}
+
+
+
+BEGIN_MESSAGE_MAP(CTestEingabe, CFormView)
+	ON_BN_CLICKED(IDC_BUTTON1, &CTestEingabe::OnBnClickedButton1)
+	ON_BN_CLICKED(IDC_BUTTON2, &CTestEingabe::OnBnClickedButton2)
+	ON_BN_CLICKED(IDC_BUTTON3, &CTestEingabe::OnBnClickedButton3)
+	ON_BN_CLICKED(IDC_BUTTON4, &CTestEingabe::OnBnClickedButton4)
+	ON_BN_CLICKED(IDC_BUTTON5, &CTestEingabe::OnBnClickedButton5)
+	ON_BN_CLICKED(IDC_BUTTON6, &CTestEingabe::OnBnClickedButton6)
+END_MESSAGE_MAP()
+
+
+
+
+
+
+void CTestEingabe::OnInitialUpdate()
+{
+	CFormView::OnInitialUpdate();
+	CMainFrame*  pF =  (CMainFrame*)AfxGetMainWnd();
+	m_pHTML = (CHtmlTestview*) pF->m_mainSplitter.GetPane(1,0);
+	m_pGraficController = new CGraficController(m_pHTML);
+	PostMessage(WM_COMMAND, IDC_BUTTON1);
+}
+
+
+
+void CTestEingabe::AddChildren(int RelativerAbstandzumNaechsten)
+{
+	CCRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVector = pRohrOneAssembeldKomponenteVector->GetNewAddedCommonChildToVector();
+
+	CRohrKomponenteTeilRohr* Rohrstutzen = new CRohrKomponenteTeilRohr();
+	CRohrKomponenteNut* StrangRohrnNut   = new CRohrKomponenteNut();
+
+	pRohrOneAssembeldKomponenteVector->SetRelativerAbstandNextNeigbour(RelativerAbstandzumNaechsten);
+	Rohrstutzen->SetLaenge(80);
+	Rohrstutzen->SetDn(25);
+	CString mm = _T("RohrstutzenTeilRohr");
+	if(RelativerAbstandzumNaechsten == 50)
+	{
+		mm += _T("50");
+	}
+	Rohrstutzen->SetName(mm);
+	
+	pRohrOneAssembeldKomponenteVector->AddComponenteForTube(Rohrstutzen);
+	
+	StrangRohrnNut->SetLaenge(10);
+	StrangRohrnNut->SetDn(25);
+	mm = _T("RohrstutzenNut");
+	if(RelativerAbstandzumNaechsten == 50)
+	{
+		mm += _T("50");
+	}
+	Rohrstutzen->SetName(mm);
+	pRohrOneAssembeldKomponenteVector->AddComponenteForTube(StrangRohrnNut);
+	
+}
+
+
+
+void CTestEingabe::OnBnClickedButton2()
+{
+	 pRohrOneAssembeldKomponenteVector = new CCRohrOneAssembeldKomponenteVector();
+	
+
+	CRohrKomponenteTeilRohr StrangRohrI, StrangRohrII;
+	CRohrKomponenteBogen  RohrKomponenteBogen;
+	CRohrKomponenteNut StrangRohrnNut;
+	CRohrKomponenteGlatt StrangRohrnGlatt;
+
+	StrangRohrnNut.SetWinkel(0);
+	StrangRohrnNut.SetLaenge(10);
+	StrangRohrnNut.SetFirstKomponent();
+	pRohrOneAssembeldKomponenteVector->push_back(&StrangRohrnNut);
+			
+   	StrangRohrI.SetWinkel( 0 );
+	StrangRohrI.SetLaenge(550);
+	pRohrOneAssembeldKomponenteVector->push_back(&StrangRohrI);
+	
+	RohrKomponenteBogen.SetLaenge(80);
+	pRohrOneAssembeldKomponenteVector->push_back(&RohrKomponenteBogen);
+
+	StrangRohrII.SetWinkel(-80);
+	StrangRohrII.SetLaenge(300);
+	pRohrOneAssembeldKomponenteVector->push_back(&StrangRohrII);
+	
+	StrangRohrnGlatt.SetWinkel( 0 );
+	StrangRohrnGlatt.SetLaenge(1);
+	pRohrOneAssembeldKomponenteVector->push_back(&StrangRohrnGlatt);
+	
+	m_pGraficController->GenerateDrawingOfTubes(pRohrOneAssembeldKomponenteVector);
+	CCRohrOneAssembeldKomponenteVector::ClearMeMySelf(pRohrOneAssembeldKomponenteVector);
+}
+
+
+
+
+void CTestEingabe::OnBnClickedButton4()
+{/*
+	CCRohrOneAssembeldKomponenteVector.ClearMeMySelf(&RohrOneAssembeldKomponenteVector);
+
+	CRohrKomponenteTeilRohr StrangRohrI, StrangRohrII;
+	CRohrKomponenteBogen  RohrKomponenteBogen;
+	CRohrKomponenteNut StrangRohrnNut;
+	CRohrKomponenteGlatt StrangRohrnGlatt;
+
+	StrangRohrnNut.SetWinkel(0);
+	StrangRohrnNut.SetLaenge(5);
+	StrangRohrnNut.SetFirstKomponent();
+	RohrOneAssembeldKomponenteVector.push_back(&StrangRohrnNut);
+	
+	StrangRohrI.SetWinkel(0);
+	StrangRohrI.SetLaenge(70);
+	RohrOneAssembeldKomponenteVector.push_back(&StrangRohrI);
+	
+	RohrKomponenteBogen.SetLaenge(40);
+	RohrOneAssembeldKomponenteVector.push_back(&RohrKomponenteBogen);
+	
+	StrangRohrII.SetWinkel(40);
+	StrangRohrII.SetLaenge(20);
+	RohrOneAssembeldKomponenteVector.push_back(&StrangRohrII);
+
+
+	StrangRohrnGlatt.SetWinkel( 0 );
+	StrangRohrnGlatt.SetLaenge( 0 );
+	RohrOneAssembeldKomponenteVector.push_back(&StrangRohrnGlatt);
+	
+	m_pGraficController->GenerateDrawingOfTubes(RohrOneAssembeldKomponenteVector);
+	*/
+}
+
+
+void CTestEingabe::OnBnClickedButton3()
+{/*
+	CCRohrOneAssembeldKomponenteVector.ClearMeMySelf(&RohrOneAssembeldKomponenteVector);
+
+	CRohrKomponenteTeilRohr StrangRohrI, StrangRohrII, StrangRohrIII, StrangRohrIV, StrangRohrV, StrangRohrVI;
+	CRohrKomponenteBogen  RohrKomponenteBogen, RohrKomponenteBogenII, RohrKomponenteBogenIII, RohrKomponenteBogenIV;
+	CRohrKomponenteNut StrangRohrnNutI, StrangRohrnNutII;
+	
+	
+	StrangRohrnNutI.SetWinkel(0);
+	StrangRohrnNutI.SetLaenge(10);
+	StrangRohrnNutI.SetFirstKomponent();
+	RohrOneAssembeldKomponenteVector.push_back(&StrangRohrnNutI);
+	
+	
+   	StrangRohrI.SetWinkel( 0 );
+	StrangRohrI.SetLaenge(500);
+	RohrOneAssembeldKomponenteVector.push_back(&StrangRohrI);
+	
+	AddChildren(30);
+
+	AddChildren(110);
+
+	AddChildren(400);
+
+	RohrKomponenteBogen.SetLaenge(50);
+	RohrOneAssembeldKomponenteVector.push_back(&RohrKomponenteBogen);
+	
+	StrangRohrII.SetWinkel( -40 );
+	StrangRohrII.SetLaenge(100);
+	RohrOneAssembeldKomponenteVector.push_back(&StrangRohrII);
+
+	
+	RohrKomponenteBogenII.SetLaenge(50);
+	RohrOneAssembeldKomponenteVector.push_back(&RohrKomponenteBogenII);//RohrOneAssembeldKomponenteVector.push_back(&StrangRohrIII);
+
+	StrangRohrIV.SetWinkel( 40 );
+	StrangRohrIV.SetLaenge(300);
+	RohrOneAssembeldKomponenteVector.push_back(&StrangRohrIV);
+
+//	AddChildren(&StrangRohrIV, 30);
+	
+//	AddChildren(&StrangRohrIV, 90);
+
+	RohrKomponenteBogenIII.SetLaenge(50);
+	RohrOneAssembeldKomponenteVector.push_back(&RohrKomponenteBogenIII);//RohrOneAssembeldKomponenteVector.push_back(&StrangRohrIII);
+
+	StrangRohrV.SetWinkel( 40 );
+	StrangRohrV.SetLaenge(100);
+	RohrOneAssembeldKomponenteVector.push_back(&StrangRohrV);
+
+
+
+	RohrKomponenteBogenIV.SetLaenge(50);
+	RohrOneAssembeldKomponenteVector.push_back(&RohrKomponenteBogenIV);//RohrOneAssembeldKomponenteVector.push_back(&StrangRohrIII);
+
+
+	StrangRohrVI.SetWinkel( -40 );
+	StrangRohrVI.SetLaenge(400);
+	RohrOneAssembeldKomponenteVector.push_back(&StrangRohrVI);
+	
+//	AddChildren(&StrangRohrVI, 30);
+
+	StrangRohrnNutII.SetWinkel( 0.1 );
+	StrangRohrnNutII.SetLaenge(10);
+	RohrOneAssembeldKomponenteVector.push_back(&StrangRohrnNutII);
+	
+	m_pGraficController->GenerateDrawingOfTubes(RohrOneAssembeldKomponenteVector);
+	*/
+}
+
+
+
+void CTestEingabe::OnBnClickedButton1()
+{
+	 pRohrOneAssembeldKomponenteVector = new CCRohrOneAssembeldKomponenteVector();
+
+
+	CRohrKomponenteTeilRohr StrangRohrI, StrangRohrII;
+	CRohrKomponenteBogen	RohrKomponenteBogen;
+	CRohrKomponenteNut		StrangRohrnNut;
+	CRohrKomponenteGlatt	StrangRohrnGlatt;
+
+
+	StrangRohrnNut.SetWinkel(0);
+	StrangRohrnNut.SetLaenge(10);
+	StrangRohrnNut.SetFirstKomponent();
+	pRohrOneAssembeldKomponenteVector->AddComponenteForTube(&StrangRohrnNut);
+			
+   	StrangRohrI.SetWinkel( 0 );
+	StrangRohrI.SetLaenge(750);
+	pRohrOneAssembeldKomponenteVector->AddComponenteForTube(&StrangRohrI);
+	//AddChildren(170);
+
+	
+
+	CCRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVectorChild = pRohrOneAssembeldKomponenteVector->GetNewAddedCommonChildToVector();
+
+	CRohrKomponenteTeilRohr RohrKomponenteTeilRohrChild;
+	CRohrKomponenteNut RohrKomponenteNutChild;
+
+	pRohrOneAssembeldKomponenteVectorChild->SetRelativerAbstandNextNeigbour(170);
+	RohrKomponenteTeilRohrChild.SetLaenge(80);
+	RohrKomponenteTeilRohrChild.SetDn(25);
+	CString mm = _T("RohrstutzenTeilRohr");
+	
+	RohrKomponenteTeilRohrChild.SetName(mm);
+	
+	pRohrOneAssembeldKomponenteVectorChild->AddComponenteForTube(&RohrKomponenteTeilRohrChild);
+	
+	RohrKomponenteNutChild.SetLaenge(10);
+	RohrKomponenteNutChild.SetDn(25);
+	mm = _T("RohrstutzenNut");
+	
+	RohrKomponenteNutChild.SetName(mm);
+	pRohrOneAssembeldKomponenteVectorChild->AddComponenteForTube(&RohrKomponenteNutChild);
+	
+
+	
+
+	//AddChildren(440);
+
+	/*
+	pRohrOneAssembeldKomponenteVectorChild = pRohrOneAssembeldKomponenteVector->GetNewAddedCommonChildToVector();
+
+	CRohrKomponenteTeilRohr RohrKomponenteTeilRohrChildII;
+	CRohrKomponenteNut RohrKomponenteNutChildII;
+
+	pRohrOneAssembeldKomponenteVectorChild->SetRelativerAbstandNextNeigbour(440);
+	RohrKomponenteTeilRohrChildII.SetLaenge(80);
+	RohrKomponenteTeilRohrChildII.SetDn(25);
+	mm = _T("RohrstutzenTeilRohr");
+	
+	RohrKomponenteTeilRohrChildII.SetName(mm);
+	
+	pRohrOneAssembeldKomponenteVectorChild->AddComponenteForTube(&RohrKomponenteTeilRohrChildII);
+	
+	RohrKomponenteNutChildII.SetLaenge(10);
+	RohrKomponenteNutChildII.SetDn(25);
+	mm = _T("RohrstutzenNut");
+	
+	RohrKomponenteNutChildII.SetName(mm);
+	pRohrOneAssembeldKomponenteVectorChild->AddComponenteForTube(&RohrKomponenteNutChildII);
+	*/
+
+
+	
+	RohrKomponenteBogen.SetLaenge(80);
+	pRohrOneAssembeldKomponenteVector->AddComponenteForTube(&RohrKomponenteBogen);
+
+	StrangRohrII.SetWinkel(-70);
+	StrangRohrII.SetLaenge(550);
+	pRohrOneAssembeldKomponenteVector->AddComponenteForTube(&StrangRohrII);
+	
+	StrangRohrnGlatt.SetWinkel(0);
+	StrangRohrnGlatt.SetLaenge(1);
+	pRohrOneAssembeldKomponenteVector->AddComponenteForTube(&StrangRohrnGlatt);
+	
+	m_pGraficController->GenerateDrawingOfTubes(pRohrOneAssembeldKomponenteVector);
+	CCRohrOneAssembeldKomponenteVector::ClearMeMySelf(pRohrOneAssembeldKomponenteVector);
+	
+	}
+
+void CTestEingabe::OnBnClickedButton5()
+{
+
+	::AfxBeginThread(CTestEingabe::TestThread,this, THREAD_BASE_PRIORITY_MIN, 0, 0);	
+	// TODO: Fügen Sie hier Ihren Kontrollbehandlungscode für die Benachrichtigung ein.
+}
+
+
+
+UINT CTestEingabe::TestThread(LPVOID pThis)
+{
+	while(true)
+	{
+		CTestEingabe* pTestEingabe = (CTestEingabe*) pThis;
+		pTestEingabe->PostMessageA(WM_COMMAND, IDC_BUTTON1);
+		Sleep(1000);
+		//pTestEingabe->PostMessageA(WM_COMMAND, IDC_BUTTON2);
+		//Sleep(1000);
+		//pTestEingabe->PostMessageA(WM_COMMAND, IDC_BUTTON4);
+		Sleep(1000);
+	}
+	return NULL;
+}
+
+
+CRohrOneAssembeldKomponenteVector RoneAssembeldKomponenteVector;
+
+void CTestEingabe::OnBnClickedButton6()
+{/*
+	CRohrKomponenteTeilRohr* pStrangRohr = new CRohrKomponenteTeilRohr();
+	CRohrKomponenteBogen*	pRohrKomponenteBogen  = new CRohrKomponenteBogen();
+
+	RohrOneAssembeldKomponenteVector.push_back(pStrangRohr);
+	RohrOneAssembeldKomponenteVector.push_back(pRohrKomponenteBogen);
+	CRohrKomponente*  pRohr= RohrOneAssembeldKomponenteVector.at(0);
+	delete pRohr;
+	pRohr = RohrOneAssembeldKomponenteVector.at(1);
+	delete pRohr;
+	RohrOneAssembeldKomponenteVector.erase(RohrOneAssembeldKomponenteVector.begin(), RohrOneAssembeldKomponenteVector.end());
+	*/
+	
+}

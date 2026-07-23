@@ -1,0 +1,91 @@
+#include "stdafx.h"
+#include "StrangrohrGrafic.h"
+#include <math.h>
+
+
+CStranrohrGrafic::CStranrohrGrafic( CGraficController* pCGraficController, CStrangRohr StrangRohr )
+{
+	m_pCGraficController = pCGraficController;
+	m_StrangRohr = StrangRohr;
+}
+
+CPoint CStranrohrGrafic::getStartpoint()
+{
+	return CPoint(30, 370);
+};
+
+
+
+CPoint CStranrohrGrafic::getCenterLine()
+{
+	return CPoint(580 - 30, 300 - 370);
+};
+
+
+
+void CStranrohrGrafic::CreateGrafic()
+{
+	
+
+
+	m_pCGraficController->ZeichneLinie(m_pCGraficController->m_GraficFileController.strSVGContent,
+	getStartpoint().x, getStartpoint().y, getStartpoint().x + getCenterLine().x,  getStartpoint().y + getCenterLine().y );
+		
+	CPoint Point = getCenterLine();
+	
+	int tempX = Point.x;
+	int tempY = Point.y;
+
+	// drehen
+	int x1 = -tempY;    
+	int y1 = tempX;
+
+	double iLaengeInPixel = sqrt( double( x1 * x1) + double(y1 * y1));
+	
+	int iDemisionScale = (int) (iLaengeInPixel/30); 
+
+	x1 = x1 / iDemisionScale;
+	y1 = y1 / iDemisionScale;
+	
+	int x2 = getStartpoint().x + x1;
+	int y2 = getStartpoint().y + y1;
+
+	m_pCGraficController->ZeichneLinie(m_pCGraficController->m_GraficFileController.strSVGContent, getStartpoint().x, getStartpoint().y, x2, y2);
+	
+	tempX = x2 - getStartpoint().x;
+	tempY = y2 - getStartpoint().y;
+
+	// drehen
+	int x3 = tempY;
+	int y3 = -tempX;
+
+	x3 = x3*10;
+	y3 = y3*10;
+
+	int x4 = x2 + x3;
+	int y4 = y2 + y3;
+
+	m_pCGraficController->ZeichneLinie(m_pCGraficController->m_GraficFileController.strSVGContent, x2, y2, x4, y4);
+	
+	tempX = x4 - x2;
+	tempY = y4 - y2;
+
+	int x5 = tempY;
+	int y5 = -tempX;
+
+	//x5 = x5*30;
+	//y5 = y5*30;
+	
+	int x6 = x4 + x5;
+	int y6 = y4 + y5;
+	
+	m_pCGraficController->ZeichneLinie(m_pCGraficController->m_GraficFileController.strSVGContent, x4, y4, x6, y6);
+	
+	m_pCGraficController->m_GraficFileController.strSVGContent+= "</svg>";
+	m_pCGraficController->m_GraficFileController.WriteSVGContent();
+}
+
+
+CStranrohrGrafic::~CStranrohrGrafic(void)
+{
+}

@@ -1,0 +1,39 @@
+#pragma once
+
+
+typedef std::vector<CGraficRohrKomponente*> CGraficRohrBemassungsRohrKomponentenVectorBase;
+
+class WAXGLDLL CGraficRohrBemassungsRohrKomponentenVector :
+	public CGraficRohrBemassungsRohrKomponentenVectorBase
+{
+
+	private:
+		CRohrBemassungsRohrKomponentenVector* m_pRohrLogicBemassungsKomponentenVector;
+		CGraficController* m_pGraficGraficController;
+
+	public:
+		CGraficRohrBemassungsRohrKomponentenVector(CGraficController* pGraficGraficController);
+		~CGraficRohrBemassungsRohrKomponentenVector(void);
+
+		void SetRohrLogicBemassungsKomponentenVector(CRohrBemassungsRohrKomponentenVector* pRohrLogicBemassungsKomponentenVector)
+		{
+			m_pRohrLogicBemassungsKomponentenVector = pRohrLogicBemassungsKomponentenVector;
+		};
+
+		CRohrBemassungsRohrKomponentenVector* GetRohrLogicBemassungsKomponentenVector()
+		{
+			return m_pRohrLogicBemassungsKomponentenVector;
+		};
+		
+		CGraficRohrBemassungsAnbauChildKomponentenVectorVector m_GraficRohrBemassungsAnbauChildKomponentenVectorVector;
+
+		
+		bool HasAssembeldTubes();
+		CGraficRohrBemassungsAnbauChildKomponentenVectorVector& GetGraficRohrBemassungsAnbauChildKomponentenVectorVector();
+
+		CPointDouble GetConnectionPointForAbgaenge(double RelativerAbstandzumNaechsten);
+
+		double GetWinkelRohrZuXundYAchse();
+
+};
+

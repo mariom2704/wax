@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Templates HTML", ".", "{F588FF77-00AC-407F-B1BB-53735458A8F9}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFramework = "3.5"
+		Debug.AspNetCompiler.VirtualPath = "/WebSite1"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\work\Samples\_Mfc\Dynamic MultiSplitter\Drawing Html\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\WebSite1\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/WebSite1"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\work\Samples\_Mfc\Dynamic MultiSplitter\Drawing Html\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\WebSite1\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "1561"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|.NET = Debug|.NET
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		Release|.NET = Release|.NET
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F588FF77-00AC-407F-B1BB-53735458A8F9}.Debug|.NET.ActiveCfg = Debug|.NET
+		{F588FF77-00AC-407F-B1BB-53735458A8F9}.Debug|.NET.Build.0 = Debug|.NET
+		{F588FF77-00AC-407F-B1BB-53735458A8F9}.Debug|Mixed Platforms.ActiveCfg = Debug|.NET
+		{F588FF77-00AC-407F-B1BB-53735458A8F9}.Debug|Mixed Platforms.Build.0 = Debug|.NET
+		{F588FF77-00AC-407F-B1BB-53735458A8F9}.Debug|Win32.ActiveCfg = Debug|.NET
+		{F588FF77-00AC-407F-B1BB-53735458A8F9}.Release|.NET.ActiveCfg = Debug|.NET
+		{F588FF77-00AC-407F-B1BB-53735458A8F9}.Release|.NET.Build.0 = Debug|.NET
+		{F588FF77-00AC-407F-B1BB-53735458A8F9}.Release|Mixed Platforms.ActiveCfg = Debug|.NET
+		{F588FF77-00AC-407F-B1BB-53735458A8F9}.Release|Mixed Platforms.Build.0 = Debug|.NET
+		{F588FF77-00AC-407F-B1BB-53735458A8F9}.Release|Win32.ActiveCfg = Debug|.NET
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

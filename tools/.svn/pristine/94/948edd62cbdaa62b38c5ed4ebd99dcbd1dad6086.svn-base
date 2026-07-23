@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RohrKonfDaten</name>
+    </assembly>
+    <members>
+        <member name="T:RohrKonfDaten.Db.DbSettings">
+            <summary>
+            Singleton Klasse, die die Datenbank Connection speichert. Es kann die Sprache und die Db Parameter definiert werden. 
+            Da es eine Singleton Klasse ist, bracht dies nur einmalig gemacht werden.
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbSettings.closeDb">
+            <summary>
+            Datenbank Verbindung schließen
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Db.DbSettings.Sprache">
+            <summary>
+            Sprache setzen bzw. zurückgeben
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Db.DbSettings.ConnectionData">
+            <summary>
+            Datenbank Verbindungsdaten setzen bzw. zurückgeben
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Db.DbSettings.Connection">
+            <summary>
+            Zugriff auf das DbConnection Objekt. 
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Dialog.UserControlPsp.setComboboxNl">
+            <summary>
+            ComboBox mit Niederlassungen setzen und Nl in der Pspnummer aktualisieren
+            
+            Die Psp Nummer wird automatisch aktualisiert, da beim Setzen des SelectedItem eine Message ausgelöst wird und
+            onSelecredIndexChanged aufgerufen wird.
+            </summary> 
+        </member>
+        <member name="F:RohrKonfDaten.Dialog.UserControlPsp.components">
+            <summary> 
+            Erforderliche Designervariable.
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Dialog.UserControlPsp.Dispose(System.Boolean)">
+            <summary> 
+            Verwendete Ressourcen bereinigen.
+            </summary>
+            <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
+        </member>
+        <member name="M:RohrKonfDaten.Dialog.UserControlPsp.InitializeComponent">
+            <summary> 
+            Erforderliche Methode für die Designerunterstützung. 
+            Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+            </summary>
+        </member>
+        <member name="T:RohrKonfDaten.Db.DbCombobox">
+            <summary>
+            Werte für die <c>ComboboxExt</c> aus der Tabelle Combobox aus der Stammdatenbank lesen. 
+            </summary>
+            <example>Beispiel:
+            \code
+            int voreinstellungOberflNrId = 1;
+            List[EnComboBoxWerte] werteOberfl = new List[EnComboBoxWerte]();
+            DbCombobox dbCb = new DbCombobox();
+            if (!dbCb.readWerte("Oberflaeche", werteOberfl))
+                return;
+                
+            MxLib.Dialog.ComboBoxExt comboBox = new MxLib.Dialog.ComboBoxExt();
+            comboBox.load(werteOberfl, voreinstellungOberflNrId, false);
+            \endcode
+            </example>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbCombobox.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbCombobox.readWerte(System.String,System.Collections.Generic.List{MxLib.Entities.EnComboBoxWerte})">
+            <summary>
+            Anhand der übergebenen ID die Werte aus der Tabelle Combobox lesen
+            </summary>
+            <param name="comboId">Zu dieser ID werden alle Werte eingelesen</param>
+            <param name="werte">Liste mit den Werten</param>
+            <returns>false wenn ein Fehler aufgetreten ist</returns>
+        </member>
+        <member name="M:RohrKonfDaten.Db.DbCombobox.readWert(System.String,System.Int32,MxLib.Entities.EnComboBoxWerte)">
+            <summary>
+            Wert aus der Tabelle Combobox lesen
+            </summary>
+            <param name="comboId">Wert der ID Spalte ComboId</param>
+            <param name="id">Wert der ID Spalte idCounter</param>
+            <param name="cbWert">Eingelesener Wert aus der Datenbank</param>
+            <returns></returns>
+        </member>
+        <member name="T:RohrKonfDaten.Properties.Resources">
+            <summary>
+              Eine stark typisierte Ressourcenklasse zum Suchen von lokalisierten Zeichenfolgen usw.
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Properties.Resources.ResourceManager">
+            <summary>
+              Gibt die zwischengespeicherte ResourceManager-Instanz zurück, die von dieser Klasse verwendet wird.
+            </summary>
+        </member>
+        <member name="P:RohrKonfDaten.Properties.Resources.Culture">
+            <summary>
+              Überschreibt die CurrentUICulture-Eigenschaft des aktuellen Threads für alle
+              Ressourcenlookups, die diese stark typisierte Ressourcenklasse verwenden.
+            </summary>
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpArtikelDaten.getFromListe(System.Int32)">
+            <summary>
+            Artikel aus gespeicherter Liste suchen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpArtikelDaten.readArtikelDaten(RohrKonfBase.Db.DbArtikel,System.Int32,RohrKonfBase.Entities.EnArtikel,MxLib.Db.DbConnection,System.String)">
+            <summary>
+            Artikeldaten aus dem Artikelstamm lesen
+            </summary> 
+        </member>
+        <member name="M:RohrKonfDaten.Gp.GpArtikelDaten.clear">
+            <summary>
+            Liste zurücksetzen. Wird z.B. bei einem Sprachwechsel benötigt
+            </summary> 
+        </member>
+    </members>
+</doc>

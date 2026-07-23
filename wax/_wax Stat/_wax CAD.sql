@@ -1,0 +1,1 @@
+SELECT  werkauftrag.sdauftragsnr, werkauftrag.isNextGeneration, werkauftrag.classid, status.* FROM werkauftrag INNER JOIN status ON werkauftrag.waid = status.waid  WHERE (wanr = 0 OR sachbesegment IS NULL OR sachbesegment = '') AND NOT status.storniert AND (status.status=2 or status.status is null)

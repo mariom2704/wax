@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Quellcodedateien">
+      <UniqueIdentifier>{36f19ea1-9c2c-40e4-8096-f45da68776f5}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header-Dateien">
+      <UniqueIdentifier>{f98643ee-4766-4c46-9738-35c6201980c2}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{611cfe2f-e64a-47fd-8b28-5695de39bb40}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Freigabe">
+      <UniqueIdentifier>{39c42a06-6ed9-429a-bc9d-4d7f216cb884}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Freigabe\Dialog">
+      <UniqueIdentifier>{c9a52178-6ba9-46db-b561-137870fd1e68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Freigabe\Dialog\Quellcodedateien">
+      <UniqueIdentifier>{3ffb76a3-297b-414a-b0d0-fa31a00ea624}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Freigabe\Dialog\Header-Dateien">
+      <UniqueIdentifier>{0512b790-14a7-48c5-92ab-197b81bb6ec7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Freigabe\GP">
+      <UniqueIdentifier>{71813052-8024-48e2-a050-a857173b183f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Freigabe\GP\Header-Dateien">
+      <UniqueIdentifier>{bf412d35-7f67-43d3-9da4-ac092066dbb7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Freigabe\GP\Quellcodedateien">
+      <UniqueIdentifier>{5b25bc0f-0a97-4319-8006-af6839cc9aeb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BefehlGesamtStatistkNeuSchreiben.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="BefehlZusammenfassungWerkauftraegeRobbi.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="DbAnlage.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="DbExcelUeberagbeRobby.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="DbWerkauftrag.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogHtmlView.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogZusammenfassenWerkauftraegeRobbi.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="DlgDate.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Excel.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ExcelODBC.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GpAnlage.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GpAnlageSaegeNut.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GpAnlageVerteiler.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GpUebergabeStrangrohrstrasse.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GpWerkauftrag.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="GrohrAuswahl.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Monitor.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="MonitorOpen.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Rohrstuecke.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Sap.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SapfileOpen.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SapSearch.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SimpleBrowser.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SpanxServer.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="waxint.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerDBMyWa.cpp">
+      <Filter>Freigabe\Dialog\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerDBNewWa.cpp">
+      <Filter>Freigabe\Dialog\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerDBOpen.cpp">
+      <Filter>Freigabe\Dialog\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerDbPa.cpp">
+      <Filter>Freigabe\Dialog\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ServerDBPSPElement.cpp">
+      <Filter>Freigabe\Dialog\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="WaLoader.cpp">
+      <Filter>Freigabe\GP\Quellcodedateien</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="waxint.def">
+      <Filter>Quellcodedateien</Filter>
+    </None>
+    <None Include="res\waxint.rc2">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="waxint.rc">
+      <Filter>Quellcodedateien</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BefehlGesamtStatistkNeuSchreiben.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="BefehlZusammenfassungWerkauftraegeRobbi.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="DbAnlage.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="DbExcelUeberagbeRobby.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="DbWerkauftrag.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogHtmlView.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogZusammenfassenWerkauftraegeRobbi.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="DlgDate.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Excel.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ExcelODBC.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GpAnlage.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GpAnlageSaegeNut.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GpAnlageVerteiler.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GpUebergabeStrangrohrstrasse.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GpWerkauftrag.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GrohrAuswahl.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Monitor.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="MonitorOpen.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Rohrstuecke.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Sap.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SapfileOpen.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SapSearch.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleBrowser.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SpanxServer.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="waxint_dll.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerDBMyWa.h">
+      <Filter>Freigabe\Dialog\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerDBNewWa.h">
+      <Filter>Freigabe\Dialog\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerDBOpen.h">
+      <Filter>Freigabe\Dialog\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerDbPa.h">
+      <Filter>Freigabe\Dialog\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ServerDBPSPElement.h">
+      <Filter>Freigabe\Dialog\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WaxServer.h">
+      <Filter>Freigabe\Dialog\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GPCadConverter.h">
+      <Filter>Freigabe\GP\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GpSammelauftragCreator.h">
+      <Filter>Freigabe\GP\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="GpStatusUpdate.h">
+      <Filter>Freigabe\GP\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WaLoader.h">
+      <Filter>Freigabe\GP\Header-Dateien</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,53 @@
+#include "stdafx.h"
+
+
+#include "..\Mechanicals Geometrics\StrangrohrGrafic.h"
+#include "..\Mechanicals Geometrics\GraficRohrKomponente.h"
+
+CGraficController::CGraficController(void)
+{
+}
+
+
+
+void CGraficController::GenerateDrawingOfTubes(CRohrKomponenteVector StrangRohrVector)
+{
+		m_StrangRohrKomponenten = StrangRohrVector;
+		
+		std::vector<int>::size_type sz = m_StrangRohrKomponenten.size();
+		for(UINT i = 0; i < sz; i++ )
+		{
+			CGraficRohrKomponente GraficRohrKomponente(m_StrangRohrKomponenten[i]);
+			m_GraficRohrKomponentenContainer.push_back(GraficRohrKomponente);
+		}
+		CGraficStranrohrContainer StranrohrGrafic(this, m_GraficRohrKomponentenContainer);
+		m_GraficFileController.CreateSVGFile("D:\\work\\samples\\tools\\diverse\\SVG  Grafic\\Debug\\HTML Test\\Test.svg");
+
+		StranrohrGrafic.CreateGraficModell();
+		
+		m_GraficFileController.strSVGContent+= "</svg>";
+		m_GraficFileController.WriteSVGContent();
+		m_pHtmlView->Navigate("D:\\work\\samples\\tools\\diverse\\SVG  Grafic\\Debug\\HTML Test\\Test.html", NULL, NULL, NULL, NULL);
+}
+
+
+
+void CGraficController::ZeichneLinie(CString& strPost, double x1, double y1, double x2, double y2)
+{ 
+	CString strTemp;
+	strTemp.Format( "<line  x1='%f' y1='%f' x2='%f'  y2='%f'   style='stroke:rgb(0,0,0);stroke-width:2'/>", x1, y1, x2, y2);
+	strPost += strTemp;	
+}
+
+
+void CGraficController::ZeichneLinie(CString& strPost, CString strFarbe, double x1, double y1, double x2, double y2)
+{ 
+	CString strTemp;
+	strTemp.Format( "<line  x1='%f' y1='%f' x2='%f'  y2='%f'   style='stroke:%s;stroke-width:2'/>", x1, y1, x2, y2,strFarbe);
+	strPost += strTemp;	
+}
+
+
+CGraficController::~CGraficController(void)
+{
+}

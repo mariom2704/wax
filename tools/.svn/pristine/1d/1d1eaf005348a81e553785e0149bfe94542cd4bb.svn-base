@@ -1,0 +1,63 @@
+#pragma once
+class CRohrKomponente
+{
+	
+public:
+	CRohrKomponente(void);
+	~CRohrKomponente(void);
+	double GetWinkel()
+	{
+		return winkel;
+	};
+	int GetDn()
+	{
+		return iDN;
+	};
+	int GetRadius()
+	{
+		return iDN/2;
+	};
+	void SetWinkel(double lWinkel)
+	{
+		winkel = lWinkel;
+	};
+	double GetLaenge()
+	{
+		return iLaenge;
+	};
+
+	void SetprevStrangRohr(CRohrKomponente* prevStrangRohr)
+	{
+		m_prevStrangRohr = prevStrangRohr;
+	};
+
+	CRohrKomponente* GetprevStrangRohr()
+	{
+		return m_prevStrangRohr;
+	};
+
+	void SetnextStrangRohr(CRohrKomponente* nextStrangRohr)
+	{
+		m_pNextStrangRohr = nextStrangRohr;
+	};
+
+	
+	CRohrKomponente* GetnextStrangRohr()
+	{
+		return m_pNextStrangRohr;
+	};
+
+
+
+private:
+	int iDN;
+	int iLaenge;
+	int NutIdEnde;
+	int NutIdAnfang;
+	double winkel;
+	CRohrKomponente* m_prevStrangRohr;
+	CRohrKomponente* m_pNextStrangRohr;
+
+};
+
+typedef std::vector<CRohrKomponente> CRohrKomponenteVector;

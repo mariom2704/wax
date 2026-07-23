@@ -1,0 +1,35 @@
+#pragma once
+
+
+#include "HtmlTestview.h"
+// CTestEingabe-Formularansicht
+
+class CTestEingabe : public CFormView
+{
+	DECLARE_DYNCREATE(CTestEingabe)
+
+protected:
+	CTestEingabe();           // Dynamische Erstellung verwendet geschützten Konstruktor
+	virtual ~CTestEingabe();
+	CHtmlTestview* m_pHTML;
+
+
+public:
+	enum { IDD = IDD_TESTEINGABE };
+
+
+protected:
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV-Unterstützung
+
+	DECLARE_MESSAGE_MAP()
+public:
+	afx_msg void OnBnClickedButton1();
+	
+private:
+	CGraficController* m_pGraficController;
+public:
+	virtual void OnInitialUpdate();
+	void AddChildren(CRohrKomponente* pRohrKomponente);
+};
+
+

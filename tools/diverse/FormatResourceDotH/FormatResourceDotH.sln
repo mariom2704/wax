@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FormatResourceDotH", "FormatResourceDotH.vcproj", "{76AC31C7-EFF2-4DF1-8DAD-1E22F0232E44}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{76AC31C7-EFF2-4DF1-8DAD-1E22F0232E44}.Debug|Win32.ActiveCfg = Debug|Win32
+		{76AC31C7-EFF2-4DF1-8DAD-1E22F0232E44}.Debug|Win32.Build.0 = Debug|Win32
+		{76AC31C7-EFF2-4DF1-8DAD-1E22F0232E44}.Release|Win32.ActiveCfg = Release|Win32
+		{76AC31C7-EFF2-4DF1-8DAD-1E22F0232E44}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

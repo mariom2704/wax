@@ -1,0 +1,1751 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MxLib</name>
+    </assembly>
+    <members>
+        <member name="T:MxLib.Basis.IMxError">
+             <summary>
+             Interface für das Errorhandling einer Klasse
+             </summary>
+             <example>Implementierung Schnittstelle IMxError:
+             <code>
+             MxErrorListe errorliste = new MxErrorListe();
+            	public MxErrorListe Errorliste
+            	{
+            		get { return errorliste; }
+            	}
+            
+            	public void appendErrorListe(IMxError liste)
+            	{
+            		this.errorliste.AddRange(liste.Errorliste);
+            	}
+             </code>
+             </example>
+        </member>
+        <member name="M:MxLib.Basis.IMxError.appendErrorListe(MxLib.Basis.IMxError)">
+            <summary>
+            Fehler an die Liste anhängen
+            </summary>
+            <param name="errorliste"></param>
+        </member>
+        <member name="P:MxLib.Basis.IMxError.Errorliste">
+            <summary>
+            Fehlerliste
+            </summary>
+        </member>
+        <member name="M:MxLib.Dialog.TreeViewExtended.loadRoot">
+            <summary>
+            Hauptebene des Trees laden
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Dialog.TreeViewExtended.expandTreeKnoten">
+            <summary>
+            Treenode aufklappen
+            </summary>
+        </member>
+        <member name="M:MxLib.Dialog.TreeViewExtended.getReversToRootListe(System.Collections.Generic.List{MxLib.Entities.EnTreeKnoten})">
+            <summary>
+            Liste mit zugeordneten Objekten vom selectierten Node bis zur Rootebene ermitteln
+            </summary>
+            <param name="reverse"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Dialog.TreeViewExtended.getUnterlisten(System.Collections.Generic.List{MxLib.Entities.EnTreeKnoten},MxLib.Entities.EnMatrix)">
+            <summary>
+            Zum Selektierten Node die Unterlisten ermitteln
+            </summary>
+            <param name="listeVerz"></param>
+            <param name="listeDateien"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Dialog.TreeViewExtendedListe.expandTreeKnoten">
+            <summary>
+            Treenode aufklappen
+            </summary>
+        </member>
+        <member name="M:MxLib.Dialog.TreeViewExtendedListe.setListe(MxLib.Entities.EnMatrix)">
+            <summary>
+            Anstatt die Liste an den Treenode zu hängen, wird sie in das ListControl geschrieben
+            </summary>
+            <param name="liste"></param>
+        </member>
+        <member name="T:MxLib.Dialog.ListViewExtended">
+            <summary>
+            Das ListView kann über eine Matrix vom Typ <c>EnMatrix</c> gefüllt werden. Den einzelnen Feldern können 
+            verschiedene Eigenschaften zugeordnet werden. Z.B. ReadOnly, Editierbar oder eine Listbox mit Werten
+            
+            Zeilen zweifarbig:
+            nach dem Aufruf von <c>listView1.setMatrix(mat);</c> die Methode <c>listView1.setBackColorWhiteGrey();</c> aufrufen
+            </summary>
+        </member>
+        <member name="M:MxLib.Dialog.ListViewExtended.tbox_KeyUp(System.Object,System.Windows.Forms.KeyEventArgs)">
+            <summary>
+            Wie sich die Textbox verhält wenn bestimmte Tasten gedrückt werden
+            </summary> 
+        </member>
+        <member name="M:MxLib.Dialog.ListViewExtended.setMatrix(MxLib.Entities.EnMatrix)">
+            <summary>
+            Komplette Liste und Spaltennamen über die Matrix setzen
+            </summary>
+            <param name="liste"></param>
+        </member>
+        <member name="M:MxLib.Dialog.ListViewExtended.getMatrix(MxLib.Entities.EnMatrix)">
+            <summary>
+            Felder des Listviews in eine Matrix schreiben
+            </summary> 
+        </member>
+        <member name="M:MxLib.Dialog.ListViewExtended.addColumns(System.Collections.Generic.List{System.Object})">
+            <summary>
+            Eine Stringliste als Spalten hinzufügen
+            </summary>
+            <param name="liste"></param>
+        </member>
+        <member name="M:MxLib.Dialog.ListViewExtended.addField(System.Int32,System.Int32,MxLib.Dialog.ListViewField)">
+            <summary>
+            Ein Feld in dem List Control setzen.
+            
+            Achtung: Wenn nicht vorher alle Items mit createItems() gesetzt werden (Spalte 0), gibt es 
+            Probleme mit der Sortierung in this.Items.
+            Tritt auf bei Preisanzeige wenn von Liste mit einem Eintrag auf mehrere Einträge umgeschalten wird.
+            </summary> 
+        </member>
+        <member name="M:MxLib.Dialog.ListViewExtended.setBackColorWhiteGrey">
+            <summary>
+            Hintergrund abwechselnd auf weiß und grau setzen
+            </summary>
+        </member>
+        <member name="M:MxLib.Dialog.ListViewExtended.getField(System.Int32,System.Int32,System.Int32@,System.Int32@,System.Drawing.Rectangle@)">
+            <summary>
+            Anhand der xy Koordinaten das Feld in der Liste zurückgeben
+            </summary> 
+        </member>
+        <member name="T:MxLib.Dialog.ListViewItemComparer">
+            <summary>
+            Implements the manual sorting of items by columns.
+            </summary>
+        </member>
+        <member name="M:MxLib.Dialog.ListViewItemComparer.#ctor">
+            <summary>
+            Standardkonstruktor
+            </summary>
+        </member>
+        <member name="M:MxLib.Dialog.ListViewItemComparer.#ctor(System.Int32,System.Windows.Forms.SortOrder)">
+            <summary>
+            
+            </summary>
+            <param name="column"></param>
+            <param name="sortOrder"></param>
+        </member>
+        <member name="M:MxLib.Dialog.ListViewItemComparer.Compare(System.Object,System.Object)">
+            <summary>
+            Werte 1 mit Wert 2 vergleichen
+            </summary>
+            <param name="x"></param>
+            <param name="y"></param>
+            <returns>kleiner 0 wenn x kleiner y, 0 wenn Werte gleich sind, größer 0 wenn x größer y</returns>
+        </member>
+        <member name="T:MxLib.Dialog.SortOrderMerker">
+            <summary>
+            Klasse zum Speichern der letzen sortierten Spalte und Sortierrichtung
+            </summary>
+        </member>
+        <member name="M:MxLib.Dialog.SortOrderMerker.changeAndGetSortOrder(System.Int32)">
+            <summary>
+            Sortierung zwischen auf- und absteigend umschalten. Wird eine neue Spalte angeklickt wird auf aufsteigend umgestellt.
+            </summary>
+            <param name="column"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MxLib.Dialog.DlgBaseSizeChange">
+             <summary>
+             Basisklasse für Forms.
+             Folgendes beachten, wenn die Größe des Forms veränderbar sein soll:
+            
+             - Die Eigenschaft des Forms auf folgenden Wert setzen:
+               <c>this.FormBorderStyle = FormBorderStyle.Sizable;</c>
+             - Bei einer Listbox MUSS folegnde Eigenschaft gesetzt sein, da sonst die Höhe nicht richtig gesetzt wird.
+               <c>this.listBox1.IntegralHeight = false;</c>
+             - In der abgeleiteten Klasse in den Konstruktor die Methode <c>saveFormSize();</c>
+             - Die abgeleiteten Klasse muß das Ereignis SizeChanged aufrufen
+             
+             </summary> 
+             <example>
+             Beispiel für die Methode onSizeChanged:
+             \code
+             private void onSizeChanged(object sender, EventArgs e) 
+             {
+                 this.reLocationXY(button1);
+                 this.reLocationY(label1);
+                 this.resizeXY(listBox1);
+                 saveFormSize();
+             }
+             \endcode
+             </example>      
+        </member>
+        <member name="F:MxLib.Dialog.DlgBaseSizeChange.components">
+            <summary>
+            Erforderliche Designervariable.
+            </summary>
+        </member>
+        <member name="M:MxLib.Dialog.DlgBaseSizeChange.Dispose(System.Boolean)">
+            <summary>
+            Verwendete Ressourcen bereinigen.
+            </summary>
+            <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
+        </member>
+        <member name="M:MxLib.Dialog.DlgBaseSizeChange.InitializeComponent">
+            <summary>
+            Erforderliche Methode für die Designerunterstützung.
+            Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+            </summary>
+        </member>
+        <member name="F:MxLib.Dialog.DlgBaseSizeChange.oldFormSize">
+            <summary>
+            Platzhalter für alte Größe
+            </summary>
+        </member>
+        <member name="M:MxLib.Dialog.DlgBaseSizeChange.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:MxLib.Dialog.DlgBaseSizeChange.stringToDouble(System.String)">
+            <summary>
+            Double in Integer umwandeln
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Dialog.DlgBaseSizeChange.saveFormSize">
+            <summary>
+            Größe des Forms speichern
+            </summary>
+        </member>
+        <member name="M:MxLib.Dialog.DlgBaseSizeChange.resizeXY(System.Windows.Forms.Control)">
+            <summary>
+            Übergebenes Control in Breite und Höhe anpassen
+            </summary>
+            <param name="ctrl"></param>
+        </member>
+        <member name="M:MxLib.Dialog.DlgBaseSizeChange.resizeY(System.Windows.Forms.Control)">
+            <summary>
+            Übergebenes Control in der Höhe anpassen
+            </summary>
+            <param name="ctrl"></param>
+        </member>
+        <member name="M:MxLib.Dialog.DlgBaseSizeChange.resizeX(System.Windows.Forms.Control)">
+            <summary>
+            Übergebenes Control in der Breite anpassen
+            </summary>
+            <param name="ctrl"></param>
+        </member>
+        <member name="M:MxLib.Dialog.DlgBaseSizeChange.reLocationXY(System.Windows.Forms.Control)">
+            <summary>
+            Location neu setzen, wenn sich das Hauptfenster in der Größe geändert hat
+            </summary>
+            <param name="ctrl"></param>
+        </member>
+        <member name="M:MxLib.Dialog.DlgBaseSizeChange.reLocationX(System.Windows.Forms.Control)">
+            <summary>
+            Location in x Richtung neu setzen, wenn sich das Hauptfenster in der Größe geändert hat
+            </summary>
+            <param name="ctrl"></param>
+        </member>
+        <member name="M:MxLib.Dialog.DlgBaseSizeChange.reLocationY(System.Windows.Forms.Control)">
+            <summary>
+            Location in Y Richtung neu setzen, wenn sich das Hauptfenster in der Größe geändert hat
+            </summary>
+            <param name="ctrl"></param>
+        </member>
+        <member name="M:MxLib.Dialog.DlgBaseSizeChange.getDeltaSizeX">
+            <summary>
+            Veränderte Breite
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Dialog.DlgBaseSizeChange.getDeltaSizeY">
+            <summary>
+            Veränderte Höhe
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Dialog.DlgBaseSizeChange.closeWithOk">
+            <summary>
+            Form mit <c>DialogResult.OK</c> beenden
+            </summary>
+        </member>
+        <member name="M:MxLib.Dialog.DlgBaseSizeChange.closeWithCancel">
+            <summary>
+            Form mit <c>DialogResult.Cancel</c> beenden
+            </summary>
+        </member>
+        <member name="M:MxLib.Dialog.DlgBaseSizeChange.appendErrorListeAnClearError(MxLib.Basis.IMxError)">
+            <summary>
+            Fehlerliste übernehmen und die übergebenen Liste leeren.
+            </summary>
+            <param name="liste"></param>
+        </member>
+        <member name="M:MxLib.Dialog.DlgBaseSizeChange.appendErrorListe(MxLib.Basis.IMxError)">
+            <summary>
+            Fehlerliste übernehmen
+            </summary>
+            <param name="liste"></param>
+        </member>
+        <member name="M:MxLib.Dialog.DlgBaseSizeChange.doubleToString(System.Double,MxLib.Basis.Einheit)">
+            <summary>
+            Double Wert in Abhängkeit der Einheit in einen Stringwert umwandeln. Millimeter: keine Nachkommastellen, sonst 3 Nachkommas
+            </summary>
+            <param name="value"></param>
+            <param name="einheit"></param>
+            <returns></returns>
+        </member>
+        <member name="P:MxLib.Dialog.DlgBaseSizeChange.Errorliste">
+            <summary>
+            Fehlerliste
+            </summary>
+        </member>
+        <member name="T:MxLib.Db.DbBase">
+            <summary>
+            Basisklasse 
+            </summary>
+        </member>
+        <member name="M:MxLib.Db.DbBase.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:MxLib.Db.DbBase.appendErrorListe(MxLib.Basis.IMxError)">
+            <summary>
+            Eine Fehlerliste anhängen
+            </summary>
+            <param name="errorliste"></param>
+        </member>
+        <member name="P:MxLib.Db.DbBase.Errorliste">
+            <summary>
+            Fehlerliste
+            </summary>
+        </member>
+        <member name="T:MxLib.Db.DbBase.DbError">
+            <summary>
+            Fehlercodes
+            </summary>
+        </member>
+        <member name="T:MxLib.Basis.IdWert">
+            <summary>
+            Wertepaar mit Bezeichnung und Wert.
+            </summary>
+        </member>
+        <member name="T:MxLib.Basis.IDataTransfer">
+             <summary>
+             Interface für XML Import und Export
+             </summary>
+             <example>Datengerüst für die Implementierung
+             <code>
+             public bool export(DataElement element)
+            	{
+            		element.Name = tagName;
+            
+            		return true;
+            	}
+            
+            	public bool import(DataElement element)
+            	{
+            		if (element.Name != tagName)
+            			return false;
+            
+            		if (isSet == false)
+            			throw new MxException(null, "err_ImportFehler"); //Fehler beim Import der Daten
+            
+            		return true;
+            	}
+             </code>
+             </example>
+        </member>
+        <member name="M:MxLib.Basis.IDataTransfer.export(MxLib.Basis.DataElement)">
+            <summary>
+            Zu implementierende Export Methode
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Basis.IDataTransfer.import(MxLib.Basis.DataElement)">
+            <summary>
+            Zu implementierende Import Methode
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Basis.MxErrorListe.addRangeAndClear(MxLib.Basis.MxErrorListe)">
+            <summary>
+            Errorliste kopieren und Ursprungsliste zurücksetzen
+            </summary> 
+        </member>
+        <member name="M:MxLib.Basis.MxErrorListe.hasOnlyWarnings">
+            <summary>
+            True, wenn in der Errorliste nur Warnmeldungen stehen
+            </summary> 
+        </member>
+        <member name="T:MxLib.Entities.EnSqlFilter">
+            <summary>
+            Filter für SQL Abfragen
+            </summary>
+        </member>
+        <member name="M:MxLib.Entities.EnSqlFilter.addFilter(System.String,System.Int32)">
+            <summary>
+            Filter anhängen
+            </summary>
+            <param name="fieldname">Spaltenname</param>
+            <param name="value">Wert</param>
+        </member>
+        <member name="M:MxLib.Entities.EnSqlFilter.addFilter(System.String,System.Double)">
+            <summary>
+            Filter anhängen
+            </summary>
+            <param name="fieldname">Spaltenname</param>
+            <param name="value">Wert</param>
+        </member>
+        <member name="M:MxLib.Entities.EnSqlFilter.addFilter(System.String,System.String)">
+            <summary>
+            Filter anhängen
+            </summary>
+            <param name="fieldname">Spaltenname</param>
+            <param name="value">Wert</param>
+        </member>
+        <member name="M:MxLib.Entities.EnSqlFilter.addFilter(System.String,System.Object)">
+            <summary>
+            Filter anhängen
+            </summary>
+            <param name="fieldname">Spaltenname</param>
+            <param name="value">Wert</param>
+        </member>
+        <member name="M:MxLib.Entities.EnSqlFilter.addFilter(System.String,MxLib.Entities.EnFilterWert)">
+            <summary>
+            Filter anhängen
+            </summary>
+            <param name="fieldname">Spaltenname</param>
+            <param name="value">Wert</param>
+        </member>
+        <member name="M:MxLib.Entities.EnSqlFilter.addFilter(System.String,MxLib.Entities.EnFilterString)">
+            <summary>
+            Filter anhängen
+            </summary>
+            <param name="fieldname">Spaltenname</param>
+            <param name="value">Wert</param>
+        </member>
+        <member name="M:MxLib.Entities.EnSqlFilter.addFilter(System.String,System.Collections.Generic.List{System.Object})">
+            <summary>
+            Filter anhängen
+            </summary>
+            <param name="fieldname"></param>
+            <param name="values"></param>
+        </member>
+        <member name="M:MxLib.Entities.EnSqlFilter.isSet">
+            <summary>
+            Prüfen ob ein Wert im Filter gesetzt ist
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Entities.EnSqlFilter.getFilterAsSql">
+            <summary>
+            		 * Sql Filterstatement zusammenbasteln
+                     * Dabei erst alle AND Bedingungen und danach in einer Klammer alle OR Bedingungen
+            		 * </summary> 
+        </member>
+        <member name="P:MxLib.Entities.EnSqlFilter.Table">
+            <summary>
+            Tabellenname
+            </summary>
+        </member>
+        <member name="P:MxLib.Entities.EnSqlFilter.Limit">
+            <summary>
+            Anzahl der Datensätze, die gelesen werden sollen
+            </summary>
+        </member>
+        <member name="T:MxLib.Dialog.ComboBoxExt">
+            <summary>
+            ComboBoxExt ist eine ComboBox mit erweiterten Eigenschaften. Der Box kann eine Liste mit <c>EnComboBoxWerte</c> übergeben werden. Die Bezeichnung
+            wird dann nach Aufruf der load Methode angezeigt. Über die Methode getSelectedComboboxWerte() kann auf das selektierte EnComboBoxWerte Objekt zugegriffen werden.
+            </summary>
+            <example>Beispiel für das Laden einer Integer Liste 
+            \code
+            List[EnComboBoxWerte] cbwerte = new List[EnComboBoxWerte]();
+            cbwerte.Add(new EnComboBoxWerte("DN 50", 50));
+            cbwerte.Add(new EnComboBoxWerte("DN 65", 65));
+              
+            ComboBoxExt combo = new ComboBoxExt();
+            combo.load(cbwerte, 65, true);
+            \endcode
+            </example>
+        </member>
+        <member name="M:MxLib.Dialog.ComboBoxExt.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:MxLib.Dialog.ComboBoxExt.load(MxLib.Entities.EnComboBoxWerte)">
+            <summary>
+            Werte in der Combobox anzeigen
+            </summary>
+            <param name="voreinstellung"></param>
+        </member>
+        <member name="M:MxLib.Dialog.ComboBoxExt.load(System.Collections.Generic.List{MxLib.Entities.EnComboBoxWerte},MxLib.Entities.EnComboBoxWerte)">
+            <summary>
+            Werte in der Combobox anzeigen
+            </summary>
+            <param name="values"></param>
+            <param name="voreinstellung"></param>
+        </member>
+        <member name="M:MxLib.Dialog.ComboBoxExt.load(System.Collections.Generic.List{MxLib.Entities.EnComboBoxWerte},System.Int32,System.Boolean)">
+            <summary>
+            Werte in der Combobox anzeigen.
+            </summary>
+            <param name="values">Liste mit Werten. Wenn die IntValue gesetzt sind, muß der Schalter isIntValue true sein</param>
+            <param name="intId">Voreinstellung</param>
+            <param name="isIntValue">true: Wert intId bezieht sich auf IntValue aus EnComboBoxWerte, 
+            false: Wert intId bezieht sich auf den IdCounter aus EnComboBoxWerte</param>
+        </member>
+        <member name="M:MxLib.Dialog.ComboBoxExt.load(System.Collections.Generic.List{MxLib.Entities.EnComboBoxWerte},System.Double,System.Boolean)">
+            <summary>
+            Werte in der Combobox anzeigen
+            </summary>
+            <param name="values">Liste mit Werten bei denen die DoubleValue gestezt sind</param>
+            <param name="dwert">Voreinstellung</param>
+            <param name="addIfNotInListe">true: wenn der dwert noch nicht in der Liste existiert, wird ein neuer Eintrag generiert</param>
+        </member>
+        <member name="M:MxLib.Dialog.ComboBoxExt.load(System.Collections.Generic.List{MxLib.Entities.EnComboBoxWerte},System.String)">
+            <summary>
+            Werte in der Combobox anzeigen. 
+            </summary>
+            <param name="values">Liste mit Werten bei denen die StringValue gesetzt sind.</param>
+            <param name="stringId">Voreinstellung</param>
+        </member>
+        <member name="M:MxLib.Dialog.ComboBoxExt.setSelectedItem(System.Object,System.Boolean,System.Boolean)">
+            <summary>
+            nach dem Item suchen.
+            Wenn useValue=true wird der Value Wert verglichen sonst wird die Bezeichnung verglichen
+            </summary> 
+        </member>
+        <member name="M:MxLib.Dialog.ComboBoxExt.setSelectedItem(System.Int32,System.Boolean)">
+            <summary>
+            Anhand des IdCounters das Item auswählen
+            
+            isIntValue = true: Wert intId bezieht sich auf IntValue aus EnComboBoxWerte
+            isIntValue = false: Wert intId bezieht sich auf den IdCounter aus EnComboBoxWerte
+            </summary> 
+        </member>
+        <member name="M:MxLib.Dialog.ComboBoxExt.setSelectedItem(System.Double,System.Boolean,System.String)">
+            <summary>
+            Item suchen das dem Wert "wert" entspricht und in der Liste selektieren.
+            </summary>
+            <param name="wert">Zu suchender Wert</param>
+            <param name="insertIfNotExist">true: Wenn der Wert nicht existiert, wird ein neuer Item angelegt</param>
+            <param name="formatString">String wie der Double Wert formatiert werden soll z.B. "F3"</param>
+        </member>
+        <member name="M:MxLib.Dialog.ComboBoxExt.getTextAsDouble">
+            <summary>
+            Ausgewählten Item als Double 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Dialog.ComboBoxExt.getTextAsInteger">
+            <summary>
+            Ausgewählten Item als integer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Dialog.ComboBoxExt.getSelectedComboboxWerte">
+            <summary>
+            Wert des ausgewählten Item zurückgeben
+            </summary>
+            <returns>EnComboBoxWerte</returns>
+        </member>
+        <member name="F:MxLib.Dialog.ComboBoxExt.components">
+            <summary>
+            Erforderliche Designervariable.
+            </summary>
+        </member>
+        <member name="M:MxLib.Dialog.ComboBoxExt.Dispose(System.Boolean)">
+            <summary> 
+            Verwendete Ressourcen bereinigen.
+            </summary>
+            <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
+        </member>
+        <member name="M:MxLib.Dialog.ComboBoxExt.InitializeComponent">
+            <summary>
+            Erforderliche Methode für die Designerunterstützung.
+            Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+            </summary>
+        </member>
+        <member name="P:MxLib.Dialog.ComboBoxExt.Values">
+            <summary>
+            Liste der Werte, die in der Combobox angezeigt werden
+            </summary>
+        </member>
+        <member name="T:MxLib.Db.DbExcel">
+            <summary>
+            Zugriff auf eine Exceldatei
+            </summary>
+        </member>
+        <member name="M:MxLib.Db.DbExcel.#ctor(System.String)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="datei"></param>
+        </member>
+        <member name="M:MxLib.Db.DbExcel.writeMatrixToDatei(MxLib.Entities.EnMatrix,System.Boolean)">
+            <summary>
+            Werte der Matrix in die Exceldatei schreiben
+            </summary>
+            <param name="matrix"></param>
+            <param name="setAllFieldsToString">wenn true, dann werden alle Felder in Excel als Text definiert</param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Basis.MxXml.exportToXmlString(MxLib.Basis.IDataTransfer)">
+            <summary>
+            Datenstruktur als Xml String ausgeben
+            </summary> 
+        </member>
+        <member name="M:MxLib.Basis.MxXml.importFromXmlString(System.String,MxLib.Basis.IDataTransfer)">
+            <summary>
+            aus einem Xml formatierten String die Daten einlesen
+            </summary> 
+        </member>
+        <member name="M:MxLib.Basis.MxXml.convertToData(System.Xml.XmlNode,MxLib.Basis.DataElement)">
+            <summary>
+            Xml Struktur in eine DataElement Stuktur einlesen
+            </summary> 
+        </member>
+        <member name="M:MxLib.Basis.MxXml.convertToXmlWriter(MxLib.Basis.DataElement,System.Xml.XmlWriter)">
+            <summary>
+            Datenstruktur in Xml konvertieren.  (Rekusive Methode)
+            </summary> 
+        </member>
+        <member name="F:MxLib.Dialog.DlgListe.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MxLib.Dialog.DlgListe.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MxLib.Dialog.DlgListe.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:MxLib.Entities.EnWaxDate">
+            <summary>
+            Nur Datum (5 stelliger Int Wert)
+            </summary> 
+        </member>
+        <member name="T:MxLib.Entities.EnWaxDateTime">
+            <summary>
+            Datum + Uhrzeit (9 stelliger int Wert)
+            </summary> 
+        </member>
+        <member name="M:MxLib.Entities.EnWaxDateTime.abrunden">
+            <summary>
+            Auf Tagesanfang abrunden
+            </summary> 
+        </member>
+        <member name="M:MxLib.Entities.EnWaxDateTime.aufrunden">
+            <summary>
+            auf Tagesende aufrunden
+            </summary> 
+        </member>
+        <member name="M:MxLib.Entities.EnWaxDateTime.ToString(System.String)">
+            <summary>
+            Formatbsp:
+            dd.MM.yyyy -> 10.03.2008
+            dd.MM.yyyy hh:mm:ss -> 10.03.2008 12:23:24
+            </summary> 
+        </member>
+        <member name="F:MxLib.Dialog.ListBoxExt.components">
+            <summary>
+            Erforderliche Designervariable.
+            </summary>
+        </member>
+        <member name="M:MxLib.Dialog.ListBoxExt.Dispose(System.Boolean)">
+            <summary> 
+            Verwendete Ressourcen bereinigen.
+            </summary>
+            <param name="disposing">True, wenn verwaltete Ressourcen gelöscht werden sollen; andernfalls False.</param>
+        </member>
+        <member name="M:MxLib.Dialog.ListBoxExt.InitializeComponent">
+            <summary>
+            Erforderliche Methode für die Designerunterstützung.
+            Der Inhalt der Methode darf nicht mit dem Code-Editor geändert werden.
+            </summary>
+        </member>
+        <member name="T:MxLib.Tools.FileTools">
+            <summary>
+            Tools für Dateien und Verzeichnisse
+            </summary>
+        </member>
+        <member name="M:MxLib.Tools.FileTools.getFiles(System.String,System.String[],System.Collections.Generic.List{System.String})">
+            <summary>
+            File aus dem Verzeichnis pfad 
+            </summary> 
+        </member>
+        <member name="M:MxLib.Tools.FileTools.getFilesRekursiv(System.String,System.String[],System.Collections.Generic.List{System.String})">
+            <summary>
+            File aus dem Verzeichnis pfad und allen Unterverzeichnissen einlesen
+            </summary> 
+        </member>
+        <member name="M:MxLib.Tools.FileTools.getFilesRekursiv(System.String,System.String[],System.Collections.Generic.List{System.String},System.Boolean)">
+            <summary>
+            Files aus dem Verzeichnis pfad einlesen. Wenn  rekursiv=true dann auch von allen Unterverzeichnissen einlesen
+            </summary> 
+        </member>
+        <member name="F:MxLib.Dialog.DlgAbfrage.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:MxLib.Dialog.DlgAbfrage.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:MxLib.Dialog.DlgAbfrage.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:MxLib.Db.DbConnection">
+            <summary>
+            Connection Klasse für Datenbankenabfragen. Öffnet und schließ die DB
+            </summary>
+        </member>
+        <member name="M:MxLib.Db.DbConnection.#ctor(MxLib.Entities.EnConnectionData)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="dbWerte">Datenbankwerte (DB Name, Server, User, Paßwort, ...)</param>
+        </member>
+        <member name="M:MxLib.Db.DbConnection.openDb">
+            <summary>
+            Datenbank öffnen
+            </summary> 
+        </member>
+        <member name="M:MxLib.Db.DbConnection.getConnectionstring(System.String@)">
+            <summary>
+            Anhand der Connectiondata den Connectionstring erstellen
+            </summary> 
+        </member>
+        <member name="M:MxLib.Db.DbConnection.closeDb">
+            <summary>
+            Datenbankverbindung wieder schließen
+            </summary> 
+        </member>
+        <member name="M:MxLib.Db.DbConnection.getCommand(System.String)">
+            <summary>
+            Objekt zum Ausführen eines Sql Befehls
+            </summary> 
+        </member>
+        <member name="M:MxLib.Db.DbConnection.setDatabaseTyp">
+            <summary>
+            Anhand des Db Names den DB Typ bestimmen
+            </summary> 
+        </member>
+        <member name="P:MxLib.Db.DbConnection.CloseDbByAccess">
+            <summary>
+            Bei Access muß die DB nach einer bestimmten Anzahl von Zugriffen geschlossen und wieder geöffnet werden.
+            </summary>
+        </member>
+        <member name="P:MxLib.Db.DbConnection.ErrorTextDontOpenDb">
+            <summary>
+            Standardtext für die Fehlermeldung, wenn die Db nicht geöffent werden kann.
+            Wenn die Fehlertexte in der Db stehen kann der Fehlertext für die Fehler ID errDontOpenDb
+            ja nicht aus der Db gelesen werden.
+            </summary> 
+        </member>
+        <member name="P:MxLib.Db.DbConnection.Connection">
+            <summary>
+            ODBC Connection Objekt
+            </summary>
+        </member>
+        <member name="P:MxLib.Db.DbConnection.ConnectionData">
+            <summary>
+            Connection Daten (DB Name, Server, User, Paßwort, ...)
+            </summary>
+        </member>
+        <member name="T:MxLib.Basis.Tools">
+            <summary>
+            Hilfsfunktionen
+            </summary>
+        </member>
+        <member name="M:MxLib.Basis.Tools.copy(MxLib.Basis.IDataTransfer,MxLib.Basis.IDataTransfer)">
+            <summary>
+            Werte von zwei gleichen Objekten kopieren
+            </summary> 
+        </member>
+        <member name="M:MxLib.Basis.Tools.getNoNullString(System.String)">
+            <summary>
+            Wenn str null ist, wird ein Leerstring zurückgegeben, sonst str selber.
+            </summary>
+            <param name="str"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Basis.Tools.tryParse(System.Object,System.Double@)">
+            <summary>
+            Try Parse für einen double Wert unter Berücksichtigung von <c>MxCulture.Instance.NumberStyles, MxCulture.Instance.NumberFormat</c>
+            </summary>
+            <param name="obj">Zu prüfender Wert</param>
+            <param name="val">Result</param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Math.Bks.set(MxLib.Math.Point,MxLib.Math.Vector,MxLib.Math.Vector,System.Double)">
+            <summary>
+            Bks aus Basispunkt und x-undy Achse setzten. 
+            Aus der yAchse wird nur der Senkrechte Teil zur X Achse genommen.
+            </summary> 
+        </member>
+        <member name="M:MxLib.Math.Bks.export(MxLib.Basis.DataElement)">
+            <summary>
+            Bks als Xml schreiben
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Math.Bks.import(MxLib.Basis.DataElement)">
+            <summary>
+            XML Import
+            </summary>
+            <param name="element"></param>
+            <returns></returns>
+        </member>
+        <member name="T:MxLib.Basis.Singleton`2">
+            <summary>
+            Tamplate für eine Singleton Klassendefinition
+            </summary>
+            <typeparam name="T">Klasse T wird mit new erzeugt</typeparam>
+            <typeparam name="X">Rückgabe des Objektes gecastet mit X</typeparam>
+        </member>
+        <member name="M:MxLib.Basis.Singleton`2.op_Implicit(MxLib.Basis.Singleton{`0,`1})~`1">
+            <summary>
+            Cast
+            </summary>
+            <param name="t"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Basis.Singleton`2.appendErrorListe(MxLib.Basis.IMxError)">
+            <summary>
+            Fehlerliste anhängen
+            </summary>
+            <param name="liste"></param>
+        </member>
+        <member name="M:MxLib.Basis.Singleton`2.clearErrorListe">
+            <summary>
+            Fehlerliste löschen
+            </summary>
+        </member>
+        <member name="P:MxLib.Basis.Singleton`2.Instance">
+            <summary>
+            Zugriff auf das Objekt
+            </summary>
+        </member>
+        <member name="P:MxLib.Basis.Singleton`2.Errorliste">
+            <summary>
+            Errorliste
+            </summary>
+        </member>
+        <member name="M:MxLib.Math.Vector.angleTo(MxLib.Math.Vector,MxLib.Math.Vector)">
+            <summary>
+            Winkel von This nach Vektor b im Bereich 0 - 2Pi. 
+            refPositiveYAchse gibt die 
+            positive Y-Achse zu dem this Vector an. 
+            
+            </summary> 
+        </member>
+        <member name="M:MxLib.Math.Vector.angleToTest(MxLib.Math.Vector,MxLib.Math.Vector)">
+            <summary>
+            angleToTest rechnet den WaxWinklel richtig aus. Bei angleTo ist der Winkel falsch
+            </summary> 
+        </member>
+        <member name="M:MxLib.Math.Vector.angleTo(MxLib.Math.Vector)">
+            <summary>
+            Winkel von this nach Vector b im Bereich 0 - Pi (0° - 180°)
+            wird über das Skalarprodukt berechnet
+            </summary> 
+        </member>
+        <member name="T:MxLib.Entities.EnComboBoxWerte">
+            <summary>
+            Datenklasse für die ComboBox ComboBoxExt. Der Combobox kann eine Liste von EnComboBoxWerte
+            übergeben werden. 
+            EnComboBoxWerte kann je nach Bedarf string, int , double oder ein object Objekt zugeordnet werden. Angezeigt wird 
+            in der ComboBox immer die Bezeichnung über die ToSting Methode
+            </summary>
+        </member>
+        <member name="M:MxLib.Entities.EnComboBoxWerte.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:MxLib.Entities.EnComboBoxWerte.#ctor(System.String,System.Object)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="bezeichnung">Bezeichnung</param>
+            <param name="value">Wert</param>
+        </member>
+        <member name="M:MxLib.Entities.EnComboBoxWerte.ToString">
+            <summary>
+            Anzeige der Bezeichnung
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:MxLib.Entities.EnComboBoxWerte.ComboId">
+            <summary>
+            ID (gleich bei allen Elementen der Liste)
+            </summary>
+        </member>
+        <member name="P:MxLib.Entities.EnComboBoxWerte.IdCounter">
+            <summary>
+            eindeutige ID 
+            </summary>
+        </member>
+        <member name="P:MxLib.Entities.EnComboBoxWerte.Bezeichnung">
+            <summary>
+            Bezeichnung, die in der Combobox angezeigt wird
+            </summary>
+        </member>
+        <member name="P:MxLib.Entities.EnComboBoxWerte.IntValue">
+            <summary>
+            Integer Wert 
+            </summary>
+        </member>
+        <member name="P:MxLib.Entities.EnComboBoxWerte.StringValue">
+            <summary>
+            String Wert
+            </summary>
+        </member>
+        <member name="P:MxLib.Entities.EnComboBoxWerte.DoubleValue">
+            <summary>
+            Double Wert
+            </summary>
+        </member>
+        <member name="P:MxLib.Entities.EnComboBoxWerte.Value">
+            <summary>
+            Object Wert
+            </summary>
+        </member>
+        <member name="T:MxLib.Tools.MailTools">
+            <summary>
+            Tools für Mails
+            </summary>
+        </member>
+        <member name="M:MxLib.Tools.MailTools.sendMail(System.String,System.String,System.String)">
+            <summary>
+            Öffnet das aktuelle Mailprogramm mit den übergebenen Werten
+            </summary>
+            <param name="to">Empfänger</param>
+            <param name="subject">Kopf</param>
+            <param name="message">Mitteilung</param>
+            <returns></returns>
+        </member>
+        <member name="T:MxLib.Math.MathTools">
+            <summary>
+            Mathe Tools
+            </summary>
+        </member>
+        <member name="F:MxLib.Math.MathTools.ToleranzRechnung">
+            <summary>
+            Hohe Genauigkeit z.B. für Berechnungen oder Double Werte auf Null prüfen (0.00000001)
+            </summary>
+        </member>
+        <member name="F:MxLib.Math.MathTools.ToleranzGeoBerechnung">
+            <summary>
+            Berechnungen und Vergleiche bei Punkten und Vektoren in Rad. (0.001, entspricht ca. 0.057°)
+            </summary>
+        </member>
+        <member name="F:MxLib.Math.MathTools.ToleranzGeoGrad">
+            <summary>
+            Prüfung auf Winkelgrad (1.0)
+            </summary>
+        </member>
+        <member name="F:MxLib.Math.MathTools.ToleranzIsOnBauteil">
+            <summary>
+            Prüfungen ob Teil auf einem anderen sitzt  (1.0)
+            </summary>
+        </member>
+        <member name="F:MxLib.Math.MathTools.ToleranzPlausiAbstaende">
+            <summary>
+            Toleranz für Min/Max Abstände die auch im Wax Gültigkeit haben müssen
+            Im Wax werden Double Werte ab 0.5 aufgerundet.
+            Diese Toleranz darf nicht größer gemacht werden, da sonst im Wax Fehlermeldungen kommen, dass 
+            Mindestabstände nicht eingehalten werden. Die Übergabe von Wax zu den Maschinen könnte sonst auch Probleme bereiten. 
+            </summary>
+        </member>
+        <member name="M:MxLib.Math.MathTools.radiantToGrad(System.Double)">
+            <summary>
+            Radiant in Grad umwandeln
+            </summary>
+            <param name="dWinkelRadiant"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Math.MathTools.gradToRadiant(System.Double)">
+            <summary>
+            Grad in Radiant umwandeln
+            </summary>
+            <param name="dWinkelGrad"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Math.MathTools.compare(System.Double,System.Double,System.Double)">
+            <summary>
+            Double Werte vergleichen
+            </summary>
+            <param name="d1"></param>
+            <param name="d2"></param>
+            <param name="tol">Toleranz</param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Math.MathTools.isNull(System.Double,System.Double)">
+            <summary>
+            Prüfen ob der Double Wert Null ist
+            </summary>
+            <param name="wert"></param>
+            <param name="tol">Toleranz</param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Math.MathTools.getRad90">
+            <summary>
+            90° in Radiant
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Math.MathTools.getRad180">
+            <summary>
+            180° Grad in Radiant
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Math.MathTools.getRad270">
+            <summary>
+            270° in Radiant
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Math.MathTools.getRad360">
+            <summary>
+            360° in Radiant
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Math.MathTools.round(System.Double,MxLib.Math.MathTools.Rounding,MxLib.Basis.Einheit)">
+            <summary>
+            Double Wert abhängig der Einheit runden
+            </summary>
+            <param name="wert">Wert</param>
+            <param name="roundTyp">Art des Rundens</param>
+            <param name="einheit">Einheit auf die sich der wert bezieht</param>
+            <returns>Gerundeter Double Wert</returns>
+        </member>
+        <member name="M:MxLib.Math.MathTools.round(System.Double,MxLib.Math.MathTools.Rounding)">
+            <summary>
+            Double Wert runden
+            </summary>
+            <param name="wert">Wert</param>
+            <param name="roundTyp">Art des Rundens</param>        
+            <returns>Gerundeter Double Wert</returns>
+        </member>
+        <member name="T:MxLib.Math.MathTools.Rounding">
+            <summary>
+            Runden von Double Werten
+            </summary>
+        </member>
+        <member name="F:MxLib.Math.MathTools.Rounding.MidpointRounding">
+            <summary>Ab 0.5 auf die nächste Ganzzahl aufrunden</summary>
+        </member>
+        <member name="F:MxLib.Math.MathTools.Rounding.Ceiling">
+            <summary>Auf die nächste Ganzzahl aufrunden</summary>
+        </member>
+        <member name="F:MxLib.Math.MathTools.Rounding.Floor">
+            <summary>Auf die nächste Ganzzahl abrunden</summary>
+        </member>
+        <member name="T:MxLib.Entities.EnFilterWert">
+            <summary>
+            Filter für SQL Abfragen
+            </summary>
+        </member>
+        <member name="M:MxLib.Entities.EnFilterWert.#ctor(System.Object,System.Boolean)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="wert"></param>
+            <param name="isOrFilter"></param>
+        </member>
+        <member name="P:MxLib.Entities.EnFilterWert.IsOrFilter">
+            <summary>
+            Ob der Wert mit OR an den Filterstring im SQL Statement angehängt wird
+            </summary>
+        </member>
+        <member name="T:MxLib.Entities.EnFilterString">
+            <summary>
+            Filter für SQL Abfragen
+            </summary>
+        </member>
+        <member name="M:MxLib.Entities.EnFilterString.#ctor(System.String,System.Boolean,System.Boolean)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="wert"></param>
+            <param name="isOrFilter"></param>
+            <param name="useLike">Bei Stringvergleich "Like" verwenden</param>
+        </member>
+        <member name="P:MxLib.Entities.EnFilterString.UseLike">
+            <summary>
+            Stringvergleich mit "Like"
+            </summary>
+        </member>
+        <member name="T:MxLib.Basis.DataElement">
+            <summary>
+            Datenelement für XML Import und Export
+            </summary>
+        </member>
+        <member name="M:MxLib.Math.Line.getPoint(System.Double)">
+            <summary>
+            Punkt auf der Linie, vom Startpunkt aus gemessen
+            </summary> 
+        </member>
+        <member name="M:MxLib.Math.Line.isOnLine(MxLib.Math.Point,System.Double,MxLib.Math.Point@)">
+            <summary>
+            		 * Prüfen ob Punkt auf der Linie liegt 
+            		* </summary> 
+        </member>
+        <member name="M:MxLib.Math.Line.distanceTo(MxLib.Math.Point,System.Double@,System.Double@,MxLib.Math.Point@)">
+            <summary>
+            kürzesten Abstand des Punktes zur Achse der Linie 
+            Formel: v(P-g) = 0
+            v=Richtungsvektor der Geraden
+            g=Geradengleichung  x=r+kv
+            P=Punkt
+            
+            return: void, da es immer eine Lösung gibt
+            </summary> 
+        </member>
+        <member name="M:MxLib.Math.Line.intersectionWith(MxLib.Math.Line,System.Double,MxLib.Math.Point@)">
+            <summary>
+            Schnittpunkt zweier Geraden berechnen
+            </summary> 
+        </member>
+        <member name="M:MxLib.Basis.MxTreeDaten.getRootEbene(System.Collections.Generic.List{MxLib.Entities.EnTreeKnoten},MxLib.Entities.EnMatrix)">
+            <summary>
+            Root Ebene generieren
+            </summary> 
+        </member>
+        <member name="M:MxLib.Basis.MxTreeDaten.expandNode(System.Collections.Generic.List{MxLib.Entities.EnTreeKnoten},System.Collections.Generic.List{MxLib.Entities.EnTreeKnoten},MxLib.Entities.EnMatrix)">
+            <summary>
+            Listen erzeugen, die beim Klick auf den Node entstehen
+            </summary> 
+        </member>
+        <member name="M:MxLib.Basis.MxTreeDaten.appendErrorListeAndClear(MxLib.Basis.IMxError)">
+            <summary>
+            Errorliste kopieren und Ursprungsliste zurücksetzen
+            </summary> 
+        </member>
+        <member name="T:MxLib.Tools.FileString">
+            <summary>
+            Tools für die Stringbehandlung von Datei- und Verzeichnisnamen
+            </summary>
+        </member>
+        <member name="M:MxLib.Tools.FileString.getFileName(System.Boolean)">
+            <summary>
+            Den Dateinamen extrahieren
+            </summary> 
+        </member>
+        <member name="T:MxLib.Db.DbSqlBase">
+             <summary>
+             Zugriff auf SQL Datenbanken.
+             </summary> 
+             <example>Beispiele 1: Allgemeine Verwendung der Klasse:
+             \code
+             public readFromDb(List[EnOberflaeche] oberflaechen)
+             {
+                 //Verbindungsdaten
+                 EnConnectionData conData = new EnConnectionData();
+                 conData.DatabaseTyp = EnConnectionData.DbTyp.Access;
+                 conData.Datenbank = @"d:\test.accdb"; 
+             
+                 //Datenbank Verbindung
+                 DbConnection dbCon = new DbConnection(conData);
+             
+                 //Sql Zugriffsobjekt
+                 DbSqlBase dbSql = new DbSqlBase(dbCon);
+            
+                 int maxSpalten = 3;
+                 string sql = "Select Id, BezeichnungDeutsch ,Ral from Beschichtungen where Verfuegbar=True order by Id";
+            
+                 //Sql Statement ausführen (Die Datenbank wird automatisch geöffnet, falls sie noch nicht geöffnet war)
+                 EnMatrix matrix = new EnMatrix();
+                 if (!dbSql.executeSql(sql, matrix))
+                     return false;
+            
+                 //Anzahl der Spalten im Sql Statement prüfen
+                 if (matrix.MaxColumn != maxSpalten)
+                 {
+                     Errorliste.addErrorId(DbError.errFalscheAnzSpalten.ToString());
+                     return false;
+                 }
+            
+                 try
+                 {
+                     //Ergebnis in Liste schreiben
+                     for (int count = 0; count (kleiner als) matrix.MaxRow; count++)
+                     {
+                         int id = (int)matrix.getAt(count, 0);
+                         string bezeichnung = (string)matrix.getAt(count, 1);
+                         int ral = (int)matrix.getAt(count, 2);
+            			
+                         EnOberflaeche obfl = new EnOberflaeche(id, bezeichnung, ral);
+                         oberflaechen.Add(obfl);
+                     }
+                 }
+                 catch (Exception ex)
+                 {
+                     this.Errorliste.addError(ex.Message);
+                     return false;
+                 }
+                 finally
+                 {
+                     dbCon.closeDb();
+                 }	
+             
+                 return true;
+             }
+             \endcode
+             
+             Beispiel 2: Klasse ableiten
+             \code
+             public class DbProjekt : DbSqlBase
+             {
+                 //Tabellenname
+                 string tabname = "Projekt";
+                 
+                 //Key Spalten
+                 string spalteBezProjektNr = "Nummer";
+                 string spalteBezProjektAbschnittsNr = "AbschnittsNr";
+                 
+                 public DbProjekt(MxLib.Db.DbConnection conectionData)
+            		: base(conectionData)
+                 {
+                 }
+                 
+                 List[string] getSpalten()
+                 {
+                     List[string] sp = new List[string]();
+                     sp.Add(spalteBezProjektNr);
+                     sp.Add(spalteBezProjektAbschnittsNr);
+                     sp.Add("Bezeichnung");
+                     sp.Add("Leiter");
+                     
+                     return sp;
+                 }
+                 
+                 public bool save(EnProjekt projekt)
+                 {
+                     bool result = true;                     
+            
+                     //Filter setzen
+                     EnSqlFilter filter = new EnSqlFilter();
+                     filter.addFilter(spalteBezProjektNr, projekt.Nummer);
+                     filter.addFilter(spalteBezProjektAbschnittsNr, projekt.AbschnittsNr);
+            
+                     //prüfen ob der Datensatz schon existiert
+                     long count = countRows(tabname, filter); 
+             
+                     List[object] values = new List[object]();
+                     values.Add(projekt.Nummer);
+                     values.Add(projekt.AbschnittsNr);
+                     values.Add(projekt.Bezeichnung);
+                     values.Add(projekt.Leiter);
+            
+                     int changedRow = 0;
+                     if (count == 1)            
+                        result = updateTable(tabname, getSpalten(), values, filter, ref changedRow);
+                     else if (count == 0)
+                        result = insertInto(tabname, getSpalten(), values);
+                     else
+                        throw new MxException(null, "err_freigabe_zuvieleDatensatze");
+                    
+                    return result; 
+                 }
+             }
+             \endcode
+             </example>
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.#ctor(MxLib.Db.DbConnection)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="dbConnection">Verbindungsdaten Daten</param>
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.executeSql(System.String,MxLib.Entities.EnMatrix)">
+            <summary>
+            Sql Abfrage in einer Matrix zurückgeben
+            </summary>
+            <param name="sqlStatement"></param>
+            <param name="matrix"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.executeSqlOneRow(System.String,System.Collections.Generic.List{System.Object})">
+            <summary>
+            Für Sql Abfragen mit einem Satz als Antwort. Hat die Abfrage mehrere Datensätze
+            als Antwort wird false zurückgegeben.
+            </summary>
+            <param name="sqlStatement"></param>
+            <param name="result"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.openDbAndGetReader(System.String)">
+            <summary>
+            Datenbank öffnen, Sql Statement ausführen und Reader auf Abfrage zurückgeben
+            </summary> 
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.openDbAndGetScalar(System.String)">
+            <summary>
+            Abfragen starten, die nur einen Wert als Antwort haben.
+            Bsp: select count(*) from ....
+            </summary> 
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.createTableAllColumnsAsString(System.String,System.Collections.Generic.List{System.Object})">
+            <summary>
+            Neue Tabelle anlegen. Alle Spalten bekommen den Typ String.
+            </summary>
+            <param name="tabName">Tabellenname</param>
+            <param name="spalten">Spaltennamen</param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.createTable(System.String,MxLib.Entities.EnMatrix)">
+            <summary>
+            Neue Tabelle anlegen.
+            </summary>
+            <param name="tabName">Tabellenname</param>
+            <param name="mat">Aus den Spalteninformationen der Matrix die Spalten der Tabelle definieren</param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.updateTable(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object},MxLib.Entities.EnSqlFilter,System.Int32@)">
+            <summary>
+            Die Spalten "spalten" mit den Werten "values" updaten.
+            </summary> 
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.updateTable(System.String,MxLib.Entities.EnMatrix,System.String[],System.Boolean,System.Int32@,System.Int32@)">
+            <summary>
+            Werte aus der Matrix in die Db schreiben
+            Die Spalten aus filterSpalten müssen in der matrix vorhanden sein.
+            insertIfNotExist = true: Wenn der Datensatz noch nicht in der Db vorhanden ist, wird er neu angelegt
+            </summary> 
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.insertInto(System.String,MxLib.Entities.EnMatrix)">
+            <summary>
+            Neue Datensätze in die Datenbank schreiben
+            </summary>
+            <param name="tabName">Tabellenname</param>
+            <param name="matrix">Matrix mit neuen Werten.</param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.insertInto(System.String,System.Collections.Generic.List{System.String},System.Collections.Generic.List{System.Object})">
+            <summary>
+            Neue Datensätze in die Datenbank schreiben
+            </summary>
+            <param name="tabName">Tabellenname</param>
+            <param name="spalten">Spaltennamen der Tabelle</param>
+            <param name="values">Werteliste</param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.addSqlStatementToErrorliste(System.Data.Common.DbCommand)">
+            <summary>
+            Fehler aus Anfrage lesen und in die Errorliste stellen
+            </summary>
+            <param name="cmd"></param>
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.readSpaltenWerte(System.String,System.String,System.Collections.Generic.List{System.Object})">
+            <summary>
+            alle Werte zu einer Spalte auslesen
+            </summary> 
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.readSpaltenWerte(System.String,System.String,System.String,System.Object,System.Collections.Generic.List{System.Object})">
+            <summary>
+            alle Werte zu einer Spalte auslesen
+            </summary> 
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.read(System.String,System.String[],MxLib.Entities.EnSqlFilter,MxLib.Entities.EnMatrix)">
+            <summary>
+            Tabelle auslesen
+            </summary> 
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.createSqlString(System.String,System.String[],MxLib.Entities.EnSqlFilter)">
+            <summary>
+            Aus den Werten einen SELECT Sql String erzeugen.
+            </summary>
+            <param name="tabName">Tabellenname</param>
+            <param name="spalten">Spaltennamen</param>
+            <param name="filter">Filter (Darf auch null sein)</param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.readOneRow(System.String,System.String[],MxLib.Entities.EnSqlFilter,System.Collections.Generic.List{System.Object})">
+            <summary>
+            aus der Datenbank Werte einlesen. Der Filter muss so gesetzt sein, dass nur eine Spalte zurückgegeben wird.
+            </summary> 
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.readDouble(System.Object,System.Double)">
+            <summary>
+            Object Value in ein Double convertieren
+            </summary>
+            <param name="value">Wert</param>
+            <param name="standard">Vorgabewert</param>
+            <returns>Konvertierter Double Wert</returns>
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.readInt(System.Object,System.Int32)">
+            <summary>
+            Wert in integer Konvertieren
+            </summary>
+            <param name="value">Wert</param>
+            <param name="standard">Vorgabewert</param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.readBool(System.Object,System.Boolean)">
+            <summary>
+            Wert in Bool konvertieren
+            </summary>
+            <param name="value">Wert</param>
+            <param name="standard">Vorgabewert</param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.readString(System.Object,System.String)">
+            <summary>
+            Wert in String konvertieren
+            </summary>
+            <param name="value">Wert</param>
+            <param name="standard">Vorgabewert</param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.countRows(System.String,MxLib.Entities.EnSqlFilter)">
+            <summary>
+            Datensätze mit dem SQL Befehl select count(*) zählen.
+            </summary> 
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.max(System.String,System.String,MxLib.Entities.EnSqlFilter)">
+            <summary>
+            Größten Wert einer Spalte ermitteln
+            </summary> 
+        </member>
+        <member name="M:MxLib.Db.DbSqlBase.delete(System.String,MxLib.Entities.EnSqlFilter)">
+            <summary>
+            Datensätze aus der DB löschen. 
+            Hinweis: openDbAndGetScalar gibt immer NULL zurück. 
+            </summary> 
+        </member>
+        <member name="P:MxLib.Db.DbSqlBase.Connection">
+            <summary>
+            Connection Objekt
+            </summary>
+        </member>
+        <member name="P:MxLib.Db.DbSqlBase.CloseDbByAccess">
+            <summary>
+            Bei Access muß nach einer bestimmten Anzahl von Zugriffen die Db geschlossen werden
+            </summary>
+        </member>
+        <member name="P:MxLib.Db.DbSqlBase.ExecuteReaderCounter">
+            <summary>
+            Counter für die Anzahl der Zugriffe auf die DB
+            </summary>
+        </member>
+        <member name="T:MxLib.Entities.EnMatrix">
+            <summary>
+            Matrix. Es können Spaltennamen definiert werden und auf jedes beliebige Feld zugegriffen werden.
+            </summary>
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.setAt(System.Int32,System.Int32,System.Object)">
+            <summary>
+            Feld setzen
+            </summary>
+            <param name="zeile"></param>
+            <param name="spalte"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.getAt(System.Int32,System.Int32)">
+            <summary>
+            Eintrag aus einem bestimmten Feld holen
+            </summary>
+            <param name="zeile"></param>
+            <param name="spalte"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.getDoubleAt(System.Int32,System.Int32,System.Double@)">
+            <summary>
+            Double Wert aus dem Feld lesen
+            </summary>
+            <param name="zeile"></param>
+            <param name="spalte"></param>
+            <param name="wert"></param>
+            <returns>false, wenn es kein double ist</returns>
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.getDecimalAt(System.Int32,System.Int32,System.Decimal@)">
+            <summary>
+            Wert auslesen
+            </summary>
+            <param name="zeile"></param>
+            <param name="spalte"></param>
+            <param name="wert"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.getShortAt(System.Int32,System.Int32,System.Int16@)">
+            <summary>
+            Wert auslesen
+            </summary>
+            <param name="zeile"></param>
+            <param name="spalte"></param>
+            <param name="wert"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.getIntAt(System.Int32,System.Int32,System.Int32@)">
+            <summary>
+            Wert auslesen
+            </summary>
+            <param name="zeile"></param>
+            <param name="spalte"></param>
+            <param name="wert"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.getWaxDateAt(System.Int32,System.Int32,MxLib.Entities.EnWaxDateTime@)">
+            <summary>
+            Wert als Waxdatum lesen
+            </summary> 
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.getDateTimeAt(System.Int32,System.Int32,System.DateTime@)">
+            <summary>
+            Datum auslesen
+            </summary>
+            <param name="zeile"></param>
+            <param name="spalte"></param>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.getStringAt(System.Int32,System.Int32,System.String@)">
+            <summary>
+            Wert auslesen
+            </summary>
+            <param name="zeile"></param>
+            <param name="spalte"></param>
+            <param name="wert"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.getBlobAsStringAt(System.Int32,System.Int32,System.String@)">
+            <summary>
+            Blob Wert als String 
+            </summary>
+            <param name="zeile"></param>
+            <param name="spalte"></param>
+            <param name="wert"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.getBoolAt(System.Int32,System.Int32,System.Boolean@)">
+            <summary>
+            Wert auslesen
+            </summary>
+            <param name="zeile"></param>
+            <param name="spalte"></param>
+            <param name="wert"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.setTagRow(System.Int32,System.Object)">
+            <summary>
+            Einer Zeile eine Wert bzw. ein Objekt zuordnen
+            </summary>
+            <param name="zeile"></param>
+            <param name="tag"></param>
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.getTagRow(System.Int32)">
+            <summary>
+            Tag der Zeile holen
+            </summary>
+            <param name="zeile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.clearField">
+            <summary>
+            Matrix zurücksetzen. Hinweis: Die Spaltennamen bleiben erhalten.
+            </summary>
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.clearAll">
+            <summary>
+            Matrix und Spalten zurücksetzen
+            </summary>
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.set(System.Int32,System.String,System.Object)">
+            <summary>
+            In Zeile "zeile" neuen Eintrag setzen. Wenn die Spalte "spaltenname" noch nicht existiert, wird sie 
+            in Spaltennames angelegt
+            </summary>
+            <param name="zeile"></param>
+            <param name="spaltenname"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.delete(System.Int32)">
+            <summary>
+            Eine komplette Zeile löschen
+            </summary>
+            <param name="zeile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.getKey(System.Int32,System.Int32)">
+            <summary>
+            Key des Feldes 
+            </summary>
+            <param name="zeile"></param>
+            <param name="spalte"></param>
+            <returns></returns>
+        </member>
+        <member name="M:MxLib.Entities.EnMatrix.getSpaltenTyp(System.Int32)">
+            <summary>
+            gibt den Typ der Spalte zurück.
+            </summary> 
+        </member>
+        <member name="P:MxLib.Entities.EnMatrix.MaxColumn">
+            <summary>
+            Anzahl der Spalten
+            </summary>
+        </member>
+        <member name="P:MxLib.Entities.EnMatrix.MaxRow">
+            <summary>
+            Anzahl der Zeilen
+            </summary>
+        </member>
+        <member name="P:MxLib.Entities.EnMatrix.ColumnNames">
+            <summary>
+            Liste mit Columnnames zurückgeben, wenn Liste kleiner MaxColumn ist, wird diese aufgefüllt mit Leerstrings
+            </summary>
+        </member>
+        <member name="T:MxLib.Entities.EnMatrix.spaltenTyp">
+            <summary>
+            Typen zum Definieren der Felder
+            </summary>
+        </member>
+        <member name="T:MxLib.Entities.EnConnectionData">
+            <summary>
+            Verbindungsdaten für einen Zugriff auf eine Datenbank
+            </summary>
+        </member>
+        <member name="F:MxLib.Entities.EnConnectionData.mDbTyp">
+            <summary>
+            Datenbanktyp
+            </summary>
+        </member>
+        <member name="M:MxLib.Entities.EnConnectionData.#ctor">
+            <summary>
+            Konstruktor
+            </summary>
+        </member>
+        <member name="M:MxLib.Entities.EnConnectionData.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            Konstruktor
+            </summary>
+            <param name="server">Servername</param>
+            <param name="db">Datenbankname</param>
+            <param name="user">Benutzer</param>
+            <param name="pwd">Passwort</param>
+        </member>
+        <member name="P:MxLib.Entities.EnConnectionData.DatabaseTyp">
+            <summary>
+            Datenbanktyp
+            </summary>
+        </member>
+        <member name="P:MxLib.Entities.EnConnectionData.Datenbank">
+            <summary>
+            Datenbankname
+            </summary>
+        </member>
+        <member name="P:MxLib.Entities.EnConnectionData.Server">
+            <summary>
+            Server
+            </summary>
+        </member>
+        <member name="P:MxLib.Entities.EnConnectionData.User">
+            <summary>
+            Username
+            </summary>
+        </member>
+        <member name="P:MxLib.Entities.EnConnectionData.Passwort">
+            <summary>
+            Passwort
+            </summary>
+        </member>
+        <member name="T:MxLib.Entities.EnConnectionData.DbTyp">
+            <summary>
+            Datenbanktyp
+            </summary>
+        </member>
+        <member name="F:MxLib.Entities.EnConnectionData.DbTyp.nichtGesetzt">
+            <summary>Nicht gesetzt</summary>
+        </member>
+        <member name="F:MxLib.Entities.EnConnectionData.DbTyp.Access_old">
+            <summary>Access bis Version 2003</summary>
+        </member>
+        <member name="F:MxLib.Entities.EnConnectionData.DbTyp.Access">
+            <summary>Access ab Version 2007</summary>
+        </member>
+        <member name="F:MxLib.Entities.EnConnectionData.DbTyp.MySql">
+            <summary>MySql</summary>
+        </member>
+        <member name="F:MxLib.Entities.EnConnectionData.DbTyp.Excel">
+            <summary>Excel bis Version 2003</summary>
+        </member>
+        <member name="T:MxLib.Basis.Einheit">
+            <summary>
+            Einheit
+            </summary>
+        </member>
+        <member name="F:MxLib.Basis.Einheit.nichtGesetzt">
+            <summary>
+            nicht Gesetzt
+            </summary>
+        </member>
+        <member name="F:MxLib.Basis.Einheit.mm">
+            <summary>
+            Millimeter
+            </summary>
+        </member>
+        <member name="F:MxLib.Basis.Einheit.cm">
+            <summary>
+            Zentimeter
+            </summary>
+        </member>
+        <member name="F:MxLib.Basis.Einheit.m">
+            <summary>
+            Meter
+            </summary>
+        </member>
+        <member name="F:MxLib.Basis.Einheit.inch">
+            <summary>
+            Zoll
+            </summary>
+        </member>
+        <member name="T:MxLib.Basis.EinheitenRechner">
+            <summary>
+            Einheiten umrechnen
+            </summary>
+        </member>
+        <member name="M:MxLib.Basis.EinheitenRechner.getFaktor(MxLib.Basis.Einheit,MxLib.Basis.Einheit)">
+            <summary>
+            Gibt den Faktor für die Umrechung der Basiseinheit in die Zieleinheit zurück
+            </summary>
+            <param name="basis">Basiseinheit</param>
+            <param name="ziel">Zieleinheit</param>
+            <returns>Umrechnugsfaktor</returns>
+        </member>
+    </members>
+</doc>

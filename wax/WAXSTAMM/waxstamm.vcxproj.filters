@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Quellcodedateien">
+      <UniqueIdentifier>{81f914e7-b0ea-444c-a23e-5959113356c0}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header-Dateien">
+      <UniqueIdentifier>{6dd853db-b40f-420c-a342-df2ca22b74d7}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{72ecdee5-3a7f-4f0a-97cf-02dbc9e687de}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+    <Filter Include="Tabellen">
+      <UniqueIdentifier>{5d108121-ffab-4a21-9135-af5e1e9eadb0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tabellen\Header-Dateien">
+      <UniqueIdentifier>{aeb0751b-9e3c-45cb-bc15-2e2554754c02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tabellen\Quellcodedateien">
+      <UniqueIdentifier>{653867cd-8ec1-4e9e-b49f-5a0f411ad4f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Queries">
+      <UniqueIdentifier>{1c3cce49-bcc5-4d2a-824d-ffe47ea025aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Queries\Header-Dateien">
+      <UniqueIdentifier>{fc9aabdf-d39d-4268-a9a2-88c3c180ff05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="unittest">
+      <UniqueIdentifier>{74effaf1-ef2f-42f7-9e33-6c651ca78341}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="StammDat.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="WaxStamm.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="WaxStamm_dll.cpp">
+      <Filter>Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="AbzugRadius.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="AfoZeiten.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Arbeitsfolgen.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Arbeitsplaetze.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="AussendurchmesserWandstaerke.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Bauelemente.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="BauelementeAfos.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="BauelementGruppen.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Beschichtungen.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Biegung.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="DNzuAussendurchmesser.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="DummyMaterialnummern.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="FormstueckeUndFittinge.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Kostenstellen.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Krantaetigkeit.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Montagezeiten.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Niederlassungen.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Preisfaktoren.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Profile.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ProfileArbeitsfolgen.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ProfileSaegezeiten.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="PulvernZeiten.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="PutzenZeiten.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Ral.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="RohrstutzenBrennzugabe.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="RohrTexte.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SapArtikelstamm.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Soko.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Sondermaterial.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Spanx PreiseArtikelstamm.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Texte.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="verzinkung.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="VK3Preise.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ZMass.cpp">
+      <Filter>Tabellen\Quellcodedateien</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="waxstamm.def">
+      <Filter>Quellcodedateien</Filter>
+    </None>
+    <None Include="res\waxstamm.rc2">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="waxstamm.rc">
+      <Filter>Quellcodedateien</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resource.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="StammDat.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WaxStamm.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="WaxStamm_dll.h">
+      <Filter>Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="AbzugRadius.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="AfoZeiten.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Arbeitsfolgen.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ArbeitsfolgenSammel.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Arbeitsplaetze.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="AussendurchmesserWandstaerke.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Bauelemente.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="BauelementeAfos.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="BauelementGruppen.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Beschichtungen.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Biegung.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="DNzuAussendurchmesser.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="DummyMaterialnummern.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="FormstueckeUndFittinge.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Kostenstellen.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Krantaetigkeit.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Montagezeiten.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Niederlassungen.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Preisfaktoren.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Profile.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ProfileArbeitsfolgen.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ProfileSaegezeiten.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PulvernZeiten.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="PutzenZeiten.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Ral.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="RohrstutzenBrennzugabe.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="RohrTexte.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SapArtikelstamm.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Soko.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Sondermaterial.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Spanx PreiseArtikelstamm.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Spanx PreiseBauelementeArtikelstamm.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Spanx PreiseFormStueckeArtikelstamm.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Texte.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="verzinkung.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="VK3Preise.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="VK3PreiseSammel.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ZMass.h">
+      <Filter>Tabellen\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="QueryBase.h">
+      <Filter>Queries\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="QueryBauelemente.h">
+      <Filter>Queries\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="QueryBrennzugabe.h">
+      <Filter>Queries\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="QueryFormstueckeFittinge.h">
+      <Filter>Queries\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="QuerySondermaterial.h">
+      <Filter>Queries\Header-Dateien</Filter>
+    </ClInclude>
+    <ClInclude Include="unittest\test_rohrstutzenbrennzugabe.h">
+      <Filter>unittest</Filter>
+    </ClInclude>
+    <ClInclude Include="unittest\testsuite_waxstamm.h">
+      <Filter>unittest</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

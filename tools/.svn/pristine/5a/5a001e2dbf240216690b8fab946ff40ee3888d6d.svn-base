@@ -1,0 +1,125 @@
+#include "StdAfx.h"
+
+#include "UtiltyHelper.h"
+
+#include "..\_Tubes Logic Grafic Adapter\RohrKomponente.h"
+#include "..\_Tubes Logic Grafic Adapter\RohrBemassungsAnbauChildKomponentenVectorVector.h"
+#include "..\_Tubes Logic Grafic Adapter\RohrBemassungsRohrKomponentenVector.h"
+#include "..\_Tubes Logic Grafic Adapter\RohrBemassungsRohrKomponentenVectorVector.h"
+#include "..\_Tubes Logic Grafic Adapter\RohrOneAssembeldKomponenteVector.h"
+
+
+#include "GraficTubeController.h"
+#include "..\Mechanicals Geometrics\GraficRohrKomponente.h"
+#include "..\SVG File Operations\GraficFileController.h"
+#include "..\Controller\GraficController.h"
+
+#include "GraficRohrBemassungsAnbauChildKomponentenVectorVector.h"
+#include "GraficRohrBemassungsRohrKomponentenVector.h"
+#include "GraficRohrBemassungsRohrKomponentenVectorVector.h"
+#include "GraficRohrOneAssembeldKomponenteVector.h"
+
+
+
+CCGraficRohrOneAssembeldKomponenteVector::CCGraficRohrOneAssembeldKomponenteVector()
+{	
+}
+
+
+void CCGraficRohrOneAssembeldKomponenteVector::AddComponenteForTube(CGraficRohrKomponente* pRohrKomponente)
+{
+	push_back(pRohrKomponente);
+}
+
+
+void CCGraficRohrOneAssembeldKomponenteVector::ClearMeMySelf(CCGraficRohrOneAssembeldKomponenteVector* pGraficRohrOneAssembeldKomponenteVector )
+{
+	
+	if(pGraficRohrOneAssembeldKomponenteVector->HasAssembeldTubes())
+	{
+		std::vector<int>::size_type sz = pGraficRohrOneAssembeldKomponenteVector->m_GraficBemassungsKomponentenVectorVector.size();
+		for(int z = 0; z < (int)sz; z++)
+		{
+			CGraficRohrBemassungsRohrKomponentenVector* pGraficRohrBemassungsKomponentenVector = pGraficRohrOneAssembeldKomponenteVector->m_GraficBemassungsKomponentenVectorVector[z];
+		
+			if(pGraficRohrBemassungsKomponentenVector->m_GraficRohrBemassungsAnbauChildKomponentenVectorVector.size() > 0)
+			{
+				std::vector<int>::size_type hh = pGraficRohrOneAssembeldKomponenteVector->m_GraficBemassungsKomponentenVectorVector.size();
+				for(int h = 0; h < (int)hh; h++)
+				{
+					CCGraficRohrOneAssembeldKomponenteVector* pGraficRohrOneAssembeldKomponenteVector = pGraficRohrBemassungsKomponentenVector->m_GraficRohrBemassungsAnbauChildKomponentenVectorVector[h];
+					ClearMeMySelf( pGraficRohrOneAssembeldKomponenteVector );
+				}
+			}
+			pGraficRohrBemassungsKomponentenVector->m_GraficRohrBemassungsAnbauChildKomponentenVectorVector.erase(pGraficRohrBemassungsKomponentenVector->m_GraficRohrBemassungsAnbauChildKomponentenVectorVector.begin(), pGraficRohrBemassungsKomponentenVector->m_GraficRohrBemassungsAnbauChildKomponentenVectorVector.end());
+
+		}
+		pGraficRohrOneAssembeldKomponenteVector->m_GraficBemassungsKomponentenVectorVector.erase(pGraficRohrOneAssembeldKomponenteVector->m_GraficBemassungsKomponentenVectorVector.begin(), pGraficRohrOneAssembeldKomponenteVector->m_GraficBemassungsKomponentenVectorVector.end());
+	}
+	
+	//m_GraficBemassungsKomponentenVectorVector.erase(m_GraficBemassungsKomponentenVectorVector.begin(), m_GraficBemassungsKomponentenVectorVector.end());
+	//m_GraficAssembeldTubeVectorVector.erase(m_GraficAssembeldTubeVectorVector.begin(), m_GraficAssembeldTubeVectorVector.end());
+	pGraficRohrOneAssembeldKomponenteVector->erase(pGraficRohrOneAssembeldKomponenteVector->begin(), pGraficRohrOneAssembeldKomponenteVector->end());
+	delete pGraficRohrOneAssembeldKomponenteVector;
+}
+
+
+
+bool CCGraficRohrOneAssembeldKomponenteVector::HasChildTubes()
+{
+	std::vector<int>::size_type sz = m_BemassungsKomponentenVectorVector.size();
+	bool bHasChilds = false;
+	for(int z = 0; z < (int)sz; z++)
+	{
+		CRohrBemassungsRohrKomponentenVector* pRohrBemassungsKomponentenVector= m_BemassungsKomponentenVectorVector[z];
+		if(pRohrBemassungsKomponentenVector->GetRohrBemassungsAnbauChildKomponentenVectorVector().HasChildTubes())
+		{
+			bHasChilds = true;
+			break;
+		}
+	}
+	return   bHasChilds; 
+}
+
+
+
+bool CCGraficRohrOneAssembeldKomponenteVector::HasAssembeldTubes()
+{	
+	std::vector<int>::size_type sz = m_GraficBemassungsKomponentenVectorVector.size();
+	bool bHasChilds = false;
+	for(int z = 0; z < (int)sz; z++)
+	{
+		CGraficRohrBemassungsRohrKomponentenVector* pGraficRohrBemassungsKomponentenVector = m_GraficBemassungsKomponentenVectorVector[z];
+		
+		if(pGraficRohrBemassungsKomponentenVector->m_GraficRohrBemassungsAnbauChildKomponentenVectorVector.size() > 0)
+		{
+			bHasChilds = true;
+			break;
+		}
+		
+	}
+	return   bHasChilds; 
+}
+
+
+
+/*
+CGraficRohrKomponenteVectorVector& CCGraficRohrOneAssembeldKomponenteVector::GetChildAssembeldTubes()
+{	
+	return  m_GraficAssembeldTubeVectorVector; 
+}
+*/
+
+
+
+
+CGraficRohrBemassungsKomponentenVectorVector& CCGraficRohrOneAssembeldKomponenteVector::GetGraficBemassungsKomponentenVectorVector()
+{
+	return m_GraficBemassungsKomponentenVectorVector;
+}
+
+
+
+CCGraficRohrOneAssembeldKomponenteVector::~CCGraficRohrOneAssembeldKomponenteVector(void)
+{	
+}

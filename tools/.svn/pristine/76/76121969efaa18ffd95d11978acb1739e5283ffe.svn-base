@@ -1,0 +1,37 @@
+
+# Info: Kommentare beginnen mit #, wenn die Ausführung bei Fehler gestoppt und ein Rollback erfolgen soll
+# muss vor der Anweisung ein ! stehen.
+#
+# Preistabelle neu erstellen
+DROP TABLE preise
+
+!CREATE TABLE preise (code VARCHAR(255), artikelnr INTEGER, region INTEGER, preis DOUBLE, PRIMARY KEY(code, artikelnr, region))  ENGINE =InnoDB DEFAULT CHARSET=latin1
+
+!CREATE INDEX index_code ON preise(code)
+
+!CREATE INDEX index_artikelnr ON preise(artikelnr)
+
+!CREATE INDEX index_region ON preise(region)
+
+!CREATE INDEX index_artregion ON preise(artikelnr, region)
+
+!CREATE INDEX index_coderegion ON preise(code, region)
+
+#ALTER TABLE niederlassungen ADD COLUMN region INTEGER
+
+#!UPDATE niederlassungen SET region = 2001 WHERE nl < 300
+#!UPDATE niederlassungen SET region = 2005 WHERE nl > 380 AND nl < 600
+#!UPDATE niederlassungen SET region = 2006 WHERE nl > 300 AND nl < 380
+#!UPDATE niederlassungen SET region = 2006 WHERE nl > 700 AND nl < 800
+# Intersales
+#!UPDATE niederlassungen SET region = 2006 WHERE nl = 284
+
+
+DROP TABLE region
+
+!CREATE TABLE region (id INTEGER, bezeichnung VARCHAR(255), bezeichnung_english VARCHAR(255), bezeichnung_francais VARCHAR(255), PRIMARY KEY(id)) ENGINE =InnoDB DEFAULT CHARSET=latin1
+
+INSERT INTO region (id, bezeichnung, bezeichnung_english, bezeichnung_francais) VALUES(2001, 'Deutschland', 'Germany', 'Allemagne')  
+INSERT INTO region (id, bezeichnung, bezeichnung_english, bezeichnung_francais) VALUES(2005, 'International', 'International', 'International')
+!INSeeeERT INTO region (id, bezeichnung, bezeichnung_english, bezeichnung_francais) VALUES(2006, 'Tochtergesellschaften', 'Affiliates', 'Filiales')
+

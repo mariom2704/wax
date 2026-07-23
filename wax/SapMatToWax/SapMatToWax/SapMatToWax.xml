@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Einstellung xmlns="http://tempuri.org/XMLSchema1.xsd">
+  <SapMaterialstamm>D:\work\bin\Wax\Release\wax_mat_stamm.txt</SapMaterialstamm>
+  <Server></Server>
+  <Datenbank>D:\work\bin\Wax\Release\WaxStamm.mdb</Datenbank>
+  <ShowPreise>1</ShowPreise>
+  <PreiseEinlesen>1</PreiseEinlesen>
+</Einstellung>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<Position Datei="Regalplanung.dwg" Dichtmittel="5" FertHinweis="" IsApaxBauteil="true" IsHandelslaenge="false" KappenFarbe="0" MitUeberlaenge="false" Trockenanlage="false" Waid="714233">
+
+  <Bauteil>
+    <BauteilPos Artikelgruppe="64" Artikelnummer="1402" Bezeichnung="Biegung" Durchmesser="30" ElementId="64" Id="-499" IsAnlage="false" MaxExt_x="0.000000" MaxExt_y="0.000000" MaxExt_z="0.000000" MinExt_x="0.000000" MinExt_y="0.000000" MinExt_z="0.000000" Sondermuffenlaenge="0" WaxWinkel="178">
+      <Anschluesse>
+        <Anschluss AnschlussId="8796088212880" DnId="40" P_X="377057.893100" P_Y="76441.603300" P_Z="2109.530100" R_X="0.000500" R_Y="0.999500" R_Z="-0.033100" Rohrverlaengerung="0" VbArt="0"/>
+      </Anschluesse>
+    </BauteilPos>
+    <BauteilPos Artikelgruppe="64" Artikelnummer="1402" Bezeichnung="Biegung" Durchmesser="30" ElementId="64" Id="-498" IsAnlage="false" MaxExt_x="0.000000" MaxExt_y="0.000000" MaxExt_z="0.000000" MinExt_x="0.000000" MinExt_y="0.000000" MinExt_z="0.000000" Sondermuffenlaenge="0" WaxWinkel="0">
+      <Anschluesse>
+        <Anschluss AnschlussId="8796088212880" DnId="40" P_X="376814.891400" P_Y="76441.603300" P_Z="2105.872200" R_X="-0.000900" R_Y="-0.998000" R_Z="0.063100" Rohrverlaengerung="0" VbArt="0"/>
+      </Anschluesse>
+    </BauteilPos>
+    <BauteilPos Artikelgruppe="51" Artikelnummer="841249" Bezeichnung="DIN EN 10217-1 Standardrohr geschweißt (vormals DIN 2458)" Durchmesser="0" ElementId="51" Id="8796088212880" IsAnlage="false" MaxExt_x="377352.374400" MaxExt_y="76587.246900" MaxExt_z="2130.025800" MinExt_x="376514.527900" MinExt_y="76417.453300" MinExt_z="2077.206300" Sondermuffenlaenge="0" WaxWinkel="0">
+      <TypRohr DnId="40" Id="8796088212880" P1_X="376514.891400" P1_Y="76441.603300" P1_Z="2101.356300" P2_X="377384.905900" P2_Y="76441.603300" P2_Z="2114.452600"/>
+      <Anschluesse>
+        <Anschluss AnschlussId="0" DnId="40" P_X="376514.891400" P_Y="76441.603300" P_Z="2101.356300" R_X="-0.999900" R_Y="0.000000" R_Z="-0.015100" Rohrverlaengerung="0" VbArt="1"/>
+        <Anschluss AnschlussId="0" DnId="40" P_X="377384.905900" P_Y="76441.603300" P_Z="2114.452600" R_X="0.999900" R_Y="0.000000" R_Z="0.015100" Rohrverlaengerung="0" VbArt="1"/>
+      </Anschluesse>
+      <Anbauteile>
+        <Anschluss AnschlussId="-498" DnId="40" P_X="376814.891400" P_Y="76441.603300" P_Z="2105.872200" R_X="-0.000900" R_Y="-0.998000" R_Z="0.063100" VbArt="0"/>
+        <Anschluss AnschlussId="-499" DnId="40" P_X="377057.893100" P_Y="76441.603300" P_Z="2109.530100" R_X="0.000500" R_Y="0.999500" R_Z="-0.033100" VbArt="0"/>
+      </Anbauteile>
+    </BauteilPos>
+  </Bauteil>
+
+</Position>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Einstellung>
+  <InsertKey>HKEY_CURRENT_USER\Software\Autodesk\AutoCAD\R18.1\ACAD-9001:407\Profiles</InsertKey>
+  <InsertVar></InsertVar>
+  <ReplaceKey>*VALUE*</ReplaceKey>
+
+  <Key>HKEY_CURRENT_USER\Software\Autodesk\AutoCAD\R18.1\ACAD-9001:407\Profiles\*VALUE*\General</Key>
+  <Var>ACAD</Var>
+  <Separator>;</Separator>
+
+  <DeleteWert>help</DeleteWert>
+  <DeleteWert>Rohrnetzkonfigurator</DeleteWert>
+  <DeleteWert>SpriCalc</DeleteWert>
+
+  <NewWert Position="0">D:\programme\autoCAD 2011\help</NewWert>
+  <NewWert Position="1">D:\programme\Rohrnetzkonfigurator\Programm2011</NewWert>
+  <NewWert Position="100">D:\programme\Rohrnetzkonfigurator</NewWert>
+  <NewWert Position="100">M:\Rohrnetzkonfigurator\Menue2011</NewWert>
+  <NewWert Position="100">D:\programme\sprink\SpriCalc\ACAD\ACAD2010</NewWert>
+</Einstellung>

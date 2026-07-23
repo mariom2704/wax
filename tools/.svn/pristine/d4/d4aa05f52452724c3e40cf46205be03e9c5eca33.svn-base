@@ -1,0 +1,21 @@
+#include "stdafx.h"
+#include "StrangRohr.h"
+
+
+
+ CRohrKomponente::CRohrKomponente(void)
+{
+	m_prevStrangRohr  = NULL;
+	m_pNextStrangRohr = NULL;
+	iDN			= 60;
+	iLaenge		= 250;
+	NutIdEnde	= 21;
+	NutIdAnfang = 22;
+	winkel		= 0;
+}
+
+
+CRohrKomponente::~CRohrKomponente(void)
+{
+}
+

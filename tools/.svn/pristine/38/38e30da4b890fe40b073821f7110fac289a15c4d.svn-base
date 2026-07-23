@@ -1,0 +1,56 @@
+#pragma once
+
+#include "Konfiguration.h"
+
+
+/**
+Funktionen der Softwareprüfung
+*/
+class MXSoftwareCheck
+{
+public:
+	/// Konstruktor
+	MXSoftwareCheck();
+
+	/// Destruktor
+	~MXSoftwareCheck();
+
+	/// Initialisierungsüberprüfung
+	bool init();
+
+	
+	string path;
+	string file;
+	string cur_msg;
+	int check_count;
+	list<string> content;
+
+	/// Konfigurationsobjekt
+	MxSoftwareCheck::Konfiguration conf;
+	
+	/// Ausführung der Überprüfung
+	void process();
+	void process_entry(string str);
+
+private:
+
+	/// Wird auf false gesetzt, wenn ein Eintrag in die Logdatei geschrieben wird. Dann wird die
+	/// Logdatei im Konstruktor auf den Server kopiert
+	bool is_logfile_empty;
+	bool check_configfile();
+	vector<string> isFileOlder( double maxdiff);
+	bool isFileSizeOk(const string &fname, unsigned int size) const;
+	bool setFile(const string &fname, const string& val) { file = val; check_count = 0; return true; };
+	bool setPath(const string &fname, const string& val) { path = val; return true; };
+	bool setMsg(const string &fname, const string& val) { cur_msg = val; return true; };
+	bool chkSize(const string &fname, const string& val);
+	bool chkDate(const string &fname, const string& val);
+	void readfile();
+	void write_log(const string& file, const string& msg) const;
+	void write_log2(const string& file, const string& msg, bool msgbox = true) const;
+	const time_t get_filetime(const string& file) const;
+	const unsigned int get_filesize(const string& file) const;
+
+	/// Keine Ausgabe der Meldung durch MessageBox
+	bool silent;
+};

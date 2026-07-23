@@ -1,0 +1,28 @@
+#pragma once
+#include "..\SVG File Operations\GraficFileController.h"
+#include "..\Mechanicals Geometrics\GraficRohrKomponente.h"
+
+
+class CGraficController
+{
+private:
+	CHtmlView* m_pHtmlView;
+	CRohrKomponenteVector m_StrangRohrKomponenten;
+	CGraficRohrKomponenteVector m_GraficRohrKomponentenContainer;
+
+public:
+	CGraficFileController m_GraficFileController;
+	CGraficController(void);
+	CGraficController(CHtmlView* pHtmlView)
+	{
+		m_pHtmlView = pHtmlView;
+	};
+
+	
+
+	
+	void GenerateDrawingOfTubes(CRohrKomponenteVector StrangRohrVector);
+
+	~CGraficController(void);
+};
+

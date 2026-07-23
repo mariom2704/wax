@@ -1,0 +1,6 @@
+; waxstamm.def : Deklariert die Modul-Parameter für die DLL.
+
+LIBRARY      "waxstamm"
+
+EXPORTS
+    ; Explizite Exporte können hier eingefügt werden

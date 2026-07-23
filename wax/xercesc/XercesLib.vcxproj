@@ -1,0 +1,1226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Static Debug|Win32">
+      <Configuration>Static Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Static Debug|x64">
+      <Configuration>Static Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Static Release|Win32">
+      <Configuration>Static Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Static Release|x64">
+      <Configuration>Static Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{152CE948-F659-4206-A50A-1D2B9658EF96}</ProjectGuid>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Static Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Static Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Static Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Static Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Static Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Static Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Static Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Static Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\bin\release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(OutDir)obj\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\..\..\..\..\..\Build\Win64\VC8\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\..\..\..\..\..\Build\Win64\VC8\Release\obj\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\bin\$(SolutionName)\$(Configuration)32\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\tmp\$(Configuration)32\$(ProjectName)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\..\..\..\..\..\Build\Win64\VC8\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\..\..\..\..\..\Build\Win64\VC8\Debug\obj\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Static Release|Win32'">.\..\..\..\..\..\Build\Win32\VC8\StaticRelease\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Static Release|Win32'">$(OutDir)obj\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Static Release|x64'">.\..\..\..\..\..\Build\Win64\VC8\StaticRelease\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Static Release|x64'">.\..\..\..\..\..\Build\Win64\VC8\StaticRelease\obj\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Static Debug|Win32'">.\..\..\..\..\..\Build\Win32\VC8\StaticDebug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Static Debug|Win32'">$(OutDir)obj\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Static Debug|x64'">.\..\..\..\..\..\Build\Win64\VC8\StaticDebug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Static Debug|x64'">.\..\..\..\..\..\Build\Win64\VC8\StaticDebug\obj\</IntDir>
+    <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</PostBuildEventUseInBuild>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\..\..\Build\Win32\VC8\Release/XercesLib.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;NDEBUG;PLATFORM_WIN32;_CRTDBG_MAP_ALLOC;PROJ_XMLPARSER;PROJ_XMLUTIL;PROJ_PARSERS;PROJ_SAX4C;PROJ_SAX2;PROJ_DOM;PROJ_VALIDATORS;XML_SINGLEDLL;WIN32;_WINDOWS;XML_USE_WIN32_TRANSCODER;XML_USE_WIN32_MSGLOADER;XML_USE_NETACCESSOR_WINSOCK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>$(IntDir)XercesLib.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>ws2_32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\bin\release\xerces-c_2_8.dll</OutputFile>
+      <AdditionalLibraryDirectories>.\..\..\..\..\..\Build\Win32\VC8\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\bin\release\xerces-c_2_8.fullpdb</ProgramDatabaseFile>
+      <StripPrivateSymbols>..\bin\release\xerces-c_2_8.pdb</StripPrivateSymbols>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(IntDir)xerces-c_2_8.map</MapFileName>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SetChecksum>true</SetChecksum>
+      <BaseAddress>0x12000000</BaseAddress>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>..\bin\release\xerces-c_2.lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\..\..\Build\Win64\VC8\Release/XercesLib.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;NDEBUG;PLATFORM_WIN32;_CRTDBG_MAP_ALLOC;PROJ_XMLPARSER;PROJ_XMLUTIL;PROJ_PARSERS;PROJ_SAX4C;PROJ_SAX2;PROJ_DOM;PROJ_VALIDATORS;XML_SINGLEDLL;WIN32;WIN64;_WINDOWS;XML_USE_WIN32_TRANSCODER;XML_USE_WIN32_MSGLOADER;XML_USE_NETACCESSOR_WINSOCK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeaderOutputFile>$(IntDir)XercesLib.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\..\..\..\Build\Win64\VC8\Release\xerces-c_2_8.dll</OutputFile>
+      <AdditionalLibraryDirectories>..\..\..\..\..\Build\Win64\VC8\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>.\..\..\..\..\..\Build\Win64\VC8\Release\xerces-c_2_8.fullpdb</ProgramDatabaseFile>
+      <StripPrivateSymbols>.\..\..\..\..\..\Build\Win64\VC8\Release\xerces-c_2_8.pdb</StripPrivateSymbols>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>$(IntDir)xerces-c_2_8.map</MapFileName>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <SetChecksum>true</SetChecksum>
+      <BaseAddress>0x12000000</BaseAddress>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>..\..\..\..\..\Build\Win64\VC8\Release\xerces-c_2.lib</ImportLibrary>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\..\..\Build\Win32\VC8\Debug/XercesLib.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;_CRTDBG_MAP_ALLOC;PROJ_SAX2;_DEBUG;PROJ_XMLPARSER;PROJ_XMLUTIL;PROJ_PARSERS;PROJ_SAX4C;PROJ_DOM;PROJ_VALIDATORS;XML_SINGLEDLL;WIN32;_WINDOWS;XML_USE_WIN32_TRANSCODER;XML_USE_WIN32_MSGLOADER;XML_USE_NETACCESSOR_WINSOCK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>$(IntDir)XercesLib.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalOptions>/MACHINE:I386 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalDependencies>ws2_32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\bin\$(SolutionName)\$(Configuration)32\xerces-c_2_8D.dll</OutputFile>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\bin\debug\xerces-c_2_8D.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <SetChecksum>true</SetChecksum>
+      <BaseAddress>0x12000000</BaseAddress>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>..\..\tmp\$(Configuration)32\xerces-c_2D.lib</ImportLibrary>
+    </Link>
+    <PostBuildEvent>
+      <Command>
+      </Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\..\..\Build\Win64\VC8\Debug/XercesLib.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;_CRTDBG_MAP_ALLOC;PROJ_SAX2;_DEBUG;PROJ_XMLPARSER;PROJ_XMLUTIL;PROJ_PARSERS;PROJ_SAX4C;PROJ_DOM;PROJ_VALIDATORS;XML_SINGLEDLL;WIN32;WIN64;_WINDOWS;XML_USE_WIN32_TRANSCODER;XML_USE_WIN32_MSGLOADER;XML_USE_NETACCESSOR_WINSOCK;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>$(IntDir)XercesLib.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>ws2_32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>..\..\..\..\..\Build\Win64\VC8\Debug\xerces-c_2_8D.dll</OutputFile>
+      <AdditionalLibraryDirectories>..\..\..\..\..\Build\Win64\VC8\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>..\..\..\..\..\Build\Win64\VC8\Debug\xerces-c_2_8D.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <SetChecksum>true</SetChecksum>
+      <BaseAddress>0x12000000</BaseAddress>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <ImportLibrary>..\..\..\..\..\Build\Win64\VC8\Debug\xerces-c_2D.lib</ImportLibrary>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static Release|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\..\..\Build\Win32\VC8\StaticRelease/XercesLib.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;NDEBUG;PLATFORM_WIN32;_CRTDBG_MAP_ALLOC;PROJ_XMLPARSER;PROJ_XMLUTIL;PROJ_PARSERS;PROJ_SAX4C;PROJ_SAX2;PROJ_DOM;PROJ_VALIDATORS;WIN32;_WINDOWS;XML_USE_WIN32_TRANSCODER;XML_USE_INMEM_MESSAGELOADER;XML_USE_NETACCESSOR_WINSOCK;XML_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>$(IntDir)XercesLib.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>..\..\..\..\..\Build\Win32\VC8\StaticRelease\xerces-c_static_2.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\..\..\Build\Win64\VC8\StaticRelease/XercesLib.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <Optimization>MinSpace</Optimization>
+      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
+      <AdditionalIncludeDirectories>.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;NDEBUG;PLATFORM_WIN32;_CRTDBG_MAP_ALLOC;PROJ_XMLPARSER;PROJ_XMLUTIL;PROJ_PARSERS;PROJ_SAX4C;PROJ_SAX2;PROJ_DOM;PROJ_VALIDATORS;WIN32;WIN64;_WINDOWS;XML_USE_WIN32_TRANSCODER;XML_USE_INMEM_MESSAGELOADER;XML_USE_NETACCESSOR_WINSOCK;XML_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>$(IntDir)XercesLib.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>..\..\..\..\..\Build\Win64\VC8\StaticRelease\xerces-c_static_2.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static Debug|Win32'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\..\..\Build\Win32\VC8\StaticDebug/XercesLib.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;_CRTDBG_MAP_ALLOC;PROJ_SAX2;_DEBUG;PROJ_XMLPARSER;PROJ_XMLUTIL;PROJ_PARSERS;PROJ_SAX4C;PROJ_DOM;PROJ_VALIDATORS;WIN32;_WINDOWS;XML_USE_WIN32_TRANSCODER;XML_USE_INMEM_MESSAGELOADER;XML_USE_NETACCESSOR_WINSOCK;XML_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>$(IntDir)XercesLib.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>..\..\..\..\..\Build\Win32\VC8\StaticDebug\xerces-c_static_2D.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Static Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>true</MkTypLibCompatible>
+      <TargetEnvironment>X64</TargetEnvironment>
+      <TypeLibraryName>.\..\..\..\..\..\Build\Win64\VC8\StaticDebug/XercesLib.tlb</TypeLibraryName>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_DEPRECATE;_CRTDBG_MAP_ALLOC;PROJ_SAX2;_DEBUG;PROJ_XMLPARSER;PROJ_XMLUTIL;PROJ_PARSERS;PROJ_SAX4C;PROJ_DOM;PROJ_VALIDATORS;WIN32;WIN64;_WINDOWS;XML_USE_WIN32_TRANSCODER;XML_USE_INMEM_MESSAGELOADER;XML_USE_NETACCESSOR_WINSOCK;XML_LIBRARY;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeaderOutputFile>$(IntDir)XercesLib.pch</PrecompiledHeaderOutputFile>
+      <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <ProgramDataBaseFileName>$(IntDir)</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>Default</CompileAs>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+    </ResourceCompile>
+    <Lib>
+      <OutputFile>..\..\..\..\..\Build\Win64\VC8\StaticDebug\xerces-c_static_2D.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="xercesc\util\ArrayIndexOutOfBoundsException.hpp" />
+    <ClInclude Include="xercesc\util\AutoSense.hpp" />
+    <ClInclude Include="xercesc\util\Base64.hpp" />
+    <ClInclude Include="xercesc\util\BaseRefVectorOf.hpp" />
+    <ClInclude Include="xercesc\util\BinFileInputStream.hpp" />
+    <ClInclude Include="xercesc\util\BinInputStream.hpp" />
+    <ClInclude Include="xercesc\util\BinMemInputStream.hpp" />
+    <ClInclude Include="xercesc\util\BitOps.hpp" />
+    <ClInclude Include="xercesc\util\BitSet.hpp" />
+    <ClInclude Include="xercesc\util\CountedPointer.hpp" />
+    <ClInclude Include="xercesc\util\DefaultPanicHandler.hpp" />
+    <ClInclude Include="xercesc\util\EmptyStackException.hpp" />
+    <ClInclude Include="xercesc\util\EncodingValidator.hpp" />
+    <ClInclude Include="xercesc\util\FlagJanitor.hpp" />
+    <ClInclude Include="xercesc\util\HashBase.hpp" />
+    <ClInclude Include="xercesc\util\HashCMStateSet.hpp" />
+    <ClInclude Include="xercesc\util\HashPtr.hpp" />
+    <ClInclude Include="xercesc\util\HashXMLCh.hpp" />
+    <ClInclude Include="xercesc\util\HexBin.hpp" />
+    <ClInclude Include="xercesc\util\IllegalArgumentException.hpp" />
+    <ClInclude Include="xercesc\util\InvalidCastException.hpp" />
+    <ClInclude Include="xercesc\util\IOException.hpp" />
+    <ClInclude Include="xercesc\util\Janitor.hpp" />
+    <ClInclude Include="xercesc\util\KeyRefPair.hpp" />
+    <ClInclude Include="xercesc\util\KeyValuePair.hpp" />
+    <ClInclude Include="xercesc\util\KVStringPair.hpp" />
+    <ClInclude Include="xercesc\util\Mutexes.hpp" />
+    <ClInclude Include="xercesc\util\NameIdPool.hpp" />
+    <ClInclude Include="xercesc\util\NoSuchElementException.hpp" />
+    <ClInclude Include="xercesc\util\NullPointerException.hpp" />
+    <ClInclude Include="xercesc\util\OutOfMemoryException.hpp" />
+    <ClInclude Include="xercesc\util\PanicHandler.hpp" />
+    <ClInclude Include="xercesc\util\PlatformUtils.hpp" />
+    <ClInclude Include="xercesc\util\QName.hpp" />
+    <ClInclude Include="xercesc\util\RefArrayOf.hpp" />
+    <ClInclude Include="xercesc\util\RefArrayVectorOf.hpp" />
+    <ClInclude Include="xercesc\util\RefHash2KeysTableOf.hpp" />
+    <ClInclude Include="xercesc\util\RefHash3KeysIdPool.hpp" />
+    <ClInclude Include="xercesc\util\RefHashTableOf.hpp" />
+    <ClInclude Include="xercesc\util\RefStackOf.hpp" />
+    <ClInclude Include="xercesc\util\RefVectorOf.hpp" />
+    <ClInclude Include="xercesc\util\RuntimeException.hpp" />
+    <ClInclude Include="xercesc\util\SchemaDateTimeException.hpp" />
+    <ClInclude Include="xercesc\util\StringPool.hpp" />
+    <ClInclude Include="xercesc\util\TranscodingException.hpp" />
+    <ClInclude Include="xercesc\util\TransService.hpp" />
+    <ClInclude Include="xercesc\util\UnexpectedEOFException.hpp" />
+    <ClInclude Include="xercesc\util\UnsupportedEncodingException.hpp" />
+    <ClInclude Include="xercesc\util\UTFDataFormatException.hpp" />
+    <ClInclude Include="xercesc\util\ValueArrayOf.hpp" />
+    <ClInclude Include="xercesc\util\ValueHashTableOf.hpp" />
+    <ClInclude Include="xercesc\util\ValueStackOf.hpp" />
+    <ClInclude Include="xercesc\util\ValueVectorOf.hpp" />
+    <ClInclude Include="xercesc\util\XercesDefs.hpp" />
+    <ClInclude Include="xercesc\util\XercesVersion.hpp" />
+    <ClInclude Include="xercesc\util\XMemory.hpp" />
+    <ClInclude Include="xercesc\util\XML256TableTranscoder.hpp" />
+    <ClInclude Include="xercesc\util\XML88591Transcoder.hpp" />
+    <ClInclude Include="xercesc\util\XMLAbstractDoubleFloat.hpp" />
+    <ClInclude Include="xercesc\util\XMLASCIITranscoder.hpp" />
+    <ClInclude Include="xercesc\util\XMLBigDecimal.hpp" />
+    <ClInclude Include="xercesc\util\XMLBigInteger.hpp" />
+    <ClInclude Include="xercesc\util\XMLChar.hpp" />
+    <ClInclude Include="xercesc\util\XMLChTranscoder.hpp" />
+    <ClInclude Include="xercesc\util\XMLDateTime.hpp" />
+    <ClInclude Include="xercesc\util\XMLDeleterFor.hpp" />
+    <ClInclude Include="xercesc\util\XMLDOMMsg.hpp" />
+    <ClInclude Include="xercesc\util\XMLDouble.hpp" />
+    <ClInclude Include="xercesc\util\XMLEBCDICTranscoder.hpp" />
+    <ClInclude Include="xercesc\util\XMLEntityResolver.hpp" />
+    <ClInclude Include="xercesc\util\XMLEnumerator.hpp" />
+    <ClInclude Include="xercesc\util\XMLException.hpp" />
+    <ClInclude Include="xercesc\util\XMLExceptMsgs.hpp" />
+    <ClInclude Include="xercesc\util\XMLFloat.hpp" />
+    <ClInclude Include="xercesc\util\XMLHolder.hpp" />
+    <ClInclude Include="xercesc\util\XMLIBM1047Transcoder.hpp" />
+    <ClInclude Include="xercesc\util\XMLIBM1140Transcoder.hpp" />
+    <ClInclude Include="xercesc\util\XMLInitializer.hpp" />
+    <ClInclude Include="xercesc\util\XMLInteger.hpp" />
+    <ClInclude Include="xercesc\util\XMLMsgLoader.hpp" />
+    <ClInclude Include="xercesc\util\XMLNetAccessor.hpp" />
+    <ClInclude Include="xercesc\util\XMLNumber.hpp" />
+    <ClInclude Include="xercesc\util\XMLResourceIdentifier.hpp" />
+    <ClInclude Include="xercesc\util\XMLString.hpp" />
+    <ClInclude Include="xercesc\util\XMLStringTokenizer.hpp" />
+    <ClInclude Include="xercesc\util\XMLUCS4Transcoder.hpp" />
+    <ClInclude Include="xercesc\util\XMLUni.hpp" />
+    <ClInclude Include="xercesc\util\XMLUniDefs.hpp" />
+    <ClInclude Include="xercesc\util\XMLUri.hpp" />
+    <ClInclude Include="xercesc\util\XMLURL.hpp" />
+    <ClInclude Include="xercesc\util\XMLUTF16Transcoder.hpp" />
+    <ClInclude Include="xercesc\util\XMLUTF8Transcoder.hpp" />
+    <ClInclude Include="xercesc\util\XMLWin1252Transcoder.hpp" />
+    <ClInclude Include="xercesc\util\Platforms\Win32\resource.h" />
+    <ClInclude Include="xercesc\util\Platforms\Win32\Win32Defs.hpp" />
+    <ClInclude Include="xercesc\util\XMLRegisterCleanup.hpp" />
+    <CustomBuildStep Include="xercesc\util\MsgLoaders\InMemory\InMemMsgLoader.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="xercesc\util\MsgLoaders\Win32\Win32MsgLoader.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Static Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Static Debug|x64'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="xercesc\util\MsgLoaders\InMemory\XercesMessages_en_US.hpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <ClInclude Include="xercesc\util\Transcoders\Win32\Win32TransService.hpp" />
+    <ClInclude Include="xercesc\util\NetAccessors\WinSock\BinHTTPURLInputStream.hpp" />
+    <ClInclude Include="xercesc\util\NetAccessors\WinSock\WinSockNetAccessor.hpp" />
+    <ClInclude Include="xercesc\util\regx\ASCIIRangeFactory.hpp" />
+    <ClInclude Include="xercesc\util\regx\BlockRangeFactory.hpp" />
+    <ClInclude Include="xercesc\util\regx\BMPattern.hpp" />
+    <ClInclude Include="xercesc\util\regx\CharToken.hpp" />
+    <ClInclude Include="xercesc\util\regx\ClosureToken.hpp" />
+    <ClInclude Include="xercesc\util\regx\ConcatToken.hpp" />
+    <ClInclude Include="xercesc\util\regx\ConditionToken.hpp" />
+    <ClInclude Include="xercesc\util\regx\Match.hpp" />
+    <ClInclude Include="xercesc\util\regx\ModifierToken.hpp" />
+    <ClInclude Include="xercesc\util\regx\Op.hpp" />
+    <ClInclude Include="xercesc\util\regx\OpFactory.hpp" />
+    <ClInclude Include="xercesc\util\regx\ParenToken.hpp" />
+    <ClInclude Include="xercesc\util\regx\ParserForXMLSchema.hpp" />
+    <ClInclude Include="xercesc\util\regx\RangeFactory.hpp" />
+    <ClInclude Include="xercesc\util\regx\RangeToken.hpp" />
+    <ClInclude Include="xercesc\util\regx\RangeTokenMap.hpp" />
+    <ClInclude Include="xercesc\util\regx\RegularExpression.hpp" />
+    <ClInclude Include="xercesc\util\regx\RegxDefs.hpp" />
+    <ClInclude Include="xercesc\util\regx\RegxParser.hpp" />
+    <ClInclude Include="xercesc\util\regx\RegxUtil.hpp" />
+    <ClInclude Include="xercesc\util\regx\StringToken.hpp" />
+    <ClInclude Include="xercesc\util\regx\Token.hpp" />
+    <ClInclude Include="xercesc\util\regx\TokenFactory.hpp" />
+    <ClInclude Include="xercesc\util\regx\TokenInc.hpp" />
+    <ClInclude Include="xercesc\util\regx\UnicodeRangeFactory.hpp" />
+    <ClInclude Include="xercesc\util\regx\UnionToken.hpp" />
+    <ClInclude Include="xercesc\util\regx\XMLRangeFactory.hpp" />
+    <ClInclude Include="xercesc\util\regx\XMLUniCharacter.hpp" />
+    <ClInclude Include="xercesc\framework\LocalFileFormatTarget.hpp" />
+    <ClInclude Include="xercesc\framework\LocalFileInputSource.Hpp" />
+    <ClInclude Include="xercesc\framework\MemBufFormatTarget.hpp" />
+    <ClInclude Include="xercesc\framework\MemBufInputSource.hpp" />
+    <ClInclude Include="xercesc\framework\MemoryManager.hpp" />
+    <ClInclude Include="xercesc\framework\StdInInputSource.hpp" />
+    <ClInclude Include="xercesc\framework\StdOutFormatTarget.hpp" />
+    <ClInclude Include="xercesc\framework\URLInputSource.hpp" />
+    <ClInclude Include="xercesc\framework\ValidationContext.hpp" />
+    <ClInclude Include="xercesc\framework\Wrapper4DOMInputSource.hpp" />
+    <ClInclude Include="xercesc\framework\Wrapper4InputSource.hpp" />
+    <ClInclude Include="xercesc\framework\XMLAttDef.hpp" />
+    <ClInclude Include="xercesc\framework\XMLAttDefList.hpp" />
+    <ClInclude Include="xercesc\framework\XMLAttr.hpp" />
+    <ClInclude Include="xercesc\framework\XMLBuffer.hpp" />
+    <ClInclude Include="xercesc\framework\XMLBufferMgr.hpp" />
+    <ClInclude Include="xercesc\framework\XMLContentModel.hpp" />
+    <ClInclude Include="xercesc\framework\XMLDocumentHandler.hpp" />
+    <ClInclude Include="xercesc\framework\XMLElementDecl.hpp" />
+    <ClInclude Include="xercesc\framework\XMLEntityDecl.hpp" />
+    <ClInclude Include="xercesc\framework\XMLEntityHandler.hpp" />
+    <ClInclude Include="xercesc\framework\XMLErrorCodes.hpp" />
+    <ClInclude Include="xercesc\framework\XMLErrorReporter.hpp" />
+    <ClInclude Include="xercesc\framework\XMLFormatter.hpp" />
+    <ClInclude Include="xercesc\framework\XMLNotationDecl.hpp" />
+    <ClInclude Include="xercesc\framework\XMLPScanToken.hpp" />
+    <ClInclude Include="xercesc\framework\XMLRecognizer.hpp" />
+    <ClInclude Include="xercesc\framework\XMLRefInfo.hpp" />
+    <ClInclude Include="xercesc\framework\XMLValidator.hpp" />
+    <ClInclude Include="xercesc\framework\XMLValidityCodes.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\PSVIAttribute.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\PSVIAttributeList.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\PSVIElement.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\PSVIHandler.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\PSVIItem.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSAnnotation.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSAttributeDeclaration.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSAttributeGroupDefinition.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSAttributeUse.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSComplexTypeDefinition.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSConstants.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSElementDeclaration.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSFacet.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSIDCDefinition.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSModel.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSModelGroup.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSModelGroupDefinition.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSMultiValueFacet.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSNamedMap.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSNamespaceItem.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSNotationDeclaration.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSObject.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSParticle.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSSimpleTypeDefinition.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSTypeDefinition.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSValue.hpp" />
+    <ClInclude Include="xercesc\framework\psvi\XSWildcard.hpp" />
+    <ClInclude Include="xercesc\internal\BinFileOutputStream.hpp" />
+    <ClInclude Include="xercesc\internal\BinMemOutputStream.hpp" />
+    <ClInclude Include="xercesc\framework\BinOutputStream.hpp" />
+    <ClInclude Include="xercesc\internal\CharTypeTables.hpp" />
+    <ClInclude Include="xercesc\internal\DGXMLScanner.hpp" />
+    <ClInclude Include="xercesc\internal\ElemStack.hpp" />
+    <ClInclude Include="xercesc\internal\EndOfEntityException.hpp" />
+    <ClInclude Include="xercesc\internal\IANAEncodings.hpp" />
+    <ClInclude Include="xercesc\internal\IGXMLScanner.hpp" />
+    <ClInclude Include="xercesc\internal\MemoryManagerArrayImpl.hpp" />
+    <ClInclude Include="xercesc\internal\MemoryManagerImpl.hpp" />
+    <ClInclude Include="xercesc\internal\ReaderMgr.hpp" />
+    <ClInclude Include="xercesc\internal\SGXMLScanner.hpp" />
+    <ClInclude Include="xercesc\internal\ValidationContextImpl.hpp" />
+    <ClInclude Include="xercesc\internal\VecAttributesImpl.hpp" />
+    <ClInclude Include="xercesc\internal\VecAttrListImpl.hpp" />
+    <ClInclude Include="xercesc\internal\WFXMLScanner.hpp" />
+    <ClInclude Include="xercesc\internal\XMLGrammarPoolImpl.hpp" />
+    <ClInclude Include="xercesc\internal\XMLInternalErrorHandler.hpp" />
+    <ClInclude Include="xercesc\internal\XMLReader.hpp" />
+    <ClInclude Include="xercesc\internal\XMLScanner.hpp" />
+    <ClInclude Include="xercesc\internal\XMLScannerResolver.hpp" />
+    <ClInclude Include="xercesc\internal\XSAXMLScanner.hpp" />
+    <ClInclude Include="xercesc\internal\XTemplateSerializer.hpp" />
+    <ClInclude Include="xercesc\sax\AttributeList.hpp" />
+    <ClInclude Include="xercesc\sax\DocumentHandler.hpp" />
+    <ClInclude Include="xercesc\sax\DTDHandler.hpp" />
+    <ClInclude Include="xercesc\sax\EntityResolver.hpp" />
+    <ClInclude Include="xercesc\sax\ErrorHandler.hpp" />
+    <ClInclude Include="xercesc\sax\HandlerBase.hpp" />
+    <ClInclude Include="xercesc\sax\InputSource.hpp" />
+    <ClInclude Include="xercesc\sax\Locator.hpp" />
+    <ClInclude Include="xercesc\sax\Parser.hpp" />
+    <ClInclude Include="xercesc\sax\SAXException.hpp" />
+    <ClInclude Include="xercesc\sax\SAXParseException.hpp" />
+    <ClInclude Include="xercesc\parsers\AbstractDOMParser.hpp" />
+    <ClInclude Include="xercesc\parsers\DOMBuilderImpl.hpp" />
+    <ClInclude Include="xercesc\parsers\SAX2XMLFilterImpl.hpp" />
+    <ClInclude Include="xercesc\parsers\SAX2XMLReaderImpl.hpp" />
+    <ClInclude Include="xercesc\parsers\SAXParser.hpp" />
+    <ClInclude Include="xercesc\parsers\XercesDOMParser.hpp" />
+    <ClInclude Include="xercesc\validators\common\AllContentModel.hpp" />
+    <ClInclude Include="xercesc\validators\common\CMAny.hpp" />
+    <ClInclude Include="xercesc\validators\common\CMBinaryOp.hpp" />
+    <ClInclude Include="xercesc\validators\common\CMLeaf.hpp" />
+    <ClInclude Include="xercesc\validators\common\CMNode.hpp" />
+    <ClInclude Include="xercesc\validators\common\CMStateSet.hpp" />
+    <ClInclude Include="xercesc\validators\common\CMUnaryOp.hpp" />
+    <ClInclude Include="xercesc\validators\common\ContentLeafNameTypeVector.hpp" />
+    <ClInclude Include="xercesc\validators\common\ContentSpecNode.hpp" />
+    <ClInclude Include="xercesc\validators\common\DFAContentModel.hpp" />
+    <ClInclude Include="xercesc\validators\common\Grammar.hpp" />
+    <ClInclude Include="xercesc\validators\common\GrammarResolver.hpp" />
+    <ClInclude Include="xercesc\validators\common\MixedContentModel.hpp" />
+    <ClInclude Include="xercesc\validators\common\SimpleContentModel.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\AbstractNumericFacetValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\AbstractNumericValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\AbstractStringValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\AnySimpleTypeDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\AnyURIDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\Base64BinaryDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\BooleanDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\DatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\DatatypeValidatorFactory.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\DateDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\DateTimeDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\DateTimeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\DayDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\DecimalDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\DoubleDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\DurationDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\ENTITYDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\FloatDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\HexBinaryDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\IDDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\IDREFDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\InvalidDatatypeFacetException.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\InvalidDatatypeValueException.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\ListDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\MonthDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\MonthDayDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\NameDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\NCNameDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\NOTATIONDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\QNameDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\StringDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\TimeDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\UnionDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\XMLCanRepGroup.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\YearDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\datatype\YearMonthDatatypeValidator.hpp" />
+    <ClInclude Include="xercesc\validators\DTD\DocTypeHandler.hpp" />
+    <ClInclude Include="xercesc\validators\DTD\DTDAttDef.hpp" />
+    <ClInclude Include="xercesc\validators\DTD\DTDAttDefList.hpp" />
+    <ClInclude Include="xercesc\validators\DTD\DTDElementDecl.hpp" />
+    <ClInclude Include="xercesc\validators\DTD\DTDEntityDecl.hpp" />
+    <ClInclude Include="xercesc\validators\DTD\DTDGrammar.hpp" />
+    <ClInclude Include="xercesc\validators\DTD\DTDScanner.hpp" />
+    <ClInclude Include="xercesc\validators\DTD\DTDValidator.hpp" />
+    <ClInclude Include="xercesc\validators\DTD\XMLDTDDescriptionImpl.hpp" />
+    <ClInclude Include="xercesc\validators\schema\ComplexTypeInfo.hpp" />
+    <ClInclude Include="xercesc\validators\schema\GeneralAttributeCheck.hpp" />
+    <ClInclude Include="xercesc\validators\schema\NamespaceScope.hpp" />
+    <ClInclude Include="xercesc\validators\schema\PSVIDefs.hpp" />
+    <ClInclude Include="xercesc\validators\schema\SchemaAttDef.hpp" />
+    <ClInclude Include="xercesc\validators\schema\SchemaAttDefList.hpp" />
+    <ClInclude Include="xercesc\validators\schema\SchemaElementDecl.hpp" />
+    <ClInclude Include="xercesc\validators\schema\SchemaGrammar.hpp" />
+    <ClInclude Include="xercesc\validators\schema\SchemaInfo.hpp" />
+    <ClInclude Include="xercesc\validators\schema\SchemaSymbols.hpp" />
+    <ClInclude Include="xercesc\validators\schema\SchemaValidator.hpp" />
+    <ClInclude Include="xercesc\validators\schema\SubstitutionGroupComparator.hpp" />
+    <ClInclude Include="xercesc\validators\schema\TraverseSchema.hpp" />
+    <ClInclude Include="xercesc\validators\schema\XercesAttGroupInfo.hpp" />
+    <ClInclude Include="xercesc\validators\schema\XercesElementWildcard.hpp" />
+    <ClInclude Include="xercesc\validators\schema\XercesGroupInfo.hpp" />
+    <ClInclude Include="xercesc\validators\schema\XMLSchemaDescriptionImpl.hpp" />
+    <ClInclude Include="xercesc\validators\schema\XSDDOMParser.hpp" />
+    <ClInclude Include="xercesc\validators\schema\XSDErrorReporter.hpp" />
+    <ClInclude Include="xercesc\validators\schema\XSDLocator.hpp" />
+    <ClInclude Include="xercesc\validators\schema\XUtil.hpp" />
+    <ClInclude Include="xercesc\validators\schema\identity\FieldActivator.hpp" />
+    <ClInclude Include="xercesc\validators\schema\identity\FieldValueMap.hpp" />
+    <ClInclude Include="xercesc\validators\schema\identity\IC_Field.hpp" />
+    <ClInclude Include="xercesc\validators\schema\identity\IC_Key.hpp" />
+    <ClInclude Include="xercesc\validators\schema\identity\IC_KeyRef.hpp" />
+    <ClInclude Include="xercesc\validators\schema\identity\IC_Selector.hpp" />
+    <ClInclude Include="xercesc\validators\schema\identity\IC_Unique.hpp" />
+    <ClInclude Include="xercesc\validators\schema\identity\IdentityConstraint.hpp" />
+    <ClInclude Include="xercesc\validators\schema\identity\IdentityConstraintHandler.hpp" />
+    <ClInclude Include="xercesc\validators\schema\identity\ValueStore.hpp" />
+    <ClInclude Include="xercesc\validators\schema\identity\ValueStoreCache.hpp" />
+    <ClInclude Include="xercesc\validators\schema\identity\XercesXPath.hpp" />
+    <ClInclude Include="xercesc\validators\schema\identity\XPathException.hpp" />
+    <ClInclude Include="xercesc\validators\schema\identity\XPathMatcher.hpp" />
+    <ClInclude Include="xercesc\validators\schema\identity\XPathMatcherStack.hpp" />
+    <ClInclude Include="xercesc\validators\schema\identity\XPathSymbols.hpp" />
+    <ClInclude Include="xercesc\sax2\Attributes.hpp" />
+    <ClInclude Include="xercesc\sax2\ContentHandler.hpp" />
+    <ClInclude Include="xercesc\sax2\DefaultHandler.hpp" />
+    <ClInclude Include="xercesc\sax2\SAX2XMLFilter.hpp" />
+    <ClInclude Include="xercesc\sax2\SAX2XMLReader.hpp" />
+    <ClInclude Include="xercesc\sax2\XMLReaderFactory.hpp" />
+    <ClInclude Include="xercesc\dom\DOMAttr.hpp" />
+    <ClInclude Include="xercesc\dom\DOMBuilder.hpp" />
+    <ClInclude Include="xercesc\dom\DOMCDATASection.hpp" />
+    <ClInclude Include="xercesc\dom\DOMCharacterData.hpp" />
+    <ClInclude Include="xercesc\dom\DOMComment.hpp" />
+    <ClInclude Include="xercesc\dom\DOMConfiguration.hpp" />
+    <ClInclude Include="xercesc\dom\DOMDocument.hpp" />
+    <ClInclude Include="xercesc\dom\DOMDocumentFragment.hpp" />
+    <ClInclude Include="xercesc\dom\DOMDocumentRange.hpp" />
+    <ClInclude Include="xercesc\dom\DOMDocumentTraversal.hpp" />
+    <ClInclude Include="xercesc\dom\DOMDocumentType.hpp" />
+    <ClInclude Include="xercesc\dom\DOMElement.hpp" />
+    <ClInclude Include="xercesc\dom\DOMEntity.hpp" />
+    <ClInclude Include="xercesc\dom\DOMEntityReference.hpp" />
+    <ClInclude Include="xercesc\dom\DOMEntityResolver.hpp" />
+    <ClInclude Include="xercesc\dom\DOMError.hpp" />
+    <ClInclude Include="xercesc\dom\DOMErrorHandler.hpp" />
+    <ClInclude Include="xercesc\dom\DOMException.hpp" />
+    <ClInclude Include="xercesc\dom\DOMImplementation.hpp" />
+    <ClInclude Include="xercesc\dom\DOMImplementationLS.hpp" />
+    <ClInclude Include="xercesc\dom\DOMImplementationRegistry.hpp" />
+    <ClInclude Include="xercesc\dom\DOMImplementationSource.hpp" />
+    <ClInclude Include="xercesc\dom\DOMInputSource.hpp" />
+    <ClInclude Include="xercesc\dom\DOMLocator.hpp" />
+    <ClInclude Include="xercesc\dom\DOMNamedNodeMap.hpp" />
+    <ClInclude Include="xercesc\dom\DOMNode.hpp" />
+    <ClInclude Include="xercesc\dom\DOMNodeFilter.hpp" />
+    <ClInclude Include="xercesc\dom\DOMNodeIterator.hpp" />
+    <ClInclude Include="xercesc\dom\DOMNodeList.hpp" />
+    <ClInclude Include="xercesc\dom\DOMNotation.hpp" />
+    <ClInclude Include="xercesc\dom\DOMProcessingInstruction.hpp" />
+    <ClInclude Include="xercesc\dom\DOMRange.hpp" />
+    <ClInclude Include="xercesc\dom\DOMRangeException.hpp" />
+    <ClInclude Include="xercesc\dom\DOMText.hpp" />
+    <ClInclude Include="xercesc\dom\DOMTreeWalker.hpp" />
+    <ClInclude Include="xercesc\dom\DOMTypeInfo.hpp" />
+    <ClInclude Include="xercesc\dom\DOMUserDataHandler.hpp" />
+    <ClInclude Include="xercesc\dom\DOMWriter.hpp" />
+    <ClInclude Include="xercesc\dom\DOMWriterFilter.hpp" />
+    <ClInclude Include="xercesc\dom\DOMXPathEvaluator.hpp" />
+    <ClInclude Include="xercesc\dom\DOMXPathException.hpp" />
+    <ClInclude Include="xercesc\dom\DOMXPathExpression.hpp" />
+    <ClInclude Include="xercesc\dom\DOMXPathNamespace.hpp" />
+    <ClInclude Include="xercesc\dom\DOMXPathNSResolver.hpp" />
+    <ClInclude Include="xercesc\dom\DOMXPathResult.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMAttrImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMAttrMapImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMAttrNSImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMCasts.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMCDATASectionImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMCharacterDataImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMChildNode.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMCommentImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMConfigurationImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMDeepNodeListImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMDeepNodeListPool.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMDocumentFragmentImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMDocumentImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMDocumentTypeImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMElementImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMElementNSImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMEntityImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMEntityReferenceImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMErrorImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMImplementationimpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMLocatorImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMNamedNodeMapImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMNodeIDMap.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMNodeImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMNodeIteratorImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMNodeListImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMNodeVector.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMNormalizer.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMNotationImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMParentNode.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMProcessingInstructionImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMRangeImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMStringPool.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMTextImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMTreeWalkerImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMTypeInfoImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\DOMWriterImpl.hpp" />
+    <ClInclude Include="xercesc\dom\impl\XSDElementNSImpl.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="xercesc\util\Base64.cpp" />
+    <ClCompile Include="xercesc\util\BinFileInputStream.cpp" />
+    <ClCompile Include="xercesc\util\BinInputStream.cpp" />
+    <ClCompile Include="xercesc\util\BinMemInputStream.cpp" />
+    <ClCompile Include="xercesc\util\BitSet.cpp" />
+    <ClCompile Include="xercesc\util\DefaultPanicHandler.cpp" />
+    <ClCompile Include="xercesc\util\EncodingValidator.cpp" />
+    <ClCompile Include="xercesc\util\HashPtr.cpp" />
+    <ClCompile Include="xercesc\util\HashXMLCh.cpp" />
+    <ClCompile Include="xercesc\util\HeaderDummy.cpp" />
+    <ClCompile Include="xercesc\util\HexBin.cpp" />
+    <ClCompile Include="xercesc\util\KVStringPair.cpp" />
+    <ClCompile Include="xercesc\util\Mutexes.cpp" />
+    <ClCompile Include="xercesc\util\PanicHandler.cpp" />
+    <ClCompile Include="xercesc\util\PlatformUtils.cpp" />
+    <ClCompile Include="xercesc\util\QName.cpp" />
+    <ClCompile Include="xercesc\util\StringPool.cpp" />
+    <ClCompile Include="xercesc\util\SynchronizedStringPool.cpp" />
+    <ClCompile Include="xercesc\util\TransService.cpp" />
+    <ClCompile Include="xercesc\util\XMemory.cpp" />
+    <ClCompile Include="xercesc\util\XML256TableTranscoder.cpp" />
+    <ClCompile Include="xercesc\util\XML88591Transcoder.cpp" />
+    <ClCompile Include="xercesc\util\XMLAbstractDoubleFloat.cpp" />
+    <ClCompile Include="xercesc\util\XMLASCIITranscoder.cpp" />
+    <ClCompile Include="xercesc\util\XMLBigDecimal.cpp" />
+    <ClCompile Include="xercesc\util\XMLBigInteger.cpp" />
+    <ClCompile Include="xercesc\util\XMLChar.cpp" />
+    <ClCompile Include="xercesc\util\XMLChTranscoder.cpp" />
+    <ClCompile Include="xercesc\util\XMLDateTime.cpp" />
+    <ClCompile Include="xercesc\util\XMLDouble.cpp" />
+    <ClCompile Include="xercesc\util\XMLEBCDICTranscoder.cpp" />
+    <ClCompile Include="xercesc\util\XMLException.cpp" />
+    <ClCompile Include="xercesc\util\XMLFloat.cpp" />
+    <ClCompile Include="xercesc\util\XMLIBM1047Transcoder.cpp" />
+    <ClCompile Include="xercesc\util\XMLIBM1140Transcoder.cpp" />
+    <ClCompile Include="xercesc\util\XMLInitializer.cpp" />
+    <ClCompile Include="xercesc\util\XMLMsgLoader.cpp" />
+    <ClCompile Include="xercesc\util\XMLNumber.cpp" />
+    <ClCompile Include="xercesc\util\XMLString.cpp" />
+    <ClCompile Include="xercesc\util\XMLStringTokenizer.cpp" />
+    <ClCompile Include="xercesc\util\XMLUCSTranscoder.cpp" />
+    <ClCompile Include="xercesc\util\XMLUni.cpp" />
+    <ClCompile Include="xercesc\util\XMLUri.cpp" />
+    <ClCompile Include="xercesc\util\XMLURL.cpp" />
+    <ClCompile Include="xercesc\util\XMLUTF16Transcoder.cpp" />
+    <ClCompile Include="xercesc\util\XMLUTF8Transcoder.cpp" />
+    <ClCompile Include="xercesc\util\XMLWin1252Transcoder.cpp" />
+    <ClCompile Include="xercesc\util\Platforms\Win32\Win32PlatformUtils.cpp">
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Debug|Win32'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Debug|x64'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Release|Win32'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Release|x64'">false</DisableLanguageExtensions>
+    </ClCompile>
+    <ClCompile Include="xercesc\util\XMLRegisterCleanup.cpp" />
+    <ClCompile Include="xercesc\util\MsgLoaders\InMemory\InMemMsgLoader.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="xercesc\util\MsgLoaders\Win32\Win32MsgLoader.cpp">
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</DisableLanguageExtensions>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Static Debug|Win32'">true</ExcludedFromBuild>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Debug|Win32'">false</DisableLanguageExtensions>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Static Debug|x64'">true</ExcludedFromBuild>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Debug|x64'">false</DisableLanguageExtensions>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Static Release|Win32'">true</ExcludedFromBuild>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Release|Win32'">false</DisableLanguageExtensions>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Static Release|x64'">true</ExcludedFromBuild>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Release|x64'">false</DisableLanguageExtensions>
+    </ClCompile>
+    <ClCompile Include="xercesc\util\Transcoders\Win32\Win32TransService.cpp">
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Debug|Win32'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Debug|x64'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Release|Win32'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Release|x64'">false</DisableLanguageExtensions>
+    </ClCompile>
+    <ClCompile Include="xercesc\util\NetAccessors\WinSock\BinHTTPURLInputStream.cpp">
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Debug|Win32'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Debug|x64'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Release|Win32'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Release|x64'">false</DisableLanguageExtensions>
+    </ClCompile>
+    <ClCompile Include="xercesc\util\NetAccessors\WinSock\WinSockNetAccessor.cpp">
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Debug|Win32'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Debug|x64'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Release|Win32'">false</DisableLanguageExtensions>
+      <DisableLanguageExtensions Condition="'$(Configuration)|$(Platform)'=='Static Release|x64'">false</DisableLanguageExtensions>
+    </ClCompile>
+    <ClCompile Include="xercesc\util\regx\ASCIIRangeFactory.cpp" />
+    <ClCompile Include="xercesc\util\regx\BlockRangeFactory.cpp" />
+    <ClCompile Include="xercesc\util\regx\BMPattern.cpp" />
+    <ClCompile Include="xercesc\util\regx\CharToken.cpp" />
+    <ClCompile Include="xercesc\util\regx\ClosureToken.cpp" />
+    <ClCompile Include="xercesc\util\regx\ConcatToken.cpp" />
+    <ClCompile Include="xercesc\util\regx\ConditionToken.cpp" />
+    <ClCompile Include="xercesc\util\regx\Match.cpp" />
+    <ClCompile Include="xercesc\util\regx\ModifierToken.cpp" />
+    <ClCompile Include="xercesc\util\regx\Op.cpp" />
+    <ClCompile Include="xercesc\util\regx\OpFactory.cpp" />
+    <ClCompile Include="xercesc\util\regx\ParenToken.cpp" />
+    <ClCompile Include="xercesc\util\regx\ParserForXMLSchema.cpp" />
+    <ClCompile Include="xercesc\util\regx\RangeFactory.cpp" />
+    <ClCompile Include="xercesc\util\regx\RangeToken.cpp" />
+    <ClCompile Include="xercesc\util\regx\RangeTokenMap.cpp" />
+    <ClCompile Include="xercesc\util\regx\RegularExpression.cpp" />
+    <ClCompile Include="xercesc\util\regx\RegxParser.cpp" />
+    <ClCompile Include="xercesc\util\regx\RegxUtil.cpp" />
+    <ClCompile Include="xercesc\util\regx\StringToken.cpp" />
+    <ClCompile Include="xercesc\util\regx\Token.cpp" />
+    <ClCompile Include="xercesc\util\regx\TokenFactory.cpp" />
+    <ClCompile Include="xercesc\util\regx\UnicodeRangeFactory.cpp" />
+    <ClCompile Include="xercesc\util\regx\UnionToken.cpp" />
+    <ClCompile Include="xercesc\util\regx\XMLRangeFactory.cpp" />
+    <ClCompile Include="xercesc\util\regx\XMLUniCharacter.cpp" />
+    <ClCompile Include="xercesc\framework\LocalFileFormatTarget.cpp" />
+    <ClCompile Include="xercesc\framework\LocalFileInputSource.cpp" />
+    <ClCompile Include="xercesc\framework\MemBufFormatTarget.cpp" />
+    <ClCompile Include="xercesc\framework\MemBufInputSource.cpp" />
+    <ClCompile Include="xercesc\framework\StdInInputSource.cpp" />
+    <ClCompile Include="xercesc\framework\StdOutFormatTarget.cpp" />
+    <ClCompile Include="xercesc\framework\URLInputSource.cpp" />
+    <ClCompile Include="xercesc\framework\Wrapper4DOMInputSource.cpp" />
+    <ClCompile Include="xercesc\framework\Wrapper4InputSource.cpp" />
+    <ClCompile Include="xercesc\framework\XMLAttDef.cpp" />
+    <ClCompile Include="xercesc\framework\XMLAttDefList.cpp" />
+    <ClCompile Include="xercesc\framework\XMLAttr.cpp" />
+    <ClCompile Include="xercesc\framework\XMLBuffer.cpp" />
+    <ClCompile Include="xercesc\framework\XMLBufferMgr.cpp" />
+    <ClCompile Include="xercesc\framework\XMLContentModel.cpp" />
+    <ClCompile Include="xercesc\framework\XMLDTDDescription.cpp" />
+    <ClCompile Include="xercesc\framework\XMLElementDecl.cpp" />
+    <ClCompile Include="xercesc\framework\XMLEntityDecl.cpp" />
+    <ClCompile Include="xercesc\framework\XMLFormatter.cpp" />
+    <ClCompile Include="xercesc\framework\XMLGrammarDescription.cpp" />
+    <ClCompile Include="xercesc\framework\XMLNotationDecl.cpp" />
+    <ClCompile Include="xercesc\framework\XMLRecognizer.cpp" />
+    <ClCompile Include="xercesc\framework\XMLRefInfo.cpp" />
+    <ClCompile Include="xercesc\framework\XMLSchemaDescription.cpp" />
+    <ClCompile Include="xercesc\framework\XMLValidator.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\PSVIAttribute.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\PSVIAttributeList.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\PSVIElement.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\PSVIItem.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSAnnotation.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSAttributeDeclaration.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSAttributeGroupDefinition.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSAttributeUse.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSComplexTypeDefinition.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSElementDeclaration.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSFacet.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSIDCDefinition.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSModel.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSModelGroup.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSModelGroupDefinition.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSMultiValueFacet.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSNamespaceItem.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSNotationDeclaration.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSObject.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSParticle.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSSimpleTypeDefinition.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSTypeDefinition.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSValue.cpp" />
+    <ClCompile Include="xercesc\framework\psvi\XSWildcard.cpp" />
+    <ClCompile Include="xercesc\internal\BinFileOutputStream.cpp" />
+    <ClCompile Include="xercesc\internal\BinMemOutputStream.cpp" />
+    <ClCompile Include="xercesc\framework\BinOutputStream.cpp" />
+    <ClCompile Include="xercesc\internal\DGXMLScanner.cpp" />
+    <ClCompile Include="xercesc\internal\ElemStack.cpp" />
+    <ClCompile Include="xercesc\internal\IGXMLScanner.cpp" />
+    <ClCompile Include="xercesc\internal\IGXMLScanner2.cpp" />
+    <ClCompile Include="xercesc\internal\MemoryManagerArrayImpl.cpp" />
+    <ClCompile Include="xercesc\internal\MemoryManagerImpl.cpp" />
+    <ClCompile Include="xercesc\internal\ReaderMgr.cpp" />
+    <ClCompile Include="xercesc\internal\SGXMLScanner.cpp" />
+    <ClCompile Include="xercesc\internal\ValidationContextImpl.cpp" />
+    <ClCompile Include="xercesc\internal\VecAttributesImpl.cpp" />
+    <ClCompile Include="xercesc\internal\VecAttrListImpl.cpp" />
+    <ClCompile Include="xercesc\internal\WFXMLScanner.cpp" />
+    <ClCompile Include="xercesc\internal\XMLGrammarPoolImpl.cpp" />
+    <ClCompile Include="xercesc\internal\XMLReader.cpp" />
+    <ClCompile Include="xercesc\internal\XMLScanner.cpp" />
+    <ClCompile Include="xercesc\internal\XMLScannerResolver.cpp" />
+    <ClCompile Include="xercesc\internal\XProtoType.cpp" />
+    <ClCompile Include="xercesc\internal\XSAXMLScanner.cpp" />
+    <ClCompile Include="xercesc\internal\XSerializeEngine.cpp" />
+    <ClCompile Include="xercesc\internal\XSObjectFactory.cpp" />
+    <ClCompile Include="xercesc\internal\XTemplateSerializer.cpp" />
+    <ClCompile Include="xercesc\sax\Dummy.cpp" />
+    <ClCompile Include="xercesc\sax\InputSource.cpp" />
+    <ClCompile Include="xercesc\sax\SAXException.cpp" />
+    <ClCompile Include="xercesc\sax\SAXParseException.cpp" />
+    <ClCompile Include="xercesc\parsers\AbstractDOMParser.cpp" />
+    <ClCompile Include="xercesc\parsers\DOMBuilderImpl.cpp" />
+    <ClCompile Include="xercesc\parsers\SAX2XMLFilterImpl.cpp" />
+    <ClCompile Include="xercesc\parsers\SAX2XMLReaderImpl.cpp" />
+    <ClCompile Include="xercesc\parsers\SAXParser.cpp" />
+    <ClCompile Include="xercesc\parsers\XercesDOMParser.cpp" />
+    <ClCompile Include="xercesc\validators\common\AllContentModel.cpp" />
+    <ClCompile Include="xercesc\validators\common\CMAny.cpp" />
+    <ClCompile Include="xercesc\validators\common\CMBinaryOp.cpp" />
+    <ClCompile Include="xercesc\validators\common\CMUnaryOp.cpp" />
+    <ClCompile Include="xercesc\validators\common\ContentLeafNameTypeVector.cpp" />
+    <ClCompile Include="xercesc\validators\common\ContentSpecNode.cpp" />
+    <ClCompile Include="xercesc\validators\common\DFAContentModel.cpp" />
+    <ClCompile Include="xercesc\validators\common\Grammar.cpp" />
+    <ClCompile Include="xercesc\validators\common\GrammarResolver.cpp" />
+    <ClCompile Include="xercesc\validators\common\MixedContentModel.cpp" />
+    <ClCompile Include="xercesc\validators\common\SimpleContentModel.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\AbstractNumericFacetValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\AbstractNumericValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\AbstractStringValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\AnySimpleTypeDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\AnyURIDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\Base64BinaryDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\BooleanDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\DatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\DatatypeValidatorFactory.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\DateDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\DateTimeDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\DateTimeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\DayDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\DecimalDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\DoubleDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\DurationDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\ENTITYDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\FloatDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\HexBinaryDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\IDDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\IDREFDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\ListDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\MonthDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\MonthDayDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\NameDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\NCNameDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\NOTATIONDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\QNameDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\StringDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\TimeDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\UnionDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\XMLCanRepGroup.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\YearDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\datatype\YearMonthDatatypeValidator.cpp" />
+    <ClCompile Include="xercesc\validators\DTD\DTDAttDef.cpp" />
+    <ClCompile Include="xercesc\validators\DTD\DTDAttDefList.cpp" />
+    <ClCompile Include="xercesc\validators\DTD\DTDElementDecl.cpp" />
+    <ClCompile Include="xercesc\validators\DTD\DTDEntityDecl.cpp" />
+    <ClCompile Include="xercesc\validators\DTD\DTDGrammar.cpp" />
+    <ClCompile Include="xercesc\validators\DTD\DTDScanner.cpp" />
+    <ClCompile Include="xercesc\validators\DTD\DTDValidator.cpp" />
+    <ClCompile Include="xercesc\validators\DTD\XMLDTDDescriptionImpl.cpp" />
+    <ClCompile Include="xercesc\validators\schema\ComplexTypeInfo.cpp" />
+    <ClCompile Include="xercesc\validators\schema\GeneralAttributeCheck.cpp" />
+    <ClCompile Include="xercesc\validators\schema\NamespaceScope.cpp" />
+    <ClCompile Include="xercesc\validators\schema\SchemaAttDef.cpp" />
+    <ClCompile Include="xercesc\validators\schema\SchemaAttDefList.cpp" />
+    <ClCompile Include="xercesc\validators\schema\SchemaElementDecl.cpp" />
+    <ClCompile Include="xercesc\validators\schema\SchemaGrammar.cpp" />
+    <ClCompile Include="xercesc\validators\schema\SchemaInfo.cpp" />
+    <ClCompile Include="xercesc\validators\schema\SchemaSymbols.cpp" />
+    <ClCompile Include="xercesc\validators\schema\SchemaValidator.cpp" />
+    <ClCompile Include="xercesc\validators\schema\SubstitutionGroupComparator.cpp" />
+    <ClCompile Include="xercesc\validators\schema\TraverseSchema.cpp" />
+    <ClCompile Include="xercesc\validators\schema\XercesAttGroupInfo.cpp" />
+    <ClCompile Include="xercesc\validators\schema\XercesElementWildcard.cpp" />
+    <ClCompile Include="xercesc\validators\schema\XercesGroupInfo.cpp" />
+    <ClCompile Include="xercesc\validators\schema\XMLSchemaDescriptionImpl.cpp" />
+    <ClCompile Include="xercesc\validators\schema\XSDDOMParser.cpp" />
+    <ClCompile Include="xercesc\validators\schema\XSDErrorReporter.cpp" />
+    <ClCompile Include="xercesc\validators\schema\XSDLocator.cpp" />
+    <ClCompile Include="xercesc\validators\schema\XUtil.cpp" />
+    <ClCompile Include="xercesc\validators\schema\identity\FieldActivator.cpp" />
+    <ClCompile Include="xercesc\validators\schema\identity\FieldValueMap.cpp" />
+    <ClCompile Include="xercesc\validators\schema\identity\IC_Field.cpp" />
+    <ClCompile Include="xercesc\validators\schema\identity\IC_Key.cpp" />
+    <ClCompile Include="xercesc\validators\schema\identity\IC_KeyRef.cpp" />
+    <ClCompile Include="xercesc\validators\schema\identity\IC_Selector.cpp" />
+    <ClCompile Include="xercesc\validators\schema\identity\IC_Unique.cpp" />
+    <ClCompile Include="xercesc\validators\schema\identity\IdentityConstraint.cpp" />
+    <ClCompile Include="xercesc\validators\schema\identity\IdentityConstraintHandler.cpp" />
+    <ClCompile Include="xercesc\validators\schema\identity\ValueStore.cpp" />
+    <ClCompile Include="xercesc\validators\schema\identity\ValueStoreCache.cpp" />
+    <ClCompile Include="xercesc\validators\schema\identity\XercesXPath.cpp" />
+    <ClCompile Include="xercesc\validators\schema\identity\XPathMatcher.cpp" />
+    <ClCompile Include="xercesc\validators\schema\identity\XPathMatcherStack.cpp" />
+    <ClCompile Include="xercesc\validators\schema\identity\XPathSymbols.cpp" />
+    <ClCompile Include="xercesc\sax2\sax2Dummy.cpp" />
+    <ClCompile Include="xercesc\dom\DOMException.cpp" />
+    <ClCompile Include="xercesc\dom\DOMRangeException.cpp" />
+    <ClCompile Include="xercesc\dom\DOMXPathException.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMAttrImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMAttrMapImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMAttrNSImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMCDATASectionImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMCharacterDataImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMChildNode.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMCommentImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMConfigurationImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMDeepNodeListImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMDocumentFragmentImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMDocumentImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMDocumentTypeImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMElementImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMElementNSImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMEntityImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMEntityReferenceImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMErrorImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMImplementationImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMImplementationRegistry.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMLocatorImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMNamedNodeMapImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMNodeIDMap.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMNodeImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMNodeIteratorImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMNodeListImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMNodeVector.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMNormalizer.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMNotationImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMParentNode.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMProcessingInstructionImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMRangeImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMStringPool.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMTextImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMTreeWalkerImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMTypeInfoImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\DOMWriterImpl.cpp" />
+    <ClCompile Include="xercesc\dom\impl\XSDElementNSImpl.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="xercesc\util\Platforms\Win32\Version.rc">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\..\..\..\xercesc\util\Platforms\Win32</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">..\..\..\..\..\xercesc\util\Platforms\Win32</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\..\..\..\xercesc\util\Platforms\Win32</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|x64'">..\..\..\..\..\xercesc\util\Platforms\Win32</AdditionalIncludeDirectories>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Static Debug|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Static Debug|Win32'">..\..\..\..\..\xercesc\util\Platforms\Win32</AdditionalIncludeDirectories>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Static Debug|x64'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Static Debug|x64'">..\..\..\..\..\xercesc\util\Platforms\Win32</AdditionalIncludeDirectories>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Static Release|Win32'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Static Release|Win32'">..\..\..\..\..\xercesc\util\Platforms\Win32</AdditionalIncludeDirectories>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Static Release|x64'">true</ExcludedFromBuild>
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Static Release|x64'">..\..\..\..\..\xercesc\util\Platforms\Win32</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

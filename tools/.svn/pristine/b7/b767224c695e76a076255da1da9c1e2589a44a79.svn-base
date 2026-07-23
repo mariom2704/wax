@@ -1,0 +1,89 @@
+#include "StdAfx.h"
+
+#include "RohrKomponente.h"
+#include "RohrBemassungsRohrKomponentenVectorVector.h"
+#include "RohrOneAssembeldKomponenteVector.h"
+
+
+CCRohrOneAssembeldKomponenteVector::CCRohrOneAssembeldKomponenteVector(void)
+{
+	m_iFromWhere = 0;
+}
+
+
+
+CCRohrOneAssembeldKomponenteVector* CCRohrOneAssembeldKomponenteVector::GetNewAddedChildAssembeldTube()
+{
+	CCRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVector = new CCRohrOneAssembeldKomponenteVector();
+	m_AssembeldTubeVector.push_back(pRohrOneAssembeldKomponenteVector);
+	
+	return pRohrOneAssembeldKomponenteVector;
+}
+
+
+
+CRohrKomponenteVector& CCRohrOneAssembeldKomponenteVector::GetChildAssembeldTubes()
+{	
+	return  m_AssembeldTubeVector; 
+}
+
+
+
+bool CCRohrOneAssembeldKomponenteVector::HasAssembeldTubes()
+{	
+	return  m_AssembeldTubeVector.size() > 0 ?  true : false; 
+}
+
+
+
+void CCRohrOneAssembeldKomponenteVector::AddComponenteForTube(CRohrKomponente* pRohrKomponente)
+{
+	push_back(pRohrKomponente);
+}
+
+
+
+void CCRohrOneAssembeldKomponenteVector::CumulateBemassungscomponents()
+{
+	std::vector<int>::size_type sz  = size();
+	int i = 0;
+	while(true)
+	{
+		 CRohrBemassungsKomponentenVector* pBemassungsRohrKomponentenVector = new CRohrBemassungsKomponentenVector();
+		
+		 for( i = m_iFromWhere; i < (int)sz; i++)
+		 {
+			 CRohrKomponente* pRohrKomponente =  at(i);
+			 pBemassungsRohrKomponentenVector->push_back(pRohrKomponente); 
+			 if((pRohrKomponente->GetKlassenName() == CRohrKomponente::RohrKomponenteBogen) && i > m_iFromWhere)
+			 {
+				 break;
+			 }
+		 }
+		 m_iFromWhere = i;
+		 m_BemassungsVectorVector.push_back(pBemassungsRohrKomponentenVector);
+		 if(i == sz)
+			 break;
+	}
+
+	if(HasAssembeldTubes())
+	{
+		CRohrKomponenteVector& RohrKomponenteVectorChlidTubes = GetChildAssembeldTubes();
+		std::vector<int>::size_type sz  =  RohrKomponenteVectorChlidTubes.size();
+		for(int z = 0; z < (int) sz; z++)
+		{
+			 CCRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVector  = RohrKomponenteVectorChlidTubes[z];
+			 // Komponente mit Abstand zum Naechsten
+			 CRohrKomponente* pRohrKomponente = pRohrOneAssembeldKomponenteVector->at(0);
+			 //Wo muss noch bestimmt werden
+			 m_BemassungsVectorVector[0]->push_back(pRohrKomponente); 
+		}
+
+	}
+}
+
+
+
+CCRohrOneAssembeldKomponenteVector::~CCRohrOneAssembeldKomponenteVector(void)
+{
+}

@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LizenzGuiClass</class>
+ <widget class="QDialog" name="LizenzGuiClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>552</width>
+    <height>482</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>LizenzGui</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="LizenzGui.qrc">
+    <normaloff>:/LizenzGui/Resources/argotec.png</normaloff>:/LizenzGui/Resources/argotec.png</iconset>
+  </property>
+  <layout class="QGridLayout">
+   <item row="0" column="0">
+    <layout class="QHBoxLayout">
+     <item>
+      <widget class="QLabel" name="label_begin">
+       <property name="text">
+        <string>&lt;b&gt;Lizenzbeginn</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_end">
+       <property name="text">
+        <string>&lt;b&gt;Lizenzende</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="1" column="0">
+    <layout class="QHBoxLayout">
+     <item>
+      <widget class="QCalendarWidget" name="calendarWidget_begin"/>
+     </item>
+     <item>
+      <widget class="QCalendarWidget" name="calendarWidget_end"/>
+     </item>
+    </layout>
+   </item>
+   <item row="2" column="0">
+    <layout class="QVBoxLayout">
+     <item>
+      <widget class="QLabel" name="label_program">
+       <property name="text">
+        <string>&lt;b&gt;Programm</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="comboBox_programm"/>
+     </item>
+    </layout>
+   </item>
+   <item row="3" column="0">
+    <layout class="QGridLayout">
+     <item row="1" column="1">
+      <widget class="QCheckBox" name="checkBox_novec">
+       <property name="text">
+        <string>MX1230/Novec</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QCheckBox" name="checkBox_hfc">
+       <property name="text">
+        <string>MX200/HFC</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="5">
+      <widget class="QCheckBox" name="checkBox_co2">
+       <property name="text">
+        <string>Co2</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="6">
+      <widget class="QCheckBox" name="checkBox_ig55">
+       <property name="text">
+        <string>IG55</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="7">
+      <widget class="QCheckBox" name="checkBox_ig541">
+       <property name="text">
+        <string>IG541</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QCheckBox" name="checkBox_autocad">
+       <property name="text">
+        <string>Autocad Erweiterung</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>&lt;b&gt;Chemie</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_module">
+       <property name="text">
+        <string>&lt;b&gt;Module</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>&lt;b&gt;Inertgase</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
+       <property name="text">
+        <string>&lt;b&gt;Diverses</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QCheckBox" name="checkBox_stickstoff">
+       <property name="text">
+        <string>IG100/Stickstoff</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QCheckBox" name="checkBox_argon">
+       <property name="text">
+        <string>IG01/Argon</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="4" column="0">
+    <layout class="QVBoxLayout">
+     <item>
+      <widget class="QLabel" name="label_hwid">
+       <property name="text">
+        <string>&lt;b&gt;Hardware ID</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="lineEdit_hwid">
+       <property name="maxLength">
+        <number>8</number>
+       </property>
+       <property name="readOnly">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="label_key">
+     <property name="text">
+      <string>&lt;b&gt;Lizenzschlüssel</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLineEdit" name="lineEdit_key">
+     <property name="maxLength">
+      <number>300</number>
+     </property>
+     <property name="frame">
+      <bool>true</bool>
+     </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <layout class="QHBoxLayout">
+     <property name="spacing">
+      <number>13</number>
+     </property>
+     <item>
+      <spacer>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_read_license">
+       <property name="text">
+        <string>Lizenzdatei laden...</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_write_license">
+       <property name="text">
+        <string>Lizenzdatei schreiben</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="LizenzGui.qrc"/>
+ </resources>
+ <connections/>
+</ui>

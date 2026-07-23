@@ -1,0 +1,1 @@
+SELECT * FROM waxserver.BauteilPos B where Artikelnummer >=1400 and Artikelnummer <= 1410

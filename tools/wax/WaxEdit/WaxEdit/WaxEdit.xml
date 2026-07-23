@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Einstellung xmlns="http://tempuri.org/XMLSchema1.xsd">
+
+	<Datenbank>D:\Daten\Programmierung\Tools\wax\WaxEdit\WaxEdit\waxstamm.mdb</Datenbank>
+
+        <Datenbank_xx>D:\Daten\Programmierung\Tools\wax\WaxEdit\WaxEdit\RohrKonfStammPreise.accdb</Datenbank_xx>
+
+</Einstellung>

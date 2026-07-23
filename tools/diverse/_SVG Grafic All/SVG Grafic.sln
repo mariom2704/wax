@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SVG Grafic", "SVG Grafic\SVG Grafic.vcxproj", "{C78B2612-6C62-4C41-A066-9286378AB8D9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{7568EF29-DE32-43C3-AB90-A2A2D9C98CEF} = {7568EF29-DE32-43C3-AB90-A2A2D9C98CEF}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_SVG Grafic Test", "SSVG Grafic Test\Test SVG Grafic.vcxproj", "{7568EF29-DE32-43C3-AB90-A2A2D9C98CEF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C78B2612-6C62-4C41-A066-9286378AB8D9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C78B2612-6C62-4C41-A066-9286378AB8D9}.Debug|Win32.Build.0 = Debug|Win32
+		{C78B2612-6C62-4C41-A066-9286378AB8D9}.Release|Win32.ActiveCfg = Release|Win32
+		{C78B2612-6C62-4C41-A066-9286378AB8D9}.Release|Win32.Build.0 = Release|Win32
+		{7568EF29-DE32-43C3-AB90-A2A2D9C98CEF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7568EF29-DE32-43C3-AB90-A2A2D9C98CEF}.Debug|Win32.Build.0 = Debug|Win32
+		{7568EF29-DE32-43C3-AB90-A2A2D9C98CEF}.Release|Win32.ActiveCfg = Release|Win32
+		{7568EF29-DE32-43C3-AB90-A2A2D9C98CEF}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

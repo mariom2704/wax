@@ -1,0 +1,6 @@
+; waxgl.def : Deklariert die Modul-Parameter für die DLL.
+
+LIBRARY      "waxgl"
+
+EXPORTS
+    ; Explizite Exporte können hier eingefügt werden

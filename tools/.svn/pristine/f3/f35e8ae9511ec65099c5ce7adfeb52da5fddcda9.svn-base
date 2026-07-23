@@ -1,0 +1,96 @@
+#include "StdAfx.h"
+
+#include "RohrKomponente.h"
+#include "RohrBemassungsAnbauChildKomponentenVectorVector.h"
+#include "RohrBemassungsRohrKomponentenVector.h"
+#include "RohrBemassungsRohrKomponentenVectorVector.h"
+
+#include "RohrOneAssembeldKomponenteVector.h"
+
+
+CCRohrOneAssembeldKomponenteVector::CCRohrOneAssembeldKomponenteVector(void)
+{
+	m_iFromWhere = 0;
+}
+
+
+CCRohrOneAssembeldKomponenteVector* CCRohrOneAssembeldKomponenteVector::GetNewAddedCommonChildToVector()
+{
+	CCRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVector = new CCRohrOneAssembeldKomponenteVector();
+	m_AssembeldCommonTubeVectorVector.push_back(pRohrOneAssembeldKomponenteVector);
+	return pRohrOneAssembeldKomponenteVector;
+}
+
+
+bool CCRohrOneAssembeldKomponenteVector::HasAssembeldCommonTubes()
+{			
+	return   m_AssembeldCommonTubeVectorVector.size() > 0 ? true : false; 
+}
+
+
+CRohrKomponenteVectorVector& CCRohrOneAssembeldKomponenteVector::GetAssembledCommonTubeVectorVector()
+{	
+	return  m_AssembeldCommonTubeVectorVector; 
+}
+
+
+
+
+CCRohrOneAssembeldKomponenteVector* CCRohrOneAssembeldKomponenteVector::GetNewAddedChildToBemassungsVector()
+{
+	CCRohrOneAssembeldKomponenteVector* pRohrOneAssembeldKomponenteVector = new CCRohrOneAssembeldKomponenteVector();
+	
+	CRohrBemassungsRohrKomponentenVector* pRohrBemassungsRohrKomponentenVector = m_BemassungsKomponentenVectorVector[0];
+	CRohrBemassungsAnbauChildKomponentenVectorVector& RohrBemassungsAnbauChildKomponentenVectorVector =  pRohrBemassungsRohrKomponentenVector->GetRohrBemassungsAnbauChildKomponentenVectorVector();
+	RohrBemassungsAnbauChildKomponentenVectorVector.push_back(pRohrOneAssembeldKomponenteVector);
+	
+	return pRohrOneAssembeldKomponenteVector;
+}
+
+
+
+CRohrBemassungsKomponentenVectorVector& CCRohrOneAssembeldKomponenteVector::GetBemassungsKomponentenVectorVector()
+{	
+	return  m_BemassungsKomponentenVectorVector; 
+}
+
+
+
+bool CCRohrOneAssembeldKomponenteVector::HasAssembeldTubes()
+{	
+	std::vector<int>::size_type sz = m_BemassungsKomponentenVectorVector.size();
+	bool bHasChilds = false;
+	for(int z = 0; z < (int)sz; z++)
+	{
+		CRohrBemassungsRohrKomponentenVector* pRohrBemassungsKomponentenVector= m_BemassungsKomponentenVectorVector[z];
+		if(pRohrBemassungsKomponentenVector->size() > 0)
+		{
+			bHasChilds = true;;
+		}
+	}
+	return   bHasChilds; 
+}
+
+
+
+void CCRohrOneAssembeldKomponenteVector::AddComponenteForTube(CRohrKomponente* pRohrKomponente)
+{
+	push_back(pRohrKomponente);
+}
+
+
+
+
+
+
+double CCRohrOneAssembeldKomponenteVector::GetRelativerAbstandzumNaechsten()
+{
+	
+	 return  at(0)->GetRelativerAbstandzumNaechsten();
+}
+
+
+
+CCRohrOneAssembeldKomponenteVector::~CCRohrOneAssembeldKomponenteVector(void)
+{
+}
