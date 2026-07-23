@@ -1,0 +1,738 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+ICON_BENUTZER           ICON                    "res\\sysparam.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PASSWD DIALOGEX 0, 0, 205, 87
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Passwort"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Statisch",IDC_MSG,7,7,191,32
+    EDITTEXT        IDC_PASSWD,7,44,191,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,90,66,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,148,66,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PASSWD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 198
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 80
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Deutsch (Deutschland) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE LANG_GERMAN, SUBLANG_GERMAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_PARA_USER DIALOGEX 0, 0, 400, 201
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Benutzerverwaltung"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "L&ogin : ",IDC_STATIC_LOGIN,7,8,27,12
+    COMBOBOX        IDC_PARA_LOGIN,80,8,160,103,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Benutzer&name : ",IDC_STATIC_NAME,7,29,50,12
+    EDITTEXT        IDC_PARA_BENUTZERNAME,80,29,160,12,ES_AUTOHSCROLL
+    LTEXT           "&Durchwahl : ",IDC_STATIC_TEL,7,50,51,12
+    EDITTEXT        IDC_PARA_DURCHWAHL,80,50,160,12,ES_AUTOHSCROLL
+    LTEXT           "&EMail-Adresse : ",IDC_STATIC_EMAIL,7,71,52,12
+    EDITTEXT        IDC_PARA_EMAIL,80,71,160,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "Benutzer &löschen",IDC_BENUTZERLOESCHEN,7,121,70,14,WS_DISABLED
+END
+
+IDD_PARA_ALLGEMEIN DIALOGEX 0, 0, 413, 202
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Allgemein"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         8301,IDB_TRENNSTRICH,"Static",SS_BITMAP,54,13,353,1
+    LTEXT           "Autosave",IDC_STATIC_AUTOSAVE,10,10,42,8
+    LTEXT           "Automatisch speichern in (min) : ",IDC_STATIC_ASAVE,55,34,105,8
+    EDITTEXT        IDC_PARA_AUTOSAVE,169,32,29,12,ES_AUTOHSCROLL
+    CONTROL         8301,IDB_TRENNSTRICH2,"Static",SS_BITMAP,54,69,353,1
+    LTEXT           "Sprache",IDC_STATIC_SPRACHE,12,65,40,8
+    CONTROL         "Deutsch",IDC_PARA_SPRACHEDEUTSCH,"Button",BS_AUTORADIOBUTTON,54,84,41,10
+    CONTROL         "Englisch",IDC_PARA_SPRACHEENGLISCH,"Button",BS_AUTORADIOBUTTON,142,84,41,10
+    PUSHBUTTON      "&Passwort ändern",IDC_PASSWORD,3,181,83,15
+END
+
+IDD_PARA_GEWINDEROHR DIALOGEX 0, 0, 400, 201
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Gewinderohr"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         8301,IDB_TRENNSTRICH,"Static",SS_BITMAP,40,10,353,1
+    LTEXT           "Kurztext",IDC_STATIC_KURZTXT,11,7,38,8
+    CONTROL         "Kurz",IDC_TEXTKURZ,"Button",BS_AUTORADIOBUTTON,32,23,41,9
+    LTEXT           "T 1x1x1",IDC_EXAMPLE1,80,23,100,8,NOT WS_GROUP
+    CONTROL         "Mittel",IDC_TEXTMITTEL,"Button",BS_AUTORADIOBUTTON,32,35,41,9
+    LTEXT           "T-Stück 1x1x1",IDC_EXAMPLE2,80,35,100,9,NOT WS_GROUP
+    CONTROL         "Lang",IDC_TEXTLANG,"Button",BS_AUTORADIOBUTTON,32,47,41,9
+    LTEXT           "T-Stück 1x1x1 GF290 verz.",IDC_EXAMPLE3,80,47,100,8,NOT WS_GROUP
+    RTEXT           "Trennzeichen der Nennweiten:",IDC_STATIC_TRENNZEICHEN,191,22,108,11
+    EDITTEXT        IDC_PARA_TRENNZEICHEN,306,19,40,14,ES_AUTOHSCROLL
+    CONTROL         8301,IDB_TRENNSTRICH1,"Static",SS_BITMAP,40,85,353,1
+    LTEXT           "Z-Mass Abzug anzeigen in",IDC_STATIC_ZMASSABZ,13,82,91,8
+    CONTROL         "Gewinderohrliste ",IDC_ZMASSLISTE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,130,98,90,11
+    CONTROL         "Gewinderohrgraphik",IDC_ZMASSGRAPHIK,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,219,98,84,11
+    CONTROL         8301,IDB_TRENNSTRICH2,"Static",SS_BITMAP,40,122,353,1
+    LTEXT           "Winkel/Ausrichtung",IDC_STATIC_WINKELAUS,13,118,68,8
+    CONTROL         "Winkelangabe",IDC_WINKEL,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,128,133,61,10
+    CONTROL         "Textangabe",IDC_AUSRICHTUNG,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,218,133,57,10
+    CONTROL         8301,IDB_TRENNSTRICH3,"Static",SS_BITMAP,40,155,353,1
+    LTEXT           "Nennweite",IDC_STATIC_NENNWEITE,13,151,44,8
+    CONTROL         "DN",IDC_DN,"Button",BS_AUTORADIOBUTTON | WS_GROUP | WS_TABSTOP,128,166,27,10
+    CONTROL         "Zoll",IDC_ZOLL,"Button",BS_AUTORADIOBUTTON | WS_TABSTOP,218,166,27,10
+END
+
+IDD_PARA_GRAPHIK DIALOGEX 0, 0, 402, 201
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Grafik"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         8301,IDB_TRENNSTRICH,"Static",SS_BITMAP,40,10,353,1
+    LTEXT           "Druckliste",IDC_STATIC_DRUCKLISTE,11,6,47,8
+    LTEXT           "Fontgrösse : ",IDC_STATIC_FONTGROESSE,60,27,68,8
+    EDITTEXT        IDC_PARA_FONTGROESSE,133,24,39,12,ES_AUTOHSCROLL
+    LTEXT           "DWF-Viewer: ",IDC_STATIC_DWF,60,62,69,9
+    COMBOBOX        IDC_PARA_VIEWERDRUCK,132,60,60,92,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Rahmen um Grafik",IDC_PARA_RAHMEN,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,222,26,122,11
+    CONTROL         "Trennlinie zwischen Grafiken",IDC_PARA_TRENNLINIE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,222,39,129,11
+    CONTROL         8301,IDB_TRENNSTRICH2,"Static",SS_BITMAP,42,94,353,1
+    LTEXT           "Vorschau",IDC_STATIC_VORSCHAU,12,90,40,8
+    LTEXT           "Grafikformat: ",IDC_STATIC_GRAFIKFORMAT,60,114,67,11
+    COMBOBOX        IDC_PARA_GRAFIKFORMAT,132,112,60,92,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Bemassungslinie anzeigen",IDC_PARA_BEMASSUNGSLINIE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,222,106,170,11
+    CONTROL         "Beschriftung Rohrlänge (Gewinderohrfertigung)",IDC_PARA_BESCHRIFTUNGLAENGE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,222,119,170,11
+END
+
+IDD_PARA_ANSICHT DIALOGEX 0, 0, 400, 201
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Ansicht"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         8301,IDB_TRENNSTRICH2,"Static",SS_BITMAP,41,10,353,1
+    LTEXT           "Icongrösse",IDC_STATIC_ICON,7,7,44,8
+    CONTROL         "klein",IDC_ICONKLEIN,"Button",BS_AUTORADIOBUTTON,116,23,42,10
+    CONTROL         "mittel",IDC_ICONMITTEL,"Button",BS_AUTORADIOBUTTON,177,23,38,10
+    CONTROL         "gross",IDC_ICONGROSS,"Button",BS_AUTORADIOBUTTON,242,23,40,10
+    CONTROL         8301,IDB_TRENNSTRICH1,"Static",SS_BITMAP,41,47,353,1
+    LTEXT           "Hintergrundfarbe des Baumes",IDC_STATIC_HFARBE,9,43,106,8
+    LTEXT           "eingestellt:",IDC_STATIC_EINGESTELLT,113,67,36,8
+    LTEXT           "",IDC_TREECOLOR,153,63,49,16,WS_DISABLED | WS_BORDER,WS_EX_TRANSPARENT
+    PUSHBUTTON      "setzen...",IDC_PARA_BAUMFARBE,216,65,58,13
+    CONTROL         8301,IDB_TRENNSTRICH,"Static",SS_BITMAP,41,97,353,1
+    LTEXT           "Anzeige",IDC_STATIC_ANZEIGE,11,93,26,8
+    CONTROL         "Graphikfenster unter der Eingabe",IDC_PARA_GRAPHIKFENSTER,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,87,115,137,10
+    CONTROL         "Nicht freigegebene Positionen zeigen",IDC_PARA_SHOWFREIGABEPOS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,87,128,137,10
+    CONTROL         "Symbolleiste anzeigen",IDC_PARA_SYMBOLLEISTE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,226,115,137,10
+    CONTROL         "Statusleiste anzeigen",IDC_PARA_STATUSLEISTE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,226,128,137,10
+END
+
+IDD_PARA_PROJEKT DIALOGEX 0, 0, 400, 180
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Pfade und Leitkarte"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         8301,IDB_TRENNSTRICH,"Static",SS_BITMAP,40,10,353,3
+    LTEXT           "Pfade",IDC_STATIC_PFADE,10,7,31,8
+    LTEXT           "Projekte: ",IDC_STATIC_PROJEKT,23,25,45,8
+    EDITTEXT        IDC_PARA_PROJEKTE,87,22,266,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_PROJEKT,357,22,20,12
+    LTEXT           "Komponenten: ",IDC_STATIC_KO,23,43,56,8
+    EDITTEXT        IDC_PARA_KOMP,87,41,266,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_KOMP,357,41,20,12
+    LTEXT           "Auftragstabelle: ",IDC_STATIC_AUFTRAGTAB,23,63,61,8
+    EDITTEXT        IDC_PARA_EXCEL,87,61,266,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_EXCEL,357,61,20,12
+    CONTROL         8301,IDB_TRENNSTRICH5,"Static",SS_BITMAP,36,86,353,3
+    LTEXT           "Datenbanken",IDC_STATIC_DB,12,83,53,8
+    LTEXT           "Stammdatenbank: ",IDC_STATIC_STAMMDB,23,104,62,8
+    EDITTEXT        IDC_PARA_STAMMDB,86,102,267,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "...",IDC_STAMMDB,357,102,20,12
+    CONTROL         8301,IDB_TRENNSTRICH6,"Static",SS_BITMAP,40,139,353,1
+    LTEXT           "Leitkarte",IDC_STATIC_LEITK,9,135,53,8
+    RTEXT           "Büronummer: ",IDC_STATIC_BNR,14,156,63,8
+    EDITTEXT        IDC_PARA_IB_NL_KENNUNG,82,155,48,12,ES_AUTOHSCROLL | ES_NUMBER
+    RTEXT           "Lieferfrist: ",IDC_STATIC_LFRIST,131,157,61,8
+    EDITTEXT        IDC_PARA_LIEFERFRIST,196,155,48,12,ES_AUTOHSCROLL
+    RTEXT           "MB - Termin: ",IDC_STATIC_MBTERMIN,263,157,48,8
+    EDITTEXT        IDC_PARA_MBTERMIN,312,155,48,12,ES_AUTOHSCROLL
+    LTEXT           "SAP Soap Server: ",IDC_STATIC_SAPSOAP_SERVER,22,123,62,8
+    EDITTEXT        IDC_PARA_SAPSOAPSERVER,86,121,307,12,ES_AUTOHSCROLL
+END
+
+IDD_PARA_SYSALL DIALOGEX 0, 0, 400, 201
+STYLE DS_SETFONT | DS_MODALFRAME | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Systemparameter - erweiterte Anzeige"
+FONT 8, "Arial", 0, 0, 0x0
+BEGIN
+    CONTROL         "List1",IDC_SYSPARAM_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | LVS_AUTOARRANGE | WS_BORDER | WS_TABSTOP,7,6,385,167
+    PUSHBUTTON      "&Bearbeiten...",IDC_BEARBEITEN,342,181,50,14
+END
+
+IDD_PARA_FREIGABESTATUS DIALOGEX 0, 0, 400, 201
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Freigabe und Statusaktualisierung"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         8301,IDB_TRENNSTRICH,"Static",SS_BITMAP,40,10,353,1
+    LTEXT           "Freigabe",IDC_STATIC_FREIGABE,7,6,29,8
+    CONTROL         "automatische Freigabe von geänderten Positionen",IDC_PARA_AUTOFREIGABE,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,40,23,232,15
+    CONTROL         "SAP-Felder prüfen",IDC_PARA_CHECKSAP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,40,37,232,15
+    CONTROL         "Sicherheitsabfrage",IDC_PARA_SAFEFREIGABE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,40,51,232,15
+    CONTROL         8301,IDB_TRENNSTRICH2,"Static",SS_BITMAP,40,76,353,3
+    LTEXT           "Status",IDC_STATIC_STATUS,12,73,22,8
+    CONTROL         "Prüfung auf aktuellen Status",IDC_PARA_CHECKSTATUS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,40,85,249,15
+    CONTROL         "Sicherheitsabfrage",IDC_PARA_SAFESTATUS,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,40,99,232,15
+    CONTROL         8301,IDB_TRENNSTRICH3,"Static",SS_BITMAP,40,126,353,1
+    LTEXT           "Email an die Fertigung",IDC_STATIC_EMAILFERT,12,123,85,8
+    LTEXT           "Empfängeradresse : ",IDC_STATIC_EMAILADR,44,140,70,11
+    EDITTEXT        IDC_PARA_EMPFAENGER,129,138,103,13,ES_AUTOHSCROLL
+    LTEXT           "Empfängerbezeichnung : ",IDC_STATIC_EMPF_BEZ,44,156,82,11
+    EDITTEXT        IDC_PARA_DISPLAYNAME,129,154,103,13,ES_AUTOHSCROLL
+    LTEXT           "Betreff : ",IDC_STATIC_BETREFF,44,171,52,9
+    EDITTEXT        IDC_PARA_BETREFF,129,170,204,13,ES_AUTOHSCROLL
+END
+
+IDD_EDIT_PARAMETER DIALOGEX 0, 0, 274, 146
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Systemparameter"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Statisch",IDC_BEMERKUNG,18,15,236,22
+    LTEXT           "Wert:",IDC_TXT_WERT,18,49,20,8
+    EDITTEXT        IDC_VAL,48,47,206,14,ES_AUTOHSCROLL
+    LTEXT           "Gültigkeit des Parameters",IDC_STATIC_GUELTIGKEIT,18,78,95,8
+    CONTROL         8302,IDC_STATIC,"Static",SS_BITMAP,110,82,101,1
+    CONTROL         "&Lokation",IDC_LOCATION,"Button",BS_AUTORADIOBUTTON,27,94,43,10
+    CONTROL         "Alle Benutzer dieses Computers",IDC_MACHINE,"Button",BS_AUTORADIOBUTTON,78,94,117,10
+    CONTROL         "Nur Benutzer",IDC_USER,"Button",BS_AUTORADIOBUTTON,196,94,58,10
+    DEFPUSHBUTTON   "OK",IDOK,151,125,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,204,125,50,14
+END
+
+IDD_PASSWD_AENDERN DIALOGEX 0, 0, 152, 105
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Password ändern"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,7,84,50,14
+    PUSHBUTTON      "Abbrechen",IDCANCEL,95,84,50,14
+    LTEXT           "Neues Password:",IDC_STATIC_NEWPWD,7,7,98,8
+    LTEXT           "Neues Password bestätigen:",IDC_STATIC_NEWPWD_OK,7,45,98,8
+    EDITTEXT        IDC_NEWPASSWORD,7,23,138,14,ES_PASSWORD | ES_AUTOHSCROLL
+    EDITTEXT        IDC_PASSWORD,7,61,137,14,ES_PASSWORD | ES_AUTOHSCROLL
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_PARA_USER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 391
+        BOTTOMMARGIN, 194
+    END
+
+    IDD_PARA_ALLGEMEIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 3
+        RIGHTMARGIN, 407
+        BOTTOMMARGIN, 196
+    END
+
+    IDD_PARA_GEWINDEROHR, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 393
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 194
+    END
+
+    IDD_PARA_GRAPHIK, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 395
+        TOPMARGIN, 8
+        BOTTOMMARGIN, 194
+    END
+
+    IDD_PARA_ANSICHT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 394
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 195
+    END
+
+    IDD_PARA_PROJEKT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 393
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 173
+    END
+
+    IDD_PARA_SYSALL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 392
+        TOPMARGIN, 6
+        BOTTOMMARGIN, 195
+    END
+
+    IDD_PARA_FREIGABESTATUS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 393
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 194
+    END
+
+    IDD_EDIT_PARAMETER, DIALOG
+    BEGIN
+        LEFTMARGIN, 18
+        RIGHTMARGIN, 254
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 139
+    END
+
+    IDD_PASSWD_AENDERN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 145
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 98
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 7, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\SysParm.rc2""  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen\r\n"
+    "#include ""l.deu\\afxres.rc""          // Standardkomponenten\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 4,6,0,0
+ PRODUCTVERSION 4,6,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040704b0"
+        BEGIN
+            VALUE "FileDescription", "Wax Systemparameter"
+            VALUE "FileVersion", "4, 6, 0, 0"
+            VALUE "InternalName", "MxParam"
+            VALUE "LegalCopyright", "Copyright (C) 2015 Minimax GmbH & Co KG"
+            VALUE "OriginalFilename", "mxparam.dll"
+            VALUE "ProductName", "mxparam Dynamic Link Library"
+            VALUE "ProductVersion", "4, 6, 0, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x407, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_PARA_GRAPHIK DLGINIT
+BEGIN
+    IDC_PARA_VIEWERDRUCK, 0x403, 9, 0
+0x656d, 0x6174, 0x6966, 0x656c, "\000" 
+    IDC_PARA_VIEWERDRUCK, 0x403, 4, 0
+0x5653, 0x0047, 
+    IDC_PARA_GRAFIKFORMAT, 0x403, 4, 0
+0x5653, 0x0047, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+LIST_SHORTCUTS ACCELERATORS 
+BEGIN
+    VK_RETURN,      IDC_BEARBEITEN,         VIRTKEY, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_TRENNSTRICH         BITMAP                  "res\\trennstrich.bmp"
+IDB_TRENNSTRICH_KURZ    BITMAP                  "res\\trennstrich_kurz.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_DBERROR             "Es konnte nicht auf die Datenbank zugegriffen werden.\nPrüfen Sie, ob die Datenbank schreibgeschützt ist und entfernen Sie ggf. den Schreibschutz.\nStarten Sie dann Wax+ neu."
+    IDS_STDPFAD             "c:\\programme\\waxplus"
+    IDC_PARA_APSAD_ROHRE    "Auswahl der APSAD-Rohre"
+    IDS_UNBEKANNTER_BENUTZER "unbekannter Benutzer"
+    IDS_FERT_IN_BO          "Fertigung_in_Bad_Oldesloe"
+    IDS_DELETEITEM          "Felder wirklich aus der Datenbank löschen?"
+    IDS_AUFTRAG_ZUR_FREIGABE "Wax Auftrag zur Freigabe"
+    IDS_EDITNOTCHANGE       "Wollen Sie die Änderungen wirklich verwerfen?"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_SYSPARAMNEUERUSER   "Sie sind ein neuer Benutzer.\n Es werden jetzt die Standardeinträge in der Datenbank für Sie erzeugt."
+    IDS_SYSPARAM_BEMERKUNG  "Bemerkung"
+    IDS_SYSPARAM_NAME       "Name"
+    IDS_SYSPARAM_NAMEFUERALLE "Alle Benutzer"
+    IDS_SYSPARAM_USER       "Gültigkeit"
+    IDS_SYSPARAM_WERT       "Wert"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PARAMFROMINI        "Parametereinstellungen"
+    IDS_PASSWORD            "Bitte geben Sie das Passwort ein"
+    IDS_PASSWORD2           "Bitte geben Sie das Passwort ein, wenn Sie alle Einträge einsehen möchten. Sie haben sonst nur Zugriff auf Ihre persönlichen Einträge."
+    IDS_PASSWORDCHANGE      "Geben Sie bitte das neue Passwort ein:"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_FALSCHESPASSWORD    "Es wurde ein falsches Passwort eingegeben."
+    IDS_FALSCHESPROJEKTFORMAT """Die Datei %s hat ein falsches Format!"""
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_WRONGENTRY          "Der Eintrag '%s = %s' in den Systemparametern ist falsch. Es werden Standardwerte benutzt."
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PARA_MAXPOSPERSA    "Maximale Anzahl der Positionen pro Sammelauftrag"
+    IDC_PARA_KENNUNG        "IB/NL - Kennung, ersten 3 Stellen der Kostenstelle"
+    IDC_PARA_LIEFERFRIST    "Liefertermin wird auf Systemdatum plus eingestellten Wert in Tagen voreingestellt"
+    IDC_PARA_MBTERMIN       "Wert wird beim Laden von Werkaufträgen zu dem Systemdatum in Tagen hinzugezählt"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PARA_GRAPHIKFENSTER "Zeigt ein Fenster mit der Graphikvorschau unter den Eingeabedialogen an"
+    IDC_PARA_SPRACHEDEUTSCH "Die Programmsprache ist ""Deutch"""
+    IDC_PARA_SPRACHEENGLISCH "Die Programmsprache ist ""Englisch"""
+    IDC_PARA_BEMASSUNGSLINIE "Bemassungslinie wird gezeichnet"
+    IDC_PARA_BESCHRIFTUNGLAENGE 
+                            "Schaltet die Beschriftung für die Rohrlänge an (i.d.R. nur Gewinderohrfertigung)"
+    IDC_PARA_RAHMEN         "Zeichnet beim Ausdruck einen Rahmen um jede Graphik"
+    IDC_PARA_TRENNLINIE     "Gibt an ob die Graphiken beim Ausdruck durch eine Linie voneinander getrennt werden sollen"
+    IDC_PARA_GRAFIKFORMAT   "Erzeugtes Grafikformat: Autodesk DWF  (Drawing Web Format) oder SVG (Scalable Vector Graphics)"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PARA_CHECKSAP       "SAP Felder (PSP Element, SD Nummern) werden vor der Freigabe geprüft"
+    IDC_PARA_STAMMDB        "Pfad zur Stammdatenbank"
+    IDC_PARA_SERVERDB       "Pfad zur Serverdatenbank"
+    IDC_PARA_LANGUAGE       "Programmsprache"
+    IDC_PARA_AUTOSAVE       "Automatisches Speichern alle x Minuten (0 Min. = kein automatisches Speichern)"
+    IDC_PARA_TRENNZEICHEN   "Dieses Zeichen wird zum Trennen der Nennweiten beim Fittingtext verwendet"
+    IDC_PARA_FONTGROESSE    "Gibt die Schriftgrösse in der Graphik an"
+    IDC_PARA_ICONGROESSE    "Icongrösse im Baum: klein, mittel oder gross"
+    IDC_PARA_EMPFAENGER     "Mailadresse des Empfängers"
+    IDC_PARA_PROJEKTE       "Pfad, in dem standardmässig die Projekte gespeichert werden"
+    IDC_PARA_DN2ZOLL        "Setzt die Ausgabe von Masseinheiten auf Zoll"
+    IDC_PARA_WINKELAUSRICHTUNG 
+                            "Nur Gewinderohr: Ausgabe der Gradangaben als Text (vorne, hinten usw)"
+    IDC_PARA_DISPLAY        "Text, der als E-Mail Name angezeigt wird, wenn ein Auftrag per E-Mail gesendet wird"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PARA_SAFESTATUS     "Aktiviert eine Sicherheitsabfrage für die Statusaktualisierung"
+    IDC_PARA_SHOWFREIGABEPOS 
+                            "Zeigt automatisch alle nicht freigegebenen Positionen an"
+    IDC_PARA_BAUMFARBE      "Hintergrundfarbe des Baumes"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PARA_ZMASSLISTE     "Die in der Druckliste 'Gewinderohrliste' angegebenen Rohrlängen sind abzüglich ZMasse"
+    IDC_PARA_AUTOFREIGABE   "Prüfung, ob veränderte Werkaufträge freigegeben werden sollen"
+    IDC_PARA_AV             "Programmversion für Fertigung"
+    IDC_PARA_KOMP           "Pfad, in dem standardmässig die Waxteilkomponenten gespeichert werden"
+    IDC_PARA_DN             "Die Nennweitenangaben erfolgen bei Gewinderohr in DN"
+    IDC_PARA_BETREFF        "Text, der als Betreff angezeigt wird, wenn ein Auftrag per E-Mail gesendet wird"
+    IDC_PARA_CHECKSTATUS    "Prüfung, ob freigegebene Werkaufträge keinen aktuellen Status besitzen "
+    IDC_PARA_EXCEL          "Pfad, in dem die Auftragstabelle gespeichert wird"
+    IDC_PARA_ZOLL           "Die Nennweitenangaben erfolgen bei Gewinderohr in Zoll"
+    IDC_PARA_TEXTFORMAT     "Nur Gewinderohr: Fittingtexte kurz,mittel oder lang"
+    IDC_PARA_TEXTKURZ       "Der Fittingtext wird in Kurzform angegeben (z.B. T 1.1/2-1.1/2-1.1/2 (130)) "
+    IDC_PARA_TEXTMITTEL     "Der Fittingtext wird in in Normalform angegeben (z.B. T-Stück 1.1/2x1.1/2x1.1/2 (GF 130)) "
+    IDC_PARA_LOGDB          "Datenbank mit Logmeldungen"
+    IDC_PARA_TEXTLANG       "Der Fittingtext wird in in Langform angegeben (z.B. T-Stück 1.1/2x1.1/2x1.1/2 (B1/GF 130) verzinkt) "
+    IDC_PARA_BEARBEITER     "Bearbeiter???"
+    IDC_PARA_WINKEL         "In der Druckliste 'Gewinderohrliste' erfolgt die Winkelangabe in Grad   "
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PARA_AUSRICHTUNG    "In der Druckliste 'Gewinderohrliste' erfolgt die Winkelangabe in Textform (0=oben, 90=hinten, 180=unten ,270=vorne)"
+    IDC_PARA_SAFEFREIGABE   "Aktiviert eine Sicherheitsabfrage für das Freigeben"
+    IDC_PARA_ZMASSGRAPHIK   "Die in der Druckliste 'Gewinderohrgraphik' angegebenen Rohrlängen sind abzüglich ZMasse"
+    IDC_PARA_DEBUGNL        "Schaltet die AV Zusatzreiter für Verteiler auch in der NL Version an"
+    IDC_PARA_VIEWERDRUCK    "Gibt das Dateiformat der Graphik für den Ausdruck an"
+    IDC_PARA_GF_DN2ZOLL     "Zoll bzw. DN Angabe für Gewinderohr"
+    IDC_PARA_VIEWERVORSCHAU "Für die Graphik verwendeter Viewer"
+    IDC_PARA_GF_ELELAENGE   "Grafikfaktor für Elementlänge"
+    IDC_PARA_GF_ELEBREITE   "Grafikfaktor für Elementbreite"
+    IDC_PARA_LOGIN          "Login-Name des Benutzers "
+    IDC_PARA_BENUTZERNAME   "Name des Benutzers"
+    IDC_PARA_GF_DWFHOEHE    "Höhe der DWF Grafiken"
+    IDC_PARA_DURCHWAHL      "Telefonische Durchwahl des Benutzers"
+    IDC_PARA_EMAIL          "EMail-Adresse des Benutzers"
+    IDS_CANCEL              "&Abbrechen"
+    IDS_USER                "BENUTZER"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PASSWORD            "Das Passwort für die erweiterten Systemparameter ändern"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PARA_REL_ABST_AENDERN "Relativen Abstand ändern"
+    IDC_PARA_PRINT_WORD     "Über Winword ausdrucken"
+    IDC_PARA_DISPLAYNAME    "Bezeichnung der Emailadresse"
+    IDC_PARA_DIR_GROHR_FREE "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_GROHR_ACTIVE "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_GROHR_STOPPED "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_GROHR_FINISHED "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_GROHR_ARCHIVE "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_SAEGENUT_FREE "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_SAEGENUT_ACTIVE "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_SAEGENUT_STOPPED "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_SAEGENUT_FINISHED "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_SAEGENUT_ARCHIVE "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_VERTEILER_FREE "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_VERTEILER1_ACTIVE "Verzeichnis der Rohrstrasse"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PARA_DIR_VERTEILER_FREE_USB "Verzeichnis der Rohrstrasse"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PARA_DIR_VERTEILER1_STOPPED "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_VERTEILER1_FINISHED "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_VERTEILER2_ACTIVE "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_VERTEILER2_STOPPED "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_VERTEILER2_FINISHED "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_VERTEILER_ARCHIVE "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_STRANG_FREE "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_STRANG1_ACTIVE "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_STRANG1_STOPPED "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_STRANG1_FINISHED "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_STRANG2_ACTIVE "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_STRANG2_STOPPED "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_STRANG2_FINISHED "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_STRANG3_ACTIVE "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_STRANG3_STOPPED "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_STRANG3_FINISHED "Verzeichnis der Rohrstrasse"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_PARA_DIR_STRANG4_ACTIVE "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_STRANG4_STOPPED "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_STRANG4_FINISHED "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_STRANG_ARCHIVE "Verzeichnis der Rohrstrasse"
+    IDC_PARA_DIR_WAXTOSAP   "Verzeichis für Zwischendateien"
+    IDC_PARA_DIR_SAPTOWAX   "Verzeichis für Zwischendateien"
+	IDC_PARA_DIR_SAPTOWAXWITTENBERGE "Verzeichis für Zwischendateien"
+    IDC_PARA_DIR_WAXAPAX    "Verzeichnis für die Arbeitspläne"
+    IDC_PARA_DIR_WAXAPAX_OLD "Verzeichnis für die Arbeitspläne aus Altwax"
+    IDC_PARA_DIR_WAXOLD     "Verzeichnis für Altwax"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MACHINE             "COMPUTER"
+    IDS_LOCATION            "LOKATION"
+    IDC_PARA_STATUSZEILE    "Anzeige der Statuszeile"
+    IDC_PARA_DIR_DOC        "Unterverzeichnis für die Dokumentation "
+    ID_STANDARD_SETZEN      "Standardwerte setzen"
+    IDS_EXAMPLE3            "T-Stück 1%s1%s1 GF290 verz."
+    IDS_EXAMPLE2            "T-Stück 1%s1%s1"
+    IDS_EXAMPLE1            "T 1%s1%s1"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PARAMETEREINST      "Systemparameter"
+    IDS_BROWSEFILE          "Access-Datenbanken (*.mdb)|*.mdb|kompr. Datenbanken (*.dat;)|*.dat|Alle Dateien (*.*)|*.*||"
+END
+
+#endif    // Deutsch (Deutschland) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_DEU)
+#ifdef _WIN32
+LANGUAGE 7, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\SysParm.rc2"  // Nicht mit Microsoft Visual C++ bearbeitete Ressourcen
+#include "l.deu\afxres.rc"          // Standardkomponenten
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
