@@ -1,0 +1,18 @@
+#M043009                        1.000                                                                                  410012774303300400010                 92.57 EUR    28.64 KG   6000 MM     1
++       M043009                              932481     1.000      0010ST
++       M043009                              932487     1.000      0020ST
++       M043009                              858451     1.000      0030ST
++       M043009                              843032     6.525      0040M
+*   M043009                                      000108501   0.00   0.00       
+&   M043009                                      000108501   0.00   0.00       001Übergabe Produktion
+*   M043009                                      007032020   0.05   0.00       
+&   M043009                                      007032020   0.05   0.00       001Rohr sägen,V-Nut einrollen
+*   M043009                                      008532000   0.46   0.00       
+&   M043009                                      008532000   0.46   0.00       001Vorrichten, heften, signieren nach MXA073
+*   M043009                                      009032000   0.27   0.00       
+&   M043009                                      009032000   0.27   0.00       001Schweißen, richten, kennzeichnen nach MXA 073
+*   M043009                                      012022010   0.04   0.00       
+&   M043009                                      012022010   0.04   0.00       001Pulvern "rot gepulvert (ähnlich RAL 3000 feuerrot)"
+*   M043009                                      012532999   0.00   0.00       
+&   M043009                                      012532999   0.00   0.00       001Bündeln, 28 kg, Länge 6.0 m, anliefern 7114
+§M043009 Positionsnr.    KN101 Anzahl    1 DN  65 Länge   6000 Gewicht 28.64                             kein Hinweis
